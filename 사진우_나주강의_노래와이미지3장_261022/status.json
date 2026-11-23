@@ -1,0 +1,53 @@
+{
+  "status": "COMPLETE_WITH_SUNO_LINKS",
+  "music": "GENERATED_NOT_DOWNLOADED",
+  "songs": [
+    {
+      "label": "버전 A",
+      "duration": "0:40",
+      "url": "https://suno.com/song/a19200fd-f3d5-4fe6-aaba-16f58cf403b3"
+    },
+    {
+      "label": "버전 B",
+      "duration": "0:39",
+      "url": "https://suno.com/song/90c75fe7-7b12-4151-ac19-b7be3248de87"
+    }
+  ],
+  "images": [
+    {
+      "file": "이미지/01_나주도착.png",
+      "title": "나주 도착",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "402743bed10060698eea1ccb9bc848aac4aeab51ebf279785185e37f9b4bacf0",
+      "visual_qc": "PASS: 얼굴/복장 일치, 장면별 구도 차이 및 주요 문구 확인"
+    },
+    {
+      "file": "이미지/02_강의시작.png",
+      "title": "강의 시작",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "c82175bfd08095768f1d16acd9f135631603e1305fbd079f9edfd0fe981cf774",
+      "visual_qc": "PASS: 얼굴/복장 일치, 장면별 구도 차이 및 주요 문구 확인"
+    },
+    {
+      "file": "이미지/03_현장시연.png",
+      "title": "현장 시연",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "b17b4bcfae4339f38644a8879e083e790a8f59dcd5b778a6826cf3d03608c710",
+      "visual_qc": "PASS: 얼굴/복장 일치, 장면별 구도 차이 및 주요 문구 확인"
+    }
+  ],
+  "image_generation": "built-in imagegen",
+  "image_prompts": "제작자료/S01_prompt.txt ~ S03_prompt.txt",
+  "audio_listening_qc": "NOT_PERFORMED",
+  "review": "LOCAL_REVIEWED",
+  "date": "2026-10-22"
+}

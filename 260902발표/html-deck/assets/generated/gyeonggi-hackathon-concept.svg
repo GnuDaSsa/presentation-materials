@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520">
+<rect width="1200" height="520" fill="#f7f4ec"/>
+<text x="55" y="52" font-family="Arial,sans-serif" font-size="17" font-weight="700" letter-spacing="2" fill="#777168">해커톤 계획 · 확정 행사 아님</text>
+<g font-family="Arial,sans-serif">
+ <circle cx="150" cy="260" r="102" fill="#dfdbd2"/><text x="150" y="244" text-anchor="middle" font-size="19" font-weight="800">당일</text><text x="150" y="278" text-anchor="middle" font-size="28" font-weight="800">주제 공개</text>
+ <circle cx="450" cy="260" r="102" fill="#cac5bb"/><text x="450" y="244" text-anchor="middle" font-size="19" font-weight="800">현장</text><text x="450" y="278" text-anchor="middle" font-size="28" font-weight="800">서비스 제작</text>
+ <circle cx="750" cy="260" r="102" fill="#aaa59c"/><text x="750" y="244" text-anchor="middle" font-size="19" font-weight="800">마감</text><text x="750" y="278" text-anchor="middle" font-size="28" font-weight="800">발표 · 설득</text>
+ <circle cx="1050" cy="260" r="102" fill="#a94528"/><text x="1050" y="238" text-anchor="middle" font-size="19" font-weight="800" fill="#fff">목표</text><text x="1050" y="275" text-anchor="middle" font-size="28" font-weight="800" fill="#fff">함께 나갈</text><text x="1050" y="306" text-anchor="middle" font-size="28" font-weight="800" fill="#fff">인재 확보</text>
+ <path d="M252 260 H348 M552 260 H648 M852 260 H948" stroke="#2a2926" stroke-width="3" stroke-linecap="round"/><path d="M335 250 L348 260 L335 270 M635 250 L648 260 L635 270 M935 250 L948 260 L935 270" fill="none" stroke="#2a2926" stroke-width="3"/>
+</g></svg>

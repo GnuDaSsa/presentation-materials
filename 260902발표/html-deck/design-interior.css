@@ -1,0 +1,133 @@
+/*
+ * Design Interior HTML adaptation.
+ * Visual source: Design_Interior_20260830132103.pptx (18 slides).
+ * The source deck supplies the editorial system; this file keeps the current
+ * 58-slide content and browser interactions intact.
+ */
+:root{
+  --di-paper:#fbfbf8;
+  --di-paper-warm:#eee6d9;
+  --di-paper-warm-2:#e3d8c7;
+  --di-ink:#111211;
+  --di-body:#555650;
+  --di-mute:#8c8d86;
+  --di-line:#dedfd9;
+  --di-line-strong:#bfc1ba;
+  --di-rust:#c45b38;
+  --di-number:#e7e8e4;
+  --df-paper:var(--di-paper);
+  --df-paper-1:var(--di-paper-warm);
+  --df-paper-2:var(--di-paper-warm-2);
+  --df-ink:var(--di-ink);
+  --df-body:var(--di-body);
+  --df-mute:var(--di-mute);
+  --df-line:var(--di-line);
+  --df-line-strong:var(--di-line-strong);
+  --df-accent:var(--di-ink);
+  --accent:var(--di-ink);
+  --accent2:var(--di-body);
+  --paper-accent:var(--di-ink);
+}
+
+/* White editorial canvas and the source deck's thin running header. */
+#viewport{background:#e7e6e1}
+#canvas{background:var(--di-paper);box-shadow:0 22px 70px rgba(27,27,24,.22)}
+.slide,.slide.paper,.slide.part,.slide.deck-dark,
+.slide:not(.part):not(.deck-dark){
+  background-color:var(--di-paper)!important;
+  color:var(--di-ink)!important;
+  padding:70px 80px 54px;
+  box-shadow:inset 0 43px 0 var(--di-paper),inset 0 44px 0 var(--di-line);
+}
+.slide::after{
+  top:22px;right:80px;bottom:auto!important;
+  color:var(--di-ink)!important;font-size:10px;font-weight:700;letter-spacing:.08em;
+}
+.deck-brand{left:80px;top:20px;color:var(--di-mute)!important;font-size:9px;letter-spacing:.06em;text-transform:none}
+.deck-brand::before{display:none}
+.deck-meta{left:50%;right:auto;top:20px;transform:translateX(-50%);color:var(--di-mute)!important;font-size:8px;letter-spacing:.22em}
+.deck-author{display:none}
+.source-chip{left:80px;bottom:25px;color:var(--di-mute)}
+
+/* Source typography: large neutral titles, sparse labels, no decorative full stop. */
+.hero,.title{color:var(--di-ink)!important;font-weight:560;letter-spacing:-.062em}
+.hero::after,.title::after{content:""!important}
+.hero{font-size:78px;line-height:.98;max-width:1100px}
+.title{font-size:51px;line-height:1.05}
+.title.sm{font-size:48px;line-height:1.08}
+.eyebrow{margin:0 0 20px;color:var(--di-mute)!important;font-size:10px;font-weight:650;letter-spacing:.16em}
+.subtitle,.slide:not(.part):not(.deck-dark) .subtitle{color:var(--di-body);font-weight:450}
+.kicker,.paper .kicker,.list-row .n,.paper .list-row .n{color:var(--di-mute);font-size:10px;font-weight:650}
+.quote,.paper .quote,.part .quote,.deck-dark .quote{
+  color:var(--di-ink)!important;border-left:0;padding-left:0;font-weight:560;letter-spacing:-.035em;
+}
+.rule,.paper .rule{background:var(--di-line)!important}
+.rule.accent-rule{height:1px;background:var(--di-ink)!important}
+.accent,.cyan,.warm{color:var(--di-ink)!important}
+
+/* Cover and closing imitate the source's title/thanks pages. */
+.slide:first-child .eyebrow{margin-top:96px}
+.slide:first-child .hero{font-size:86px;line-height:.92;max-width:1050px}
+.slide:first-child .hero::after{content:"✳"!important;display:inline-block;margin-left:34px;font-size:25px;vertical-align:top;line-height:1;color:var(--di-ink)}
+.slide:first-child::before,.slide:last-of-type::before{
+  content:"";position:absolute;right:80px;bottom:54px;width:78px;height:58px;
+  background:repeating-linear-gradient(90deg,var(--di-ink) 0 2px,transparent 2px 5px,var(--di-ink) 5px 6px,transparent 6px 9px);
+}
+.slide:first-child .badge{transform:translateX(-104px)}
+.slide:last-of-type .hero{font-size:82px}
+
+/* Section openers use oversized pale numerals rather than a dark divider. */
+.slide.part>.grid{grid-template-columns:44% 56%!important;gap:0!important;margin-top:50px!important;align-items:center}
+.slide.part .a-num{font-size:290px!important;line-height:.78!important;color:var(--di-number)!important;font-weight:620!important;letter-spacing:-.08em!important}
+.slide.part .title{font-size:72px!important;line-height:.98!important;font-weight:540!important}
+.slide.part .subtitle{color:var(--di-body)!important;font-size:19px!important;max-width:680px}
+
+/* Flat editorial components: hairlines, whitespace, square media. */
+.card,.paper .card,.process .step,.paper .process .step,
+.part .card,.deck-dark .card,.part .process .step,.deck-dark .process .step{
+  background:transparent!important;border:0!important;border-top:1px solid var(--di-line)!important;
+  border-radius:0!important;box-shadow:none!important;padding-left:0;padding-right:12px;
+}
+.card.accent-card,.process .step.accent-card{border-top-color:var(--di-ink)!important}
+.process .step:not(:last-child)::after{color:var(--di-mute)}
+.card p,.process p,.slide:not(.part):not(.deck-dark) .card p,.slide:not(.part):not(.deck-dark) .process p{color:var(--di-body)}
+.badge,.paper .badge{border:1px solid var(--di-line);border-radius:0;background:transparent;color:var(--di-ink)}
+.media-frame,.paper .media-frame,.evidence-shot,.demo-frame,.testimonial-shot{
+  border-radius:0!important;box-shadow:none!important;
+}
+.media-frame,.paper .media-frame{border:1px solid var(--di-line);background:var(--di-paper-warm)}
+.media-frame img,.evidence-shot img,.demo-frame img{background:var(--di-paper-warm)}
+.evidence-shot{border-top:1px solid var(--di-line-strong);min-height:0}
+.evidence-shot figcaption,.demo-frame figcaption{color:var(--di-mute)}
+.demo-frame{border:1px solid var(--di-line);background:var(--di-paper)}
+.demo-no{background:var(--di-ink);border-radius:0}
+.codebox{border-radius:0;background:#20211f;border-color:#20211f}
+
+/* Data and evidence use black numerals and warm-neutral highlights. */
+.stat strong,.slide.has-stat .stat strong,.mini-table strong,.demo-summary strong{color:var(--di-ink)!important;font-weight:560}
+.stat span,.slide:not(.part):not(.deck-dark) .stat span{color:var(--di-body)}
+.mini-table,.mini-table>div,.label-row,.decision-stack,.decision-stack>div,.demo-summary{border-color:var(--di-line)}
+.mini-table b,.mini-table span,.mini-table strong{color:var(--di-ink)}
+.mini-table>div:last-child{background:linear-gradient(90deg,transparent 0 64px,var(--di-paper-warm) 64px);padding-right:12px}
+.privacy-note::before{background:var(--di-ink)!important}
+.testimonial-shot{background:var(--di-paper)!important;border-top:1px solid var(--di-line-strong)!important}
+.quarter-wheel>div{border-top-color:var(--di-ink)}
+.quarter-wheel i{color:var(--di-ink)}
+
+/* The source uses a single rust frame as an occasional chapter accent. */
+.slide[data-title="EXE 실행 화면과 결과 폴더"] .evidence-shot,
+.slide[data-title="Genspark 초안"] .genspark-output-shot:last-child{
+  border:18px solid var(--di-rust)!important;padding:10px!important;background:var(--di-rust);
+}
+.slide[data-title="EXE 실행 화면과 결과 폴더"] .evidence-shot figcaption,
+.slide[data-title="Genspark 초안"] .genspark-output-shot:last-child figcaption{color:#fff}
+.slide[data-title="EXE 실행 화면과 결과 폴더"] .evidence-shot figcaption{display:none}
+
+/* Viewer UI remains dark and clearly separate from the projected slide. */
+#progress{background:var(--di-rust)}
+.thumb.active{box-shadow:0 0 0 2px var(--di-rust)}
+.thumb::after{background:var(--di-rust)}
+
+@media print{
+  .slide,.slide.paper,.slide.part,.slide.deck-dark{background-color:var(--di-paper)!important;color:var(--di-ink)!important}
+}

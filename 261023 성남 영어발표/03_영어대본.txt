@@ -1,0 +1,120 @@
+SEONGNAM - ENGLISH PRESENTATION SCRIPT V1.6 + SPEAKER INTRODUCTION / SPEAKING REVISION
+Korean opening, then English; timing is a rehearsal guide, not a limit - pronunciation and phrasing revised 2 November 2026
+
+01 - Seongnam: The Heart of the System Semiconductor Cluster
+42 seconds
+한국어로 인사합니다. “국제적인 자리”에서 전환 안내 자막이 먼저 나오고, “영어로 진행”을 말하면 같은 표지가 약 1.2초 동안 영어로 전환됩니다. “진행해보도록 하겠습니다”처럼 끝말을 바꿔도 됩니다. 오른쪽 방향키로도 전환할 수 있습니다. 영어 표지에서 기존 영어 인사를 이어간 뒤 다음 장으로 이동합니다. Home은 한국어 오프닝부터 다시 시작합니다.
+
+안녕하세요. AI반도체과 사진우 주무관입니다.
+오늘 이렇게 성남시에 방문해 주심에 감사드립니다.
+국제적인 자리이니만큼, 지금부터 영어로 진행하도록 하겠습니다.
+It's a great honor to speak here today.
+Thank you for visiting seongnam out of your business schedule representationg Ministry of Science and Technology from Vietnam
+Today, I will introduce Seongnam's policies to support the system semiconductor industry.
+
+02 - Jinwoo Sa · AI Champion Black
+41 seconds
+프로필과 AI 챔피언 블랙을 소개한 뒤 영상 소개 대사를 말합니다. 영상을 재생하고 끝나면 3장으로 이어갑니다.
+
+My name is Jinwoo Sa, and I’m belong to the AI Division, AI Semiconductor Department, and the Semiconductor Team at Seongnam City Hall.
+I have completed the AI Champion Black, which is the highest level of the government's AI Champion certification program.
+In fact, I created all of today's presentation materials and the live caption system using AI.
+Now, let me begin my presentation, titled “Seongnam: The Heart of the System Semiconductor Cluster.”
+I will show you a video about Seongnam's semiconductor programs, and then continue my presentation.
+
+03 - Our vision and industrial strength
+28 seconds
+영상 내용을 간단히 짚고 발표를 이어간 뒤, 40% 산업 기반과 기업 성장 지원 전략을 설명합니다.
+
+You have just seen a brief overview of our programs. Now, let me continue my presentation.
+Our vision is to become a leading city for system semiconductors.
+Seongnam has a unique strength.
+About 40 percent of South Korea's fabless semiconductor companies are located here in Seongnam, especially in Pangyo.
+We aim to provide the support these companies need to grow much faster.
+
+04 - Three main strategies
+23 seconds
+인프라·인재양성·산업공간을 순서대로 짚습니다.
+
+Our goal is to build a strong network for the system semiconductor industry in Seongnam.
+We have developed three main strategies.
+Infrastructure, talent development, and industrial space.
+Let me explain how we are putting these strategies into action.
+
+05 - System Semiconductor Development Support Center: Three major projects
+28 seconds
+V1.6의 축약 사업명을 그대로 읽습니다. 첫 두 문장은 하나의 자막 구간입니다.
+
+First, infrastructure. One of our major programs is the System Semiconductor Development Support Center.
+This program includes three major projects.
+The first is the System IC Verification Center.
+The second is a Semiconductor Testing Project for the Advanced Defense Industry.
+And the third is the Advanced Equipment Sharing Program for Fabless Companies.
+
+06 - Advanced equipment, EDA tools and testing facilities
+20 seconds
+공동장비·EDA·시험시설과 기술교육·컨설팅을 설명합니다.
+
+These projects give companies access to advanced equipment, EDA tools, and testing facilities.
+We also offer technical training and consulting services.
+Through these programs, we aim to lower development costs and help local companies compete.
+
+07 - Seongnam System Semiconductor Alliance
+36 seconds
+사업명 → 77개사(공급 55·수요 22) → 화면 아래 세 활동: Tech Forum Day / Small-group networking / Joint planning of government projects.
+
+Here is the second thing we do for the Insfrasturcture, System Semiconductor Alliance.
+The System Semiconductor Alliance connects semiconductor suppliers with companies that need their technology.
+At Tech Forum Day, companies share new technologies and present their work.
+Through small-group networking, companies find partners in their field.
+We also support joint planning of government projects, from proposals to joint research.
+In 2026, the alliance connects 77 companies: 55 suppliers and 22 customers.
+
+08 - Three-step semiconductor training
+59 seconds
+세 단계와 대학별 교육을 설명한 뒤 청년과 기업의 효과를 짚습니다.
+
+Second, talent development.
+We run a three-step semiconductor training program.
+The program has three levels: practical, professional, and advanced training.
+Each level is supported by a university.
+At Korea Polytechnics Seongnam Campus, students receive training in AI semiconductor manufacturing, packaging, and testing.
+Gachon University offers a specialized course in digital chip design.
+And Sogang University's Pangyo Campus offers an advanced semiconductor design program.
+These programs have two main goals.
+For young people, we provide the skills they need to start their careers.
+For local companies, we train skilled workers right here in Seongnam.
+This is how we connect education directly with the needs of the semiconductor industry.
+
+09 - Pangyo System Semiconductor Research Center
+20 seconds
+직접 제작한 기획안 3D 모델이 약 10초간 재생됩니다. 건물을 짚고 2030년 준공 계획을 설명합니다.
+
+Third, industrial space.
+We plan to build the Pangyo System Semiconductor Research Center in the Third Pangyo Techno Valley.
+The center will be completed in 2030.
+It will provide office and research space for semiconductor companies.
+
+10 - Office space, research and technical support
+32 seconds
+1~3층 Support facilities를 보고 첫 문장, 이어서 개발지원센터 이름을 말합니다. 두 문장은 각각 줄을 나눴으며 하나의 자막 구간으로 연결됩니다. three floors 또는 development support center로도 같은 자막이 나옵니다.
+
+The first three floors will be for support facilities.
+The System Semiconductor Development Support Center will be here.
+This means companies in the building will have easy access to shared equipment, technical support, and other services.
+We aim to offer more than office space. We want to create a place where companies can develop technology, work together, and grow.
+
+11 - A strong industrial ecosystem
+21 seconds
+01 Shared infrastructure → 기업 경쟁 / 02 University partnerships → 좋은 일자리 / 03 Industrial space → 산업 네트워크. 화면의 세 행을 위에서 아래로 한 문장씩 읽습니다.
+
+Shared infrastructure and development support help fabless companies compete.
+Through university partnerships and skills training, we aim to create high-quality jobs.
+Industrial space and business cooperation help us build a strong industry network.
+
+12 - Thank you
+6 seconds
+협력에 대한 기대를 전하고, Thank you로 짧게 마칩니다.
+
+Together with our partners, we are working to build a stronger semiconductor industry.
+Thank you for listening.

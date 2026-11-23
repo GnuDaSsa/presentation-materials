@@ -1,0 +1,410 @@
+{
+  "version": 1,
+  "deckVersion": "2026-11-03-english-v1.6-alliance-restored",
+  "title": "Seongnam - English Presentation V1.6",
+  "draft": true,
+  "cues": [
+    {
+      "id": "v16-001",
+      "slide": 1,
+      "spokenLanguage": "ko",
+      "en": "Hello. I am Jinwoo Sa, an administrative officer with the AI Semiconductor Department.",
+      "ko": "안녕하세요. AI반도체과 사진우 주무관입니다.",
+      "vi": "Xin chào quý vị. Tôi là Jinwoo Sa, chuyên viên thuộc Phòng Bán dẫn AI."
+    },
+    {
+      "id": "v16-002",
+      "slide": 1,
+      "spokenLanguage": "ko",
+      "en": "Thank you for visiting Seongnam today.",
+      "ko": "오늘 이렇게 성남시에 방문해 주심에 감사드립니다.",
+      "vi": "Xin trân trọng cảm ơn quý vị đã đến thăm thành phố Seongnam hôm nay."
+    },
+    {
+      "id": "v16-003",
+      "slide": 1,
+      "spokenLanguage": "ko",
+      "en": "As this is an international gathering, I will now continue in English.",
+      "ko": "국제적인 자리이니만큼, 지금부터 영어로 진행하도록 하겠습니다.",
+      "vi": "Vì đây là một buổi gặp gỡ quốc tế, từ bây giờ tôi xin tiếp tục trình bày bằng tiếng Anh."
+    },
+    {
+      "id": "v16-005",
+      "slide": 1,
+      "en": "It's a great honor to speak here today.",
+      "ko": "오늘 이 자리에서 말씀드리게 되어 매우 영광입니다.",
+      "vi": "Tôi rất vinh dự được phát biểu tại đây hôm nay."
+    },
+    {
+      "id": "v16-006",
+      "slide": 1,
+      "en": "Thank you for visiting seongnam out of your business schedule representationg Ministry of Science and Technology from Vietnam",
+      "ko": "바쁜 일정 중에도 성남을 방문해 주신 베트남 과학기술부 관계자 여러분께 감사드립니다.",
+      "vi": "Xin cảm ơn quý vị đại diện Bộ Khoa học và Công nghệ Việt Nam đã dành thời gian trong lịch trình bận rộn để đến thăm Seongnam."
+    },
+    {
+      "id": "v16-007",
+      "slide": 1,
+      "en": "Today, I will introduce Seongnam's policies to support the system semiconductor industry.",
+      "ko": "오늘은 시스템반도체 산업을 지원하기 위한 성남시의 정책을 소개해 드리겠습니다.",
+      "vi": "Hôm nay, tôi xin giới thiệu các chính sách của Seongnam nhằm hỗ trợ ngành bán dẫn hệ thống."
+    },
+    {
+      "id": "v16-008",
+      "slide": 2,
+      "en": "My name is Jinwoo Sa, and I’m belong to the AI Division, AI Semiconductor Department, and the Semiconductor Team at Seongnam City Hall.",
+      "ko": "저는 성남시청 AI국 AI반도체과 반도체팀 소속 사진우입니다.",
+      "vi": "Tôi là Jinwoo Sa, thuộc Nhóm Bán dẫn, Phòng Bán dẫn AI, Cục AI của Tòa thị chính Seongnam."
+    },
+    {
+      "id": "v16-009",
+      "slide": 2,
+      "en": "I have completed the AI Champion Black, which is the highest level of the government's AI Champion certification program.",
+      "ko": "저는 정부 AI 챔피언 인증 프로그램의 최고 등급인 블랙 과정을 수료했습니다.",
+      "vi": "Tôi đã hoàn thành AI Champion Black, cấp độ cao nhất trong chương trình chứng nhận AI Champion của Chính phủ."
+    },
+    {
+      "id": "v16-010",
+      "slide": 2,
+      "en": "In fact, I created all of today's presentation materials and the live caption system using AI.",
+      "ko": "사실 오늘 발표자료와 실시간 자막 시스템을 모두 AI로 만들었습니다.",
+      "vi": "Trên thực tế, tôi đã tạo toàn bộ tài liệu trình bày hôm nay và hệ thống phụ đề trực tiếp bằng AI."
+    },
+    {
+      "id": "v16-011",
+      "slide": 2,
+      "en": "Now, let me begin my presentation, titled “Seongnam: The Heart of the System Semiconductor Cluster.”",
+      "ko": "그럼 ‘시스템반도체 클러스터의 중심, 성남’이라는 주제로 발표를 시작하겠습니다.",
+      "vi": "Sau đây, tôi xin bắt đầu bài trình bày với chủ đề “Seongnam: Trung tâm của cụm công nghiệp bán dẫn hệ thống”."
+    },
+    {
+      "id": "v16-video-001",
+      "slide": 2,
+      "en": "I will show you a video about Seongnam's semiconductor programs, and then continue my presentation.",
+      "ko": "성남시 반도체 사업 전반을 담은 영상을 보여드린 뒤 발표를 이어가겠습니다.",
+      "vi": "Tôi xin giới thiệu một video về các chương trình bán dẫn của Seongnam, sau đó sẽ tiếp tục bài trình bày."
+    },
+    {
+      "id": "v16-video-002",
+      "slide": 3,
+      "en": "You have just seen a brief overview of our programs. Now, let me continue my presentation.",
+      "ko": "사업을 간단히 정리한 영상을 보셨습니다. 이제 발표를 이어가겠습니다.",
+      "vi": "Quý vị vừa xem phần giới thiệu khái quát về các chương trình của chúng tôi. Bây giờ, tôi xin tiếp tục bài trình bày."
+    },
+    {
+      "id": "v16-012",
+      "slide": 3,
+      "en": "Our vision is to become a leading city for system semiconductors.",
+      "ko": "우리의 비전은 시스템반도체에 특화된 선도 도시가 되는 것입니다.",
+      "vi": "Tầm nhìn của chúng tôi là trở thành thành phố tiên phong chuyên về bán dẫn hệ thống."
+    },
+    {
+      "id": "v16-013",
+      "slide": 3,
+      "en": "Seongnam has a unique strength.",
+      "ko": "성남에는 특별한 강점이 있습니다.",
+      "vi": "Seongnam có một thế mạnh riêng."
+    },
+    {
+      "id": "v16-014",
+      "slide": 3,
+      "en": "About 40 percent of South Korea's fabless semiconductor companies are located here in Seongnam, especially in Pangyo.",
+      "ko": "대한민국 팹리스 반도체 기업의 약 40%가 이곳 성남에 있으며, 특히 판교에 집중되어 있습니다.",
+      "vi": "Khoảng 40% doanh nghiệp bán dẫn fabless của Hàn Quốc đặt tại Seongnam, đặc biệt là ở Pangyo."
+    },
+    {
+      "id": "v16-015",
+      "slide": 3,
+      "en": "We aim to provide the support these companies need to grow much faster.",
+      "ko": "우리는 기업들이 훨씬 빠르게 성장할 수 있는 발판을 만들고자 합니다.",
+      "vi": "Chúng tôi hướng tới cung cấp sự hỗ trợ cần thiết để các doanh nghiệp tăng trưởng nhanh hơn nhiều."
+    },
+    {
+      "id": "v16-016",
+      "slide": 4,
+      "en": "Our goal is to build a strong network for the system semiconductor industry in Seongnam.",
+      "ko": "우리의 목표는 성남에 탄탄한 시스템반도체 산업 네트워크를 구축하는 것입니다.",
+      "vi": "Mục tiêu của chúng tôi là xây dựng một mạng lưới công nghiệp vững mạnh cho ngành bán dẫn hệ thống tại Seongnam."
+    },
+    {
+      "id": "v16-017",
+      "slide": 4,
+      "en": "We have developed three main strategies.",
+      "ko": "세 가지 주요 전략을 마련했습니다.",
+      "vi": "Chúng tôi đã xây dựng ba chiến lược chính."
+    },
+    {
+      "id": "v16-018",
+      "slide": 4,
+      "en": "Infrastructure, talent development, and industrial space.",
+      "ko": "인프라, 인재양성, 산업공간입니다.",
+      "vi": "Đó là hạ tầng, phát triển nhân lực và không gian công nghiệp."
+    },
+    {
+      "id": "v16-019",
+      "slide": 4,
+      "en": "Let me explain how we are putting these strategies into action.",
+      "ko": "이 전략들을 어떻게 실행하고 있는지 설명드리겠습니다.",
+      "vi": "Sau đây, tôi xin trình bày cách chúng tôi triển khai các chiến lược này."
+    },
+    {
+      "id": "v16-020",
+      "slide": 5,
+      "en": "First, infrastructure. One of our major programs is the System Semiconductor Development Support Center.",
+      "ko": "첫 번째는 인프라입니다. 주요 사업 중 하나는 시스템반도체 개발지원센터입니다.",
+      "vi": "Thứ nhất là hạ tầng. Một trong những chương trình chủ chốt là Trung tâm Hỗ trợ Phát triển Bán dẫn Hệ thống."
+    },
+    {
+      "id": "v16-021",
+      "slide": 5,
+      "en": "This program includes three major projects.",
+      "ko": "이 사업은 세 가지 주요 프로젝트로 구성됩니다.",
+      "vi": "Chương trình này gồm ba dự án chính."
+    },
+    {
+      "id": "v16-022",
+      "slide": 5,
+      "en": "The first is the System IC Verification Center.",
+      "ko": "첫째는 시스템반도체 검증지원센터입니다.",
+      "vi": "Thứ nhất là Trung tâm Kiểm chứng Vi mạch Hệ thống."
+    },
+    {
+      "id": "v16-023",
+      "slide": 5,
+      "en": "The second is a Semiconductor Testing Project for the Advanced Defense Industry.",
+      "ko": "둘째는 첨단 방위산업용 반도체 시험 프로젝트입니다.",
+      "vi": "Thứ hai là Dự án Thử nghiệm Bán dẫn cho Công nghiệp Quốc phòng Tiên tiến."
+    },
+    {
+      "id": "v16-024",
+      "slide": 5,
+      "en": "And the third is the Advanced Equipment Sharing Program for Fabless Companies.",
+      "ko": "셋째는 팹리스 기업을 위한 첨단장비 공동이용지원사업입니다.",
+      "vi": "Thứ ba là Chương trình Sử dụng Chung Thiết bị Tiên tiến dành cho Doanh nghiệp Fabless."
+    },
+    {
+      "id": "v16-025",
+      "slide": 6,
+      "en": "These projects give companies access to advanced equipment, EDA tools, and testing facilities.",
+      "ko": "이 사업들은 기업이 첨단장비, EDA 도구, 시험 시설을 이용할 수 있도록 지원합니다.",
+      "vi": "Các dự án này giúp doanh nghiệp tiếp cận thiết bị tiên tiến, công cụ EDA và cơ sở thử nghiệm."
+    },
+    {
+      "id": "v16-026",
+      "slide": 6,
+      "en": "We also offer technical training and consulting services.",
+      "ko": "기술교육과 컨설팅 서비스도 제공합니다.",
+      "vi": "Chúng tôi cũng cung cấp đào tạo kỹ thuật và dịch vụ tư vấn."
+    },
+    {
+      "id": "v16-027",
+      "slide": 6,
+      "en": "Through these programs, we aim to lower development costs and help local companies compete.",
+      "ko": "이를 통해 개발비용을 줄이고 지역 기업의 경쟁력을 강화하고자 합니다.",
+      "vi": "Thông qua các chương trình này, chúng tôi hướng tới giảm chi phí phát triển và nâng cao năng lực cạnh tranh của doanh nghiệp địa phương."
+    },
+    {
+      "id": "v16-alliance-001",
+      "slide": 7,
+      "en": "Here is the second thing we do for the Insfrasturcture, System Semiconductor Alliance.",
+      "ko": "인프라 분야의 두 번째 사업은 시스템반도체 얼라이언스입니다.",
+      "vi": "Hoạt động thứ hai về hạ tầng là Liên minh Bán dẫn Hệ thống."
+    },
+    {
+      "id": "v16-alliance-006",
+      "slide": 7,
+      "en": "The System Semiconductor Alliance connects semiconductor suppliers with companies that need their technology.",
+      "ko": "시스템반도체 얼라이언스는 반도체 공급기업과 기술이 필요한 수요기업을 연결합니다.",
+      "vi": "Liên minh Bán dẫn Hệ thống kết nối các nhà cung cấp bán dẫn với những doanh nghiệp cần công nghệ của họ."
+    },
+    {
+      "id": "v16-alliance-003",
+      "slide": 7,
+      "en": "At Tech Forum Day, companies share new technologies and present their work.",
+      "ko": "테크포럼 데이에서는 기업들이 최신 기술을 공유하고 자사의 기술을 발표합니다.",
+      "vi": "Tại Ngày Diễn đàn Công nghệ, các doanh nghiệp chia sẻ công nghệ mới và giới thiệu thành quả của mình."
+    },
+    {
+      "id": "v16-alliance-004",
+      "slide": 7,
+      "en": "Through small-group networking, companies find partners in their field.",
+      "ko": "소규모 네트워킹을 통해 같은 기술 분야의 협력 기업을 찾습니다.",
+      "vi": "Thông qua kết nối theo nhóm nhỏ, các doanh nghiệp tìm đối tác trong cùng lĩnh vực công nghệ."
+    },
+    {
+      "id": "v16-alliance-005",
+      "slide": 7,
+      "en": "We also support joint planning of government projects, from proposals to joint research.",
+      "ko": "정부과제 제안 기획부터 공동 연구까지, 정부과제 공동기획도 지원합니다.",
+      "vi": "Chúng tôi cũng hỗ trợ doanh nghiệp cùng lập kế hoạch cho các dự án của chính phủ, từ xây dựng đề xuất đến nghiên cứu chung."
+    },
+    {
+      "id": "v16-alliance-002",
+      "slide": 7,
+      "en": "In 2026, the alliance connects 77 companies: 55 suppliers and 22 customers.",
+      "ko": "2026년에는 공급기업 55개사와 수요기업 22개사, 총 77개사를 연결합니다.",
+      "vi": "Năm 2026, liên minh kết nối 77 doanh nghiệp, gồm 55 nhà cung cấp và 22 doanh nghiệp có nhu cầu sử dụng bán dẫn."
+    },
+    {
+      "id": "v16-028",
+      "slide": 8,
+      "en": "Second, talent development.",
+      "ko": "두 번째는 인재양성입니다.",
+      "vi": "Thứ hai là phát triển nhân lực."
+    },
+    {
+      "id": "v16-029",
+      "slide": 8,
+      "en": "We run a three-step semiconductor training program.",
+      "ko": "성남시는 3단계 반도체 교육 프로그램을 운영합니다.",
+      "vi": "Chúng tôi triển khai chương trình đào tạo bán dẫn theo ba cấp độ."
+    },
+    {
+      "id": "v16-030",
+      "slide": 8,
+      "en": "The program has three levels: practical, professional, and advanced training.",
+      "ko": "실무교육, 전문교육, 고급교육의 세 단계로 구성됩니다.",
+      "vi": "Chương trình gồm ba cấp độ đào tạo: thực hành, chuyên môn và nâng cao."
+    },
+    {
+      "id": "v16-031",
+      "slide": 8,
+      "en": "Each level is supported by a university.",
+      "ko": "각 단계는 대학의 지원을 받아 운영됩니다.",
+      "vi": "Mỗi cấp độ được triển khai với sự hỗ trợ của một trường đại học."
+    },
+    {
+      "id": "v16-032",
+      "slide": 8,
+      "en": "At Korea Polytechnics Seongnam Campus, students receive training in AI semiconductor manufacturing, packaging, and testing.",
+      "ko": "한국폴리텍대학 성남캠퍼스에서는 AI반도체 제조, 패키징, 테스트 분야를 교육합니다.",
+      "vi": "Tại Cơ sở Seongnam của Korea Polytechnics, học viên được đào tạo về chế tạo, đóng gói và kiểm thử bán dẫn AI."
+    },
+    {
+      "id": "v16-033",
+      "slide": 8,
+      "en": "Gachon University offers a specialized course in digital chip design.",
+      "ko": "가천대학교는 디지털 칩 설계 전문과정을 제공합니다.",
+      "vi": "Đại học Gachon cung cấp khóa học chuyên sâu về thiết kế chip số."
+    },
+    {
+      "id": "v16-034",
+      "slide": 8,
+      "en": "And Sogang University's Pangyo Campus offers an advanced semiconductor design program.",
+      "ko": "서강대학교 판교캠퍼스는 고급 반도체 설계 프로그램을 운영합니다.",
+      "vi": "Cơ sở Pangyo của Đại học Sogang tổ chức chương trình thiết kế bán dẫn nâng cao."
+    },
+    {
+      "id": "v16-035",
+      "slide": 8,
+      "en": "These programs have two main goals.",
+      "ko": "이 프로그램에는 두 가지 주요 목표가 있습니다.",
+      "vi": "Các chương trình này có hai mục tiêu chính."
+    },
+    {
+      "id": "v16-036",
+      "slide": 8,
+      "en": "For young people, we provide the skills they need to start their careers.",
+      "ko": "청년들에게는 사회에 첫발을 내딛는 데 필요한 역량을 제공합니다.",
+      "vi": "Đối với thanh niên, chúng tôi trang bị những kỹ năng cần thiết để bắt đầu sự nghiệp."
+    },
+    {
+      "id": "v16-037",
+      "slide": 8,
+      "en": "For local companies, we train skilled workers right here in Seongnam.",
+      "ko": "지역 기업에 필요한 숙련 인력을 이곳 성남에서 양성합니다.",
+      "vi": "Chúng tôi đào tạo lao động có tay nghề ngay tại Seongnam cho các doanh nghiệp địa phương."
+    },
+    {
+      "id": "v16-038",
+      "slide": 8,
+      "en": "This is how we connect education directly with the needs of the semiconductor industry.",
+      "ko": "이처럼 교육을 반도체 산업의 수요와 직접 연결하고 있습니다.",
+      "vi": "Đó là cách chúng tôi gắn kết trực tiếp giáo dục với nhu cầu của ngành bán dẫn."
+    },
+    {
+      "id": "v16-039",
+      "slide": 9,
+      "en": "Third, industrial space.",
+      "ko": "세 번째는 산업공간입니다.",
+      "vi": "Thứ ba là không gian công nghiệp."
+    },
+    {
+      "id": "v16-040",
+      "slide": 9,
+      "en": "We plan to build the Pangyo System Semiconductor Research Center in the Third Pangyo Techno Valley.",
+      "ko": "제3판교테크노밸리에 판교 시스템반도체 연구센터를 조성할 계획입니다.",
+      "vi": "Chúng tôi đang lên kế hoạch xây dựng Trung tâm Nghiên cứu Bán dẫn Hệ thống Pangyo tại Khu Công nghệ Pangyo thứ ba."
+    },
+    {
+      "id": "v16-041",
+      "slide": 9,
+      "en": "The center will be completed in 2030.",
+      "ko": "연구센터는 2030년 준공 예정입니다.",
+      "vi": "Trung tâm dự kiến hoàn thành vào năm 2030."
+    },
+    {
+      "id": "v16-042",
+      "slide": 9,
+      "en": "It will provide office and research space for semiconductor companies.",
+      "ko": "반도체 기업을 위한 사무공간과 연구공간을 제공하게 됩니다.",
+      "vi": "Trung tâm sẽ cung cấp không gian văn phòng và nghiên cứu cho các doanh nghiệp bán dẫn."
+    },
+    {
+      "id": "v16-043",
+      "slide": 10,
+      "en": "The first three floors will be for support facilities. The System Semiconductor Development Support Center will be here.",
+      "ko": "1층부터 3층까지는 지원시설로 사용됩니다. 시스템반도체 개발지원센터가 이곳에 들어섭니다.",
+      "vi": "Ba tầng đầu tiên sẽ dành cho các cơ sở hỗ trợ. Trung tâm Hỗ trợ Phát triển Bán dẫn Hệ thống sẽ đặt tại đây."
+    },
+    {
+      "id": "v16-044",
+      "slide": 10,
+      "en": "This means companies in the building will have easy access to shared equipment, technical support, and other services.",
+      "ko": "따라서 입주 기업들은 공동장비, 기술지원 등 다양한 서비스를 편리하게 이용할 수 있습니다.",
+      "vi": "Nhờ đó, doanh nghiệp trong tòa nhà có thể thuận tiện tiếp cận thiết bị dùng chung, hỗ trợ kỹ thuật và các dịch vụ khác."
+    },
+    {
+      "id": "v16-045",
+      "slide": 10,
+      "en": "We aim to offer more than office space. We want to create a place where companies can develop technology, work together, and grow.",
+      "ko": "우리의 목표는 단순한 사무공간 제공이 아니라, 기업들이 기술을 개발하고 협력하며 함께 성장할 수 있는 환경을 조성하는 것입니다.",
+      "vi": "Mục tiêu của chúng tôi không chỉ là cung cấp văn phòng, mà còn tạo môi trường để doanh nghiệp phát triển công nghệ, hợp tác và cùng tăng trưởng."
+    },
+    {
+      "id": "v16-046",
+      "slide": 11,
+      "en": "Shared infrastructure and development support help fabless companies compete.",
+      "ko": "공동 인프라와 개발 지원으로 팹리스 기업의 경쟁력을 높입니다.",
+      "vi": "Hạ tầng dùng chung và hỗ trợ phát triển giúp các doanh nghiệp fabless nâng cao khả năng cạnh tranh."
+    },
+    {
+      "id": "v16-047",
+      "slide": 11,
+      "en": "Through university partnerships and skills training, we aim to create high-quality jobs.",
+      "ko": "대학 연계와 전문역량 교육으로 양질의 일자리를 만들고자 합니다.",
+      "vi": "Thông qua hợp tác với các trường đại học và đào tạo kỹ năng, chúng tôi hướng tới tạo ra việc làm chất lượng cao."
+    },
+    {
+      "id": "v16-048",
+      "slide": 11,
+      "en": "Industrial space and business cooperation help us build a strong industry network.",
+      "ko": "산업공간과 기업 협력으로 탄탄한 산업 네트워크를 구축합니다.",
+      "vi": "Không gian công nghiệp và hợp tác giữa các doanh nghiệp giúp chúng tôi xây dựng mạng lưới ngành vững mạnh."
+    },
+    {
+      "id": "v16-049",
+      "slide": 12,
+      "en": "Together with our partners, we are working to build a stronger semiconductor industry.",
+      "ko": "파트너들과 함께 더욱 탄탄한 반도체 산업을 만들어 나가고 있습니다.",
+      "vi": "Cùng các đối tác, chúng tôi đang xây dựng một ngành bán dẫn vững mạnh hơn."
+    },
+    {
+      "id": "v16-050",
+      "slide": 12,
+      "en": "Thank you for listening.",
+      "ko": "경청해 주셔서 감사합니다.",
+      "vi": "Xin cảm ơn quý vị đã lắng nghe."
+    }
+  ]
+}

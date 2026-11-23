@@ -1,0 +1,1995 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>내 업무에서 시작하는 AI 업무혁신 · v2</title>
+<link rel="stylesheet" href="quest-v2.css">
+</head>
+<body>
+<div id="viewport"><div id="canvas">
+
+<!-- ================= INTRO ================= -->
+
+<section class="slide cover" data-title="표지 · 내 업무에서 시작하는 AI 업무혁신" data-stage="INTRO">
+  <canvas class="bg" data-scene="city"></canvas>
+  <div class="wind" data-n="9" data-leaves="1"></div>
+  <div class="titlebox" style="width:1100px">
+    <span class="eyebrow">AI 업무혁신 사례 · 성남시</span>
+    <h1>내 업무에서 시작하는<br><b>AI 업무혁신</b></h1>
+  </div>
+  <canvas class="sp bob" data-sp="hero" data-scale="12" style="left:1200px;bottom:120px"></canvas>
+  <div class="who"><span>PLAYER 1</span>성남시 AI반도체과 · 사진우</div>
+  <div class="press">PRESS ▶ START</div>
+  <aside class="note">표지. 중랑구청 강의(2026.11.20) 제목: 내 업무에서 시작하는 AI 업무혁신.</aside>
+</section>
+
+<section class="slide" data-title="불러주셔서 감사합니다" data-stage="INTRO">
+  <canvas class="bg" data-scene="city"></canvas>
+  <div class="wind" data-n="6" data-leaves="1"></div>
+  <canvas class="sp talk" data-sp="hero" data-scale="11" style="left:180px;bottom:270px"></canvas>
+  <div class="win light dlg" style="font-size:62px"><span class="name">사진우</span><span class="type">지금까지는 주로 <em>AI 영상 입문</em> 강의 요청만 받았는데요,</span><span class="more">▼</span></div>
+  <div class="win light dlg" style="font-size:56px" data-s="1"><span class="name">사진우</span><span class="type">오늘은 전반적인 <em>업무혁신 사례</em>와<br>제 <em>영상 스토리</em>를 엮어서 보여 드리려 합니다.</span><span class="more">▼</span></div>
+  <div class="win light dlg" data-s="2"><span class="name">사진우</span><span class="type">엄청 알려진 무언가를 개발한 케이스는 아니지만,<br><em>성남시청 안에서 변화의 바람</em>은 확실하게 일으키고 있습니다.</span><span class="more">▼</span></div>
+  <aside class="note">사실 지금까지 AI영상 입문 관련된 강의 요청만 받았는데, 오늘은 전반적인 업무혁신 사례와 제 영상 스토리를 엮어서 보여 드리려 합니다.
+엄청 알려진 무언가를 개발하거나 한 케이스는 아니지만, 적어도 성남시청 내에서 변화의 바람은 확실하게 불러일으키고 있다.</aside>
+</section>
+
+<section class="slide" data-title="미리 경고: 정신없을 수 있음" data-stage="INTRO">
+  <div class="stars"></div>
+  <div class="win" style="left:200px;right:200px;top:190px;padding:70px 80px">
+    <span class="tag">SYSTEM</span>
+    <div class="h2">⚠ 이 이야기는 <span class="mint">코딩</span>과 <span class="pink">영상</span>을 오갑니다</div>
+    <div style="display:flex;align-items:center;gap:22px;margin-top:56px;font:30px var(--pixel)">
+      <span style="padding:14px 22px;border:5px solid var(--mint);color:var(--mint)">&lt;/&gt; 코딩</span><span class="mark">▶</span>
+      <span style="padding:14px 22px;border:5px solid var(--pink);color:var(--pink)">■ 영상</span><span class="mark">▶</span>
+      <span style="padding:14px 22px;border:5px solid var(--mint);color:var(--mint)">&lt;/&gt; 코딩</span><span class="mark">▶</span>
+      <span style="padding:14px 22px;border:5px solid var(--pink);color:var(--pink)">■ 영상</span><span class="mark">▶ ?</span>
+    </div>
+    <p class="p" style="margin-top:56px" data-s="1">정신없으실 수 있는데요, 이런 케이스가 잘 없어서<br><b class="mark">좋게 봐주시는 기관이 많았습니다.</b></p>
+  </div>
+  <aside class="note">이야기를 듣다보면 아마 코딩얘기로 갔다가 영상얘기로 갔다가 정신이 없을건데, 이런 케이스가 잘 없어서 좋게 봐주시는 타 기관이 많은 것 같다.</aside>
+</section>
+
+<section class="slide" data-title="캐릭터 정보" data-stage="INTRO">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">STATUS</div><div class="h2" style="margin-top:10px">캐릭터 정보</div></div>
+  <div class="status">
+    <div>
+      <div class="portrait face"></div>
+      <div class="lv"><b>8급</b> · 지방시설서기 (토목직)</div>
+      <div class="gauge"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i></i></div>
+    </div>
+    <dl class="stat">
+      <dt>이름</dt><dd>사진우 <small>· 경기도 성남시</small> <button class="linkbtn" data-video="profileImg">강사프로필 원본 ↗</button></dd>
+      <dt>전공</dt><dd>일본어</dd>
+      <dt>전직</dt><dd>영어교육 앱 스타트업 영상팀 <button class="linkbtn" data-video="realclassImg">Qualson · 리얼클래스 보기 ↗</button></dd>
+      <dt>현재</dt><dd>토목직 공무원 · AI반도체과 <small>· 담당은 ‘반도체 건물조성’</small></dd>
+      <dt>길드</dt><dd>성남시 AI 동호회 <b class="mark">DLC</b> 창설·운영</dd>
+      <dt>칭호</dt><dd>AI챔피언 블랙</dd>
+      <dt>특수</dt><dd>댄스배틀 우승·준우승 <button class="vbtn" data-video="danceClip">배틀 영상 ▶</button> · 카투사 복무</dd>
+      <dt data-s="1" class="pink">일관성</dt><dd data-s="1" class="pink">측정 불가</dd>
+    </dl>
+  </div>
+  <div class="vmodal" id="profileImg" data-close-any><div class="ibox"><div class="vbar"><span>강사프로필 원본</span><button class="vclose">✕ 닫기</button></div><img src="assets/lecturer-profile.png" alt="사진우 강사프로필"></div></div>
+  <div class="vmodal" id="realclassImg" data-close-any><div class="ibox"><div class="vbar"><span>리얼클래스 앱 · 스토어 등록 화면</span><button class="vclose">✕ 닫기</button></div><img src="assets/media/realclass-app-screen.jpg" alt="리얼클래스 앱 화면"></div></div>
+  <div class="vmodal" id="danceClip"><div class="vbox"><div class="vbar"><span>Triple Connexion vol.1 · FINAL BATTLE · GNUDAS</span><button class="vclose">✕ 닫기</button></div><video src="assets/media/popping-battle-triple-connexion.mp4" poster="assets/media/popping-battle-triple-connexion.jpg" playsinline preload="metadata" controls></video></div></div>
+  <aside class="note">늘 쓰던 자기소개 재탕(나주 강의 2장 기준). 사진은 강사프로필 원본 얼굴, '배틀 영상 ▶'은 Agent Korea 발표 때 쓴 팝핑댄스 배틀 영상(Triple Connexion vol.1 FINAL BATTLE, 원본 8:44~9:14, 30초). 재생 막대가 있어서 적당한 곳에서 직접 끊으면 됨.
+대학에서는 일본어를 전공했고, 첫 회사는 영어교육 앱 스타트업 영상팀이었습니다. 지금은 토목직 공무원이고, AI반도체과에 있지만 담당 업무는 반도체 건물조성입니다.
+성남시 AI 동호회 DLC를 만들고 운영하고 있고요. 댄스배틀 우승·준우승에 카투사 복무까지, 일관성과 평범함을 찾기는 조금 어려운 커리어입니다.</aside>
+</section>
+
+<section class="slide" data-title="업적 로그" data-stage="INTRO">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">ACHIEVEMENTS · 2024—2026</div><div class="h2" style="margin-top:10px">업적 로그 <span class="mark" id="achCount" style="font:44px var(--pixel)">×25</span></div></div>
+  <div class="ach-grid" id="achGrid"></div>
+  <div class="achpop" id="achPop"></div>
+  <aside class="note">나주 강의 3장의 수상·활동 기록 재탕. 항목을 누르면 전체 명칭·금액·메모가 크게 열린다. 금색 테두리: 2024 정부혁신 우수, 2025 AI 경진대회 1위(오늘 이야기의 핵심 장면), 2026 서울 국제협력 영상 챌린지 대상, 2026 대구 달서구 BOOMBOOM 저출산 공모전 대상(2026.10).
+노래 대회, 글쓰기, AI 경진대회부터 다른 부서 업무 지원까지 섞여 있다.</aside>
+</section>
+
+<section class="slide" data-title="AI 활용 분야" data-stage="INTRO">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">CLASS SKILLS</div><div class="h2" style="margin-top:10px">AI 활용 분야</div></div>
+  <div class="usage">
+    <div class="win"><div class="no">01</div><div class="h3">바이브코딩</div><p class="p">성남 페이스북 취합기<br>확장 프로그램 배포</p></div>
+    <div class="win"><div class="no">02</div><div class="h3">내부 혁신</div><p class="p">성남시 AI 동호회<br>DLC 창설·운영</p></div>
+    <div class="win gold"><div class="no">03</div><div class="h3">영상 제작·홍보</div><p class="p">정책홍보와 행사 영상<br>다른 부서의 제작 의뢰</p></div>
+  </div>
+  <aside class="note">영상 말고도 AI를 여러 분야에 활용하고 있습니다. 바이브코딩으로 필요한 도구를 직접 만들어 보고요, 성남 페이스북 취합기 확장 프로그램도 그 예입니다.
+동호회 DLC에서는 같이 배우고 실험하면서 내부 혁신으로 연결하려고 하고, 영상 제작과 홍보에서도 계속 써 보고 있습니다.
+그런데 이렇게 이것저것 해 보다 보니, 다음 장면을 보시면 많은 분이 포기하고 싶어지실 것 같아요. 제 개인 구독 현황입니다.</aside>
+</section>
+
+<section class="slide" data-title="개인 구독 현황" data-stage="INTRO">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">INVENTORY · 2026.09 개인 지출 기준</div><div class="h2" style="margin-top:10px">개인 구독 현황</div></div>
+  <button id="budgetReset">처음으로 ↺</button>
+  <div class="inv" id="budget">
+    <label class="sub-row"><input type="checkbox" checked data-price="350000" data-discount="190000"><span>ChatGPT Pro 20x</span><button id="coupon" type="button"><del hidden>350,000원</del><strong>350,000원</strong><small>눌러서 필쫀쿠 적용 ↗</small></button></label>
+    <label class="sub-row"><input type="checkbox" checked data-price="150000"><span>Claude Max 5x</span><span class="price">150,000원</span></label>
+    <label class="sub-row"><input type="checkbox" checked data-price="65000"><span>Runway Unlimited</span><span class="price">65,000원</span></label>
+    <label class="sub-row"><input type="checkbox" checked><span>Gemini Pro</span><span class="price" style="font-size:24px">동호회 공동구독</span></label>
+    <label class="sub-row"><input type="checkbox" checked data-price="30000"><span>Genspark</span><span class="price">30,000원</span></label>
+    <label class="sub-row"><input type="checkbox" checked data-price="45000"><span>SuperGrok</span><span class="price">45,000원</span></label>
+    <label class="sub-row"><input type="checkbox" checked data-price="5000"><span>Suno</span><span class="price">5,000원</span></label>
+  </div>
+  <div class="total">
+    <div class="win gold" style="position:relative"><span class="tag">월 구독료 합계</span>
+      <div class="num"><b id="budgetTotal" style="font-weight:400">645,000</b><span>원</span></div>
+      <p id="budgetSave" class="p mint" hidden>필쫀쿠 적용 · 월 160,000원 절감</p>
+    </div>
+    <div class="win" style="position:relative;margin-top:50px"><span class="tag">하드웨어 · 일회성</span>
+      <div style="display:flex;justify-content:space-between;align-items:baseline"><div class="h3">맥미니</div><div style="font:36px var(--pixel)">890,000원</div></div>
+      <div style="font:20px var(--pixel);color:var(--muted);margin-top:8px">2026.02 구입</div>
+    </div>
+  </div>
+  <aside class="note">장표는 전 항목 체크, 필쫀쿠 적용 전 상태로 시작한다. ChatGPT Pro 20x 금액(350,000원)을 누르면 190,000원으로 바뀌고 합계도 645,000원에서 485,000원으로 바뀐다. 다시 누르면 원래 금액. 체크박스를 켜고 끄면 합계에 넣거나 뺀다. Gemini 공동구독 분담금은 미제공이라 계산에 넣지 않는다. 맥미니(2026.02, 890,000원)는 일회성이라 월 합계에서 제외. '처음으로'로 초기화.
+사용자가 제공한 개인 구독 비용이며 서비스 공식 정가표가 아니다.</aside>
+</section>
+
+<section class="slide" data-title="따서 갚으면 되잖아!" data-stage="INTRO">
+  <div class="stars"></div>
+  <figure class="gifcard" style="left:50%;top:50%;width:900px;transform:translate(-50%,-50%)"><img src="assets/media/payback-meme.png" alt="따서 갚으면 되잖아! 갚으면! 이라는 대사가 있는 흑백 만화 짤" style="image-rendering:auto"></figure>
+  <aside class="note">농담 그대로. 한 박자 쉬고 “따서 갚으면 되잖아!”라고 말한 뒤 본 이야기로 넘어간다. 구독을 필수 조건으로 제시하거나 수익을 보장하는 설명은 덧붙이지 않는다.</aside>
+</section>
+
+<!-- ================= STAGE 1 ================= -->
+
+<section class="slide stage-card" data-title="STAGE 1 · 2024 상수도" data-stage="STAGE 1">
+  <canvas class="bg dim" data-scene="waterworks"></canvas>
+  <div data-lit="1" class="stage-card" style="background:none">
+    <div class="no">STAGE 1</div>
+    <div class="ttl">2024 · 상수도</div>
+    <div class="sub">반복되는 공문과의 싸움</div>
+    <div class="bar"><i></i><i></i><i></i><i></i><i></i></div>
+  </div>
+  <div class="year">2024</div>
+  <aside class="note">2024년 스토리. 상수도 업무를 하던 시절부터.</aside>
+</section>
+
+<section class="slide" data-title="공사 한 건당 서류 7장" data-stage="STAGE 1">
+  <canvas class="bg dim" data-scene="waterworks"></canvas>
+  <div class="top-left"><div class="kicker">상수도 업무 · 급수공사</div><div class="h2" style="margin-top:10px">공사 한 건당, 서류 <span class="mark">7장</span></div></div>
+  <div style="position:absolute;left:80px;top:300px;display:flex;align-items:center;gap:26px;font:700 36px var(--body)">
+    <span class="win" style="position:static;padding:18px 30px">현장 방문</span><span class="mark" style="font:40px var(--pixel)">▶</span>
+    <span class="win" style="position:static;padding:18px 30px">설계</span><span class="mark" style="font:40px var(--pixel)">▶</span>
+    <span class="win gold" style="position:static;padding:18px 30px">공문 + 붙임파일</span>
+  </div>
+  <div class="papers" style="left:80px;top:500px"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="count" style="position:absolute;right:110px;top:470px">×7</div>
+  <p class="p" style="position:absolute;left:80px;top:720px">설계가 끝나면, 공문과 붙임파일을 합쳐 <b class="mark">공사마다 7장씩</b> 만들어야 했다.</p>
+  <aside class="note">상수도 업무를 하고 있었는데, 현장 방문~설계 이후, 공문과 붙임파일 합쳐서 공사당 7장씩이 발생했다.</aside>
+</section>
+
+<section class="slide" data-title="바뀌는 건 숫자 몇 개뿐" data-stage="STAGE 1">
+  <div class="stars"></div>
+  <div class="doc" style="left:80px;top:90px;width:740px;height:720px">
+    <h4>급 수 공 사</h4>
+    <div class="ln" style="width:70%"></div><div class="ln"></div>
+    <div>도급액 <span class="var" data-cycle="3,420,000원|1,180,000원|5,760,000원|2,045,000원">3,420,000원</span></div>
+    <div>공사 요청일 <span class="var" data-cycle="2024.03.11|2024.04.02|2024.05.27|2024.06.14">2024.03.11</span></div>
+    <div>신청인 <span class="var" data-cycle="홍길동|김성남|이분당|박수정">홍길동</span></div>
+    <div>신청인 번호 <span class="var" data-cycle="010-****-1234|010-****-5821|010-****-0937">010-****-1234</span></div>
+    <div>원인자부담금 <span class="var" data-cycle="812,000원|1,204,000원|455,000원|967,000원">812,000원</span></div>
+    <div class="ln"></div><div class="ln" style="width:84%"></div><div class="ln" style="width:60%"></div>
+    <div style="position:absolute;right:20px;bottom:14px;font:18px var(--pixel);color:#8a8fb0">구조 설명용 재구성 · 실제 공문 아님</div>
+  </div>
+  <div style="position:absolute;left:900px;top:160px;right:80px">
+    <div class="kicker">BUG REPORT</div>
+    <div class="h2" style="margin-top:14px">바뀌는 건<br><span class="pink">숫자 몇 개</span>뿐</div>
+    <p class="p" style="margin-top:30px">도급액 · 공사 요청일 · 신청인 · 신청인 번호 · 상수도 원인자부담금…<br>이 변수만 빼면 <b class="mark">나머지는 전부 똑같은 서류.</b></p>
+    <div class="win gold" style="position:relative;margin-top:50px;padding:28px 34px" data-s="1"><div class="h3">설계만 하면 뒤에 사항은<br>다 정해져 있다</div></div>
+  </div>
+  <aside class="note">도급액, 공사 요청일, 신청인, 신청인 번호, 상수도원인자부담금 등등 특정 숫자 변수를 제외하면 다 똑같은 공문과 붙임파일.
+왼쪽 문서는 구조 설명용 재구성 화면(값은 가상). 실제 공문 캡처가 있으면 교체 가능.</aside>
+</section>
+
+<section class="slide" data-title="이걸 왜 사람이 편집하지?" data-stage="STAGE 1">
+  <canvas class="bg" data-scene="office"></canvas>
+  <canvas class="sp" data-sp="monitor" data-scale="6" style="left:740px;bottom:400px"></canvas>
+  <canvas class="sp" data-sp="paper" data-scale="6" style="left:880px;bottom:400px"></canvas>
+  <canvas class="sp" data-sp="paper" data-scale="6" style="left:640px;bottom:400px"></canvas>
+  <canvas class="sp" data-sp="hero" data-scale="11" style="left:420px;bottom:270px"></canvas>
+  <canvas class="sp pop" data-sp="bang" data-scale="10" style="left:490px;bottom:535px" data-s="1"></canvas>
+  <div class="win light dlg" style="font-size:62px"><span class="name">사진우 (속마음)</span><span class="type">설계만 하면 뒤에 사항은 다 나오는 건데…</span><span class="more">▼</span></div>
+  <div class="win light dlg" style="font-size:62px" data-s="1"><span class="name">사진우 (속마음)</span><span class="type"><em>이걸 왜 인간이 직접 편집해야 하지?</em></span><span class="more">▼</span></div>
+  <aside class="note">설계만 하면 뒤에 사항은 다 나오는건데, 이거를 왜 직접 인간이 편집해야 하는가? 라는 생각이 들었다.</aside>
+</section>
+
+<section class="slide" data-title="개발자 친구의 한마디" data-stage="STAGE 1">
+  <canvas class="bg" data-scene="city:night"></canvas>
+  <canvas class="sp" data-sp="hero" data-scale="11" style="left:520px;bottom:270px"></canvas>
+  <canvas class="sp talk flip" data-sp="friend" data-scale="11" style="left:900px;bottom:270px"></canvas>
+  <canvas class="sp pop" data-sp="bang" data-scale="10" style="left:580px;bottom:560px" data-s="1"></canvas>
+  <div class="win light dlg"><span class="name npc">동네 개발자 친구</span><span class="type">진우야, 너가 손으로 타이핑하면서 하는 모든 행위는<br><em>다 컴퓨터가 해줄 수 있어.</em></span><span class="more">▼</span></div>
+  <aside class="note">그때 동네 친구들 중 개발자인 애들이 이렇게 말해줬다.
+"진우야 너가 손으로 타이핑하면서 하는 모든 행위는 다 컴퓨터가 해줄 수 있어."</aside>
+</section>
+
+<section class="slide" data-title="GPT-3.5와 한 땀 한 땀" data-stage="STAGE 1">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">QUEST · 독학</div><div class="h2" style="margin-top:10px">GPT-3.5와 대화하며<br>한 땀 한 땀</div></div>
+  <ul class="quest" style="position:absolute;left:80px;top:360px;width:640px">
+    <li data-s="1">파이썬 설치 <small>STEP 1</small></li>
+    <li data-s="2">환경 설정 <small>STEP 2</small></li>
+    <li data-s="3">코드 복붙 <small>STEP 3</small></li>
+    <li data-s="4">라이브러리 적용 <small>STEP 4</small></li>
+  </ul>
+  <div class="win light" style="left:820px;right:80px;top:110px;bottom:90px">
+    <span class="tag">GPT-3.5</span>
+    <div class="chat" style="margin-top:20px">
+      <p class="me">파이썬은 어떻게 설치해?</p>
+      <p class="ai"><b>ChatGPT</b>공식 사이트에서 설치 파일을 내려받고…</p>
+      <p class="me" data-s="2">에러가 나는데 이건 뭐야?</p>
+      <p class="ai" data-s="3"><b>ChatGPT</b>아래 코드를 그대로 붙여넣어 보세요.</p>
+      <p class="ai" data-s="4"><b>ChatGPT</b><code>pip install …</code> 로 라이브러리를 설치하세요.</p>
+    </div>
+    <div style="position:absolute;right:20px;bottom:14px;font:18px var(--pixel);color:#8a8fb0">대화 흐름 재구성</div>
+  </div>
+  <aside class="note">그렇게 당시 gpt3.5와 대화하면서 파이썬 설치, 환경설정, 코드복붙, 라이브러리 적용 등 한땀한땀 했다.
+오른쪽 채팅은 흐름을 보여주는 재구성 예시.</aside>
+</section>
+
+<section class="slide" data-title="공무원 고수를 찾아서" data-stage="STAGE 1">
+  <canvas class="bg" data-scene="map"></canvas>
+  <div class="win light" style="left:60px;top:60px;width:560px;padding:30px 36px">
+    <span class="tag">SIDE QUEST</span>
+    <div class="h3" style="margin-top:6px">공무원 중에<br>어떤 고수가 있을까?</div>
+  </div>
+  <svg style="position:absolute;inset:0" viewBox="0 0 1600 900"><path d="M640 300 C 760 420, 720 560, 1000 700" fill="none" stroke="#141833" stroke-width="10" stroke-dasharray="20 16"/></svg>
+  <canvas class="sp" data-sp="star" data-scale="7" style="left:604px;top:256px"></canvas>
+  <div class="win" style="left:680px;top:250px;padding:8px 16px;font:22px var(--pixel)">성남</div>
+  <canvas class="sp" data-sp="star" data-scale="7" style="left:966px;top:656px"></canvas>
+  <div class="win" style="left:940px;top:760px;padding:8px 16px;font:22px var(--pixel)">양산</div>
+  <canvas class="sp pop" data-sp="phone" data-scale="9" style="left:720px;top:400px" data-s="1"></canvas>
+  <canvas class="sp pop" data-sp="mail" data-scale="7" style="left:820px;top:560px" data-s="2"></canvas>
+  <div class="win" style="right:60px;top:150px;width:470px">
+    <span class="tag">NPC</span>
+    <canvas class="sp" data-sp="mentor" data-scale="8" style="position:relative;display:block;margin:4px auto 18px"></canvas>
+    <div class="h3">양산시 오대웅</div>
+    <div style="font:22px var(--pixel);color:var(--gold);margin-top:8px">당시 주무관 → 현 팀장</div>
+    <p class="p" style="font-size:27px;margin-top:16px">2024년에 이미<br>동호회를 꾸리고 있던 분</p>
+  </div>
+  <div class="win light" style="left:60px;bottom:60px;width:620px;padding:24px 34px;font:700 32px/1.45 var(--body)" data-s="3">냅다 <span class="pink">전화하고 메일 보내며</span><br>AI를 활용한 코딩을 배웠다</div>
+  <aside class="note">이때 구축을 위해서 공무원들 중에 어떤 고수가 있을까 찾아다녔다.
+그리고 2024년에 이미 동호회를 구축 중이었던 양산시 오대웅(전 주무관 현 팀장)을 찾고 냅다 통화 및 메일을 걸며 AI를 활용한 코딩을 배웠다.</aside>
+</section>
+
+<section class="slide" data-title="고수에게 배운 것" data-stage="STAGE 1">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">SKILL TREE</div><div class="h2" style="margin-top:10px">설치부터 하나하나</div></div>
+  <div class="tree">
+    <div class="node shown"><div class="ic">VS</div><b>VS Code 설치</b><small>시작</small></div>
+    <div class="link" data-s="1"></div>
+    <div class="node" data-s="1"><div class="ic">env</div><b>가상환경 구축</b><small>&nbsp;</small></div>
+    <div class="link" data-s="2"></div>
+    <div class="node" data-s="2"><div class="ic">3.x</div><b>파이썬 버전</b><small>&nbsp;</small></div>
+    <div class="link" data-s="3"></div>
+    <div class="node" data-s="3"><div class="ic">lib</div><b>라이브러리</b><small>&nbsp;</small></div>
+    <div class="link" data-s="4"></div>
+    <div class="node" data-s="4"><div class="ic mark">St</div><b>Streamlit</b><small>UI/UX 개념이<br>없으니 추천</small></div>
+  </div>
+  <p class="p" style="position:absolute;left:80px;bottom:90px" data-s="4">UI/UX가 아직 개념이 없으니 <b class="mark">화면은 Streamlit으로</b> — 오대웅 팀장님 추천</p>
+  <aside class="note">vs코드 설치부터, 가상환경 구축, 파이썬 버전, 라이브러리, UI/UX가 아직 개념이 없으니 스트림릿 방식 추천까지..</aside>
+</section>
+
+<section class="slide" data-title="16시간 → 2분" data-stage="STAGE 1">
+  <canvas class="bg dim" data-scene="waterworks"></canvas>
+  <div class="top-left"><div class="kicker">RESULT</div><div class="h2" style="margin-top:10px">나만을 위한 <span class="mark">급수공사 공문 자동화</span> 프로그램</div></div>
+  <div class="vs">
+    <div><div class="big">16<span style="font-size:80px">시간</span></div><div class="lab">만드는 데 걸린 시간</div></div>
+    <div class="arrow">▶</div>
+    <div data-s="1"><div class="big mark">2<span style="font-size:80px">분</span></div><div class="lab">설계 끝난 공사의 공문 전부 생성</div></div>
+  </div>
+  <div style="position:absolute;left:0;right:0;top:600px;display:flex;justify-content:center;align-items:center;gap:40px" data-s="2">
+    <div style="text-align:center"><canvas class="sp" data-sp="excel" data-scale="9" style="position:static"></canvas><div style="font:22px var(--pixel);margin-top:10px">설계완료 엑셀</div></div>
+    <span class="mark" style="font:44px var(--pixel)">▶</span>
+    <div style="text-align:center"><canvas class="sp" data-sp="monitor" data-scale="7" style="position:static"></canvas><div style="font:22px var(--pixel);margin-top:10px">자동화 프로그램</div></div>
+    <span class="mark" style="font:44px var(--pixel)">▶</span>
+    <div class="papers" style="position:static"><i class="in"></i><i class="in"></i><i class="in"></i></div>
+    <span style="font:44px var(--pixel);color:var(--gold)">…×7</span>
+  </div>
+  <aside class="note">해당 지식을 활용해서 16시간 걸려서 나만을 위한 급수공사 공문 자동화 프로그램을 만들었고, 설계완료한 엑셀만 해당 프로그램에 넣으면 이후 발생하는 공문들이 2분만에 다 생성되었다.</aside>
+</section>
+
+<section class="slide" data-title="업적: 정부혁신 우수사례 우수상" data-stage="STAGE 1">
+  <div class="stars"></div>
+  <div class="burst"></div>
+  <div class="unlock">
+    <canvas class="sp" data-sp="trophy" data-scale="13" style="position:static"></canvas>
+    <div>
+      <div class="lbl">★ ACHIEVEMENT UNLOCKED</div>
+      <div class="ttl">성남시 정부혁신 우수사례<br>경진대회 <span class="mark">우수상</span></div>
+      <div class="meta">2024.12.27 · 급수공사 공문 자동화</div>
+    </div>
+  </div>
+  <aside class="note">해당 사례로 성남시 내 정부혁신 우수사례 경진대회에 출품했고, 우수상을 탔다. (업적 로그 기준 2024.12.27)</aside>
+</section>
+
+<!-- ================= STAGE 2 ================= -->
+
+<section class="slide stage-card" data-title="STAGE 2 · 2025 기회의 공지" data-stage="STAGE 2">
+  <canvas class="bg dim" data-scene="city"></canvas>
+  <div data-lit="2" class="stage-card" style="background:none">
+    <div class="no">STAGE 2</div>
+    <div class="ttl">AI반도체과로 가는 길</div>
+    <div class="sub">막연한 꿈 · 공지 하나 · 15분 브리핑</div>
+    <div class="bar"><i></i><i></i><i></i><i></i><i></i></div>
+  </div>
+  <div class="year">2024 말 — 2025</div>
+  <aside class="note">STAGE 2. AI반도체과 발령까지.</aside>
+</section>
+
+<section class="slide" data-title="그 무렵 성남시는" data-stage="STAGE 2">
+  <canvas class="bg dim" data-scene="city"></canvas>
+  <div class="top-left"><div class="kicker">WORLD NEWS · 2024년 말부터</div><div class="h2" style="margin-top:10px">AI반도체과 설립을 앞두고,<br>희망 직원 교육이 시작됐다</div></div>
+  <div style="position:absolute;left:80px;right:80px;top:410px;display:grid;grid-template-columns:repeat(3,1fr);gap:40px">
+    <div class="win" style="position:relative"><div style="font:22px var(--pixel);color:var(--gold)">EVENT 1</div><div class="h3" style="margin-top:12px">주 1~2회씩<br>교육 이수</div></div>
+    <div class="win" style="position:relative"><div style="font:22px var(--pixel);color:var(--gold)">EVENT 2</div><div class="h3" style="margin-top:12px">네이버도<br>강의를 오고</div></div>
+    <div class="win" style="position:relative"><div style="font:22px var(--pixel);color:var(--gold)">EVENT 3</div><div class="h3" style="margin-top:12px">하정우 부위원장도<br>방문</div></div>
+  </div>
+  <div class="win light" style="left:80px;right:80px;bottom:60px;padding:26px 40px;font:700 36px/1.4 var(--body)" data-s="1">
+    그런데 나는 <span class="pink">신청하지 않았다.</span>
+    <span style="display:block;font:500 28px var(--body);color:#5a5f86;margin-top:6px">한 팀에서 두 명씩 교육을 가는 건 오바라고 생각해서</span>
+  </div>
+  <aside class="note">당시에 성남시에서는 AI반도체과 설립을 위해서 2024년 말부터 희망 직원들을 모집해서 교육을 하고 있었다.
+참여한 직원들은 주 1,2회 정도씩 교육을 이수해야 했고, 성남의 이점을 이용했는지 네이버도 강의를 왔고, 하정우 부위원장도 그때 왔었다.
+그치만 나는 당시 삼석님이 그거를 참여해서 팀에 두 명씩 교육을 가는 건 오바라고 생각해서 신청하지 않았다.</aside>
+</section>
+
+<section class="slide" data-title="막연한 꿈" data-stage="STAGE 2">
+  <canvas class="bg" data-scene="office:night"></canvas>
+  <canvas class="sp" data-sp="monitor" data-scale="6" style="left:740px;bottom:400px"></canvas>
+  <canvas class="sp" data-sp="hero" data-scale="11" style="left:420px;bottom:270px"></canvas>
+  <div class="bubble think" style="left:180px;top:70px;width:900px;font-size:38px">이걸 주도하시는 <span class="mark" style="color:#d9962b">부시장님</span>과 한 번<br>AI로 대화해 보면 너무 재밌겠다…</div>
+  <canvas class="sp pop" data-sp="star" data-scale="7" style="left:1160px;top:110px" data-s="1"></canvas>
+  <div class="win light dlg" style="font-size:52px" data-s="1"><span class="name">사진우</span><span class="type">막연한 꿈이었죠. <em>2025년에는 그런 일이 일어났으면 좋겠다</em>고요.</span><span class="more">▼</span></div>
+  <aside class="note">그저 이러한 것을 주도하는 부시장님과 한 번 AI로 대화하면 너무 재밌겠다 라는 생각을 했었다. 막연한 꿈으로 2025년에 그런 일이 일어났으면 좋겠다 라고 생각했다.</aside>
+</section>
+
+<section class="slide" data-title="계속 연구, 그리고 경진대회 출품" data-stage="STAGE 2">
+  <canvas class="bg" data-scene="office:night"></canvas>
+  <canvas class="sp" data-sp="monitor" data-scale="6" style="left:740px;bottom:400px"></canvas>
+  <canvas class="sp talk" data-sp="hero" data-scale="11" style="left:420px;bottom:270px"></canvas>
+  <div class="win" style="right:80px;top:80px;text-align:center;padding:26px 40px"><span class="tag">TIME</span><div style="font:56px var(--pixel-big);color:var(--gold)">+3 MONTHS</div></div>
+  <div class="win light dlg" style="font-size:62px"><span class="name">사진우</span><span class="type">그 뒤로도 다양한 기능을 계속 연구했고,</span><span class="more">▼</span></div>
+  <div class="win light dlg" style="font-size:62px" data-s="1"><span class="name">사진우</span><span class="type">약 3개월 뒤 열린 <em>성남시 AI 경진대회</em>에도 출품했습니다.</span><span class="more">▼</span></div>
+  <aside class="note">나는 지속적으로 다양한 기능들을 연구했었고, 약 3개월 뒤에는 성남시 내의 AI경진대회가 열렸고, 거기에도 출품을 했었다.</aside>
+</section>
+
+<section class="slide" data-title="공지: 부시장님의 전폭적인 지원" data-stage="STAGE 2">
+  <div class="stars"></div>
+  <div class="board">
+    <div class="bar"><span>성남시 내부 직원 커뮤니티</span><span>■ ■ ■</span></div>
+    <div class="post">
+      <div class="cat">[ 새 글 ]</div>
+      <h3><mark>부시장님의 전폭적인 지원</mark>을<br>보장합니다!</h3>
+      <div class="meta">화면 재구성 · 실제 게시글 캡처 아님</div>
+      <div class="body" data-s="1">부시장님은 <b>직원 자체개발 AI 도구</b>의 필요성을 인지하고 있고,<br>지원을 받으며 직접 해보고 싶은 직원들과 <b>간담회</b>를 하고 싶다는 내용.</div>
+    </div>
+  </div>
+  <aside class="note">그러던 와중 내부직원커뮤니티에 이런 글이 뜬다. "부시장님의 전폭적인 지원을 보장합니다!"
+글을 들어가보니, 부시장님은 직원 자체개발 AI 도구의 필요성을 인지하고 있는데, 그것을 지원받으면서 해보고 싶은 직원들과 간담회를 해보고 싶다는 것이었다.
+실제 게시글 캡처가 있으면 이 화면을 교체.</aside>
+</section>
+
+<section class="slide" data-title="선택지: 지원한다" data-stage="STAGE 2">
+  <canvas class="bg" data-scene="office"></canvas>
+  <canvas class="sp" data-sp="hero" data-scale="11" style="left:300px;bottom:270px"></canvas>
+  <canvas class="sp pop" data-sp="mail" data-scale="8" style="left:520px;bottom:520px" data-s="1"></canvas>
+  <div class="win light choice"><span class="tag">SELECT</span>
+    <ul><li class="sel">지원한다</li><li class="x">쫄아서 넘긴다</li></ul>
+  </div>
+  <div class="win light dlg" style="font-size:62px"><span class="name npc">나레이션</span><span class="type">대부분의 직원들은 쫄아서 지원하지 않았지만,</span><span class="more">▼</span></div>
+  <div class="win light dlg" data-s="1"><span class="name">사진우</span><span class="type">지금까지 해온 것들을 첨부해서 <em>담당자분께 메일</em>을 넣었고,<br>간담회에 참가하게 됐습니다.</span><span class="more">▼</span></div>
+  <aside class="note">대부분의 직원들은 쫄아서 하지 않았으나 나는 지금까지 해온 것들을 첨부로 넣으며 담당자분께 메일을 넣었고, 해당 간담회에 참가하게 되었다.</aside>
+</section>
+
+<section class="slide" data-title="간담회: 갑자기 발표" data-stage="STAGE 2">
+  <canvas class="bg" data-scene="meeting"></canvas>
+  <canvas class="sp" data-sp="hero" data-scale="10" style="left:160px;bottom:270px"></canvas>
+  <canvas class="sp" data-sp="staff1" data-scale="10" style="left:420px;bottom:270px"></canvas>
+  <canvas class="sp" data-sp="staff2" data-scale="10" style="left:640px;bottom:270px"></canvas>
+  <canvas class="sp" data-sp="staff3" data-scale="10" style="left:860px;bottom:270px"></canvas>
+  <canvas class="sp talk flip" data-sp="boss" data-scale="11" style="left:1240px;bottom:270px"></canvas>
+  <canvas class="sp pop" data-sp="bang" data-scale="8" style="left:490px;bottom:520px" data-s="1"></canvas>
+  <canvas class="sp pop" data-sp="bang" data-scale="8" style="left:710px;bottom:520px" data-s="1"></canvas>
+  <canvas class="sp pop" data-sp="bang" data-scale="8" style="left:930px;bottom:520px" data-s="1"></canvas>
+  <div class="win light dlg" style="font-size:60px"><span class="name boss">부시장님</span><span class="type">여러분의 AI 비전이나 의견, 하고 싶은 것을 <em>발표해 보세요.</em></span><span class="more">▼</span></div>
+  <aside class="note">부시장님은 간담회에서 갑자기 여러분의 AI비전이나 의견 하고싶은 거를 발표해라 라고 했다.</aside>
+</section>
+
+<section class="slide" data-title="공무원스러운 답 vs 나" data-stage="STAGE 2">
+  <canvas class="bg" data-scene="meeting"></canvas>
+  <canvas class="sp" data-sp="staff1" data-scale="10" style="left:200px;bottom:120px"></canvas>
+  <canvas class="sp" data-sp="staff2" data-scale="10" style="left:460px;bottom:120px"></canvas>
+  <canvas class="sp" data-sp="staff3" data-scale="10" style="left:720px;bottom:120px"></canvas>
+  <div class="bubble dim" style="left:90px;top:200px">AI에 관심은 있는데…</div>
+  <div class="bubble dim" style="left:400px;top:90px">누가 하면 따라가고 싶은 마음이에요</div>
+  <div class="bubble dim" style="left:680px;top:280px">저도 비슷합니다…</div>
+  <canvas class="sp" data-sp="hero" data-scale="11" style="left:1300px;bottom:120px" data-s="1"></canvas>
+  <div class="win gold" style="left:1010px;top:110px;width:540px" data-s="1">
+    <span class="tag">BUT ME</span>
+    <div class="h3">나는 달랐다</div>
+    <p class="p" style="margin-top:12px">경험이 있었고, 상이 있었고,<br><b class="mark">연구해 온 시간</b>이 있었다.</p>
+  </div>
+  <aside class="note">아니나다를까, 공무원스럽게 다른 분들은 AI 관심은 있는데 누가 하면 따라가고 싶은 마음이다 정도의 비전밖에 말하지 못했다.
+나는 달랐다. 지금까지 말했듯 나에게는 경험과 상이 있고 연구의 시간이 있었다.
+(왼쪽 말풍선은 분위기를 보여주는 요약 표현.)</aside>
+</section>
+
+<section class="slide" data-title="화이트보드 15분 브리핑" data-stage="STAGE 2">
+  <canvas class="bg dim" data-scene="meeting"></canvas>
+  <div class="wb">
+    <h4>AI VISION · 사진우</h4>
+    <ol>
+      <li data-s="1">AI의 가능성은 <b>엄청나다</b></li>
+      <li data-s="2">일본어과·비전공·토목직도 업무 툴을 만들고 <b>상까지 탔다</b></li>
+      <li data-s="3">양산시에 직접 연락해 배운 <b>적극성</b></li>
+      <li data-s="4">우리도 <b>동호회</b>를 조직해 역량을 키우자</li>
+      <li data-s="5"><b>업무를 가장 잘 아는 사람</b>이 직접 효율화해야 한다</li>
+    </ol>
+  </div>
+  <div class="timer">15:00</div>
+  <div style="position:absolute;right:100px;top:240px;width:380px;font:700 34px/1.45 var(--body);text-align:right">미친놈처럼<br>화이트보드에 써 가며<br><span class="mark">15분 브리핑</span></div>
+  <canvas class="sp talk" data-sp="hero" data-scale="11" style="right:170px;bottom:90px"></canvas>
+  <aside class="note">미친놈처럼 화이트보드에 써가며 15분을 브리핑했다.
+AI의 가능성은 엄청나고, 나 같은 일본어과 비전공자 토목직, 이런 전문성 하나 없는 놈도 본인 업무효율화 툴을 만들어냈고 상도 타는 것으로 증명했다. 양산시 분께 도움을 받는 등 적극성을 보였으며, 거기처럼 우리도 동호회 같은 것을 조직해서 역량을 강화하고, 우리 시 내에서 본인의 업무를 가장 잘 아는 사람이 효율화를 해 나가는 방향성이 필요하다고 어필했다.</aside>
+</section>
+
+<section class="slide" data-title="“그럼 자네가 만들면 되겠네”" data-stage="STAGE 2">
+  <canvas class="bg" data-scene="meeting"></canvas>
+  <canvas class="sp" data-sp="hero" data-scale="11" style="left:380px;bottom:270px"></canvas>
+  <canvas class="sp flip" data-sp="boss" data-scale="11" style="left:1040px;bottom:270px"></canvas>
+  <canvas class="sp pop" data-sp="heart" data-scale="9" style="left:760px;top:120px" data-s="3"></canvas>
+  <div class="pop" data-s="3" style="position:absolute;left:640px;top:220px;font:72px var(--pixel-big);color:var(--gold);text-shadow:5px 5px 0 var(--ink)">짝 짝 짝</div>
+  <div class="win light dlg" style="font-size:62px"><span class="name boss">부시장님</span><span class="type">그럼 <em>자네가 동호회 만들면</em> 되겠네.</span><span class="more">▼</span></div>
+  <div class="win light dlg" style="font-size:62px" data-s="1"><span class="name">사진우</span><span class="type">아하하… 제가 아직 8급이고… 토목이고…</span><span class="more">▼</span></div>
+  <div class="win light dlg" data-s="2"><span class="name boss">부시장님</span><span class="type">일본어과인데 지금 토목직 하고, AI도 이렇게 해 왔는데<br><em>못 할 이유가 없지.</em></span><span class="more">▼</span></div>
+  <div class="win light dlg" style="font-size:62px" data-s="3"><span class="name npc">나레이션</span><span class="type">엄청 좋게 봐주시며, 박수를 쳐 주셨다.</span><span class="more">▼</span></div>
+  <aside class="note">부시장님은 '그럼 자네가 동호회 만들면 되겠네' 라고 했다.
+하지만 나는 아하하 제가 아직 8급이고,, 토목이고,, 라고 자신없어 했지만
+부시장님은 일본어과인데 지금 토목직 하고 AI도 이렇게 해왔는데 못 할 이유가 없다 라고 말하시며 엄청 좋게 봐주시며 박수쳐줬다.</aside>
+</section>
+
+<section class="slide" data-title="1주일 뒤, AI반도체과 발령" data-stage="STAGE 2">
+  <div class="stars"></div>
+  <div class="burst" data-s="1"></div>
+  <div class="classchange">
+    <div class="kicker" style="font-size:30px">1주일 뒤</div>
+    <div style="font:96px var(--pixel-big);color:#fff;margin:40px 0 60px;text-shadow:6px 6px 0 var(--night3)">CLASS CHANGE!</div>
+    <span class="from">상수도 업무</span><span class="ar">▶</span><span class="to pop" data-s="1" data-fx="flash">AI반도체과 발령</span>
+  </div>
+  <canvas class="sp bob" data-sp="hero" data-scale="11" style="left:712px;bottom:60px"></canvas>
+  <div class="flash"></div>
+  <aside class="note">그리고 1주일 뒤 AI반도체과로 발령이 났다.</aside>
+</section>
+
+<section class="slide" data-title="약속한 툴, 한 달 만에 전부" data-stage="STAGE 2">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">MAIN QUEST · 부시장님과의 약속</div><div class="h2" style="margin-top:10px">약속한 자동화 툴,<br><span class="mark">한 달 만에</span> 전부 구축</div></div>
+  <ul class="quest" style="position:absolute;left:80px;top:360px;width:640px">
+    <li data-s="1">도급위탁용역 점검표</li>
+    <li data-s="2">보도자료 자동생성기</li>
+    <li data-s="3">그 밖에 약속드린 자동화 툴들</li>
+  </ul>
+  <div class="win gold" style="left:80px;top:690px;padding:18px 30px" data-s="3"><span style="font:40px var(--pixel-big);color:var(--gold)">1 MONTH</span><span class="p" style="margin-left:22px">당시엔 <b class="pink">Claude Code도 없었다</b></span></div>
+  <figure class="gifcard" style="left:790px;top:150px;width:730px" data-s="1"><img src="assets/media/contract-checklist-tool.jpg" alt="도급위탁용역 점검표 생성기 화면"><figcaption>도급위탁용역 점검표 생성기 · 직원용 사이트</figcaption></figure>
+  <aside class="note">나는 부시장님께 약속드렸던 도급위탁용역 점검표, 보도자료 자동생성기 같은 자동화 툴들을 한 달 만에 전부 구축했고(당시에 클로드코드도 없었음).
+오른쪽 화면: 적극행정 발표(11/7) 4장의 도급위탁용역 점검표 생성기(ODT). 왼쪽 메뉴에 보도자료 생성기 등 다른 툴도 보인다.</aside>
+</section>
+
+<section class="slide" data-title="경진대회 결과: 최우수 (1위)" data-stage="STAGE 2">
+  <div class="stars"></div>
+  <div class="confetti"></div>
+  <div class="kicker" style="position:absolute;left:0;right:0;top:110px;text-align:center;font-size:30px">그리고 앞에서 출품했던 경진대회, 결과는</div>
+  <div class="unlock" style="top:52%">
+    <canvas class="sp" data-sp="trophy" data-scale="13" style="position:static"></canvas>
+    <div>
+      <div class="lbl">★ ACHIEVEMENT UNLOCKED</div>
+      <div class="ttl">직원 AI 활용 경진대회<br><span class="mark">최우수 (1위)</span></div>
+      <div class="meta">2025.05.08 · AI반도체과 발령 첫날 · 상금 100만 원</div>
+    </div>
+  </div>
+  <aside class="note">앞에서 출품했던 성남시 직원 AI 활용 경진대회는, 결국 최우수(1위)를 받았습니다. 마침 본선일이 AI반도체과 발령 첫날이었어요.
+(업적 로그 기준 2025.05.08 직원 AI 활용 경진대회 최우수 1위 · 상금 1,000,000원. 다음 장 부시장실 보고자료의 '경진대회 상금 안 탔으면 적자'와 이어짐.)</aside>
+</section>
+
+<section class="slide" data-title="부시장실에 보고하고, 요청했다" data-stage="STAGE 2">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">REPORT · 부시장실</div><div class="h2" style="margin-top:10px">보고하고, 요청했다</div></div>
+  <div class="win" style="left:80px;top:250px;width:720px"><span class="tag">보고</span>
+    <div class="h3">완성된 툴</div>
+    <p class="p" style="margin-top:8px">도급위탁용역 점검표 · 급수공사 자동화 · 보도자료 생성기</p></div>
+  <div class="win gold" style="left:80px;top:470px;width:720px"><span class="tag">요청</span>
+    <ul class="quest" style="font-size:32px">
+      <li data-s="1">자부담이 너무 크다 <small>핫스팟·구독료·노트북</small></li>
+      <li data-s="2">일반망(인터넷망)이 필요하다</li>
+      <li data-s="3" style="border:0">부서원들에게 폐쇄망 안에서 배포가 필요하다</li>
+    </ul></div>
+  <figure class="gifcard pop" style="left:870px;top:110px;width:650px;transform:rotate(-2deg)" data-s="1"><img src="assets/media/vpreport/vpreport-05.jpg" alt="부시장님 보고자료: 당면 과제 서버 및 AI 툴 운영"><figcaption>실제 보고자료 · 당면 과제와 비용 부담</figcaption></figure>
+  <figure class="gifcard pop" style="left:900px;top:480px;width:620px;transform:rotate(1.5deg)" data-s="3"><img src="assets/media/vpreport/vpreport-09.jpg" alt="부시장님 보고자료: 건의사항 폐쇄망"><figcaption>실제 보고자료 · 폐쇄망과 인터넷망 건의</figcaption></figure>
+  <aside class="note">부시장실에 가서 완성된 툴을 보고드리고, 자부담이 많이 들고, 일반망이 필요하고, 부서원들에게 폐쇄망 안에서 배포가 필요하다고 말씀드렸다.
+보고자료(다운로드 부시장님 보고자료.pptx): 비용 부담 — 서버 연 20만 원 예상, API 월 5$, 개인 핫스팟 요금제 월 8,600 → 25,000원, AI 툴 구독 월 3만 원, 노트북 78만 원, '경진대회 상금 안 탔으면 적자'. 건의 — 폐쇄망에서 코딩용 AI 툴이 막힘, 개인 디바이스용 인터넷망 필요, 동호회 신속 설립.</aside>
+</section>
+
+<section class="slide" data-title="부시장실: 예산팀장님 호출" data-stage="STAGE 2">
+  <canvas class="bg" data-scene="office"></canvas>
+  <div class="win" style="left:60px;top:50px;padding:10px 20px;font:24px var(--pixel);color:var(--gold)">부시장실</div>
+  <canvas class="sp" data-sp="hero" data-scale="11" style="left:250px;bottom:270px"></canvas>
+  <canvas class="sp flip" data-sp="boss" data-scale="11" style="left:700px;bottom:270px"></canvas>
+  <canvas class="sp pop" data-sp="budget" data-scale="11" style="left:1150px;bottom:270px" data-s="1"></canvas>
+  <div class="win pop" style="left:1110px;top:250px;padding:8px 16px;font:22px var(--pixel)" data-s="1">예산팀장님</div>
+  <canvas class="sp pop" data-sp="star" data-scale="6" style="left:300px;top:200px" data-s="3"></canvas>
+  <canvas class="sp pop" data-sp="star" data-scale="4" style="left:420px;top:150px" data-s="3"></canvas>
+  <div class="win light dlg"><span class="name npc">나레이션</span><span class="type">자부담 이야기를 들으시자마자, 부시장님은<br>그 자리에서 <em>예산팀장님을 부르셨다.</em></span><span class="more">▼</span></div>
+  <div class="win light dlg" data-s="1"><span class="name boss">부시장님</span><span class="type">이 친구가 하는 일에, 1년 <em>1,000만 원</em>까지<br>아무것도 묻고 따지지 말고 쓰게 해 줘.</span><span class="more">▼</span></div>
+  <div class="win light dlg" style="font-size:58px" data-s="2"><span class="name npc">나레이션</span><span class="type">8급 실무자 앞에서, <em>예산 라인이 바로 연결</em>되는 순간이었다.</span><span class="more">▼</span></div>
+  <div class="win light dlg" style="font-size:62px" data-s="3"><span class="name">사진우 (속마음)</span><span class="type">이제 진짜 된다…!</span><span class="more">▼</span></div>
+  <aside class="note">부시장님은 저에게 1년 1,000만 원까지 아무것도 묻고 따지지 말고 쓰라고, 부시장실에서 예산팀장님을 불러 직접 연결해 주셨습니다.
+(타임라인: 부시장실 보고 → 자부담 때문에 그 자리에서 예산팀장 호출 → 아이템 획득 → 그 뒤 정보통신과 사건 → 우리 부서가 막아 '사용 불가'. 대사는 원문을 바탕으로 한 재구성이고, 마지막 '이제 진짜 된다…!'는 연출용이라 빼도 됨.)</aside>
+</section>
+
+<section class="slide" data-title="ITEM GET: 1년 1,000만 원" data-stage="STAGE 2">
+  <div class="stars"></div>
+  <div class="burst"></div>
+  <div class="unlock">
+    <canvas class="sp" data-sp="star" data-scale="18" style="position:static"></canvas>
+    <div>
+      <div class="lbl">★ ITEM GET · 부시장님</div>
+      <div class="ttl">1년 <span class="mark">1,000만 원</span><br>아무것도 묻고 따지지 말고</div>
+      <div class="meta">부시장실에서 예산팀장님까지 직접 연결</div>
+    </div>
+  </div>
+  <aside class="note">부시장님은 저에게 1년 1,000만 원까지 아무것도 묻고 따지지 말고 쓰라고 예산팀장님까지 연결해 주셨습니다. 이제 남은 건 일반망과 배포 — 정보통신과를 찾아갔습니다.</aside>
+</section>
+
+<!-- ================= STAGE 3 ================= -->
+
+<section class="slide stage-card" data-title="STAGE 3 · 낙동강 오리알" data-stage="STAGE 3">
+  <canvas class="bg dim" data-scene="river:night"></canvas>
+  <div data-lit="3" class="stage-card" style="background:none">
+    <div class="no">STAGE 3</div>
+    <div class="ttl">낙동강 오리알</div>
+    <div class="sub">탑다운의 실패, 그리고 모범 실패사례</div>
+    <div class="bar"><i></i><i></i><i></i><i></i><i></i></div>
+  </div>
+  <div class="year">2025</div>
+  <aside class="note">STAGE 3. 잘 풀리는 줄 알았던 이야기의 반전.</aside>
+</section>
+
+<section class="slide" data-title="질문 공격" data-stage="STAGE 3">
+  <canvas class="bg" data-scene="office"></canvas>
+  <div class="hp win" style="left:60px;top:50px;padding:16px 22px" data-hp="100,86,72,58,44,30,14,0"><span>사진우 HP</span><div class="bar"><i></i></div></div>
+  <div class="win" style="left:540px;top:50px;padding:14px 26px;font:24px var(--pixel)">⚠ 보안 · 유지관리 우려</div>
+  <canvas class="sp" data-sp="hero" data-scale="11" style="left:180px;bottom:120px"></canvas>
+  <canvas class="sp talk flip" data-sp="staff4" data-scale="11" style="left:1300px;bottom:120px"></canvas>
+  <div class="win" style="left:1260px;bottom:420px;padding:8px 16px;font:22px var(--pixel)">정보통신과</div>
+  <div class="qb" style="left:560px;top:150px" data-s="1">방침 있어요?</div>
+  <div class="qb" style="left:820px;top:240px" data-s="2">스탠드얼론 방식은 안 돼요?</div>
+  <div class="qb" style="left:500px;top:330px" data-s="3">서버 써요?</div>
+  <div class="qb" style="left:700px;top:420px" data-s="4">진우 씨 없으면 유지관리 안 되지 않나요?</div>
+  <div class="qb" style="left:470px;top:510px" data-s="5">그래서 이건 어느 부서 프로그램이에요?</div>
+  <div class="qb no" style="left:820px;top:600px" data-s="6">우리는 서버 못 줍니다.</div>
+  <div class="qb no" style="left:470px;top:700px" data-s="7">일반망 컴퓨터도 1년 넘게 걸려요.</div>
+  <div data-s="8" data-fx="shake" style="position:absolute;inset:0;pointer-events:none;transform:none">
+    <div class="glitch"></div>
+    <div class="dizzy" style="left:185px;top:440px"><canvas data-sp="star" data-scale="4" style="left:0;top:20px"></canvas><canvas data-sp="star" data-scale="4" style="left:150px;top:0"></canvas><canvas data-sp="star" data-scale="4" style="left:80px;top:46px"></canvas></div>
+    <i class="sweat" style="left:390px;top:600px"></i><i class="sweat" style="left:200px;top:620px;animation-delay:.4s"></i>
+    <div class="melt">정신 나갈 것 같았다…</div>
+    <div class="win" style="left:50%;top:520px;transform:translateX(-50%);padding:12px 26px;font:28px var(--pixel);color:#e0465a;border-color:#e0465a">HP 0 · 멘탈 붕괴</div>
+  </div>
+  <aside class="note">그런데 갑자기 묻는 말이 방침 있는가? 스탠드얼론 방식은 안되는가? 서버 쓰는가? 진우 씨 없으면 유지관리 안 되지 않나? 어느 부서 프로그램이지? 이런 보안과 유지관리에 대한 우려. 우리는 서버 못 준다. 일반망 컴도 1년 넘게 걸린다.
+(부시장실 보고 뒤, 일반망·폐쇄망 배포를 협의하러 정보통신과에 갔을 때. 한 번 넘길 때마다 질문 하나, HP가 깎임. 마지막 넘김에 HP 0 · 화면 흔들림 · 글리치 — '정신 나갈 것 같았다')</aside>
+</section>
+
+<section class="slide" data-title="1,000만 원, 그러나 사용 불가" data-stage="STAGE 3">
+  <div class="stars"></div>
+  <div class="kicker" style="position:absolute;left:80px;top:70px;font-size:28px">그리고 그 1,000만 원은…</div>
+  <div class="unlock" style="top:40%">
+    <canvas class="sp" data-sp="star" data-scale="18" style="position:static"></canvas>
+    <div>
+      <div class="lbl">★ ITEM GET · 부시장님</div>
+      <div class="ttl">1년 <span class="mark">1,000만 원</span><br>아무것도 묻고 따지지 말고</div>
+      <div class="meta">부시장실에서 예산팀장님까지 직접 연결</div>
+    </div>
+  </div>
+  <div class="stamp" style="left:1130px;top:430px" data-s="1">사용 불가</div>
+  <div class="bubble" style="left:330px;top:640px;width:940px;text-align:center;font-size:40px" data-s="1"><span style="display:block;font:20px var(--pixel);color:#5a5f86;margin-bottom:8px">우리 부서의 우려</span>“그렇게 쓰면, 의회에서 어쩌려고…”</div>
+  <aside class="note">부시장님은 저에게 1년 1,000만 원까지 아무것도 묻고 따지지 말고 쓰라고 예산팀장님까지 연결해 주셨는데요,
+우리 부서에서 그렇게 쓰면 의회에서 어쩌냐고 우려하면서 결국 막았습니다.</aside>
+</section>
+
+<section class="slide" data-title="탑다운의 실패" data-stage="STAGE 3">
+  <canvas class="bg dim" data-scene="river:night"></canvas>
+  <div class="ladder">
+    <div class="rung top"><b>부시장님</b><small>“내가 뒤에 있어”</small></div>
+    <div class="down">▼</div>
+    <div class="rung wall" data-s="1"><b>중간관리자 · 부서</b><small>방침? 보안? 의회?</small></div>
+    <div class="down x" data-s="1">✕</div>
+    <div class="rung"><b>사진우</b><small>8급 실무자</small></div>
+  </div>
+  <div style="position:absolute;left:840px;right:80px;top:250px">
+    <div class="kicker">LESSON</div>
+    <div class="h1" style="margin-top:14px">탑다운의 <span class="pink">실패</span></div>
+    <p class="p" style="margin-top:34px" data-s="2">중간관리자들을 설득하지 못한 채<br>“내가 뒤에 있어, 너 하고 싶은 거 해”라고 했을 때<br><b class="mark">벌어지는 안타까운 현상</b></p>
+  </div>
+  <aside class="note">탑다운의 실패죠. 중간관리자들을 설득하지 못하고, 내가 뒤에 있어 너 하고 싶은 거 해 라고 했을 때 벌어지는 안타까운 현상입니다.
+(행정혁신 청중에게 가장 와닿을 장. 잠깐 멈추고 강조.)</aside>
+</section>
+
+<section class="slide" data-title="두 달 뒤, 낙동강 오리알" data-stage="STAGE 3">
+  <canvas class="bg" data-scene="river"></canvas>
+  <canvas class="sp bob" data-sp="egg" data-scale="12" style="left:720px;top:470px" data-s="1"></canvas>
+  <canvas class="sp bob flip" data-sp="duck" data-scale="8" style="left:1180px;top:500px"></canvas>
+  <div class="win" style="left:60px;top:50px;padding:10px 20px;font:24px var(--pixel)">낙동강</div>
+  <div class="pop" data-s="1" style="position:absolute;left:0;right:0;top:150px;text-align:center;font:96px var(--pixel-big);color:#fff;text-shadow:6px 6px 0 var(--ink),-6px 6px 0 var(--ink),6px -6px 0 var(--ink),-6px -6px 0 var(--ink)">GAME OVER?</div>
+  <div class="win light dlg" style="font-size:62px"><span class="name npc">나레이션</span><span class="type">부시장님은 그러고 두 달 뒤 퇴임하셨고,</span><span class="more">▼</span></div>
+  <div class="win light dlg" style="font-size:62px" data-s="1"><span class="name">사진우</span><span class="type">저는 <em>낙동강 오리알</em>이 되었습니다.</span><span class="more">▼</span></div>
+  <aside class="note">부시장님은 그러고 두 달 뒤 퇴임해 버리시고, 저는 낙동강 오리알이 되었습니다.</aside>
+</section>
+
+<section class="slide" data-title="너 토목직이니까 건물조성" data-stage="STAGE 3">
+  <canvas class="bg" data-scene="office"></canvas>
+  <canvas class="sp" data-sp="hero" data-scale="11" style="left:300px;bottom:270px"></canvas>
+  <canvas class="sp talk flip" data-sp="staff2" data-scale="11" style="left:1000px;bottom:270px"></canvas>
+  <div class="win gold" style="right:70px;top:60px;text-align:center;padding:22px 34px"><span class="tag">QUEST</span><div style="font:24px var(--pixel);color:var(--muted)">반도체 건물조성</div><div style="font:52px var(--pixel-big);color:var(--gold);margin-top:8px">1년 반째</div></div>
+  <div class="win light dlg" style="font-size:62px"><span class="name npc">AI반도체과</span><span class="type">너 토목직이니까, <em>건물조성</em> 해.</span><span class="more">▼</span></div>
+  <div class="win light dlg" style="font-size:54px" data-s="1"><span class="name">사진우</span><span class="type">그렇게 반도체팀 건물조성 업무를 맡았고, 지금도 하고 있습니다.</span><span class="more">▼</span></div>
+  <div class="win light dlg" data-s="2"><span class="name">사진우</span><span class="type">중간관리자도 어쩔 수 없어요. 부서 인력은 <em>직렬</em>로 짜는데,<br>제가 토목직인 걸 어찌합니까.</span><span class="more">▼</span></div>
+  <aside class="note">이 AI반도체과에 와서도 너 토목직이니까 건물조성 해 하고 반도체팀 건물조성 업무를 맡고, 그거는 지금까지 하고 있습니다.
+중간관리자도 어쩔 수가 없어요, 부서에 직렬로 인력을 구성하는데 제가 토목직인 걸 어찌합니까.
+그래서 지금까지도 이 반도체 건물조성 업무를 1년 반째 하고 있습니다.</aside>
+</section>
+
+<section class="slide" data-title="위로 아닌 위로" data-stage="STAGE 3">
+  <canvas class="bg" data-scene="office:night"></canvas>
+  <canvas class="sp" data-sp="hero" data-scale="11" style="left:260px;bottom:270px"></canvas>
+  <canvas class="sp flip" data-sp="staff3" data-scale="10" style="left:960px;bottom:270px"></canvas>
+  <canvas class="sp flip" data-sp="staff4" data-scale="10" style="left:1180px;bottom:270px"></canvas>
+  <div class="win light dlg"><span class="name npc">주변에서</span><span class="type">너 그렇게 AI로 뭐 안 해도 돼.<br>여기서 이 업무만 해내도 <em>충분히 잘하는 거야.</em></span><span class="more">▼</span></div>
+  <div class="win light dlg" data-s="1"><span class="name">사진우</span><span class="type">그런데 살면서, AI로 증명할 <em>껀덕지라도 되는 부서</em>에<br>몸담을 일이 얼마나 되겠습니까?</span><span class="more">▼</span></div>
+  <aside class="note">이때 많이 들었던 말이, 너 그렇게 AI로 뭐 하지 않아도 된다. 여기서 이 업무만 해내도 충분히 잘하는 거다. 이런 위로 아닌 위로를 많이 들었습니다.
+그런데 살면서 이렇게 AI로 증명할 껀덕지라도 되는 부서에 몸을 담글 일이 얼마나 되겠습니까?</aside>
+</section>
+
+<section class="slide" data-title="실패를 냅다 제출" data-stage="STAGE 3">
+  <canvas class="bg dim" data-scene="river:night"></canvas>
+  <div class="top-left"><div class="kicker">PLOT TWIST</div><div class="h2" style="margin-top:10px">실패했던 사례를,<br><span class="mark">냅다 제출</span></div></div>
+  <div class="doc" style="left:820px;top:110px;width:600px;height:690px">
+    <div style="font:20px var(--pixel);color:#5a5f86;text-align:center">범정부 적극행정 경진대회</div>
+    <h4 style="margin-top:10px;letter-spacing:.05em">모범 실패사례</h4>
+    <div style="font:700 28px/1.4 var(--body);text-align:center;margin-bottom:20px">AI로 비개발자 코딩이 가능해진 시대,<br>우리는 코딩해서 칼퇴한다</div>
+    <div class="ln"></div><div class="ln" style="width:80%"></div><div class="ln"></div><div class="ln" style="width:65%"></div><div class="ln"></div><div class="ln" style="width:72%"></div>
+  </div>
+  <div class="stamp shown" style="left:900px;top:470px;animation:none">실패</div>
+  <div class="stamp ok" style="left:1150px;top:560px" data-s="1">제출!</div>
+  <p class="p" style="position:absolute;left:80px;top:420px;width:640px" data-s="1">AI 서비스 구축이 막힌 과정을 그대로<br><b class="mark">범정부 적극행정 경진대회 모범 실패사례</b>로.</p>
+  <aside class="note">저는 그래서 저 실패했던 AI 서비스 구축 사례를 범정부 적극행정 경진대회 모범 실패사례로 냅다 제출했구요.
+(업적 로그: 2025.09.02 적극행정 마일리지 · 범정부 모범실패사례 제출. 오른쪽 문서는 재구성 화면이지만 사례명은 실제 결과표 기준: 「AI로 비개발자 코딩이 가능해진 시대, 우리는 코딩해서 칼퇴한다」.)
+참고(적극행정 증빙): 가장 큰 실패 원인은 노트북·LLM 구독료·서버·Cursor 등 연간 약 140만 원의 개인 자부담. 2025년 7월 양산시 서버 지원으로 2주 베타테스트, 보도자료 생성기 약 200회 실사용.</aside>
+</section>
+
+<section class="slide" data-title="그 사이 벌어진 일들" data-stage="STAGE 3">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">SIDE QUESTS</div><div class="h2" style="margin-top:10px">그 사이, 재밌는 일들이 많이 벌어졌다</div></div>
+  <div style="position:absolute;left:80px;right:80px;top:300px;display:grid;grid-template-columns:repeat(5,1fr);gap:24px">
+    <div class="win" style="position:relative;padding:30px 24px" data-s="1"><canvas class="sp" data-sp="monitor" data-scale="5" style="position:static"></canvas><div class="h3" style="font-size:31px;margin-top:20px">만들고 싶은 건 AI로 그때그때</div></div>
+    <div class="win" style="position:relative;padding:30px 24px" data-s="2"><canvas class="sp" data-sp="heart" data-scale="9" style="position:static"></canvas><div class="h3" style="font-size:31px;margin-top:20px">주변에 알음알음 AI 전파</div></div>
+    <div class="win" style="position:relative;padding:30px 24px" data-s="3"><canvas class="sp" data-sp="medal" data-scale="8" style="position:static"></canvas><div class="h3" style="font-size:31px;margin-top:20px">AI챔피언 그린·블루</div><div style="font:20px var(--pixel);color:var(--muted);margin-top:10px">2025.10 · 2025.12</div></div>
+    <div class="win" style="position:relative;padding:30px 24px" data-s="4"><canvas class="sp" data-sp="star" data-scale="8" style="position:static"></canvas><div class="h3" style="font-size:31px;margin-top:20px">AI 영상도 해 보고</div></div>
+    <div class="win gold" style="position:relative;padding:30px 24px" data-s="5"><canvas class="sp" data-sp="trophy" data-scale="6" style="position:static"></canvas><div class="h3" style="font-size:31px;margin-top:20px">성남시 AI 숏폼대회 <span class="mark">2등</span></div><div style="font:20px var(--pixel);color:var(--muted);margin-top:10px">2025.12.12</div></div>
+  </div>
+  <aside class="note">만들고 싶은 거 AI로 그때그때 만들고, 주변 사람들한테 알음알음 AI 전파하고, AI챔피언 따고, AI영상도 해 보고, 그러다가 성남시 AI 숏폼대회 2등 하는 등 재밌는 일들이 많이 벌어졌습니다.
+(날짜는 업적 로그 기준: AI챔피언 그린 2025.10.24, 블루 2025.12, 1분 성남스토리 우수상(2등) 2025.12.12.)</aside>
+</section>
+
+<section class="slide" data-title="업적: AI챔피언 블루" data-stage="STAGE 3">
+  <div class="stars"></div>
+  <div class="burst"></div>
+  <figure class="gifcard" style="left:80px;top:120px;width:560px"><img src="assets/media/ai-champion-blue.png" alt="AI챔피언 블루 인증서"><figcaption>AI챔피언 블루 · 2025.12</figcaption></figure>
+  <div style="position:absolute;left:700px;right:80px;top:130px">
+    <div style="font:26px var(--pixel);color:var(--gold);letter-spacing:.14em">★ ACHIEVEMENT UNLOCKED</div>
+    <div class="h1" style="margin-top:16px">그린 → <span style="color:#86d6f6">블루</span></div>
+    <p class="p" style="margin-top:18px">9월 그린에 이어 11월 고급 과정 블루까지 연속 취득</p>
+  </div>
+  <figure class="gifcard pop" style="left:700px;top:470px;width:820px" data-s="1"><img src="assets/media/article-ai-champion-blue.png" alt="위키트리 기사: 성남시, AI 챔피언 배출"><figcaption>위키트리 · 2025.12.29</figcaption></figure>
+  <aside class="note">AI챔피언 그린에 이어 블루까지. 위키트리 「성남시, 'AI 챔피언' 배출... 인공지능 행정 혁신 가속화」(2025-12-29): "특히 AI반도체과 사진우 주무관은 9월 '그린' 인증에 이어 11월 고급 과정인 '블루' 인증까지 연이어 획득하며 파이썬과 기계학습 기반 실무 역량을 입증했다."</aside>
+</section>
+
+<section class="slide" data-title="NEW GOAL: 또 하나의 꿈" data-stage="STAGE 3">
+  <canvas class="bg" data-scene="city"></canvas>
+  <div class="wind" data-n="6" data-leaves="1"></div>
+  <canvas class="sp bob" data-sp="hero" data-scale="11" style="left:250px;bottom:150px"></canvas>
+  <div class="win light" style="left:60px;top:56px;padding:22px 34px"><div class="h3">그 무렵, 이런 꿈을 꾸기 시작했다</div></div>
+  <div class="win" style="left:60px;top:210px;width:560px;padding:40px 30px 22px;opacity:.92">
+    <span class="tag" style="color:var(--mint);border-color:var(--mint)">✓ CLEAR</span>
+    <div style="font:20px var(--pixel);color:var(--muted)">지난 꿈 · 2025</div>
+    <div style="font:700 30px/1.4 var(--body);margin-top:8px;color:var(--muted);text-decoration:line-through;text-decoration-thickness:3px">부시장님과 AI로 대화해 보기</div>
+  </div>
+  <div class="burst" data-s="1"></div>
+  <div class="win gold pop" style="left:700px;top:170px;width:840px;padding:44px 50px" data-s="1" data-fx="flash">
+    <span class="tag">★ NEW GOAL</span>
+    <div style="font:22px var(--pixel);color:var(--gold)">MAIN QUEST · 새로운 꿈</div>
+    <div class="h2" style="margin-top:16px">시청 곳곳에<br><span class="mark">나, 혹은 내 영상</span>이<br>상영되게 하기</div>
+    <div style="display:flex;align-items:center;gap:18px;margin-top:30px;font:22px var(--pixel);color:var(--muted)">진행도<div class="gauge" style="flex:1;margin:0"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>0%</div>
+  </div>
+  <div class="flash"></div>
+  <aside class="note">그 무렵, 저는 또 하나의 꿈을 꾸기 시작했습니다. 부시장님을 알현했을 때처럼, 시청 곳곳에 나 혹은 내 영상이 상영되리라.
+(왼쪽 'CLEAR'는 STAGE 2의 첫 꿈: 부시장님과 AI로 대화해 보기 → 간담회로 실제 이뤄짐. 이번 NEW GOAL은 진행도 0%에서 시작해 STAGE 4 엘리베이터 상영에서 달성되는 복선.)</aside>
+</section>
+
+<section class="slide" data-title="업적: 인사혁신처장상" data-stage="STAGE 3">
+  <div class="stars"></div>
+  <div class="burst"></div>
+  <div class="kicker" style="position:absolute;left:80px;top:70px;font-size:28px">그리고, 실패 사례로 냈던 그 대회는</div>
+  <figure class="gifcard" style="left:80px;top:140px;width:440px"><img src="assets/media/award-hrm-photo.jpg" alt="2025 적극행정 우수사례 경진대회 장려상 시상 사진"><figcaption>2025 적극행정 우수사례 경진대회</figcaption></figure>
+  <div style="position:absolute;left:600px;right:80px;top:150px">
+    <div class="lbl" style="font:26px var(--pixel);color:var(--gold);letter-spacing:.14em">★ ACHIEVEMENT UNLOCKED</div>
+    <div class="h1" style="margin-top:18px">실패 사례로<br><span class="mark">인사혁신처장상</span></div>
+    <p class="p" style="margin-top:20px">2025 적극행정 경진대회<br>장려상 · 2025.11.27</p>
+  </div>
+  <figure class="gifcard pop" style="left:1190px;top:90px;width:300px;transform:rotate(3deg)" data-s="2"><img src="assets/media/award-certificate.png" alt="인사혁신처장 상장"><figcaption>상장 · 인사혁신처장</figcaption></figure>
+  <figure class="gifcard pop" style="left:600px;top:500px;width:820px" data-s="1"><img src="assets/media/article-hrm-award.jpg" alt="핀포인트뉴스 기사: 성남시, 2025 적극행정 경진대회 인사혁신처장상 수상"><figcaption>핀포인트뉴스 · 2025.12.04</figcaption></figure>
+  <aside class="note">그리고 실패 사례로 냈던 대회는 인사혁신처장상을 타기에 이르렀습니다.
+사진: 적극행정 발표(11/7) 5장의 시상 사진 — 장려상 보드. 두 번째 넘김에 인사혁신처장 상장 원본(2025.11.27, 기관: 경기도 성남시). 기사: 핀포인트뉴스 「성남시, 2025 적극행정 경진대회 '인사혁신처장상' 수상」(김정기 기자, 2025.12.04).
+원문에는 '행안부 대회'라고 되어 있으나 사진·기사 표기에 맞춰 '2025 적극행정 경진대회'로 표기.</aside>
+</section>
+
+<!-- ================= STAGE 4 ================= -->
+
+<section class="slide stage-card" data-title="STAGE 4 · 2026 폭발적 성장" data-stage="STAGE 4">
+  <canvas class="bg dim" data-scene="lobby"></canvas>
+  <div data-lit="4" class="stage-card" style="background:none">
+    <div class="no">STAGE 4</div>
+    <div class="ttl">2026 · 폭발적 성장</div>
+    <div class="sub">셀프 브랜딩, 셀프 바이럴</div>
+    <div class="bar"><i></i><i></i><i></i><i></i><i></i></div>
+  </div>
+  <div class="year">2026</div>
+  <aside class="note">그리고 2026년, 저의 폭발적인 성장이 시작되었습니다.</aside>
+</section>
+
+<section class="slide" data-title="시정홍보영상에 도전" data-stage="STAGE 4">
+  <canvas class="bg dim" data-scene="studio"></canvas>
+  <div class="top-left"><div class="kicker">NEW QUEST</div><div class="h2" style="margin-top:10px">취미로 하던 AI 영상으로,<br><span class="mark">좌시할 수 없는 퀄리티</span>의 시정홍보영상을</div></div>
+  <div style="position:absolute;left:80px;right:80px;top:420px;display:flex;align-items:center;gap:24px;font:700 36px var(--body)">
+    <span class="win" style="position:static;padding:20px 30px">직접 제작</span><span class="mark" style="font:40px var(--pixel)">▶</span>
+    <span class="win" style="position:static;padding:20px 30px" data-s="1">과장님이 홍보</span><span class="mark" style="font:40px var(--pixel)" data-s="1">▶</span>
+    <span class="win" style="position:static;padding:20px 30px" data-s="2">홍보실까지</span><span class="mark" style="font:40px var(--pixel)" data-s="3">▶</span>
+    <span class="win gold" style="position:static;padding:20px 30px" data-s="3">시청 곳곳으로</span>
+  </div>
+  <div class="chips" style="position:absolute;left:80px;top:610px" data-s="3"><span>엘리베이터</span><span>페이스북</span><span>인스타그램</span><span>유튜브</span></div>
+  <button class="gifcard" data-video="lgoMv" style="left:1000px;top:560px;width:520px;padding:0;cursor:pointer;color:inherit;font:inherit;text-align:left"><img src="assets/media/local-government-official-mv-poster.jpg" alt="나는 지방직 공무원이다"><figcaption>▶ 나는 지방직 공무원이다 · 눌러서 재생</figcaption></button>
+  <div class="vmodal" id="lgoMv"><div class="vbox"><div class="vbar"><span>나는 지방직 공무원이다</span><button class="vclose">✕ 닫기</button></div><video src="assets/media/local-government-official-mv.mp4" playsinline preload="metadata" controls></video></div></div>
+  <aside class="note">오른쪽 아래 썸네일을 누르면 「나는 지방직 공무원이다」(약 1분 39초)가 처음부터 재생. 닫거나 장을 넘기면 정지.
+취미로 하던 AI영상이 슬슬 감을 잡아가면서 시정홍보영상을 좌시할 수 없는 퀄리티로 한 번 만들어 보자! 하고 만들어 봤구요.
+저희 과장님께서도 홍보해 주시고 해서 결국 홍보실까지 닿아서, 이렇게 시청 엘리베이터에서도 나오고, 시 공식 페이스북, 인스타, 유튜브 등을 장악해 나가기 시작했습니다.</aside>
+</section>
+
+<section class="slide" data-title="시청 엘리베이터에서 상영" data-stage="STAGE 4">
+  <canvas class="bg" data-scene="elevator"></canvas>
+  <div class="screen" style="left:520px;top:80px;width:560px;height:320px"><img src="assets/media/nuzic-dancing-sn-city.gif" alt="엘리베이터 TV 속 Dancing SN CITY"></div>
+  <div class="win light" style="left:60px;top:470px;width:470px;padding:26px 34px">
+    <span class="tag">ON AIR</span>
+    <div class="h3" style="margin-top:6px">시청 엘리베이터에서<br>내 영상이 나온다</div>
+  </div>
+  <canvas class="sp" data-sp="staff2" data-scale="9" style="left:700px;bottom:120px"></canvas>
+  <canvas class="sp talk" data-sp="hero" data-scale="10" style="left:1080px;bottom:110px"></canvas>
+  <div class="bubble" style="left:1180px;top:420px;width:340px" data-s="1">어…? 저거 내 영상인데?</div>
+  <aside class="note">이렇게 시청 엘리베이터에서도 나오고. (엘리베이터 위쪽 TV에 영상이 나오는 장면. 엘리베이터와 TV는 코드로 그린 픽셀 배경, 말풍선은 연출.)</aside>
+</section>
+
+<section class="slide" data-title="AI 표기를 크레딧으로" data-stage="STAGE 4">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">LAW CHECK · 인공지능기본법 제31조</div><div class="h2" style="margin-top:10px">“생성형 AI로 만들었습니다” 표시, 누구의 의무?</div></div>
+  <p class="p" style="position:absolute;left:80px;top:250px">표시 의무는 AI 제품·서비스를 <b class="mark">제공하는 인공지능사업자</b>에게 있다.</p>
+  <div style="position:absolute;left:80px;right:80px;top:380px;display:grid;grid-template-columns:1fr 1.5fr;gap:44px">
+    <div class="win" style="position:relative" data-s="1"><span class="tag">다른 공공기관</span><div class="h3" style="margin-top:8px">괜히 쫄려서</div><p class="p" style="margin-top:14px">영상 어딘가에 항상<br>“생성형 AI로 제작” 표기</p></div>
+    <div class="win gold" style="position:relative" data-s="2"><span class="tag">나는 역이용</span><div class="h3" style="margin-top:8px">크레딧처럼 <span class="mark">내 이름</span>을 상시 표기</div>
+      <img src="assets/media/ai-credit-banner.png" alt="이 영상은 사진우 주무관이 AI를 활용하여 만든 영상입니다" style="display:block;width:100%;margin-top:22px;border:4px solid var(--ink)"></div>
+  </div>
+  <aside class="note">인공지능기본법에 따라서 AI 활용 명시는 사실 AI로 수익을 내는 사업자 한정입니다. 그런데 공공기관들은 괜히 쫄려서 생성형 AI로 만들었다 하고 항상 영상 어딘가에 표기를 하더라구요.
+저는 이것을 역이용해서, 내가 이거 만들었다 라고 크레딧 표기하듯, 사진우 주무관이 생성형 AI를 활용해서 만들었다 라고 상시 디스플레이 했습니다.
+[확인 메모] 인공지능기본법 제31조 제2항: 표시 의무 주체는 '인공지능사업자'(생성형 AI 또는 이를 이용한 제품·서비스를 제공하는 자). 다만 제2조 제7호의 인공지능사업자 정의에 '국가기관등'도 포함되어 있어, '수익 내는 사업자 한정'이라고 단정하면 질문이 나올 수 있음. 화면에는 조문 표현대로 '제공하는 인공지능사업자'로만 표기.</aside>
+</section>
+
+<section class="slide" data-title="내가 짠 판 위에서" data-stage="STAGE 4">
+  <canvas class="bg" data-scene="elevator"></canvas>
+  <div class="screen" style="left:520px;top:80px;width:560px;height:320px"><img src="assets/media/nuzic-solomons-choice.gif" alt="엘리베이터 TV 속 솔로몬의 선택"></div>
+  <div style="position:absolute;left:490px;top:398px;width:620px;background:#141833;border:4px solid #262b48;color:#fff;font:600 22px/1.3 var(--body);padding:8px 12px;text-align:center">이 영상은 <b style="color:#ffc93c">사진우 주무관</b>이 AI를 활용하여 만든 영상입니다.</div>
+  <canvas class="sp" data-sp="staff1" data-scale="9" style="left:300px;bottom:250px"></canvas>
+  <canvas class="sp" data-sp="staff4" data-scale="9" style="left:560px;bottom:250px"></canvas>
+  <canvas class="sp" data-sp="staff2" data-scale="9" style="left:880px;bottom:250px"></canvas>
+  <canvas class="sp" data-sp="staff3" data-scale="9" style="left:1140px;bottom:250px"></canvas>
+  <div class="win light dlg"><span class="name npc">나레이션</span><span class="type">그렇게 성남시 직원들은, 제가 짠 이 판 위에서,<br>매일 출근하며 타는 엘리베이터에서 <em>제 이름</em>을 마주하게 됩니다.</span><span class="more">▼</span></div>
+  <aside class="note">그렇게 성남시 직원들은, 제가 짠 이 판 위에서, 매일 출근하며 타는 엘리베이터에서 제 이름을 마주하게 됩니다. (TV 아래 띠 = 실제 영상 끝 크레딧 문구.)</aside>
+</section>
+
+<section class="slide" data-title="셀프 브랜딩 전략" data-stage="STAGE 4">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">STRATEGY</div><div class="h1" style="margin-top:10px">셀프 브랜딩, <span class="mark">셀프 바이럴</span></div></div>
+  <div style="position:absolute;left:80px;right:80px;top:330px;display:grid;grid-template-columns:1fr 80px 1fr;align-items:center">
+    <div class="win" style="position:relative"><span class="tag">작년</span><div class="h3" style="color:var(--muted)">“네가 뭔데 AI를 하냐”</div><p class="p" style="margin-top:10px">— 정보부서의 분위기</p></div>
+    <div class="mark" style="font:56px var(--pixel);text-align:center">▶</div>
+    <div class="win gold" style="position:relative" data-s="1"><span class="tag">목표</span><div class="h3">좌시할 수 없는 인물</div><p class="p" style="margin-top:10px">사람들의 마음, 특히<br><b class="mark">윗사람들의 마인드</b>를 움직인다</p></div>
+  </div>
+  <div class="win light" style="left:80px;right:80px;bottom:70px;padding:28px 40px;font:700 36px/1.45 var(--body)" data-s="2">방침결재 같은 절차와 부서 검토도 물론 중요하지만,<br><span style="color:#d0314f">결국 윗분들께서 공감하고 결재해 주시면, 길이 훨씬 빨리 열리더라고요.</span></div>
+  <aside class="note">저는 이때부터 저를 셀프 브랜딩, 셀프 바이럴하자 라는 전략이었어요.
+전년도의, 니가 뭔데 AI를 하냐 라는 느낌이었던 정보부서가 좌시할 수 없는 인물로 성장하려면, 사람들의 마음, 특히 윗사람들의 마인드를 움직여야 한다고 느꼈습니다.
+방침결재 같은 절차와 부서 검토도 물론 중요하지만, 결국 시장님을 비롯한 윗분들께서 공감하고 결재해 주시면 길이 훨씬 빨리 열리더라고요.
+(STAGE 3 '탑다운의 실패'와 대비: 위에서 한 번 밀어주는 것으로는 안 됐으니, 이번엔 모두가 보는 곳에서 이름을 쌓는 방식.)</aside>
+</section>
+
+<section class="slide" data-title="그때의 영상 제작 로직" data-stage="STAGE 4">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">HOW I MADE IT · 당시 제작 로직</div><div class="h2" style="margin-top:10px">이미지로 먼저 만들고, 그다음에 움직인다</div></div>
+  <div style="position:absolute;left:70px;right:70px;top:250px;display:grid;grid-template-columns:repeat(4,1fr);gap:26px;align-items:start">
+    <figure class="gifcard" style="position:relative"><img src="assets/media/workflow/character.jpg" alt="캐릭터 이미지" style="aspect-ratio:4/3;object-fit:cover"><figcaption>① 캐릭터 이미지</figcaption></figure>
+    <figure class="gifcard" style="position:relative" data-s="1"><img src="assets/media/workflow/character-sheet.jpg" alt="캐릭터 시트" style="aspect-ratio:4/3;object-fit:cover"><figcaption>② 캐릭터 시트</figcaption></figure>
+    <figure class="gifcard" style="position:relative" data-s="2"><img src="assets/media/workflow/scene.jpg" alt="장면별 이미지" style="aspect-ratio:4/3;object-fit:cover"><figcaption>③ 장면별 이미지</figcaption></figure>
+    <figure class="gifcard" style="position:relative;border-color:var(--gold)" data-s="3"><video src="assets/media/workflow/grok-i2v.mp4" poster="assets/media/workflow/grok-i2v-poster.jpg" muted loop playsinline autoplay style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover"></video><figcaption>④ 프롬프트로 움직이기</figcaption></figure>
+  </div>
+  <div style="position:absolute;left:70px;right:70px;top:640px;display:grid;grid-template-columns:3fr 1fr;gap:26px">
+    <div class="win" style="position:relative;padding:20px 30px;text-align:center"><span style="font:22px var(--pixel);color:var(--gold)">이미지 생성</span><div class="h3" style="margin-top:6px">나노바나나 · GPT Image 2</div></div>
+    <div class="win gold" style="position:relative;padding:20px 30px;text-align:center" data-s="3"><span style="font:22px var(--pixel);color:var(--gold)">영상화</span><div class="h3" style="margin-top:6px">Grok Imagine</div></div>
+  </div>
+  <aside class="note">이때의 영상 제작 로직은 다음과 같았습니다. 나노바나나 또는 GPT Image 2를 활용해서 캐릭터 이미지, 캐릭터 시트를 뽑고, 그것으로 장면별 이미지를 뽑고, 그것을 Grok Imagine에 넣고 프롬프팅을 통해 움직이게 했습니다.
+(사진은 나주 강의 자료: 캐릭터 이미지, 캐릭터 시트 예시, 장면 이미지, Grok Imagine 이미지→영상 화면 녹화. ④는 소리 없이 반복 재생.)</aside>
+</section>
+
+<section class="slide" data-title="스타트 · 엔드 프레임" data-stage="STAGE 4">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">HOW · 스타트 프레임 / 엔드 프레임</div><div class="h2" style="margin-top:10px">처음과 끝 이미지를 주면, <span class="mark">AI가 사이를 잇는다</span></div></div>
+  <figure class="gifcard" style="left:70px;top:250px;width:640px"><img src="assets/media/startend/kling-start-end-ui.png" alt="Kling에 시작 이미지와 끝 이미지를 넣고 중간 동작을 프롬프트로 적은 화면" style="display:block;width:100%;height:400px;object-fit:cover;object-position:50% 40%"><figcaption>시작 이미지 + 끝 이미지 + 중간 동작 프롬프트</figcaption></figure>
+  <div class="mark" style="position:absolute;left:740px;top:420px;font:60px var(--pixel)" data-s="1">▶</div>
+  <figure class="gifcard" style="left:840px;right:70px;top:250px;border-color:var(--gold)" data-s="1"><video src="assets/media/startend/start-end-result.mp4" poster="assets/media/startend/start-end-result-poster.jpg" muted loop playsinline autoplay style="display:block;width:100%;height:400px;object-fit:cover"></video><figcaption>결과 · “먹던 짜장면이 옷에 흡수되더니 나시가 검정색으로”</figcaption></figure>
+  <div class="win" style="left:70px;top:740px;width:1000px;padding:20px 30px" data-s="2"><span class="tag">이어 붙이기</span>
+    <p class="p" style="font-size:28px">클립01 <b class="mark">A → B</b> · 클립02 <b class="mark">B → C</b> — 엔드 프레임을 다음 스타트 프레임으로</p></div>
+  <button class="win gold" data-video="seExample" style="left:1110px;right:70px;top:740px;padding:20px 24px;cursor:pointer;font:700 28px var(--body);color:var(--cream);text-align:center" data-s="3">▶ 적용 작품 예시 보기</button>
+  <div class="vmodal" id="seExample"><div class="vbox" style="width:390px"><div class="vbar"><span>스타트·엔드 프레임 적용 작품 예시</span><button class="vclose">✕ 닫기</button></div><video src="assets/media/startend/start-end-example.mp4" poster="assets/media/startend/start-end-example-poster.jpg" playsinline preload="metadata" controls style="width:100%;max-height:none"></video></div></div>
+  <aside class="note">장면을 움직일 때 자주 쓰는 방법이 스타트 프레임·엔드 프레임입니다. 시작 이미지와 끝 이미지를 넣고, 그 사이에 무슨 일이 일어나는지만 프롬프트로 적어 주면 AI가 두 장면을 이어 줍니다.
+예시: 짜장면 먹는 장면(시작)과 검은 나시를 입은 장면(끝) + "먹던 짜장면이 옷에 마구 흡수되더니 나시가 검정색으로 바뀌어버린다" → 결과 영상.
+여러 클립을 이을 때는 앞 클립의 엔드 프레임을 다음 클립의 스타트 프레임으로 다시 씁니다. 동작 속도·방향이 다르면 이음새에서 멈칫할 수 있음.
+오른쪽 아래 버튼: 이 방식으로 만든 작품 예시(약 30초, 소리 있음). (자료: 나주 강의 12~15장)</aside>
+</section>
+
+<section class="slide" data-title="솔로몬의 선택" data-stage="STAGE 4">
+  <div class="stars"></div>
+  <figure class="gifcard" style="left:80px;top:150px;width:820px"><img src="assets/media/nuzic-solomons-choice.gif" alt="솔로몬의 선택 홍보영상"><figcaption>This is Solomon's choice</figcaption></figure>
+  <div style="position:absolute;left:980px;right:80px;top:150px">
+    <div class="kicker">아무도 원하지 않았지만</div>
+    <div class="h2" style="margin-top:14px">솔로몬의 선택</div>
+    <p class="p" style="margin-top:26px">성남시 청춘만남 프로젝트 홍보영상</p>
+    <p class="p" style="margin-top:20px" data-s="1">성남시 대표 동물 <b class="mark">까치</b>와<br>탄천에 나타나는 <b class="mark">수달</b>의<br>러브스토리</p>
+  </div>
+  <aside class="note">저는 지속적으로, 아무도 원하지 않았지만 성남시 홍보 AI 영상을 뽑아내기 시작했습니다.
+성남시 청춘만남 프로젝트 솔로몬의 선택 홍보영상을, 이렇게 성남시 대표 동물 까치와 탄천에서 등장하는 수달이 주토피아 같은 느낌으로 러브스토리를 펼쳐 나가는 영상.</aside>
+</section>
+
+<section class="slide" data-title="Dancing SN CITY" data-stage="STAGE 4">
+  <canvas class="bg dim" data-scene="city:night"></canvas>
+  <figure class="gifcard" style="left:80px;top:150px;width:820px"><img src="assets/media/nuzic-dancing-sn-city.gif" alt="Dancing SN CITY 홍보영상"><figcaption>Dancing SN CITY</figcaption></figure>
+  <div style="position:absolute;left:980px;right:80px;top:150px">
+    <div class="kicker">쇼미더머니 12 · 언텔</div>
+    <div class="h2" style="margin-top:14px">Dancing SN CITY</div>
+    <div class="bubble" style="position:relative;margin-top:40px;font-size:27px" data-s="1"><span style="font:18px var(--pixel);color:#5a5f86;display:block;margin-bottom:6px">DM 보냄</span>이 노래를 AI로 리메이크해서<br>성남시 홍보용으로 쓰고 싶습니다!</div>
+    <p class="p" style="margin-top:54px" data-s="2">이 영상들이 <b class="mark">상반기 내내</b><br>성남시 엘리베이터에서 울려 퍼졌다.</p>
+  </div>
+  <aside class="note">쇼미더머니 12에서 언텔이라는 가수가 너무 좋은 노래를 들고 와서요, 그 가수분한테 DM 보내서 이 노래 AI로 리메이크해서 성남시 홍보용으로 쓰고 싶다, 하고 만들었던 댄싱 성남시티 영상.
+이것들이 상반기 내내 성남시의 엘리베이터에서 울려 퍼졌습니다.</aside>
+</section>
+
+<section class="slide" data-title="희귀한 이름 효과" data-stage="STAGE 4">
+  <div class="stars"></div>
+  <div class="burst"></div>
+  <div class="legend">
+    <div class="r">★★★★★ LEGENDARY NAME</div>
+    <div class="n">사진우</div>
+    <div class="s">한 번 보면 잊히지 않음</div>
+  </div>
+  <canvas class="sp" data-sp="hero" data-scale="10" style="left:200px;bottom:270px"></canvas>
+  <canvas class="sp talk flip" data-sp="staff1" data-scale="10" style="left:1240px;bottom:270px"></canvas>
+  <div class="win light dlg" style="font-size:62px"><span class="name npc">어디를 가든</span><span class="type">아, 주사님이 <em>사진우</em>시군요!</span><span class="more">▼</span></div>
+  <div class="win light dlg" style="font-size:54px" data-s="1"><span class="name">사진우</span><span class="type">강력하고 희귀한 이름 덕을 톡톡히 보며, 점점 유명해져 갔습니다.</span><span class="more">▼</span></div>
+  <aside class="note">저는 어디 갈 때마다 제 이름을 말하면, 아 주사님이 사진우시군요 라고 하는, 제 강력한 희귀한 이름 덕을 톡톡히 보며 점점 유명해져 갔습니다.</aside>
+</section>
+
+<section class="slide" data-title="AI 행보에 붙기 시작한 정당성" data-stage="STAGE 4">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">REPUTATION</div><div class="h2" style="margin-top:10px">영상은 저를<br>직원들의 <span class="mark">뇌리에 각인</span>시켰다</div></div>
+  <div class="hp win" style="left:80px;top:400px;width:700px;padding:26px 30px" data-hp="45,45,100"><span>발표로 알려진 정도</span><div class="bar"><i></i></div></div>
+  <div class="hp win" style="left:80px;top:560px;width:700px;padding:26px 30px" data-hp="20,60,100"><span>AI 행보의 정당성</span><div class="bar"><i></i></div></div>
+  <div style="position:absolute;left:880px;right:80px;top:410px">
+    <p class="p">원래도 <b>발표</b>로 이름이 알려져 있었지만,</p>
+    <p class="p" style="margin-top:22px" data-s="1">매일 보는 <b class="mark">영상</b>이 쌓이면서<br>AI 행보에 <b class="mark">정당성</b>이 붙기 시작했다.</p>
+    <div class="win gold" style="position:relative;margin-top:40px;padding:22px 30px" data-s="2"><span style="font:26px var(--pixel);color:var(--gold)">▲ LEVEL UP</span><span class="p" style="margin-left:16px">이제 판을 키울 차례</span></div>
+  </div>
+  <aside class="note">영상 활동과 함께 저의 AI 행보에는 점점 정당성이 붙기 시작했습니다. 원래도 발표 등으로 유명해져 있었지만, 영상은 저를 직원들의 뇌리에 각인시켰습니다.
+(게이지는 넘길 때마다 차오르는 연출. 수치를 뜻하지 않음.)</aside>
+</section>
+
+<!-- ================= STAGE 5 ================= -->
+
+<section class="slide stage-card" data-title="STAGE 5 · 길드 창설 DLC" data-stage="STAGE 5">
+  <canvas class="bg dim" data-scene="classroom"></canvas>
+  <div data-lit="5" class="stage-card" style="background:none">
+    <div class="no">STAGE 5</div>
+    <div class="ttl">길드 창설 · DLC</div>
+    <div class="sub">성남시 AI 동호회 딥러닝크루</div>
+    <div class="bar"><i></i><i></i><i></i><i></i><i></i></div>
+  </div>
+  <div class="year">2026.02</div>
+  <aside class="note">그렇게 성남시 내 AI 동호회 DLC를 창설하게 됩니다.</aside>
+</section>
+
+<section class="slide" data-title="부시장님과의 약속" data-stage="STAGE 5">
+  <canvas class="bg" data-scene="meeting" style="filter:sepia(.75) saturate(.7) brightness(.85)"></canvas>
+  <div class="win" style="left:60px;top:50px;padding:10px 20px;font:24px var(--pixel);color:var(--gold)">◀◀ 회상 · 2025 간담회</div>
+  <canvas class="sp" data-sp="hero" data-scale="11" style="left:380px;bottom:270px"></canvas>
+  <canvas class="sp flip" data-sp="boss" data-scale="11" style="left:1040px;bottom:270px;filter:sepia(.6)"></canvas>
+  <div class="win light dlg" style="font-size:62px"><span class="name boss">부시장님</span><span class="type">그럼 <em>자네가 동호회 만들면</em> 되겠네.</span><span class="more">▼</span></div>
+  <div class="win light dlg" style="font-size:62px" data-s="1"><span class="name">사진우</span><span class="type">부시장님과의 약속, <em>지키겠습니다!</em></span><span class="more">▼</span></div>
+  <aside class="note">부시장님과의 약속을 지키겠다! (STAGE 2 간담회 장면을 회상 톤으로 다시 보여줌. 부시장님은 이미 퇴임하신 뒤라는 점이 이 장면의 무게.)</aside>
+</section>
+
+<section class="slide" data-title="혼자서는 한계가 있다" data-stage="STAGE 5">
+  <canvas class="bg dim" data-scene="office:night"></canvas>
+  <div class="top-left"><div class="kicker">SOLO PLAY의 한계</div><div class="h2" style="margin-top:10px">저 혼자서는 한계가 있었다</div></div>
+  <div style="position:absolute;left:80px;top:300px;width:760px;display:grid;grid-template-columns:1fr 1fr;gap:20px">
+    <div class="qb" style="position:relative" data-s="1">조직 전체의 도메인 지식</div>
+    <div class="qb" style="position:relative" data-s="1">부서마다의 업무 불편사항</div>
+    <div class="qb" style="position:relative" data-s="1">어디를 개선할 수 있는지</div>
+    <div class="qb" style="position:relative" data-s="1">새로운 아이디어 도출</div>
+  </div>
+  <canvas class="sp" data-sp="hero" data-scale="10" style="left:360px;bottom:70px"></canvas>
+  <div class="win gold" style="left:940px;right:80px;top:250px" data-s="2">
+    <span class="tag">PARTY</span>
+    <div class="h3">AI 전사들을 길러내야</div>
+    <p class="p" style="margin-top:12px">함께 발전하는<br><b class="mark">조직적인 효과</b>를 볼 수 있다</p>
+    <div style="position:relative;height:250px;margin-top:20px">
+      <canvas class="sp" data-sp="hero" data-scale="7" style="left:0;bottom:0"></canvas>
+      <canvas class="sp bob" data-sp="staff1" data-scale="7" style="left:108px;bottom:0"></canvas>
+      <canvas class="sp bob" data-sp="staff2" data-scale="7" style="left:216px;bottom:0;animation-delay:.2s"></canvas>
+      <canvas class="sp bob" data-sp="staff3" data-scale="7" style="left:324px;bottom:0;animation-delay:.4s"></canvas>
+      <canvas class="sp bob" data-sp="staff4" data-scale="7" style="left:432px;bottom:0;animation-delay:.6s"></canvas>
+    </div>
+  </div>
+  <aside class="note">그리고 저 혼자서는 이 전체 조직에 대한 일반적인 도메인 지식, 업무 관련된 불편사항, 개선 가능성, 아이디어 도출 등에서 한계가 있다고 생각했구요,
+AI 전사들을 또 길러내야, 함께 발전할 수 있는 조직적인 효과를 볼 수 있다고 생각했습니다.</aside>
+</section>
+
+<section class="slide" data-title="파티원 모집 (달리기 아님)" data-stage="STAGE 5">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">RECRUIT · 2025.12 모집 → 2026.02 창설</div><div class="h2" style="margin-top:10px">파티원 모집</div></div>
+  <figure class="gifcard" style="left:80px;top:250px;width:980px"><img src="assets/media/club-recruit-20251211.png" alt="AI 동호회 딥러닝크루(DLC) 모집 게시글"><figcaption>새올 게시판 · 작성자 사진우 · 조회 190</figcaption></figure>
+  <figure class="gifcard pop" style="left:80px;top:600px;width:700px" data-s="1"><img src="assets/media/club-plan-2026.png" alt="직장동호회 2026년도 활동계획서"><figcaption>직장동호회 2026년도 활동계획서</figcaption></figure>
+  <figure class="gifcard" style="right:80px;top:110px;width:380px;transform:rotate(-2deg)"><img src="assets/media/dlc-poster.jpg" alt="D.L.C Deep Learning Crew 포스터"><figcaption>D.L.C · Deep Learning Crew</figcaption></figure>
+  <aside class="note">모집글 제목: [신규] AI 동호회 '딥러닝크루(DLC)'에서 같이 뛰실 분을 모집합니다 (달리기 아님) — 2025-12-11, 조회 190.
+2026년도 활동계획서: 구성일자 2025.12, 회원 19명.
+모집은 2025년 12월, 정식 창설은 2026년 2월.</aside>
+</section>
+
+<section class="slide" data-title="DLC에서 해 온 강의" data-stage="STAGE 5">
+  <canvas class="bg dim" data-scene="classroom"></canvas>
+  <div class="top-left"><div class="kicker">GUILD TRAINING</div><div class="h2" style="margin-top:10px">함께 배우고 실습 · <span class="mark">30여 명 · 5회</span></div></div>
+  <div class="ach-grid" style="top:250px;bottom:110px;grid-template-columns:repeat(4,1fr);gap:20px">
+    <div class="ach in key" style="padding:20px 24px"><canvas data-sp="paper" data-scale="5" style="width:auto;height:auto"></canvas><div class="t" style="font-size:28px">NotebookLM 자료 분석 · 발표자료</div></div>
+    <div class="ach in" style="padding:20px 24px"><canvas data-sp="heart" data-scale="7" style="width:auto;height:auto"></canvas><div class="t" style="font-size:28px">SUNO 작사 · 작곡</div></div>
+    <div class="ach in" style="padding:20px 24px"><canvas data-sp="star" data-scale="6" style="width:auto;height:auto"></canvas><div class="t" style="font-size:28px">같은 캐릭터로 여러 장면 만들기</div></div>
+    <div class="ach in" style="padding:20px 24px"><canvas data-sp="monitor" data-scale="4" style="width:auto;height:auto"></canvas><div class="t" style="font-size:28px">이미지와 음악으로 영상 만들기</div></div>
+    <div class="ach in" style="padding:20px 24px"><canvas data-sp="bolt" data-scale="7" style="width:auto;height:auto"></canvas><div class="t" style="font-size:28px">AI API와 업무 도구 연결</div></div>
+    <div class="ach in key" style="padding:20px 24px"><canvas data-sp="paper" data-scale="5" style="width:auto;height:auto"></canvas><div class="t" style="font-size:28px">Claude · Kordoc 한글파일 편집</div></div>
+    <div class="ach in" style="padding:20px 24px"><canvas data-sp="excel" data-scale="5" style="width:auto;height:auto"></canvas><div class="t" style="font-size:28px">AI 좌석배치도 · 명패 만들기</div></div>
+    <div class="ach in" style="padding:20px 24px;border-style:dashed"><div class="t" style="font-size:28px;color:var(--muted)">+ 다음 강의 준비 중…</div></div>
+  </div>
+  <p class="p" style="position:absolute;left:80px;bottom:50px;font-size:24px;color:var(--muted)">자료: 적극행정 추천서 기재 기준</p>
+  <aside class="note">AI 동호회 창설 이후 지금까지 이런 주제의 강의를 해 왔습니다.
+적극행정 발표 6장 기준: 30여 명 · 강의와 실습 5회 — NotebookLM 자료 분석·발표자료 / SUNO 작사·작곡 / 같은 캐릭터로 여러 장면 만들기 / 이미지와 음악으로 영상 만들기 / AI API와 업무 도구 연결 / Claude·Kordoc 한글파일 편집 / AI 좌석배치도·명패 만들기.
+(마지막 칸 '다음 강의 준비 중'은 연출용. 빼도 됨.)</aside>
+</section>
+
+<section class="slide" data-title="길드원 18명 → 32명" data-stage="STAGE 5">
+  <canvas class="bg dim" data-scene="classroom"></canvas>
+  <div class="top-left"><div class="kicker">GUILD MEMBERS</div><div class="h2" style="margin-top:10px">창설 <span class="mark">18명</span> → 지금 <span class="mark">32명</span></div></div>
+  <div class="win" style="left:80px;right:80px;top:270px;padding:34px 40px">
+    <div class="crowd"><canvas class="sp" data-sp="hero" data-scale="4"></canvas><canvas class="sp" data-sp="staff2" data-scale="4"></canvas><canvas class="sp" data-sp="staff3" data-scale="4"></canvas><canvas class="sp" data-sp="staff4" data-scale="4"></canvas><canvas class="sp" data-sp="friend" data-scale="4"></canvas><canvas class="sp" data-sp="mentor" data-scale="4"></canvas><canvas class="sp" data-sp="ryu" data-scale="4"></canvas><canvas class="sp" data-sp="won" data-scale="4"></canvas><canvas class="sp" data-sp="budget" data-scale="4"></canvas><canvas class="sp" data-sp="student" data-scale="4"></canvas><canvas class="sp" data-sp="staff1" data-scale="4"></canvas><canvas class="sp" data-sp="staff2" data-scale="4"></canvas><canvas class="sp" data-sp="staff3" data-scale="4"></canvas><canvas class="sp" data-sp="staff4" data-scale="4"></canvas><canvas class="sp" data-sp="friend" data-scale="4"></canvas><canvas class="sp" data-sp="mentor" data-scale="4"></canvas><canvas class="sp" data-sp="ryu" data-scale="4"></canvas><canvas class="sp" data-sp="won" data-scale="4"></canvas><span data-s="1" style="display:contents"><canvas class="sp" data-sp="staff1" data-scale="4"></canvas><canvas class="sp" data-sp="staff4" data-scale="4"></canvas><canvas class="sp" data-sp="ryu" data-scale="4"></canvas><canvas class="sp" data-sp="student" data-scale="4"></canvas><canvas class="sp" data-sp="staff3" data-scale="4"></canvas><canvas class="sp" data-sp="mentor" data-scale="4"></canvas><canvas class="sp" data-sp="budget" data-scale="4"></canvas><canvas class="sp" data-sp="staff2" data-scale="4"></canvas><canvas class="sp" data-sp="friend" data-scale="4"></canvas><canvas class="sp" data-sp="won" data-scale="4"></canvas><canvas class="sp" data-sp="staff1" data-scale="4"></canvas><canvas class="sp" data-sp="staff4" data-scale="4"></canvas><canvas class="sp" data-sp="ryu" data-scale="4"></canvas><canvas class="sp" data-sp="student" data-scale="4"></canvas></span></div>
+  </div>
+  <div class="win gold" style="left:80px;top:700px;padding:20px 34px;text-align:center"><span style="font:68px var(--pixel-big);color:var(--gold)" data-count="18|32|명">32명</span></div>
+  <p class="p" style="position:absolute;left:400px;top:722px" data-s="1">인원이 늘어 <b class="mark">아주 기쁘다!</b></p>
+  <aside class="note">창설 시에는 18명이었는데, 현재는 32명까지 인원들이 늘어나 아주 기쁩니다.
+(참고: 2026년도 활동계획서에는 19명, 6월 보조금 공문에는 20명으로 적혀 있음. 화면은 말씀하신 18명 → 32명 기준.)</aside>
+</section>
+
+<!-- ================= STAGE 6 ================= -->
+
+<section class="slide stage-card" data-title="STAGE 6 · 전직 퀘스트 AI챔피언 블랙" data-stage="STAGE 6">
+  <canvas class="bg dim" data-scene="server"></canvas>
+  <div data-lit="5" class="stage-card" style="background:none">
+    <div class="no">STAGE 6</div>
+    <div class="ttl">전직 퀘스트 · 블랙</div>
+    <div class="sub">AI챔피언 전문인재 과정, 그리고 SNS Solution</div>
+    <div class="bar"><i></i><i></i><i></i><i></i><i></i></div>
+  </div>
+  <div class="year">2026</div>
+  <aside class="note">이렇게 적극적으로 AI 활동을 해 오면서, 한 가지 놓치고 싶지 않은 공고가 떴습니다.</aside>
+</section>
+
+<section class="slide" data-title="놓치고 싶지 않은 공고" data-stage="STAGE 6">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">QUEST NOTICE</div><div class="h2" style="margin-top:10px">놓치고 싶지 않은 공고</div></div>
+  <figure class="gifcard" style="left:80px;top:250px;width:760px"><img src="assets/media/champion-black-notice.png" alt="2026년 AI챔피언 고급과정 교육생 선발 및 입교식 개최 공문"><figcaption>행정안전부 · 2026년 AI챔피언 고급과정</figcaption></figure>
+  <div style="position:absolute;left:920px;right:80px;top:270px">
+    <div class="win gold" style="position:relative"><span class="tag">CLASS</span>
+      <div class="h2" style="font-size:52px">AI챔피언 <span style="color:#fff;background:#000;padding:0 14px;border:4px solid var(--cream)">블랙</span></div>
+      <p class="p" style="margin-top:20px">AI챔피언 전문인재 과정<br>일명 <b class="mark">거점리더</b> 과정</p>
+    </div>
+    <p class="p" style="margin-top:36px" data-s="1">그린 · 블루를 지나<br>이번엔 <b class="mark">최상위 과정</b>에 도전</p>
+  </div>
+  <aside class="note">이렇게 적극적으로 AI 활동을 해 오면서, 한 가지 놓치지 않고 싶은 공고가 떴는데, 바로 AI챔피언 전문인재 과정, 소위 AI챔피언 블랙이라고 불리는 과정이었습니다.
+(공문: 행안부 「2026년 AI챔피언 고급과정 교육생 선발 및 입교식 개최」. 그린 2025.10.24, 블루 2025.12 취득.)</aside>
+</section>
+
+<section class="slide" data-title="선발 과정, 4.7 대 1" data-stage="STAGE 6">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">SELECTION</div><div class="h2" style="margin-top:10px">신청서 → 시험 → 면접, <span class="mark">4.7 대 1</span></div></div>
+  <div class="tree" style="top:270px">
+    <div class="node shown"><div class="ic" style="font-size:44px">신청</div><b>신청서</b><small>&nbsp;</small></div>
+    <div class="link" data-s="1"></div>
+    <div class="node" data-s="1"><div class="ic" style="font-size:44px">시험</div><b>AI 지식 온라인 시험</b><small>&nbsp;</small></div>
+    <div class="link" data-s="2"></div>
+    <div class="node" data-s="2"><div class="ic" style="font-size:44px">면접</div><b>면접 시험</b><small>&nbsp;</small></div>
+    <div class="link" data-s="3"></div>
+    <div class="node" data-s="3"><div class="ic mark" style="font-size:44px">합격</div><b>블랙 선발</b><small>2026.05.07 입교</small></div>
+  </div>
+  <figure class="gifcard pop" style="left:80px;top:610px;width:660px" data-s="3"><img src="assets/media/champion-black-selection.png" alt="행안부 보도 AI 리더 공무원 육성" style="height:200px;object-fit:cover;object-position:top"><figcaption>행안부 · 225명 지원 · 4.7 대 1 · 48명 선발</figcaption></figure>
+  <div class="win gold pop" style="left:860px;top:640px;padding:22px 34px" data-s="3"><span style="font:60px var(--pixel-big);color:var(--gold)">4.7 : 1</span><span class="p" style="margin-left:20px">통과!</span></div>
+  <aside class="note">신청서를 내고, AI 관련 지식 온라인 시험, 그리고 면접 시험을 거쳐 4.7 대 1을 통과하여 블랙 과정에 선발되었습니다.
+(행안부 보도 2026.05.07: 225명 지원, 4.7 대 1 경쟁률, 48명 선발. 업적 로그 2026.05.07 행정안전부 AI 전문인재교육 선발.)</aside>
+</section>
+
+<section class="slide" data-title="내년에 준비하신다면" data-stage="STAGE 6">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">TIP · 내년에 도전하실 분께</div><div class="h2" style="margin-top:10px">“AI 잘해요”만으로는 안 붙습니다</div></div>
+  <div style="position:absolute;left:80px;right:80px;top:290px;display:grid;grid-template-columns:repeat(3,1fr);gap:30px">
+    <div class="win" style="position:relative" data-s="1"><span class="tag">PAST</span><div class="h3">조직을 위해<br>무엇을 해 왔고</div></div>
+    <div class="win" style="position:relative" data-s="2"><span class="tag">NOW</span><div class="h3">무엇을<br>할 수 있고</div></div>
+    <div class="win" style="position:relative" data-s="3"><span class="tag">NEXT</span><div class="h3">무엇을<br>계획하고 있는지</div></div>
+  </div>
+  <div class="win gold" style="left:80px;right:80px;top:600px;padding:30px 40px" data-s="4">
+    <div class="h3">+ 리더로서의 자세</div>
+    <p class="p" style="margin-top:12px">내년에 준비하실 분이라면, 지금 <b class="mark">속해 있는 기관에 많은 기여</b>를 해 두세요.</p>
+  </div>
+  <aside class="note">이 과정은 AI챔피언 거점리더라고도 불리는 과정인데, 내가 단순히 AI만 잘한다, 이런 것도 할 수 있다 보다는, 나는 조직을 위해 무엇을 해 왔고, 어떤 것을 할 수 있고, 어떤 것을 계획하고 있다라는 능력과 조직에 대한 계획, 리더로서의 자세가 종합되어 있어야 붙을 수 있습니다.
+내년에 준비를 원하시면 속해 있는 기관에 많은 기여를 하라고 말씀드리고 싶습니다.</aside>
+</section>
+
+<section class="slide" data-title="전설의 NPC들과 재회" data-stage="STAGE 6">
+  <canvas class="bg dim" data-scene="classroom"></canvas>
+  <div class="top-left"><div class="kicker">PARTY · AI챔피언 블랙 동기</div><div class="h2" style="margin-top:10px">걸출한 인재들을 만나다</div></div>
+  <div style="position:absolute;left:80px;right:80px;top:280px;display:grid;grid-template-columns:repeat(3,1fr);gap:36px">
+    <div class="win gold" style="position:relative;text-align:center"><span class="tag">REUNION</span>
+      <canvas class="sp" data-sp="mentor" data-scale="8" style="position:relative;display:block;margin:4px auto 16px"></canvas>
+      <div class="h3">오대웅 팀장님</div><div style="font:20px var(--pixel);color:var(--gold);margin-top:8px">양산시</div>
+      <p class="p" style="font-size:26px;margin-top:12px">2년 전 전화로 코딩을<br>가르쳐 주신 그분을<br><b class="mark">현실에서</b> 만나다</p></div>
+    <div class="win" style="position:relative;text-align:center" data-s="1"><span class="tag">NPC</span>
+      <canvas class="sp" data-sp="ryu" data-scale="8" style="position:relative;display:block;margin:4px auto 16px"></canvas>
+      <div class="h3">류주임님</div><div style="font:20px var(--pixel);color:var(--gold);margin-top:8px">당시 라이징스타 · 지금은 그냥 스타</div>
+      <p class="p" style="font-size:26px;margin-top:12px">그때는 떠오르던 분,<br>지금은 <b class="mark">그냥 스타</b></p></div>
+    <div class="win" style="position:relative;text-align:center" data-s="2"><span class="tag">NPC</span>
+      <canvas class="sp" data-sp="won" data-scale="8" style="position:relative;display:block;margin:4px auto 16px"></canvas>
+      <div class="h3">원준석 팀장님</div><div style="font:20px var(--pixel);color:var(--gold);margin-top:8px">경기도 AI담당 팀장</div>
+      <p class="p" style="font-size:26px;margin-top:12px">경기도 AI를<br>이끄는 분</p></div>
+  </div>
+  <aside class="note">AI챔피언 과정에서 2년 전 나에게 도움을 준 오대웅 팀장님을 현실에서 만나고, 당시에는 라이징스타, 지금은 그냥 스타가 된 류주임님, 경기도 AI담당 팀장님인 원준석 팀장님 등등 걸출한 인재들을 만나게 되었습니다.
+(STAGE 1의 NPC 오대웅 팀장님 카드와 같은 캐릭터. '류주임님'은 원문 표기 그대로.)</aside>
+</section>
+
+<section class="slide" data-title="NEW SKILL: 브라우저 확장 프로그램" data-stage="STAGE 6">
+  <div class="stars"></div>
+  <div class="burst" data-s="1"></div>
+  <div class="top-left"><div class="kicker">POWER UP</div><div class="h2" style="margin-top:10px">AI 활용력이 <span class="mark">폭발적으로</span> 상승</div></div>
+  <div class="hp win" style="left:80px;top:300px;width:640px;padding:26px 30px" data-hp="55,100"><span>AI 활용력</span><div class="bar"><i></i></div></div>
+  <div class="unlock pop" style="left:300px;top:450px;width:1100px;transform:none" data-s="1" data-fx="flash">
+    <canvas class="sp" data-sp="bolt" data-scale="24" style="position:static;margin:auto"></canvas>
+    <div>
+      <div class="lbl">★ NEW SKILL UNLOCKED</div>
+      <div class="ttl">콘솔 프로그램 ·<br><span class="mark">브라우저 확장 프로그램</span></div>
+      <div class="meta">AI챔피언 블랙 과정에서 배운 개념</div>
+    </div>
+  </div>
+  <div class="flash"></div>
+  <aside class="note">이 과정을 지나오며 폭발적으로 AI 활용력이 상승했습니다. 여기서 콘솔 프로그램이라는, 브라우저 확장 관련된 개념을 배우게 되는데, 우리 동호회에서의 아주 뿌듯한 개발 사례와 연계됩니다.</aside>
+</section>
+
+<section class="slide" data-title="성남 SNS Solution" data-stage="STAGE 6">
+  <canvas class="bg dim" data-scene="server"></canvas>
+  <div class="top-left"><div class="kicker">GUILD PROJECT</div><div class="h1" style="margin-top:10px">성남 <span class="mark">SNS Solution</span></div></div>
+  <div class="gifcard" style="left:80px;top:290px;width:900px;cursor:pointer"><video src="assets/media/sns-solution-demo.mp4" muted loop playsinline autoplay style="display:block;width:100%"></video><figcaption>실제 화면 · 동호회 사진우 제작</figcaption></div>
+  <div style="position:absolute;left:1040px;right:80px;top:300px">
+    <p class="p">우리 동호회의<br><b class="mark">아주 뿌듯한</b> 개발 사례</p>
+    <button class="vbtn" data-video="snsDemo" style="margin:30px 0 0;font-size:24px;padding:12px 20px">시연 영상 크게 ▶</button>
+  </div>
+  <div class="vmodal" id="snsDemo"><div class="vbox"><div class="vbar"><span>SeongNam SNS Solution · 시연</span><button class="vclose">✕ 닫기</button></div><video src="assets/media/sns-solution-demo.mp4" playsinline preload="metadata" controls></video></div></div>
+  <aside class="note">바로 성남 SNS Solution이라는 툴입니다. (왼쪽은 적극행정 발표의 시연 원본을 소리 없이 반복 재생. '시연 영상 크게'는 처음부터 45초 재생.)</aside>
+</section>
+
+<section class="slide" data-title="서무들의 끔찍한 업무" data-stage="STAGE 6">
+  <canvas class="bg" data-scene="office:night"></canvas>
+  <canvas class="sp" data-sp="monitor" data-scale="6" style="left:740px;bottom:400px"></canvas>
+  <canvas class="sp" data-sp="staff1" data-scale="11" style="left:520px;bottom:270px"></canvas>
+  <i class="sweat" style="left:700px;top:400px"></i>
+  <div class="win" style="left:60px;top:50px;width:600px;padding:24px 30px"><span class="tag">매달 반복</span>
+    <div style="font:22px var(--pixel);color:var(--gold)">과장님 · 팀장님 한 달 SNS 활동 취합</div>
+    <div style="font:72px var(--pixel-big);margin-top:8px">25~40<span style="font-size:32px">개 / 1인</span></div>
+  </div>
+  <ul class="quest" style="position:absolute;right:70px;top:60px;width:560px;font-size:32px;background:rgba(20,24,51,.85);padding:10px 26px;border:5px solid var(--cream)">
+    <li data-s="1">게시물 링크 복사</li>
+    <li data-s="2">날짜 입력</li>
+    <li data-s="3" style="border:0">공유인지 · 생산인지 구분</li>
+  </ul>
+  <div class="win light dlg" style="font-size:62px" data-s="4"><span class="name npc">성남시의 모든 서무</span><span class="type">이걸… 매달… <em>한 분 한 분</em> 다…?</span><span class="more">▼</span></div>
+  <aside class="note">성남시의 모든 서무들은 과장님, 팀장님들의 한 달간의 SNS 활동을 취합해야 하는 끔찍한 업무가 있는데, 한 분당 약 25~40개 사이의 SNS 공유하거나 직접 쓴 게시물을 링크 복사하고, 날짜 입력하고, 공유인지 생산인지 구분해서 취합하는 아주 끔찍한 업무가 있습니다.
+(마지막 대사는 연출용.)</aside>
+</section>
+
+<section class="slide" data-title="크롤링도, AI 브라우저도 막혔다" data-stage="STAGE 6">
+  <canvas class="bg dim" data-scene="server"></canvas>
+  <div class="top-left"><div class="kicker">FAILED ATTEMPTS</div><div class="h2" style="margin-top:10px">자동화해 보자! … 그런데</div></div>
+  <div style="position:absolute;left:80px;right:80px;top:300px;display:grid;grid-template-columns:1fr 1fr;gap:44px">
+    <div class="win" style="position:relative" data-s="1"><span class="tag">TRY 1</span><div class="h3">크롤링</div>
+      <p class="p" style="margin-top:14px">robots.txt라는 <b>불펌 금지 규칙</b><br>페이스북은 크롤링을 막아 둠</p>
+      <div class="stamp" style="right:30px;bottom:20px;font-size:44px;padding:6px 18px;animation:none">✕ 차단</div></div>
+    <div class="win" style="position:relative" data-s="2"><span class="tag">TRY 2</span><div class="h3">Comet 같은 AI 브라우저</div>
+      <p class="p" style="margin-top:14px">특정 프롬프트로 추출해 보니<br><b>안정성이 너무 떨어짐</b></p>
+      <div class="stamp" style="right:30px;bottom:20px;font-size:44px;padding:6px 18px;animation:none">✕ 불안정</div></div>
+  </div>
+  <div class="win light" style="left:80px;right:80px;bottom:80px;padding:24px 40px;font:700 38px var(--body);text-align:center" data-s="3">…포기하고 있던 찰나</div>
+  <aside class="note">이것을 자동화해 보자라는 의견이 나왔었고, 원래는 크롤링이나 Comet 같은 AI 브라우저를 활용하는 방식을 쓰려 했습니다.
+그런데 robots.txt라고 하는 불펌 금지 규칙과, 페이스북은 크롤링을 막았었고, Comet에 특정 프롬프트를 넣어서 추출하는 것은 안정성이 너무 떨어졌습니다. 포기하고 있던 찰나.</aside>
+</section>
+
+<section class="slide" data-title="블랙 과정에서 찾은 열쇠" data-stage="STAGE 6">
+  <canvas class="bg" data-scene="office"></canvas>
+  <canvas class="sp" data-sp="hero" data-scale="11" style="left:300px;bottom:270px"></canvas>
+  <canvas class="sp pop" data-sp="bang" data-scale="10" style="left:370px;bottom:540px" data-s="1"></canvas>
+  <div class="win gold pop" style="left:620px;top:120px;width:880px" data-s="1" data-fx="flash"><span class="tag">★ 깨달음</span>
+    <div class="h3">확장 프로그램이 <span class="mark">사용자 브라우저에서 직접</span> 스크롤하며 읽으면</div>
+    <p class="p" style="margin-top:14px">서버가 긁어 가는 크롤링이 아니라 → <b class="mint">보안에 위배되지 않는다</b></p>
+  </div>
+  <div class="flash"></div>
+  <div class="win light dlg" style="font-size:60px"><span class="name">사진우</span><span class="type"><em>AI챔피언 블랙 과정</em>에서 배운 그 개념…!</span><span class="more">▼</span></div>
+  <aside class="note">포기하고 있던 찰나, AI챔피언 블랙 과정에서 배운 저 개념을 통해, 확장 프로그램이 직접 스크롤링을 수행할 경우 보안에 위배되지 않음을 알게 됐습니다.</aside>
+</section>
+
+<section class="slide" data-title="보스전: 공유냐 생산이냐" data-stage="STAGE 6">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">BOSS BATTLE</div><div class="h2" style="margin-top:10px">공유냐, 생산이냐</div></div>
+  <div class="win" style="left:80px;top:240px;width:680px;padding:30px 34px 22px"><span class="tag">원래 로직</span>
+    <p class="p">페이스북 <b class="mark">공유 테두리의 난수값</b>을 검출<br>있으면 → 공유 · 없으면 → 생산</p>
+<pre class="code"><span class="c">// facebook-backend.js · 공유 테두리의 '난수' 클래스명</span>
+<span class="k">const</span> FALLBACK_BORDER_CLASSES = [
+  <span class="rnd">"x8cjs6t"</span>, <span class="rnd">"x3sou0m"</span>, <span class="rnd">"x80vd3b"</span>, <span class="rnd">"x12u81az"</span>
+];
+
+<span class="c">// collector.js · 테두리가 있으면 → 공유</span>
+<span class="k">const</span> sharedFrame = findFacebookSharedFrame(article);
+<span class="k">if</span> (sharedFrame) <span class="k">return</span> verdict(<span class="s">"공유"</span>);</pre>
+    <span class="code-src">GitHub · GnuDaSsa/SeongNam-SNS-Solution 발췌(일부 생략)</span></div>
+  <div style="position:absolute;left:800px;right:80px;top:250px">
+    <div style="font:22px var(--pixel);color:#e0465a;margin-bottom:14px">▼ 로직을 뚫고 나오는 몬스터들</div>
+    <div class="qb" style="position:relative;margin:0 0 18px 24px" data-s="1">릴스 · 뉴스기사 · 유튜브 공유 → 테두리가 없음</div>
+    <div class="qb" style="position:relative;margin:0 0 18px 24px" data-s="2">남이 냅다 태그해 버린 글</div>
+    <div class="qb" style="position:relative;margin:0 0 18px 24px" data-s="3">“생일 축하합니다”</div>
+    <div class="qb" style="position:relative;margin:0 0 18px 24px" data-s="4">“○○님은 기분이 좋아요”</div>
+  </div>
+  <div class="hp win" style="left:80px;top:742px;width:680px;padding:14px 30px" data-hp="100,100,100,100,100"><span style="color:#e0465a">BOSS · 공유/생산 구분</span><div class="bar"><i style="background:#e0465a"></i></div></div>
+  <aside class="note">어려운 점은 공유와 생산의 구분이었는데, 원래 로직은 페이스북 공유 테두리의 난수값(x8cjs6t 같은 랜덤 클래스명)이라고 하는 것을 검출해서 그것이 있으면 공유, 없으면 생산으로 보는 것이었습니다.
+그런데 릴스라던가 뉴스기사 공유, 유튜브 공유 등은 이러한 테두리가 발생하지도 않고, 생산하는 글에 있어서도 냅다 남이 태그해 버린 글, 생일 축하합니다, ~~님은 기분이 좋아요 이러한 케이스들을 걸러내기가 쉽지 않았습니다.</aside>
+</section>
+
+<section class="slide" data-title="동호회원과 16번의 검증" data-stage="STAGE 6">
+  <canvas class="bg" data-scene="office"></canvas>
+  <canvas class="sp" data-sp="hero" data-scale="10" style="left:200px;bottom:270px"></canvas>
+  <canvas class="sp flip" data-sp="staff1" data-scale="10" style="left:1220px;bottom:270px"></canvas>
+  <div class="win" style="left:1150px;top:250px;padding:8px 14px;font:20px var(--pixel)">취합 담당 · DLC 동호회원</div>
+  <canvas class="sp" data-sp="mail" data-scale="6" style="left:520px;top:330px;animation:pass 1.2s steps(8) infinite"></canvas>
+  <div class="win gold" style="left:540px;top:110px;text-align:center;padding:22px 40px"><span class="tag">검증</span><div style="font:84px var(--pixel-big);color:var(--gold)" data-count="0|16|회">16회</div></div>
+  <div class="hp win" style="left:60px;top:50px;width:420px;padding:16px 22px" data-hp="100,0"><span style="color:#e0465a">BOSS HP</span><div class="bar"><i style="background:#e0465a"></i></div></div>
+  <div class="win light dlg"><span class="name npc">나레이션</span><span class="type">다행히 홍보실적 취합 담당자가 <em>우리 동호회원</em>이었다. 메신저로 파일을 주고받으며…</span><span class="more">▼</span></div>
+  <div class="win light dlg" style="font-size:52px" data-s="1"><span class="name">사진우</span><span class="type">약 16번의 검증 끝에, 공유와 생산을 <em>완벽하게 구분</em>하는 로직 완성!</span><span class="more">▼</span></div>
+  <aside class="note">다행히 이 모든 홍보실적 취합 담당자가 우리 동호회원이었고, 그분과 자주 메신저로 파일을 주고받으며 약 16회 정도 검증을 거치며 공유/생산도 완벽하게 구분하는 로직을 구축했습니다.</aside>
+</section>
+
+<section class="slide" data-title="스탠드얼론? 그거 됩니다" data-stage="STAGE 6">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">DEPLOY</div><div class="h2" style="margin-top:10px">배포 방식</div></div>
+  <div style="position:absolute;left:80px;right:80px;top:280px;display:flex;align-items:center;gap:22px;font:700 34px var(--body)">
+    <span class="win" style="position:static;padding:18px 26px">압축파일 배포</span><span class="mark" style="font:40px var(--pixel)">▶</span>
+    <span class="win" style="position:static;padding:18px 26px">각자 PC에 다운로드</span><span class="mark" style="font:40px var(--pixel)">▶</span>
+    <span class="win gold" style="position:static;padding:18px 26px">브라우저 확장 프로그램 등록</span>
+  </div>
+  <div class="qb" style="left:120px;top:500px;opacity:.75;filter:grayscale(.6)" data-s="1"><span style="font:18px var(--pixel);color:#5a5f86;display:block">◀◀ STAGE 3 · 정보통신과</span>스탠드얼론 방식은 안 돼요?</div>
+  <div class="win gold pop" style="left:700px;top:520px;width:820px" data-s="2"><span class="tag">COUNTER!</span>
+    <div class="h3">이게 바로 <span class="mark">스탠드얼론</span>입니다</div>
+    <p class="p" style="margin-top:10px">정보통신과가 원했던 방식 그대로 → <b class="mint">배포를 막을 수 없었다</b></p></div>
+  <aside class="note">그리고 이것을 배포할 때, 압축파일 형태로 아예 활용자가 로컬에 다운받고 그것을 브라우저 확장 프로그램으로 등록하게끔 했고, 정보통신과에서 원했던 스탠드얼론 방식과도 일치했기 때문에 그들도 나의 배포를 막을 수 없었습니다.
+(STAGE 3 질문 공격 장의 '스탠드얼론 방식은 안 돼요?'를 다시 불러오는 회수 장면.)</aside>
+</section>
+
+<section class="slide" data-title="공문으로 공식화" data-stage="STAGE 6">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">OFFICIAL</div><div class="h2" style="margin-top:10px">취합 공문에 <span class="mark">공식 반영</span></div></div>
+  <figure class="gifcard" data-zoom style="left:80px;top:250px;width:860px"><img src="assets/media/official-sns-notice.jpg" alt="2026년 9월 SNS 홍보 실적 제출 공문"><figcaption>공보관 · 2026년 9월 SNS 홍보 실적 제출 [전 직원 공람]</figcaption></figure>
+  <div style="position:absolute;left:1010px;right:80px;top:270px">
+    <div class="vs" style="position:static;grid-template-columns:1fr 80px 1fr">
+      <div><div class="big" style="font-size:80px">30<span style="font-size:36px">분</span></div><div class="lab">기존</div></div>
+      <div class="arrow" style="font-size:44px">▶</div>
+      <div><div class="big mark" style="font-size:80px">3<span style="font-size:36px">분</span></div><div class="lab">자동화</div></div>
+    </div>
+  </div>
+  <figure class="gifcard pop" data-zoom style="left:1010px;top:520px;width:510px" data-s="1"><img src="assets/media/article-sns-30to3.png" alt="반복 공문 자동생성 도구로 30분 업무를 3분으로 기사" style="height:250px;object-fit:cover;object-position:top"><figcaption>보도 · 30분 업무를 3분으로</figcaption></figure>
+  <aside class="note">이 프로그램은 결국 취합 부서에서 공식으로 취합 공문에 반영하도록 공식화되었습니다.
+공문: 2026년 9월 SNS 홍보 실적 제출 — 'AI 자동화 툴을 적극 활용해 주시기 바랍니다', 자료명 [자동화]페이스북 공유/생산 SNS실적 취합기(AI반도체과 사진우 주무관 제작).
+30분 → 3분은 적극행정 발표와 보도 기준.</aside>
+</section>
+
+<section class="slide" data-title="사라지는 알바 자리" data-stage="STAGE 6">
+  <canvas class="bg" data-scene="office" style="filter:grayscale(.7) brightness(.8)"></canvas>
+  <canvas class="sp" data-sp="student" data-scale="11" style="left:1100px;bottom:270px;filter:grayscale(.4)"></canvas>
+  <canvas class="sp" data-sp="hero" data-scale="11" style="left:300px;bottom:270px"></canvas>
+  <div class="win" style="left:1040px;top:230px;padding:8px 16px;font:22px var(--pixel)">취합 업무 대학생 아르바이트</div>
+  <div class="win light dlg" style="font-size:48px"><span class="name npc">나레이션</span><span class="type">이 취합 업무만 하던 대학생 알바의 자리도, <em>내년에는 사라지게</em> 되었다.</span><span class="more">▼</span></div>
+  <div class="win light dlg" style="font-size:50px" data-s="1"><span class="name">사진우</span><span class="type">AI의 인간 대체를 제가 어느 정도 이뤄 낸 것 같아… <em>마음이 아픕니다.</em></span><span class="more">▼</span></div>
+  <div class="win light dlg" data-s="2"><span class="name">사진우</span><span class="type">하지만 이런 단순 업무에 사람을 쓰는 게 옳다고 생각하지 않습니다.<br>미안하지만, 장기적으로는 <em>이게 맞고, 혁신</em>이라고 생각합니다.</span><span class="more">▼</span></div>
+  <aside class="note">이 취합 업무만 하던 대학생 알바의 자리 또한 내년에 사라지게 만들었다… AI의 인간 대체를 내가 어느 정도 이뤄낸 것 같아 마음이 아프다.
+하지만 이런 단순 업무에 사람을 쓰는 게 옳다고 생각하지 않기에, 미안하지만 장기적으로 봤을 땐 이게 맞고 혁신이라고 생각한다.
+(톤 주의: 웃음 포인트가 아니라 잠깐 진지해지는 장. 화면도 흑백으로 가라앉힘.)</aside>
+</section>
+
+<section class="slide" data-title="감사 인사, 그리고 버그 0건" data-stage="STAGE 6">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">AFTER STORY</div><div class="h2" style="margin-top:10px">정말 많은 분들께 <span class="mark">감사 인사</span>를 받았다</div></div>
+  <div class="win" style="left:80px;top:260px;width:680px;height:560px"><span class="tag">MESSAGES · 실제 메신저</span>
+    <figure style="position:absolute;left:50%;top:34px;transform:translateX(-50%);margin:0;border:5px solid var(--cream);box-shadow:8px 8px 0 rgba(0,0,0,.35);background:#fff"><img src="assets/media/sns-feedback.png" alt="SNS 실적 취합기 사용 후 받은 실제 감사 메신저" style="display:block;height:470px;width:auto"></figure>
+    <canvas class="sp pop" data-sp="heart" data-scale="7" style="left:575px;top:40px" data-s="1"></canvas>
+  </div>
+  <div class="win gold" style="left:830px;right:80px;top:260px;height:560px"><span class="tag">BUG REPORT</span>
+    <div style="display:flex;align-items:flex-end;gap:34px;height:330px;margin-top:20px;padding:0 20px;border-bottom:5px solid var(--cream)">
+      <div style="flex:1;text-align:center"><div style="height:280px;background:#e0465a"></div></div>
+      <div style="flex:1;text-align:center"><div style="height:230px;background:#e0465a"></div></div>
+      <div style="flex:1;text-align:center" data-s="2"><div style="font:44px var(--pixel-big);color:var(--mint)">0</div></div>
+      <div style="flex:1;text-align:center" data-s="2"><div style="font:44px var(--pixel-big);color:var(--mint)">0</div></div>
+    </div>
+    <div style="display:flex;gap:34px;padding:12px 20px 0;font:20px var(--pixel);color:var(--muted);text-align:center"><span style="flex:2">첫 두 달 · 문의 많음</span><span style="flex:2">최근 두 달 · 문의 없음</span></div>
+  </div>
+  <aside class="note">이 개발을 통해서 정말 많은 분들의 감사를 받았고, 정말로 뿌듯했습니다.
+첫 두 달은 버그 문의가 많이 왔는데, 지금은 두 달째 안 오고 있습니다.
+(왼쪽은 실제 받은 감사 메신저 캡처, 2026.7.30. 오른쪽 막대 높이는 분위기 연출이며 실제 건수가 아님.)</aside>
+</section>
+
+<!-- ================= STAGE 7 ================= -->
+
+<section class="slide stage-card" data-title="STAGE 7 · 특이점" data-stage="STAGE 7">
+  <canvas class="bg dim" data-scene="studio:night"></canvas>
+  <div data-lit="5" class="stage-card" style="background:none">
+    <div class="no">STAGE 7</div>
+    <div class="ttl">특이점이 오다</div>
+    <div class="sub">시장님 취임식 영상</div>
+    <div class="bar"><i></i><i></i><i></i><i></i><i></i></div>
+  </div>
+  <div class="year">2026.06</div>
+  <aside class="note">영상 활동으로 약 3건이 엘리베이터에서 상반기 내내 돌면서, 점점 특이점이 오기 시작했습니다.</aside>
+</section>
+
+<section class="slide" data-title="상반기 내내 엘리베이터에서 3편" data-stage="STAGE 7">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">ON AIR · 2026 상반기</div><div class="h2" style="margin-top:10px">엘리베이터에서 <span class="mark">약 3편</span>이 상반기 내내</div></div>
+  <div style="position:absolute;left:80px;right:80px;top:290px;display:grid;grid-template-columns:repeat(3,1fr);gap:34px">
+    <figure class="gifcard" style="position:relative"><img src="assets/media/nuzic-solomons-choice.gif" alt="솔로몬의 선택"><figcaption>솔로몬의 선택</figcaption></figure>
+    <figure class="gifcard" style="position:relative"><img src="assets/media/nuzic-dancing-sn-city.gif" alt="Dancing SN CITY"><figcaption>Dancing SN CITY</figcaption></figure>
+    <figure class="gifcard" style="position:relative"><img src="assets/media/local-government-official-mv-poster.jpg" alt="나는 지방직 공무원이다" style="aspect-ratio:16/9;object-fit:cover"><figcaption>나는 지방직 공무원이다</figcaption></figure>
+  </div>
+  <div class="win gold" style="left:80px;right:80px;bottom:80px;padding:24px 36px;text-align:center" data-s="1"><span class="p">그리고 점점 — <b class="mark">특이점</b>이 오기 시작했다</span></div>
+  <aside class="note">영상 활동으로 약 3건이 엘리베이터에 상반기 내내 돌면서, 점점 특이점이 오기 시작했습니다.
+(세 편은 앞에서 소개한 솔로몬의 선택, Dancing SN CITY, 나는 지방직 공무원이다로 묶었음. 실제 3편이 다르면 교체.)</aside>
+</section>
+
+<section class="slide" data-title="총무과의 호출" data-stage="STAGE 7">
+  <canvas class="bg" data-scene="office"></canvas>
+  <div class="win" style="left:60px;top:50px;padding:10px 20px;font:24px var(--pixel);color:var(--gold)">2026.06 · 지방선거 이후</div>
+  <canvas class="sp" data-sp="hero" data-scale="11" style="left:300px;bottom:270px"></canvas>
+  <canvas class="sp pop flip" data-sp="staff2" data-scale="11" style="left:1060px;bottom:270px" data-s="1"></canvas>
+  <div class="win pop" style="left:1040px;top:250px;padding:8px 16px;font:22px var(--pixel)" data-s="1">총무과</div>
+  <canvas class="sp pop" data-sp="bang" data-scale="10" style="left:370px;bottom:540px" data-s="1"></canvas>
+  <canvas class="sp pop" data-sp="star" data-scale="6" style="left:300px;top:180px" data-s="3"></canvas>
+  <div class="win light dlg"><span class="name npc">나레이션</span><span class="type">6월 지방선거 이후 재선되신 시장님.<br>그리고 어느 날 갑자기, <em>총무과에서 저를 불렀습니다.</em></span><span class="more">▼</span></div>
+  <div class="win light dlg" data-s="1"><span class="name npc">총무과</span><span class="type">사진우 씨의 AI 영상을 유의 깊게 보고 있어요.<br>이번 <em>시장님 취임식 영상</em>을 진우 씨에게 부탁하고 싶어요.</span><span class="more">▼</span></div>
+  <div class="win light dlg" style="font-size:60px" data-s="2"><span class="name npc">총무과</span><span class="type">비용은 <em>50만 원</em>까지 지원할게요. <em>동호회비로</em> 넣어 줄게요.</span><span class="more">▼</span></div>
+  <div class="win light dlg" style="font-size:62px" data-s="3"><span class="name">사진우 (속마음)</span><span class="type">드디어…!</span><span class="more">▼</span></div>
+  <aside class="note">6월 지방선거 이후 재선된 시장님. 어느 날 갑자기 총무과에서 나를 불렀다.
+"사진우 씨의 AI 영상을 유의 깊게 보고 있다. 사실 이번 시장님 취임식 영상을 진우 씨에게 부탁하고 싶다. 돈은 50만 원까지 지원해 줄게, 동호회비로 넣어 주마."
+(대사는 원문을 다듬은 재구성. 마지막 '드디어…!'는 연출용.)</aside>
+</section>
+
+<section class="slide" data-title="빌드업이 회수되는 순간" data-stage="STAGE 7">
+  <canvas class="bg dim" data-scene="lobby"></canvas>
+  <div class="top-left"><div class="kicker">PAYOFF</div><div class="h2" style="margin-top:10px">지금까지의 빌드업이 <span class="mark">회수</span>되는 순간</div></div>
+  <div class="win" style="left:80px;top:290px;width:620px"><span class="tag">STAGE 4</span>
+    <div class="h3">지금까지 만든 AI 영상들</div>
+    <p class="p" style="margin-top:10px">엘리베이터 · SNS로 쌓인 이름</p>
+    <div class="mark" style="font:30px var(--pixel);margin-top:18px">→ 의뢰를 불러왔다</div></div>
+  <div class="win" style="left:80px;top:570px;width:620px" data-s="1"><span class="tag">STAGE 5</span>
+    <div class="h3">내가 만든 동호회 DLC</div>
+    <p class="p" style="margin-top:10px">공식 지원금이 들어오는 통로</p>
+    <div class="mark" style="font:30px var(--pixel);margin-top:18px">→ 제작 지원 수단이 되었다</div></div>
+  <div class="mark" style="position:absolute;left:740px;top:530px;font:72px var(--pixel)" data-s="2">▶</div>
+  <div class="win gold pop" style="left:860px;right:80px;top:390px;text-align:center;padding:44px 40px" data-s="2"><span class="tag">QUEST</span>
+    <div class="h2" style="font-size:52px">시장님 취임식 영상</div>
+    <p class="p" style="margin-top:16px">제작비 <b class="mark">50만 원</b> · 동호회비로 지원</p></div>
+  <aside class="note">내가 지금까지 해 온 AI 영상들이 빌드업이 되어 의뢰를 가져왔고, 내가 만든 동호회가 나에게 직접적으로 제작 지원을 해 줄 수 있는 수단이 되었습니다.
+(STAGE 3의 '자부담 문제'가 동호회라는 통로로 풀린 장면이기도 함.)</aside>
+</section>
+
+<section class="slide" data-title="Seedance 2.0을 써 볼 계기" data-stage="STAGE 7">
+  <div class="stars"></div>
+  <div class="burst" data-s="1"></div>
+  <div class="top-left"><div class="kicker">TURNING POINT</div><div class="h2" style="margin-top:10px">제작 지원 덕분에,<br><span class="mark">가장 비싼 영상 툴</span>을 써 볼 기회</div></div>
+  <div class="win" style="left:80px;top:400px;width:600px"><span class="tag">평소</span>
+    <div class="h3">Grok Imagine</div>
+    <p class="p" style="margin-top:10px">지금까지 영상은 주로 이걸로</p></div>
+  <div class="mark" style="position:absolute;left:720px;top:450px;font:64px var(--pixel)">+</div>
+  <div class="win gold pop" style="left:820px;right:80px;top:380px;padding:40px 44px" data-s="1" data-fx="flash"><span class="tag">★ FIRST TRY</span>
+    <div class="h2" style="font-size:56px">Seedance 2.0</div>
+    <p class="p" style="margin-top:12px">엄청나게 비싼 툴 — 이번 지원을 계기로 <b class="mark">처음 제대로 활용</b></p></div>
+  <div class="flash"></div>
+  <aside class="note">원래 Grok Imagine이라는 툴로 만들었던 나는, 이번 지원을 기회로 삼아서 Seedance 2.0이라고 하는 엄청나게 비싼 툴을 활용해 보는 터닝포인트로 삼았습니다.
+(툴을 갈아탄 게 아니라, 가장 비싼 영상 툴을 써 볼 수 있게 된 계기라는 점을 강조.)</aside>
+</section>
+
+<section class="slide" data-title="3주간 미친 듯이" data-stage="STAGE 7">
+  <canvas class="bg" data-scene="office:night"></canvas>
+  <canvas class="sp" data-sp="monitor" data-scale="6" style="left:740px;bottom:400px"></canvas>
+  <canvas class="sp talk" data-sp="hero" data-scale="11" style="left:420px;bottom:270px"></canvas>
+  <i class="sweat" style="left:610px;top:420px"></i>
+  <div class="win gold" style="right:80px;top:70px;text-align:center;padding:24px 44px"><span class="tag">DAY</span><div style="font:84px var(--pixel-big);color:var(--gold)" data-count="0|21|일">21일</div><div style="font:20px var(--pixel);color:var(--muted)">약 3주</div></div>
+  <div class="win light dlg" style="font-size:62px"><span class="name">사진우</span><span class="type">그렇게 약 3주간, <em>미친 듯이</em> 영상을 만들었습니다.</span><span class="more">▼</span></div>
+  <aside class="note">그렇게 약 3주간 미친 듯이 영상을 만들었습니다.</aside>
+</section>
+
+<section class="slide" data-title="변수: 공직선거법" data-stage="STAGE 7">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">PLOT TWIST</div><div class="h2" style="margin-top:10px">원래는 취임식 <span class="mark">도중</span>에 틀 영상이었다</div></div>
+  <div class="win" style="left:80px;top:300px;width:640px"><span class="tag">원래 계획</span>
+    <div class="h3">취임식 진행 중 상영</div>
+    <div class="stamp" style="right:30px;bottom:-10px;font-size:40px;padding:6px 18px" data-s="1">공직선거법</div></div>
+  <div class="win light" style="left:80px;top:560px;width:640px;padding:22px 30px;font:600 30px/1.5 var(--body)" data-s="1">행사 도중 사람들을 붙잡아 두고 영상을 트는 것은 <b style="color:#d0314f">선거법 위반</b>이라는 판단</div>
+  <div class="mark" style="position:absolute;left:770px;top:420px;font:72px var(--pixel)" data-s="2">▶</div>
+  <div class="win gold pop" style="left:880px;right:80px;top:340px;text-align:center;padding:50px 40px" data-s="2"><span class="tag">변경</span>
+    <div class="h2" style="font-size:54px">취임식 <span class="mark">식전영상</span>으로</div>
+    <p class="p" style="margin-top:14px">출근길, 시청 로비에서 상영</p></div>
+  <aside class="note">원래는 시장님 취임식 도중에 재생될 영상이었지만, 공직선거법 때문에, 사람들을 어떠한 행사 도중에 가둬 놓고 영상 트는 것은 선거법 위반이라고 하여 시장님 취임식 식전영상으로 틀어 놓는 영상이 되었습니다.
+(법적 판단은 당시 들은 설명 기준. 조문까지 확인한 것은 아님 — 질문이 나오면 '그렇게 안내받았다'로 답하는 게 안전.)</aside>
+</section>
+
+<section class="slide" data-title="출근길, 취임식 식전영상" data-stage="STAGE 7">
+  <canvas class="bg dim" data-scene="hall"></canvas>
+  <div class="top-left"><div class="kicker">ON AIR · 시장님 취임식</div><div class="h2" style="margin-top:10px">출근길, 시청 로비에 내 영상이</div></div>
+  <figure class="gifcard" style="left:80px;top:240px;width:700px"><video src="assets/media/inauguration-on-site.mp4" poster="assets/media/inauguration-on-site-poster.png" muted loop playsinline autoplay style="display:block;width:100%"></video><figcaption>성남시청 로비 전광판 · 현장 상영</figcaption></figure>
+  <figure class="gifcard" style="left:820px;top:240px;width:700px"><video src="assets/media/inauguration-ceremony-video.mp4" poster="assets/media/inauguration-ceremony-poster.jpg" controls playsinline preload="metadata" style="display:block;width:100%"></video><figcaption>시장님 취임식 식전영상 · 원본 (39초)</figcaption></figure>
+  <div class="win gold" style="left:80px;right:80px;bottom:60px;padding:22px 36px;text-align:center" data-s="1"><span class="p">NEW GOAL <b class="mark">“시청 곳곳에 나, 혹은 내 영상이”</b> — 진행도 ▲</span></div>
+  <aside class="note">시장님 취임식 식전영상으로 틀어 놓은 영상. 왼쪽은 나주 강의 52장의 시청 로비 현장 촬영(10.5초, 소리 없이 반복), 오른쪽은 취임식 영상 원본(39초, 재생 버튼으로 시작).
+(마지막 줄은 STAGE 3 'NEW GOAL' 장의 회수. 빼도 됨.)</aside>
+</section>
+
+<section class="slide" data-title="시장님 취임식 영상 · 풀버전" data-stage="STAGE 7">
+  <div class="stars"></div>
+  <figure class="gifcard" style="left:120px;top:50px;width:1360px"><video src="assets/media/inauguration-full.mp4" poster="assets/media/inauguration-full.jpg" controls playsinline preload="metadata" style="display:block;width:100%"></video><figcaption>시장님 취임식 식전영상 · 풀버전 (4분 17초)</figcaption></figure>
+  <aside class="note">시장님 취임식 식전영상 풀버전. 화면 가득 재생 — 재생 버튼으로 시작, 장을 넘기면 정지. 영상 위 전체화면 버튼으로 더 크게도 가능.
+(YouTube WMvIx9srf24 풀버전 4분 17초. 시간이 부족하면 앞부분만.)</aside>
+</section>
+
+<section class="slide" data-title="재탕, 또 재탕" data-stage="STAGE 7">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">REPLAY</div><div class="h2" style="margin-top:10px">한 번 만든 영상이, <span class="mark">계속</span> 돌아간다</div></div>
+  <div style="position:absolute;left:80px;right:80px;top:290px;display:flex;align-items:center;gap:22px;font:700 34px var(--body)">
+    <span class="win" style="position:static;padding:18px 26px">시장님 취임식 식전영상</span><span class="mark" style="font:40px var(--pixel)">▶</span>
+    <span class="win" style="position:static;padding:18px 26px" data-s="1">성남 시민의 날 행사</span><span class="mark" style="font:40px var(--pixel)" data-s="2">▶</span>
+    <span class="win gold" style="position:static;padding:18px 26px" data-s="2">청년청소년재단 · 상영 중</span>
+  </div>
+  <div class="hp win" style="left:80px;top:500px;width:900px;padding:26px 30px" data-hp="35,60,80,100"><span>AI 영상 어그로</span><div class="bar"><i></i></div></div>
+  <div class="win light" style="left:80px;top:680px;width:900px;padding:22px 34px;font:700 34px var(--body)" data-s="3">취임식 영상 사건 이후, AI 영상 어그로가 <span style="color:#d0314f">정말 크게</span> 올라갔다</div>
+  <figure class="gifcard" style="left:1060px;top:470px;width:460px"><img src="assets/media/inauguration-ceremony-poster.jpg" alt="시장님 취임식 영상"><figcaption>시장님 취임식 영상</figcaption></figure>
+  <aside class="note">이 영상은 향후 성남 시민의 날이라는 큰 행사에 재탕되고, 이후에 성남시 청년청소년재단에서 재생 중입니다.
+이 취임식 영상 사건 이후 AI 영상으로서의 어그로는 정말 크게 올라가게 되었습니다.</aside>
+</section>
+
+<!-- ================= STAGE 8 ================= -->
+
+<section class="slide stage-card" data-title="STAGE 8 · 보훈 퀘스트" data-stage="STAGE 8">
+  <canvas class="bg dim" data-scene="memorial"></canvas>
+  <div data-lit="5" class="stage-card" style="background:none">
+    <div class="no">STAGE 8</div>
+    <div class="ttl">보훈 퀘스트</div>
+    <div class="sub">복지정책과 · 성남 출신 독립운동가 영상</div>
+    <div class="bar"><i></i><i></i><i></i><i></i><i></i></div>
+  </div>
+  <div class="year">2026</div>
+  <aside class="note">그리고 곧바로 두 번째 의뢰가 오게 됩니다.</aside>
+</section>
+
+<section class="slide" data-title="두 번째 의뢰: 보상 0원" data-stage="STAGE 8">
+  <canvas class="bg" data-scene="office"></canvas>
+  <canvas class="sp" data-sp="hero" data-scale="10" style="left:150px;bottom:270px"></canvas>
+  <canvas class="sp flip" data-sp="staff3" data-scale="10" style="left:420px;bottom:270px"></canvas>
+  <div class="win" style="left:380px;top:300px;padding:8px 14px;font:20px var(--pixel)">복지정책과</div>
+  <div class="win" style="left:760px;top:60px;width:780px;padding:30px 40px"><span class="tag">QUEST</span>
+    <div class="h3">성남시 보훈영상 제작</div>
+    <div style="font:22px var(--pixel);color:var(--muted);margin-top:8px">의뢰 · 복지정책과</div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:22px;padding-top:18px;border-top:4px dashed var(--night3)">
+      <span style="font:24px var(--pixel);color:var(--gold)">REWARD</span>
+      <span style="font:52px var(--pixel-big);color:#e0465a">제작비 0원</span>
+    </div>
+    <ul class="quest" style="font-size:24px;margin-top:6px;display:grid;grid-template-columns:1fr 1fr;column-gap:24px">
+      <li data-s="1">성남 출신 독립운동가라는 특수한 소재</li>
+      <li data-s="2">지역상품권 앱 · 대형 전광판 상영</li>
+      <li data-s="3">초등학생을 둔 모든 가정에 배포</li>
+      <li data-s="4" style="border:0">경기도 지표로 활용</li>
+    </ul>
+  </div>
+  <div class="win light dlg"><span class="name npc">나레이션</span><span class="type">그리고 곧바로, 복지정책과에서 <em>두 번째 의뢰</em>가 왔다. 제작비 지원은 하나도 없었다.</span><span class="more">▼</span></div>
+  <div class="win light dlg" data-s="5"><span class="name">사진우</span><span class="type">그런데 <em>주는 가치</em>가 엄청나다고 생각했습니다. 기여했을 때 돌아오는 영광이요.<br>▶ 의뢰 수락!</span><span class="more">▼</span></div>
+  <aside class="note">그리고 곧바로 두 번째 의뢰가 오게 됩니다. 바로 복지정책과의 성남시 보훈영상 제작 의뢰.
+제작비 지원이라고는 하나도 없었습니다. 그런데 주는 가치가 엄청나다고 생각했습니다. 성남시 출신 독립운동가라는 특수한 소재, 성남시 지역상품권 어플에서 재생, 대형 전광판에서 재생, 성남시에서 초등학생을 둔 모든 가정에 배포, 경기도 지표로 활용 등등.
+내가 기여를 했을 때 돌아오는 영광이 엄청나다고 생각을 했고, 의뢰를 승낙했습니다.
+(원문의 '두 번째 강의'는 '두 번째 의뢰'로 읽고 반영함.)</aside>
+</section>
+
+<section class="slide" data-title="작풍 선택: 수묵화, 그리고 귀엽게" data-stage="STAGE 8">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">ART DIRECTION</div><div class="h2" style="margin-top:10px">이번엔 늘 쓰던 그림체를 <span class="pink">못 쓴다</span></div></div>
+  <figure class="gifcard" style="left:80px;top:250px;width:440px"><img src="assets/media/local-government-official-mv-poster.jpg" alt="기존 일본 2D 애니메이션풍" style="aspect-ratio:16/9;object-fit:cover;filter:grayscale(.5)"><figcaption>기존 · 일본 2D 애니메이션풍</figcaption></figure>
+  <div class="stamp" style="left:150px;top:330px;font-size:48px" data-s="1">✕ 불가</div>
+  <div class="bubble" style="left:80px;top:600px;width:440px;font-size:26px" data-s="1">독립운동가 소재인데<br>어딜 <b style="color:#d0314f">일본풍</b>을 써!</div>
+  <figure class="gifcard pop" style="left:580px;top:250px;width:440px" data-s="2"><img src="assets/media/independence/independence-early-ink.jpg" alt="초기 진중한 수묵화 콘티"><figcaption>1차 콘티 · 진중한 수묵화</figcaption></figure>
+  <div class="bubble" style="left:580px;top:600px;width:440px;font-size:26px" data-s="3"><span style="display:block;font:18px var(--pixel);color:#5a5f86">복지정책과</span>이 영상의 타깃은 <b style="color:#d0314f">초등학생</b>이에요</div>
+  <figure class="gifcard pop" style="left:1080px;top:250px;width:440px" data-s="4"><img src="assets/media/independence/independence-beacon.png" alt="귀여운 수묵화 재질"><figcaption>최종 · 좀 귀여운 수묵화</figcaption></figure>
+  <div class="win gold pop" style="left:1080px;top:600px;width:440px;padding:20px 28px" data-s="4"><span class="p">진중함은 살리고, <b class="mark">아이들 눈높이</b>로</span></div>
+  <aside class="note">지금까지의 일본 2D 신카이 마코토 풍 스타일은 쓸 수가 없었습니다. 독립운동가 소재인데 어딜 일본풍을 써!
+그래서 진중한 수묵화 계열을 생각해서 그것으로 콘티를 냈었는데, 담당 부서에서 이 영상의 타깃은 초등학생들이다 라고 했습니다. 그렇게 좀 귀여운 수묵화 재질로 만들었습니다.
+(그림: 나주 강의의 초기 수묵화 구상과 후기 봉화 제작 이미지. 서로 다른 제작 시기의 자료.)</aside>
+</section>
+
+<section class="slide" data-title="그날의 불빛, 성남" data-stage="STAGE 8">
+  <canvas class="bg dim" data-scene="memorial"></canvas>
+  <div class="top-left"><div class="kicker">ON AIR · 성남 출신 독립운동가 영상</div><div class="h2" style="margin-top:10px">그날의 불빛, 성남</div></div>
+  <figure class="gifcard" style="left:270px;top:200px;width:1060px"><video src="assets/media/independence/independence-highlight-1min.mp4" poster="assets/media/independence/independence-poster.jpg" controls playsinline preload="metadata" style="display:block;width:100%"></video><figcaption>하이라이트 · 약 1분 · 의병장 남상목 중심</figcaption></figure>
+  <aside class="note">영상은 다음과 같습니다. (중랑구청용 1분 하이라이트, 54초 — 원본 3분 38초에서 남상목 중심으로 발췌. 재생 버튼으로 시작, 장을 넘기면 정지.)
+구성: ① 평화로운 성남의 일상(원본 0:00~0:06) → ② "성남에서 그 평화를 위해 싸워주신 분들" + 의병장 남상목 등장·고종황제 밀명(0:16~0:29) → ③ 패배 후 '죽을 때까지 이 나라를 위해 싸운다'(0:40~0:49) → ④ 체포·서대문형무소·순국(1:00~1:17) → ⑤ 엔딩 "자랑스러운 성남의 독립운동가들… 오늘의 평화에 감사드립니다"(3:28~3:38).
+2분 하이라이트(한백봉·한순회 포함): assets/media/independence/independence-highlight.mp4 / 원본 전체: independence-film.mp4</aside>
+</section>
+
+<section class="slide" data-title="결과: 경기도 보훈지표" data-stage="STAGE 8">
+  <canvas class="bg dim" data-scene="memorial"></canvas>
+  <div class="burst" data-s="2"></div>
+  <div class="top-left"><div class="kicker">RESULT</div><div class="h2" style="margin-top:10px">피드백 · 제출 완료, 그리고</div></div>
+  <figure class="gifcard" data-zoom style="left:80px;top:250px;width:880px"><img src="assets/media/welfare-promo-record.png" alt="보훈문화 홍보 실적 문서"><figcaption>보훈문화 홍보 실적 · AI 활용 독립운동가 홍보 영상 · 눌러서 확대</figcaption></figure>
+  <figure class="gifcard pop" data-zoom style="left:80px;top:610px;width:880px" data-s="2"><img src="assets/media/welfare-gg-selection.png" alt="경기도 지표 시민 참여형 보훈문화 행사·체험 우수사례 성남시 선정"><figcaption>경기도 지표 1-2-12-가 · 성남시 <span class="mark">선정</span> · 눌러서 확대</figcaption></figure>
+  <ul class="quest" style="position:absolute;left:1020px;right:80px;top:260px;font-size:30px">
+    <li data-s="1">피드백 · 제출 완료</li>
+    <li data-s="2">경기도 보훈지표 획득에 기여</li>
+    <li data-s="3">초등학생 가정에 배포</li>
+    <li data-s="4" class="nx" style="border:0;color:var(--muted)">지역상품권 앱 내 상영 <small>안 됨</small></li>
+  </ul>
+  <aside class="note">이 영상은 성공적으로 피드백을 주고받고 제출이 완료되어, 결국 성남시가 경기도 보훈지표를 획득하는 데 기여를 실제로 하게 되었습니다. 어플 내 영상 상영은 안 되었는데, 그래도 모든 초등학생 가정에 배포도 되었습니다.
+지표: 1-2-12-가 「시민 참여형 보훈문화 행사·체험 우수사례」, 05_성남시, 선정, 복지정책과.
+[참고] 실적 문서에는 '지역상품권 Chak 어플 화면' 송출이 적혀 있음 — 앱 홍보 화면(배너)과 앱 내 영상 재생을 구분해서 말하면 안전.</aside>
+</section>
+
+<section class="slide" data-title="공문에 내 유튜브 링크" data-stage="STAGE 8">
+  <canvas class="bg" data-scene="office"></canvas>
+  <canvas class="sp" data-sp="hero" data-scale="10" style="left:200px;bottom:270px"></canvas>
+  <canvas class="sp talk flip" data-sp="staff3" data-scale="10" style="left:1180px;bottom:270px"></canvas>
+  <div class="doc" style="left:520px;top:60px;width:560px;height:420px;font-size:22px">
+    <div style="font:18px var(--pixel);color:#8a8fb0">전 부서 공람</div>
+    <h4 style="font-size:28px;margin:6px 0 14px">성남 출신 독립운동가 영상 안내</h4>
+    <div class="ln"></div><div class="ln" style="width:80%"></div><div class="ln" style="width:65%"></div>
+    <div style="margin-top:18px">저작자 : 사진우 (AI반도체과)</div>
+    <div class="var" data-s="1" style="display:block;margin-top:10px;font-size:22px">▶ youtube.com/@사진우</div>
+    <div style="position:absolute;right:16px;bottom:10px;font:16px var(--pixel);color:#8a8fb0">구조 설명용 재구성</div>
+  </div>
+  <div class="win light dlg" style="font-size:58px"><span class="name npc">복지정책과</span><span class="type">저작자가 사진우 님이니까… <em>주사님 유튜브 링크</em> 좀 주세요!</span><span class="more">▼</span></div>
+  <div class="win light dlg" style="font-size:58px" data-s="1"><span class="name">사진우</span><span class="type">제 유튜브 링크가 <em>공문</em>에 들어가는, 신선한 경험이었습니다.</span><span class="more">▼</span></div>
+  <aside class="note">좀 재밌었던 건, 전체 부서에 공람을 거는데 저작자가 사진우니까 "주사님 유튜브 링크를 주세요" 해서 내 유튜브 링크가 공문에 반영되는 신선한 경험도 했습니다.
+(공문 화면은 재구성. 실제 공문 캡처가 있으면 교체. 링크 주소도 예시 표기.)</aside>
+</section>
+
+<section class="slide" data-title="이 영상도 시청 곳곳에서" data-stage="STAGE 8">
+  <canvas class="bg dim" data-scene="lobby"></canvas>
+  <div class="top-left"><div class="kicker">NEW GOAL · 진행 중</div><div class="h2" style="margin-top:10px">그리고 이 영상도, <span class="mark">시청 곳곳에서</span></div></div>
+  <figure class="gifcard" style="left:80px;top:250px;width:860px"><video src="assets/media/independence/lobby-screen.mp4" poster="assets/media/independence/lobby-screen.jpg" muted loop playsinline autoplay style="display:block;width:100%"></video><figcaption>시청 로비 대형 전광판 · 실제 상영 (Threads 게시물)</figcaption></figure>
+  <div style="position:absolute;left:1000px;right:80px;top:270px">
+    <div class="win gold" style="position:relative"><span class="tag">NEW GOAL</span>
+      <div class="h3">시청 곳곳에<br>나, 혹은 내 영상이</div>
+      <div class="gauge" style="margin-top:20px"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i></i><i></i><i></i></div>
+    </div>
+    <p class="p" style="margin-top:30px;font-size:26px">“내가 만든 영상 시에서 재생 <b class="mark">5번째</b>…!”<br><span style="font:18px var(--pixel);color:var(--muted)">— Threads @g.nu.das</span></p>
+  </div>
+  <aside class="note">그리고 이 영상도 물론, 시청 곳곳에서 틀어지고 있는 중입니다.
+Threads 게시물: https://www.threads.com/share/DsnNxUwmD (인터넷 연결 필요, 새 창으로 열림)
+(NEW GOAL 게이지 70%는 연출. STAGE 3에서 세운 목표를 계속 회수하는 장치.)</aside>
+</section>
+
+<!-- ================= STAGE 9 ================= -->
+
+<section class="slide stage-card" data-title="STAGE 9 · 강연 퀘스트" data-stage="STAGE 9">
+  <canvas class="bg dim" data-scene="hall"></canvas>
+  <div data-lit="5" class="stage-card" style="background:none">
+    <div class="no">STAGE 9</div>
+    <div class="ttl">무대 위로</div>
+    <div class="sub">AI챔피언 블랙 강의 세션, 그리고 외부 강의</div>
+    <div class="bar"><i></i><i></i><i></i><i></i><i></i></div>
+  </div>
+  <div class="year">2026</div>
+  <aside class="note">이맘때 AI챔피언 블랙 과정에서는 본인이 장기를 갖는 분야로 강의를 하는 세션을 1박 2일 동안 했습니다.</aside>
+</section>
+
+<section class="slide" data-title="1박 2일 강의 세션, 첫 순서" data-stage="STAGE 9">
+  <canvas class="bg" data-scene="hall"></canvas>
+  <canvas class="sp talk" data-sp="hero" data-scale="7" style="left:560px;bottom:450px"></canvas>
+  <div class="win light" style="left:60px;top:60px;width:600px;padding:24px 32px"><span class="tag">AI챔피언 블랙 · 1박 2일</span>
+    <div class="h3" style="margin-top:6px">각자 장기 분야로 강의하는 세션</div>
+    <p style="font:600 28px/1.5 var(--body);color:#5a5f86;margin-top:8px">첫 순서 · <b style="color:#d0314f">AI 영상 활용</b> · 20분</p></div>
+  <div class="bubble" style="right:60px;top:90px;width:470px" data-s="1">저 사람 뭐야… 엄청 신나 보이는데?</div>
+  <div class="win gold pop" style="right:60px;top:280px;width:470px;text-align:center;padding:26px 30px" data-s="2"><span class="tag">RESULT</span>
+    <div style="font:72px var(--pixel-big);color:var(--gold)">2nd</div>
+    <p class="p" style="margin-top:6px">발표 2등 · 1등은 류주임님</p></div>
+  <aside class="note">나는 첫 순서로 AI 영상 활용 관련된 강의를 20분 동안 했고, 내가 장기를 갖고 있는 것이라서 정말 신나게 했습니다.
+사람들은 이 신나게 떠드는 청년에게 경악을 금치 못했고, 류주임님 다음으로 발표 2등을 거머쥐었습니다.
+(청중 말풍선은 연출.)</aside>
+</section>
+
+<section class="slide" data-title="강연 퀘스트 연쇄" data-stage="STAGE 9">
+  <canvas class="bg dim" data-scene="classroom"></canvas>
+  <div class="top-left"><div class="kicker">QUEST CHAIN</div><div class="h2" style="margin-top:10px">그 여파로, 강의가 이어졌다</div></div>
+  <ul class="quest" style="position:absolute;left:80px;top:270px;width:780px;font-size:32px">
+    <li class="shown">경기도청 강의 <small>2026.09.15</small></li>
+    <li class="shown">한국방송통신전파진흥원 · 나주 <small>2026.10.22</small></li>
+    <li class="shown">해양수산과학기술진흥원 <small>2026.11.11</small></li>
+    <li class="shown" style="color:var(--gold)">중랑구청 · 오늘 <small>2026.11.20</small></li>
+    <li data-s="1" style="color:var(--muted)">경기도 인재개발원 <small>예정</small></li>
+    <li data-s="2" style="border:0;color:var(--pink)">Agent Korea 토크콘서트 <small>2026.11.22</small></li>
+  </ul>
+  <figure class="gifcard pop" style="left:930px;top:200px;width:590px" data-s="2"><img src="assets/media/agent-korea-poster.png" alt="제2회 공공AX네트워크 & Agent Korea 토크콘서트 포스터"><figcaption>제2회 공공AX네트워크 &amp; Agent Korea 토크콘서트</figcaption></figure>
+  <aside class="note">이때의 여파로 경기도청 강의, 나주 한국방송통신전파진흥원 강의, 해양수산과학기술진흥원 강의, 그리고 오늘의 중랑구청 강의로 이어졌고, 앞으로 경기도 인재개발원, 그리고 엄청난 이벤트인 에이전트 코리아 강연까지 나를 기다리고 있습니다.
+(날짜는 업적 로그와 포스터 기준. 오늘 강의 2026.11.20.)</aside>
+</section>
+
+<section class="slide" data-title="즐겁지만, 두렵다" data-stage="STAGE 9">
+  <canvas class="bg" data-scene="city:night"></canvas>
+  <canvas class="sp" data-sp="hero" data-scale="11" style="left:700px;bottom:200px"></canvas>
+  <div class="hp win" style="left:60px;top:60px;width:440px;padding:16px 22px" data-hp="90,90"><span>즐거움</span><div class="bar"><i></i></div></div>
+  <div class="hp win" style="left:60px;top:190px;width:440px;padding:16px 22px" data-hp="20,85"><span style="color:#e0465a">두려움</span><div class="bar"><i style="background:#e0465a"></i></div></div>
+  <div class="win light dlg" style="font-size:62px"><span class="name">사진우</span><span class="type">세상이 저를 알아봐 주는 것 같아서 <em>너무 즐겁지만,</em></span><span class="more">▼</span></div>
+  <div class="win light dlg" style="font-size:62px" data-s="1"><span class="name">사진우</span><span class="type">동시에… <em>너무 두렵기도 합니다.</em></span><span class="more">▼</span></div>
+  <aside class="note">세상이 나를 알아봐 주는 것 같아서 너무 즐겁지만, 동시에 너무 두렵기도 합니다.</aside>
+</section>
+
+<section class="slide" data-title="왜 다 애니메이션이지?" data-stage="STAGE 9">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">QUESTION</div><div class="h2" style="margin-top:10px">지금까지 영상들, <span class="mark">왜 다 애니메이션</span>이지?</div></div>
+  <div style="position:absolute;left:80px;right:80px;top:260px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+    <figure class="gifcard" style="position:relative"><img src="assets/media/anime/anime-inauguration-ceremony-video.jpg" alt="" style="aspect-ratio:16/9;object-fit:cover"></figure>
+    <figure class="gifcard" style="position:relative"><img src="assets/media/anime/anime-local-government-official-mv.jpg" alt="" style="aspect-ratio:16/9;object-fit:cover"></figure>
+    <figure class="gifcard" style="position:relative"><img src="assets/media/anime/anime-first-music-video.jpg" alt="" style="aspect-ratio:16/9;object-fit:cover"></figure>
+    <figure class="gifcard" style="position:relative"><img src="assets/media/anime/anime-cat-soul-video.jpg" alt="" style="aspect-ratio:16/9;object-fit:cover"></figure>
+    <figure class="gifcard" style="position:relative"><img src="assets/media/anime/anime-cooking-anime-moving-on.jpg" alt="" style="aspect-ratio:16/9;object-fit:cover"></figure>
+    <figure class="gifcard" style="position:relative"><img src="assets/media/anime/anime-inauguration-later.jpg" alt="" style="aspect-ratio:16/9;object-fit:cover"></figure>
+  </div>
+  <aside class="note">지금까지 영상들을 보면 이런 생각을 하실 것입니다. 왜 다 애니메이션이지~? (나주 강의 62장과 같은 작품 모음.)</aside>
+</section>
+
+<section class="slide" data-title="실사를 피했던 이유" data-stage="STAGE 9">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">WHY NOT REAL</div><div class="h2" style="margin-top:10px">실사를 피했던 이유</div></div>
+  <div style="position:absolute;left:80px;right:80px;top:280px;display:grid;grid-template-columns:repeat(3,1fr);gap:30px">
+    <div class="win" style="position:relative"><span class="tag">01</span><div class="h3">불쾌함의 골짜기</div><p class="p" style="margin-top:10px">표정·피부·움직임의 어색함</p></div>
+    <div class="win" style="position:relative" data-s="1"><span class="tag">02</span><div class="h3">딥페이크 문제</div><p class="p" style="margin-top:10px">실제 인물로 오인할 가능성</p></div>
+    <div class="win" style="position:relative" data-s="2"><span class="tag">03</span><div class="h3">공공분야의 민원</div><p class="p" style="margin-top:10px">제작자로서 느끼는 부담</p></div>
+  </div>
+  <div class="win gold" style="left:80px;right:80px;bottom:90px;padding:24px 36px;text-align:center" data-s="3"><span class="p">충분히 자연스러워졌다고 느낄 때까지, <b class="mark">실사는 건드리지 않았다</b></span></div>
+  <aside class="note">실사는 아직 티가 많이 난다고 느꼈습니다. 공공분야에서 상영했을 때 불쾌함의 골짜기나 딥페이크 문제로 민원의 여지가 있다면, 다른 부서가 상영하더라도 제작자인 저 역시 자유롭기 어렵다고 생각했습니다. (나주 강의 63장. 개인적인 제작 판단이며 법적 책임의 단정이 아님.)</aside>
+</section>
+
+<section class="slide" data-title="흔한 AI 실사 얼굴" data-stage="STAGE 9">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">AI 실사의 티</div><div class="h2" style="margin-top:10px">너무 깔끔한 턱선 · 매끈한 피부 · 비슷비슷한 얼굴</div></div>
+  <div style="position:absolute;left:80px;right:80px;top:250px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px">
+    <figure class="gifcard" style="position:relative"><img src="assets/media/realism/01-sculpted-jaw-woman.png" alt="" style="aspect-ratio:1;object-fit:cover"><figcaption>너무 깔끔한 V라인</figcaption></figure>
+    <figure class="gifcard" style="position:relative"><img src="assets/media/realism/02-sculpted-jaw-man.png" alt="" style="aspect-ratio:1;object-fit:cover"><figcaption>각 잡힌 턱선</figcaption></figure>
+    <figure class="gifcard" style="position:relative"><img src="assets/media/realism/03-waxy-skin.png" alt="" style="aspect-ratio:1;object-fit:cover"><figcaption>매끈한 피부 질감</figcaption></figure>
+    <figure class="gifcard" style="position:relative"><img src="assets/media/realism/08-generic-handsome.png" alt="" style="aspect-ratio:1;object-fit:cover"><figcaption>또 비슷한 모델 얼굴</figcaption></figure>
+  </div>
+  <aside class="note">제가 실사를 잘 안 했던 이유가 이런 느낌 때문이에요. 대충 AI로 실사 사람을 만들면 자주 보이는 얼굴 — 턱선은 너무 깔끔하고, 피부는 매끈하고, 다들 비슷하게 생긴 얼굴. (나주 강의 64장의 강의용 생성 예시 8장 중 4장.)</aside>
+</section>
+
+<section class="slide" data-title="공백기, 그리고 실사 도전" data-stage="STAGE 9">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">NEW CHALLENGE</div><div class="h2" style="margin-top:10px">작년 숏폼 2등 이후, 한동안 <span class="mark">공모전 휴식</span></div></div>
+  <div class="win" style="left:80px;top:300px;width:700px"><span class="tag">그동안</span><div class="h3">AI 교육 듣느라 바빴다</div>
+    <p class="p" style="margin-top:12px">공모전은 거의 나가지 않았다</p></div>
+  <div class="win gold pop" style="left:80px;top:520px;width:700px" data-s="1"><span class="tag">그러다</span><div class="h3">서울시 국제협력 영상 공모전</div>
+    <p class="p" style="margin-top:12px">→ <b class="mark">실사</b>에 도전해 보기로</p></div>
+  <figure class="gifcard" style="left:860px;top:250px;width:440px" data-s="2"><img src="assets/media/realism/threads-grimdal.gif" alt="실사 AI 영상 레퍼런스"><figcaption>영감 · Threads @ai_grimdal</figcaption></figure>
+  <div class="bubble" style="left:80px;top:760px;width:700px;font-size:28px" data-s="3">공모전에 나가 보니, <b style="color:#d0314f">실사가 상 타는 비율이 압도적</b>으로 높다</div>
+  <aside class="note">작년 AI 숏폼 2등 이후로 AI 교육 듣고 그러느라 공모전을 별로 하지 않았었습니다. 그러다가 서울시 국제협력 영상 공모전이라는 게 생겨서 실사에 도전을 해 보게 되었습니다. 공모전들을 나가 보니, 실사가 상 타는 비율이 압도적으로 높습니다.
+(오른쪽 GIF는 나주 강의 66장의 영감 작품.)</aside>
+</section>
+
+<section class="slide" data-title="KOICA 동기의 얼굴과 이야기" data-stage="STAGE 9">
+  <canvas class="bg" data-scene="office"></canvas>
+  <canvas class="sp" data-sp="hero" data-scale="11" style="left:280px;bottom:270px"></canvas>
+  <canvas class="sp flip" data-sp="won" data-scale="11" style="left:1080px;bottom:270px"></canvas>
+  <div class="win" style="left:990px;top:250px;padding:8px 16px;font:22px var(--pixel)">전문인재 동기 · KOICA</div>
+  <div class="win light dlg"><span class="name npc">나레이션</span><span class="type">국제협력 공모전은 <em>국제협력 경험</em>이 필요했다. 마침 전문인재 동기 중에 KOICA 직원분이 계셨다.</span><span class="more">▼</span></div>
+  <div class="win light dlg" data-s="1"><span class="name">사진우</span><span class="type">그분의 <em>얼굴과 이야기</em>를 받아서, 제 인생 <em>최초의 AI 실사 영상</em>을 만들게 됩니다.</span><span class="more">▼</span></div>
+  <aside class="note">국제협력 공모전은 국제협력 경험을 필요로 합니다. 마침 전문인재 동기 중에 한국국제협력단 KOICA 직원분이 계셨고, 저는 그분의 얼굴과 스토리를 받아서 내 인생 최초로 AI 실사 영상을 만들어 보게 됩니다.
+(캐릭터는 동기분을 표현한 픽셀 아이콘일 뿐 닮게 그린 것은 아님.)</aside>
+</section>
+
+<section class="slide" data-title="It’s Fiji time" data-stage="STAGE 9">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">ON AIR · 인생 첫 AI 실사</div><div class="h2" style="margin-top:10px">It’s Fiji time</div></div>
+  <figure class="gifcard" style="left:270px;top:200px;width:1060px"><video src="assets/media/realism/fiji-entry.mp4" poster="assets/media/realism/poster.jpg" controls playsinline preload="metadata" style="display:block;width:100%"></video><figcaption>서울시 국제협력 영상 챌린지 출품작 · 2분</figcaption></figure>
+  <aside class="note">[It's Fiji time 영상 재생] (나주 강의 67장 원본, 약 2분. 재생 버튼으로 시작, 장을 넘기면 정지.)</aside>
+</section>
+
+<section class="slide" data-title="업적: 국제협력 영상 챌린지 대상" data-stage="STAGE 9">
+  <div class="stars"></div>
+  <div class="confetti"></div>
+  <figure class="gifcard" style="left:80px;top:120px;width:720px"><img src="assets/media/realism/fiji-grand-prize-20261018.jpg" alt="서울시 국제협력 영상 챌린지 대상 시상"><figcaption>대상 · 상금 3,000,000원</figcaption></figure>
+  <div style="position:absolute;left:880px;right:80px;top:140px">
+    <div style="font:26px var(--pixel);color:var(--gold);letter-spacing:.14em">★ ACHIEVEMENT UNLOCKED</div>
+    <div class="h1" style="margin-top:16px">첫 실사로<br><span class="mark">대상</span></div>
+    <ul class="quest" style="font-size:30px;margin-top:20px">
+      <li data-s="1">바로 본선 진출</li>
+      <li data-s="2">국민투표</li>
+      <li data-s="3" style="border:0;color:var(--gold)">대상!</li>
+    </ul>
+  </div>
+  <aside class="note">영상은 바로 본선에 갔고, 국민투표를 거쳐 결국 대상을 거머쥐게 됩니다. (나주 강의 68장 시상 사진. 업적 로그 2026.09.04 서울 국제협력 영상 챌린지 공모전 개인분야 대상.)</aside>
+</section>
+
+<section class="slide" data-title="기술 × 도메인" data-stage="STAGE 9">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">INSIGHT</div><div class="h2" style="margin-top:10px">나의 기술 × 누군가의 도메인</div></div>
+  <div style="position:absolute;left:80px;right:80px;top:300px;display:grid;grid-template-columns:1fr 100px 1fr 100px 1fr;align-items:center;text-align:center">
+    <div class="win" style="position:relative"><span class="tag">나</span><div class="h3">AI 영상 기술</div></div>
+    <div class="mark" style="font:64px var(--pixel)">×</div>
+    <div class="win" style="position:relative"><span class="tag">동기</span><div class="h3">국제협력 경험 · 얼굴 · 이야기</div></div>
+    <div class="mark" style="font:64px var(--pixel)">=</div>
+    <div class="win gold" style="position:relative"><span class="tag">결과</span><div class="h3">대상</div></div>
+  </div>
+  <div class="win light" style="left:80px;top:580px;width:700px;padding:22px 32px;font:700 34px var(--body)" data-s="1">상금은 그분께 <span style="color:#d0314f">20%</span> 나눠 드렸다</div>
+  <div class="win gold pop" style="left:840px;right:80px;top:580px;padding:22px 32px" data-s="2"><span class="p">이거, 꽤 괜찮은 <b class="mark">사업 모델</b>이다</span></div>
+  <aside class="note">그분께 20%를 나눠 드렸습니다. 나의 기술과 누군가의 도메인의 결합 — 아, 이것은 꽤나 괜찮은 사업 모델이라고 생각을 합니다.</aside>
+</section>
+
+<section class="slide" data-title="10월, 또 한 통의 전화" data-stage="STAGE 9">
+  <div class="stars"></div>
+  <div class="burst" data-s="1"></div>
+  <canvas class="sp bob" data-sp="phone" data-scale="16" style="left:200px;top:180px"></canvas>
+  <div class="unlock pop" style="left:auto;right:100px;top:32%;width:960px" data-s="1">
+    <canvas class="sp" data-sp="trophy" data-scale="12" style="position:static"></canvas>
+    <div>
+      <div class="lbl">★ ACHIEVEMENT UNLOCKED</div>
+      <div class="ttl">대구 달서구 BOOMBOOM<br>저출산 공모전 <span class="mark">대상</span></div>
+      <div class="meta">2026.10 · 엄청 쉽고 간단하게 만든 영상</div>
+    </div>
+  </div>
+  <div class="win light dlg" style="font-size:62px;left:60px;right:60px;bottom:40px" data-s="2"><span class="name">사진우</span><span class="type">이 상은, 의미가 <em>엄청 깊습니다.</em></span><span class="more">▼</span></div>
+  <aside class="note">그리고 이번 10월, 나는 또 한 통의 전화를 받게 되는데, 바로 대구 달서구 BOOMBOOM 저출산 공모전에서 대상을 탄 것입니다. 영상은 엄청 쉽고 간단하게 만들었는데, 나는 이 상이 엄청 의미가 깊습니다.</aside>
+</section>
+
+<section class="slide" data-title="작년엔 탈락했다" data-stage="STAGE 9">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">◀◀ FLASHBACK · 2025</div><div class="h2" style="margin-top:10px">작년, 같은 대회에서 <span class="pink">탈락</span>했다</div></div>
+  <figure class="gifcard" style="left:1080px;top:110px;width:400px"><video src="assets/media/boomboom-2025-gloomy30.mp4" poster="assets/media/boomboom-2025-gloomy30.jpg" controls playsinline preload="metadata" style="display:block;width:100%;max-height:640px"></video><figcaption>2025 출품작 · 우울 30초 요약</figcaption></figure>
+  <div class="win" style="left:80px;top:290px;width:900px"><span class="tag">공모전 목적</span><div class="h3">출산의 기쁨과 가족의 소중함을 알리기</div></div>
+  <div class="win" style="left:80px;top:470px;width:900px;border-color:#e0465a" data-s="1"><span class="tag" style="background:#e0465a;color:#fff;border-color:var(--ink)">내가 낸 것</span>
+    <div class="h3">32살, 이별 직후의 슬픈 뮤직비디오</div>
+    <p class="p" style="margin-top:10px">“헤어져서 힘들다 · 소개팅 계속 피곤하다 · 혹시 내가 문제인 걸까?”</p></div>
+  <div class="stamp" style="left:300px;top:700px" data-s="2">탈락할 수밖에</div>
+  <aside class="note">작년에 나는 이 대회에서 탈락했습니다. 작년의 나는 요맘때쯤 이별을 했었어요. 그래서 온 세상이 우울했고, 세상에 출산의 기쁨과 가족의 소중함을 알리는 것이 목적인 공모전에 32살 먹고 헤어져서 힘들다, 소개팅 어떻게 계속하냐 너무 피곤하다, 혹시 내가 문제인 걸까? 라는 슬픈 뮤직비디오를 냈습니다. 탈락할 수밖에.
+(오른쪽: 작년 출품작에서 우울한 구간 6개를 5초씩 뽑은 30초 요약본. 재생 버튼으로 시작. 웃음 포인트.)</aside>
+</section>
+
+<section class="slide" data-title="1년 뒤, 대상으로 돌아오다" data-stage="STAGE 9">
+  <div class="stars"></div>
+  <div class="confetti"></div>
+  <div class="top-left"><div class="kicker">2025 → 2026</div><div class="h2" style="margin-top:10px">1년 만에, <span class="mark">대상</span>으로 돌아왔다</div></div>
+  <figure class="gifcard" style="left:1080px;top:60px;width:420px"><video src="assets/media/eunyu/eunyu-2026-final.mp4" poster="assets/media/eunyu/eunyu-2026-final.jpg" controls playsinline preload="metadata" style="display:block;width:100%;max-height:720px"></video><figcaption>2026 대상작 · 은유가 오는 날</figcaption></figure>
+  <ul class="quest" style="position:absolute;left:80px;top:300px;width:880px;font-size:34px">
+    <li data-s="1">1년 동안의 기술적인 성장</li>
+    <li data-s="2">공모전의 니즈를 완벽 파악</li>
+    <li data-s="3" style="border:0;color:var(--gold)">작년 탈락 → 올해 대상</li>
+  </ul>
+  <aside class="note">1년 동안의 기술적인 성장, 그리고 공모전의 니즈를 완벽 파악하여 대상으로 돌아온 것이 기뻤습니다.
+오른쪽: 2026 대상작 '은유가 오는 날' (다운로드 KakaoTalk_20261110_001810635.mp4, 세로 59초). 재생 버튼으로 시작.</aside>
+</section>
+
+<section class="slide" data-title="달서구 대상 시상식" data-stage="STAGE 9">
+  <div class="stars"></div>
+  <div class="confetti"></div>
+  <div class="top-left"><div class="kicker">AWARD CEREMONY · 2026.11.13</div><div class="h2" style="margin-top:10px">달서구청에서 <span class="mark">대상</span>을 받았다</div></div>
+  <figure class="gifcard" data-zoom style="left:330px;top:200px;width:940px"><img src="assets/media/dalseo-award.jpg" alt="제2회 출산BooM 달서 저출산 콘텐츠 영상 공모전 대상 시상식"><figcaption>제2회 출산BooM 달서 저출산 콘텐츠 영상 공모전 · <span class="mark">대상</span> · 눌러서 확대</figcaption></figure>
+  <aside class="note">지난주 11월 13일, 대구 달서구청에서 직접 대상을 받고 왔습니다. 작년에 탈락했던 바로 그 대회에서요. (사진은 누르면 확대.)</aside>
+</section>
+
+
+<section class="slide wf" data-title="워크플로우 구조도 · 전체" data-stage="STAGE 9">
+  <div class="stars"></div>
+  <div class="win" style="left:50px;top:66px;width:1500px;height:790px;padding:0">
+    <span class="tag" style="z-index:3">WORKFLOW MAP · AI영상 워크플로우</span>
+    <iframe class="wfmap" src="workflow-map/index.html?clean" title="AI영상 워크플로우 구조도" style="position:absolute;inset:0;width:100%;height:100%;border:0;background:#EEEDE8"></iframe>
+  </div>
+  <div class="wf-chip" style="position:absolute;right:66px;top:42px;padding:8px 16px;background:var(--ink);border:4px solid var(--gold);color:var(--gold);font:22px var(--pixel);z-index:2">전체도</div>
+  <aside class="note">(GitHub GnuDaSsa/video-team-workflow-map 구조도 전체를 화면 안 창에 넣음. →를 누를 때마다 구조도 안에서 전체도 → 01 기획 → 02 음악 → △1 음악에 맞춰 기획 수정 → 03 이미지 → 04 영상화 ① → 04 영상화 ② → 05 후처리 → 05-1 화성 → 05-2 매돌이 → 05-3 성남 → 05-4 솔로몬 → 06 편집 → 전체도 순서(14단계)로 확대 이동, 마지막 전체도에서 한 번 더 누르면 다음 장. ←도 같은 방식. 부록 상세도는 건너뜀.)
+전체도: 제 영상 제작 흐름 전체가 이렇게 생겼습니다. 기획부터 편집까지 하나씩 보겠습니다.
+04 ①: 시댄스 프롬프팅은 Higgsfield나 XAZINGA(사징가) 같은 곳에서 다른 사람들이 쓰는 생성 문법을 보고, 공식 문법과 함께 위키에 모아 Claude에게 맡겨 씁니다. 시작 이미지 없이 참조만 주고, 참조 한 장에는 역할 하나만 줍니다 — 이 사진은 장소만, 인물 시트는 얼굴·옷만.
+04 ②: 동작은 형용사(dynamic, cinematic)로 쓰지 않고 순서로 씁니다. 갈대가 눕고 → 코트 자락이 들리고 → 숨 한 번 → 멈춤. 형용사로 쓰면 화면 전체가 계속 출렁여서 AI 티가 납니다.
+(이전 112~114장 「시댄스 문법을 훔쳐 오다 · 시댄스 프롬프트의 문법 · 재료만 주고, 장면은 맡긴다」를 이 한 장으로 대체.)</aside>
+</section>
+
+<!-- ================= STAGE 10 ================= -->
+
+<section class="slide stage-card" data-title="STAGE 10 · 최근 미션" data-stage="STAGE 10">
+  <canvas class="bg dim" data-scene="sky"></canvas>
+  <div data-lit="5" class="stage-card" style="background:none">
+    <div class="no">STAGE 10</div>
+    <div class="ttl">최근 미션</div>
+    <div class="sub">푸드테크 · 드론축구 · 베트남 벤치마킹</div>
+    <div class="bar"><i></i><i></i><i></i><i></i><i></i></div>
+  </div>
+  <div class="year">2026 하반기</div>
+  <aside class="note">최근에는 다음과 같은 미션들이 있었습니다.</aside>
+</section>
+
+<section class="slide" data-title="미션 3종" data-stage="STAGE 10">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">MISSIONS · 누르면 전체 영상</div><div class="h2" style="margin-top:10px">최근 미션 세 가지</div></div>
+  <div style="position:absolute;left:70px;right:70px;top:250px;display:grid;grid-template-columns:repeat(3,1fr);gap:28px">
+    <div><button class="gifcard" data-video="mvFood" style="position:relative;display:block;width:100%;padding:0;cursor:pointer;color:inherit;font:inherit;text-align:left"><video src="assets/media/missions/foodtech-cut.mp4" poster="assets/media/missions/foodtech-cut.jpg" muted loop playsinline autoplay style="display:block;width:100%;pointer-events:none"></video><figcaption>▶ 푸드테크 국가공모</figcaption></button>
+      <p class="p" style="font-size:24px;margin-top:16px">과장님 요청 · 푸드테크 TF가 국가공모 발표에 쓸 영상</p></div>
+    <div data-s="1"><button class="gifcard" data-video="mvDrone" style="position:relative;display:block;width:100%;padding:0;cursor:pointer;color:inherit;font:inherit;text-align:left"><video src="assets/media/missions/drone-cut.mp4" poster="assets/media/missions/drone-cut.jpg" muted loop playsinline autoplay style="display:block;width:100%;pointer-events:none"></video><figcaption>▶ 성남시 드론축구대회</figcaption></button>
+      <p class="p" style="font-size:24px;margin-top:16px">미래모빌리티팀 · <b class="mark">내가 만들고 싶었다</b> — 스포츠 애니 오프닝처럼</p></div>
+    <div data-s="2"><button class="gifcard" data-video="mvSemi" style="position:relative;display:block;width:100%;padding:0;cursor:pointer;color:inherit;font:inherit;text-align:left"><video src="assets/media/missions/semicon-cut.mp4" poster="assets/media/missions/semicon-cut.jpg" muted loop playsinline autoplay style="display:block;width:100%;pointer-events:none"></video><figcaption>▶ 성남시 반도체 지원사업 소개</figcaption></button>
+      <p class="p" style="font-size:24px;margin-top:16px">우리 반도체팀 · 베트남 과기부 벤치마킹 방문</p></div>
+  </div>
+  <div class="vmodal" id="mvFood"><div class="vbox"><div class="vbar"><span>푸드테크 국가공모 발표 영상 · 3분 5초</span><button class="vclose">✕ 닫기</button></div><video src="assets/media/missions/foodtech-full.mp4" poster="assets/media/missions/foodtech-full.jpg" playsinline preload="none" controls></video></div></div>
+  <div class="vmodal" id="mvDrone"><div class="vbox"><div class="vbar"><span>성남시 드론축구대회 홍보영상 · 1분 42초</span><button class="vclose">✕ 닫기</button></div><video src="assets/media/missions/drone-full.mp4" poster="assets/media/missions/drone-full.jpg" playsinline preload="none" controls></video></div></div>
+  <div class="vmodal" id="mvSemi"><div class="vbox"><div class="vbar"><span>성남시 시스템반도체 소개 · 베트남어 자막 · 2분 58초</span><button class="vclose">✕ 닫기</button></div><video src="assets/media/missions/semicon-vn-full.mp4" poster="assets/media/missions/semicon-vn-full.jpg" playsinline preload="none" controls></video></div></div>
+  <aside class="note">과장님 요청에 따라 푸드테크 TF팀이 국가공모를 따오는 발표를 할 때 활용할 영상 요청을 받았습니다.
+미래모빌리티팀의 드론축구대회 홍보영상은 제가 만들고 싶었습니다. 오타쿠 출신으로서 스포츠 애니 오프닝처럼 만들고 싶었어요.
+그리고 우리 팀인 반도체팀에 베트남 과기부가 벤치마킹 요청을 해서, 성남시 반도체 지원사업을 소개하는 영상이 필요했습니다.
+(타일은 8초 발췌 무음 반복. 누르면 전체 영상이 처음부터 소리와 함께 재생, Esc로 닫기.)</aside>
+</section>
+
+<section class="slide" data-title="푸드테크 · 전체 영상" data-stage="STAGE 10">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">ON AIR · 과장님 요청 · 국가공모 발표용</div><div class="h2" style="margin-top:10px">푸드테크 국가공모 영상</div></div>
+  <figure class="gifcard" style="left:270px;top:200px;width:1060px"><video src="assets/media/missions/foodtech-full.mp4" poster="assets/media/missions/foodtech-full.jpg" controls playsinline preload="metadata" style="display:block;width:100%"></video><figcaption>푸드테크 TF 국가공모 발표 영상 · 3분 5초</figcaption></figure>
+  <aside class="note">푸드테크 TF가 국가공모 발표에 쓴 영상 풀버전(3분 5초). 재생 버튼으로 시작, 장을 넘기면 정지. 지구→성남 판교, 농림축산식품부 10대 핵심기술 구간은 Claude가 코드로 만든 모션그래픽.</aside>
+</section>
+
+<section class="slide" data-title="반도체 지원사업 · 전체 영상" data-stage="STAGE 10">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">ON AIR · 베트남 과기부 벤치마킹</div><div class="h2" style="margin-top:10px">성남시 반도체 지원사업 소개</div></div>
+  <figure class="gifcard" style="left:270px;top:200px;width:1060px"><video src="assets/media/missions/semicon-vn-full.mp4" poster="assets/media/missions/semicon-vn-full.jpg" controls playsinline preload="metadata" style="display:block;width:100%"></video><figcaption>베트남어 자막본 · 2분 58초</figcaption></figure>
+  <aside class="note">베트남 과기부 방문용 성남시 시스템반도체 지원사업 소개 영상 풀버전(베트남어 자막, 2분 58초). 반도체 사업소개 모션그래픽 구간은 Claude가 만든 것.</aside>
+</section>
+
+<section class="slide" data-title="초등학생 QA팀" data-stage="STAGE 10">
+  <canvas class="bg" data-scene="office"></canvas>
+  <canvas class="sp" data-sp="hero" data-scale="10" style="left:120px;bottom:270px"></canvas>
+  <canvas class="sp bob" data-sp="student" data-scale="7" style="left:1100px;bottom:270px"></canvas>
+  <canvas class="sp bob" data-sp="ryu" data-scale="7" style="left:1250px;bottom:270px;animation-delay:.3s"></canvas>
+  <canvas class="sp bob" data-sp="staff3" data-scale="7" style="left:1400px;bottom:270px;animation-delay:.6s"></canvas>
+  <div class="win" style="left:1090px;top:420px;padding:8px 14px;font:20px var(--pixel)">동료들의 초등학생 자녀</div>
+  <div class="win" style="left:380px;top:50px;width:640px;padding:18px 26px"><span class="tag">QA REPORT</span>
+    <div class="qb" style="position:relative;margin:16px 0 0 20px;font-size:26px" data-s="1">가사에 맞게 카운트가 떨어지는 느낌이 있어야 해요</div>
+    <div class="qb" style="position:relative;margin:22px 0 0 20px;font-size:26px" data-s="2">부자연스러운 AI 느낌을 없애야 해요</div>
+    <div class="qb" style="position:relative;margin:22px 0 0 20px;font-size:26px" data-s="3">캐릭터 서사보다 드론이 너무 많아요</div>
+  </div>
+  <div class="win light dlg" style="font-size:62px" data-s="4"><span class="name">사진우</span><span class="type">제가 초등학생 때보다 <em>훨씬 성숙한 피드백</em>이 왔습니다.</span><span class="more">▼</span></div>
+  <aside class="note">주변에 초등학생 자녀를 둔 동료들에게 영상을 보내고, 자녀 피드백을 요청했습니다. 초등학생의 피드백은 굉장히 신랄했어요. 가사와 맞게 카운트가 떨어지는 느낌, 부자연스러운 AI 느낌을 없애야 한다, 캐릭터 서사보다 드론이 많다 등등. 나 때의 초딩들보다 훨씬 성숙한 피드백이 왔습니다.</aside>
+</section>
+
+<section class="slide" data-title="드론축구 · 전체 영상" data-stage="STAGE 10">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">ON AIR · 특히 애정이 가는 영상</div><div class="h2" style="margin-top:10px">성남시 드론축구대회</div></div>
+  <figure class="gifcard" style="left:270px;top:200px;width:1060px"><video src="assets/media/missions/drone-full.mp4" poster="assets/media/missions/drone-full.jpg" controls playsinline preload="metadata" style="display:block;width:100%"></video><figcaption>스포츠 애니 오프닝처럼 · 1분 42초</figcaption></figure>
+  <aside class="note">이 영상은 특히 애정이 갑니다. (전체 영상. 재생 버튼으로 시작.)</aside>
+</section>
+
+<section class="slide" data-title="드론축구 · 유소년들 리액션" data-stage="STAGE 10">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">ON AIR · 현장 반응</div><div class="h2" style="margin-top:10px">유소년들 <span class="mark">리액션</span></div></div>
+  <figure class="gifcard" style="left:270px;top:200px;width:1060px"><video src="assets/media/missions/drone-youth-reaction.mp4" poster="assets/media/missions/drone-youth-reaction.jpg" controls playsinline preload="metadata" style="display:block;width:100%"></video><figcaption>드론축구대회 현장 상영 · 유소년 선수들 반응</figcaption></figure>
+  <aside class="note">대회 현장에서 이 영상을 틀었을 때 유소년 선수들의 리액션입니다. (현장 촬영 영상 1분 33초 이후 구간, 약 15초. 재생 버튼으로 시작.)</aside>
+</section>
+
+
+<!-- ================= FINAL ================= -->
+
+<section class="slide stage-card" data-title="FINAL STAGE · 기술 환원" data-stage="FINAL">
+  <canvas class="bg dim" data-scene="city:dawn"></canvas>
+  <div data-lit="5" class="stage-card" style="background:none">
+    <div class="no">FINAL STAGE</div>
+    <div class="ttl">기술 환원</div>
+    <div class="sub">행정혁신은, 기관의 지지에서 시작된다</div>
+    <div class="bar"><i></i><i></i><i></i><i></i><i></i></div>
+  </div>
+  <aside class="note">마지막 이야기입니다.</aside>
+</section>
+
+<section class="slide" data-title="기술 환원의 순환" data-stage="FINAL">
+  <canvas class="bg dim" data-scene="city:dawn"></canvas>
+  <div class="top-left"><div class="kicker">CORE LOOP</div><div class="h2" style="margin-top:10px">행정혁신에는 <span class="mark">기관의 지지</span>가 필요하다</div></div>
+  <div class="loop">
+    <div class="ln1 shown"><b>배운다</b><span>교육 · 연구 · 도전</span></div>
+    <div class="ln2" data-s="1"><b>시에 돌려준다</b><span>영상 · 툴 · 강의</span></div>
+    <div class="ln3" data-s="2"><b>지지를 받는다</b><span>윗분들의 마음</span></div>
+    <div class="ln4" data-s="3"><b>더 큰 기회</b><span>의뢰 · 지원 · 무대</span></div>
+    <div class="core" data-s="4">기술<br>환원</div>
+  </div>
+  <div class="win light" style="left:980px;right:80px;top:640px;padding:20px 28px;font:600 28px/1.5 var(--body)" data-s="4">그리고 나도 이걸 <b style="color:#d0314f">강의 때 써먹는다</b></div>
+  <aside class="note">행정혁신을 이루기 위해서는 기관의 지지를 받아야 합니다. 그러려면 기술 환원을 해야 한다고 생각합니다. 이것이 더 큰 기회로 결국에는 돌아옵니다. 그리고 저도 이거 강의 때 써먹고요.</aside>
+</section>
+
+<section class="slide" data-title="갑질일까, 기회일까" data-stage="FINAL">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">SELECT</div><div class="h2" style="margin-top:10px">윗분들의 “이것도 만들어 줄 수 있어?”</div></div>
+  <div class="win" style="left:80px;top:300px;width:660px;opacity:.75"><span class="tag">MZ 시선</span><div class="h2" style="font-size:60px;color:var(--muted);text-decoration:line-through;text-decoration-thickness:5px">갑질</div><p class="p" style="margin-top:12px">사실 그렇게 보일 수도 있다</p></div>
+  <div class="win gold pop" style="left:820px;right:80px;top:300px" data-s="1"><span class="tag">내 시선</span><div class="h2" style="font-size:60px" >기회</div><p class="p" style="margin-top:12px">말단 직원이 언제 윗분들께<br><b class="mark">능력으로 마음의 짐</b>을 지울 수 있겠나</p></div>
+  <aside class="note">MZ들이 보면 이거 갑질이다, 사실. 근데 저는 기회라고 봅니다. 우리 같은 말단 직원들이 언제 이렇게 윗분들한테 능력으로 마음의 짐을 지울 수 있겠어요.</aside>
+</section>
+
+<section class="slide" data-title="국장님이 댓글 달아 주는 시" data-stage="FINAL">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">SELF BRANDING · 페이스북</div><div class="h2" style="margin-top:10px">올릴 때마다 달리는 <span class="mark">응원</span></div></div>
+  <figure class="gifcard" style="left:70px;top:230px;width:470px"><img src="assets/media/facebook/fb-choi.jpg" alt="최영숙 국장님 댓글"><figcaption>최영숙 국장님 · “멋지다 우리 후배님~~”</figcaption></figure>
+  <figure class="gifcard pop" style="left:565px;top:230px;width:470px" data-s="1"><img src="assets/media/facebook/fb-cho.jpg" alt="조일호 과장님 댓글"><figcaption>조일호 과장님 · “오! 대박.^^”</figcaption></figure>
+  <figure class="gifcard pop" style="left:1060px;top:230px;width:470px" data-s="2"><img src="assets/media/facebook/fb-hong.jpg" alt="홍성모 팀장님 댓글"><figcaption>홍성모 팀장님 · “우리들의 언어로 ㅎㅎ 감사합니다”</figcaption></figure>
+  <div class="win" style="left:70px;top:640px;width:700px;padding:16px 24px" data-s="3"><span class="p" style="font-size:24px">+ 차광승 국장님 등 많은 분들이 좋아요·댓글로 응원</span></div>
+  <div class="bubble" style="left:830px;top:650px;width:640px" data-s="4"><span style="display:block;font:18px var(--pixel);color:#5a5f86">류주임님</span>국장님이 댓글 달아 주는 성남시라니…?</div>
+  <aside class="note">셀프 브랜딩을 위해 페이스북 홍보도 많이 하는데, 그때마다 퇴임하신 전 국장님, 현 국장님, 과장님, 그리고 성남시 많은 팀장님들이 응원의 좋아요와 댓글을 남겨 줍니다. 류주임님이 이 부분을 굉장히 부러워하셨어요. 국장님이 댓글 달아 주는 성남시라니?
+(캡처: 본인 페이스북 — 최영숙 국장님 2026.9.9 게시물, 조일호 과장님 9.15 드론축구 습작, 홍성모 팀장님(Sung Mo Hong) 8.5 시스템반도체 발표 게시물. 차광승 국장님 댓글은 못 찾아 이름만.)</aside>
+</section>
+
+<section class="slide" data-title="술자리에서 들은 한마디" data-stage="FINAL">
+  <canvas class="bg" data-scene="city:night"></canvas>
+  <canvas class="sp" data-sp="hero" data-scale="9" style="left:200px;bottom:270px"></canvas>
+  <canvas class="sp" data-sp="ryu" data-scale="9" style="left:520px;bottom:270px"></canvas>
+  <canvas class="sp" data-sp="won" data-scale="9" style="left:820px;bottom:270px"></canvas>
+  <canvas class="sp flip" data-sp="mentor" data-scale="9" style="left:1120px;bottom:270px"></canvas>
+  <div class="win" style="left:60px;top:50px;padding:10px 20px;font:22px var(--pixel)">AI챔피언들과 한잔</div>
+  <div class="qb" style="left:420px;top:110px" data-s="1">다른 부서에서 “네가 뭔데?”</div>
+  <div class="qb" style="left:820px;top:190px" data-s="2">인센티브는 못 받고</div>
+  <div class="qb" style="left:520px;top:270px" data-s="3">개인 돈만 깨지고…</div>
+  <div class="win light dlg" style="font-size:50px" data-s="4"><span class="name npc">어느 AI챔피언</span><span class="type">AI 거점 리더가 되려고 교육받는데… <em>우리는 왕따가 되어 가고 있어요.</em></span><span class="more">▼</span></div>
+  <aside class="note">다른 AI챔피언들과 같이 술 마시다 보면, 여기저기 다른 부서에서 "네가 뭔데?"를 당하고, 인센티브는 못 받고, 개인 돈만 깨지고. "AI 거점 리더가 되기 위해서 교육받는데 우리는 왕따가 되어 가고 있어요" — 굉장히 슬픈 한마디였습니다.
+(톤 주의: 잠깐 가라앉는 장.)</aside>
+</section>
+
+<section class="slide" data-title="우리 시는 나를 사랑하는 것 같다" data-stage="FINAL">
+  <canvas class="bg" data-scene="city"></canvas>
+  <div class="wind" data-n="6" data-leaves="1"></div>
+  <canvas class="sp bob" data-sp="hero" data-scale="11" style="left:700px;bottom:270px"></canvas>
+  <canvas class="sp pop" data-sp="heart" data-scale="8" style="left:640px;top:180px" data-s="1"></canvas>
+  <canvas class="sp pop" data-sp="heart" data-scale="6" style="left:860px;top:140px" data-s="1"></canvas>
+  <canvas class="sp pop" data-sp="heart" data-scale="7" style="left:960px;top:240px" data-s="1"></canvas>
+  <div class="bubble" style="left:120px;top:120px" data-s="1">진우 씨가 있어서 다행이야</div>
+  <div class="win light dlg" style="font-size:46px"><span class="name">사진우</span><span class="type">하지만 저는 공감할 수가 없었어요. <em>우리 시는 저를 사랑하는 것 같거든요.</em></span><span class="more">▼</span></div>
+  <div class="win light dlg" data-s="2"><span class="name">사진우</span><span class="type">챔피언들이 신나서 각자 조직의 실패를 말할 때, 저도 실패를 겪어 봤지만…<br>마냥 욕할 수가 없었어요.</span><span class="more">▼</span></div>
+  <aside class="note">하지만 저는 공감할 수 없었습니다. 우리 시는 저를 사랑하는 것 같아요. 뭔가 엄청 도움 되는 걸 만든 것 같지도 않은데, 다들 너무 예뻐하고, 내가 있어서 다행이다 라고 합니다.
+챔피언들을 모아서 기관 인센티브, 조직문화 변화 등을 말하라고 할 때, 다들 신나서 본인 조직의 안 좋은 사례, 실패들을 말하는데, 저도 한 실패 겪어 봤지만 마냥 욕을 할 수가 없어요.</aside>
+</section>
+
+<section class="slide" data-title="과기부 국민 AI혁신추진단" data-stage="FINAL">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">QUEST · 과학기술정보통신부</div><div class="h2" style="margin-top:10px">국민 AI혁신추진단 선발</div></div>
+  <div class="bubble" style="left:80px;top:270px;width:760px;font-size:34px" data-s="1"><span style="display:block;font:18px var(--pixel);color:#5a5f86">모두가 한마음으로</span>진우 씨가 과기부 가서 배우고 오는 게 성남시에 이득이야</div>
+  <div class="stamp" style="left:960px;top:280px" data-s="2">인사과 반려</div>
+  <div class="win light" style="left:80px;right:80px;top:500px;padding:30px 40px;font:600 30px/1.6 var(--body)" data-s="3"><span style="display:block;font:20px var(--pixel);color:#5a5f86;margin-bottom:6px">인사과 · 미안해하며</span>일방 파견으로 인한 인력 부족 문제도 있지만… 사실 진우 씨처럼 이렇게 AI 활동하고 영향력 끼치는 사람이 누가 있어요. <b style="color:#d0314f">진우 씨는 대체 불가</b>고, 이건 윗분들도 다 알고 계세요. 아쉽게 됐어요.</div>
+  <aside class="note">그래서 이번에 과기부에서 국민 AI혁신추진단을 뽑을 때도 모두가 한마음으로 저를 보내 주려 했습니다. "진우 씨가 과기부 가서 배우고 오는 것이 성남시에 이득이야." 물론 인사과에서 안 받아 줬지만요.
+인사과에서도 반려를 하며 저한테 미안해하며 이렇게 말했어요. "일방 파견으로 인한 인력 부족 문제도 있지만… 사실 진우 씨처럼 이렇게 AI 활동하고 영향력 끼치는 사람이 누가 있냐. 진우 씨는 대체 불가하고, 이거는 윗분들도 다 알고 계신다. 아쉽게 되었다."</aside>
+</section>
+
+<section class="slide" data-title="업적: 대체 불가" data-stage="FINAL">
+  <canvas class="bg dim" data-scene="sky:night"></canvas>
+  <div class="burst"></div>
+  <div class="unlock">
+    <canvas class="sp" data-sp="medal" data-scale="20" style="position:static"></canvas>
+    <div>
+      <div class="lbl">★ HIDDEN ACHIEVEMENT</div>
+      <div class="ttl"><span class="mark">대체 불가</span></div>
+      <div class="meta">파견은 반려됐지만, 인정받았다</div>
+    </div>
+  </div>
+  <aside class="note">인정받는 것 같아 기분이 상당히 좋았습니다.</aside>
+</section>
+
+<section class="slide" data-title="나의 핵심" data-stage="FINAL">
+  <div class="stars"></div>
+  <div style="position:absolute;left:0;right:0;top:150px;text-align:center">
+    <div class="kicker" style="font-size:28px">기술 이야기, 상 탄 이야기를 많이 했지만</div>
+    <div class="h1" style="margin-top:40px;font-size:84px">배워서 <span class="mark">시에 돌려줘야</span>,<br>그만큼 <span class="mark">기회</span>가 온다</div>
+  </div>
+  <div class="win" style="left:200px;right:200px;top:600px;padding:30px 40px;text-align:center" data-s="1"><p class="p">사랑받으면서 AX해 나가는 분위기는 <b class="mark">우리가 얼만큼 하느냐</b>에 달렸다</p></div>
+  <aside class="note">기술적인 이야기도 많이 하고 상 탄 얘기도 많이 했지만, 사실 저의 핵심은 이겁니다. 배워서 시에 돌려줘야 그만큼 기회가 옵니다. 사랑받으면서 AX해 나가는 분위기는 우리가 얼만큼 하느냐에 달렸습니다.</aside>
+</section>
+
+<section class="slide" data-title="시각을 빼앗을 수 있다면" data-stage="FINAL">
+  <canvas class="bg dim" data-scene="sky:night"></canvas>
+  <div style="position:absolute;left:80px;right:80px;top:110px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px">
+    <figure class="gifcard" style="position:relative"><video src="assets/media/independence/lobby-screen.mp4" muted loop playsinline autoplay style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover"></video></figure>
+    <figure class="gifcard" style="position:relative"><video src="assets/media/inauguration-on-site.mp4" muted loop playsinline autoplay style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover"></video></figure>
+    <figure class="gifcard" style="position:relative"><img src="assets/media/nuzic-dancing-sn-city.gif" alt="" style="aspect-ratio:16/9;object-fit:cover"></figure>
+    <figure class="gifcard" style="position:relative"><video src="assets/media/missions/drone-cut.mp4" muted loop playsinline autoplay style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover"></video></figure>
+  </div>
+  <div style="position:absolute;left:0;right:0;top:420px;text-align:center">
+    <div class="h2" style="font-size:54px">그리고 거기에 AI 영상처럼 <span class="mark">시각을 빼앗을 수 있다면</span></div>
+    <p class="p" style="margin-top:30px;font-size:36px" data-s="1">사람들의 마음속에 <b class="mark">엄청난 효과</b>를 불러일으킬 수 있다</p>
+  </div>
+  <aside class="note">그리고 거기에 AI 영상처럼 시각을 빼앗을 수 있다면, 그것은 사람들의 마음속에 엄청난 효과를 불러일으킬 수 있습니다.</aside>
+</section>
+
+<section class="slide" data-title="연구 중인 손그림체" data-stage="FINAL">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">NOW RESEARCHING · 어제 만든 영상</div><div class="h2" style="margin-top:10px">요즘 연구 중인 <span class="mark">손그림체</span></div></div>
+  <figure class="gifcard" style="left:270px;top:200px;width:1060px"><video src="assets/media/handdrawn-research.mp4" poster="assets/media/handdrawn-research.jpg" controls playsinline preload="metadata" style="display:block;width:100%"></video><figcaption>손그림체 실험 · 솔로몬의 선택 · 2분 45초</figcaption></figure>
+  <aside class="note">어제 만든 영상입니다. 요즘 연구 중인 손그림체예요. (2분 45초. 재생 버튼으로 시작, 장을 넘기면 정지. 끝나면 최신 공모전 작품으로.)</aside>
+</section>
+
+<section class="slide" data-title="최신 공모전 도전 작품" data-stage="FINAL">
+  <div class="stars"></div>
+  <div class="top-left"><div class="kicker">NEW CHALLENGE · 최신 공모전 도전</div><div class="h2" style="margin-top:10px">지금 도전 중인 <span class="mark">공모전 작품</span></div></div>
+  <figure class="gifcard" style="left:270px;top:200px;width:1060px"><video src="assets/media/contest-latest.mp4" poster="assets/media/contest-latest.jpg" controls playsinline preload="metadata" style="display:block;width:100%"></video><figcaption>최신 공모전 출품작 · 경산 · 1분 34초</figcaption></figure>
+  <aside class="note">그리고 가장 최근에 공모전에 도전한 작품입니다. (1분 34초. 재생 버튼으로 시작, 장을 넘기면 정지. 끝나면 '감사합니다'로.)</aside>
+</section>
+
+<section class="slide cover" data-title="THE END · 감사합니다" data-stage="FINAL">
+  <canvas class="bg" data-scene="city"></canvas>
+  <div class="wind" data-n="9" data-leaves="1"></div>
+  <div class="confetti"></div>
+  <div class="titlebox" style="width:1100px">
+    <span class="eyebrow">THE END</span>
+    <h1>감사합니다</h1>
+  </div>
+  <canvas class="sp bob" data-sp="hero" data-scale="12" style="left:1200px;bottom:120px"></canvas>
+  <div class="who"><span>PLAYER 1</span>성남시 AI반도체과 · 사진우</div>
+  <div class="press">CONTINUE? ▶</div>
+  <aside class="note">끝. 감사합니다.</aside>
+</section>
+
+</div></div>
+
+<nav id="hud">
+  <span id="stageName"></span>
+  <button id="prev" aria-label="이전">◀</button>
+  <span id="num"></span>
+  <button id="next" aria-label="다음">▶</button>
+  <div id="prog"></div>
+  <select id="toc" aria-label="장표 목록"></select>
+  <button id="noteBtn">노트 N</button>
+  <button id="fs">전체화면 F</button>
+</nav>
+<div id="notes"></div>
+
+<script src="scenes-v2.js"></script>
+<script src="sprites-v2.js"></script>
+<script src="quest-v2.js"></script>
+</body>
+</html>

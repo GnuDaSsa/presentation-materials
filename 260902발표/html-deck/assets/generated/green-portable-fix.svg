@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="560" viewBox="0 0 1440 560">
+<rect width="1440" height="560" fill="#FBFBF8"/>
+<style>text{font-family:Pretendard,'Apple SD Gothic Neo',Arial,sans-serif;fill:#171717}.m{fill:#71706B}.r{fill:#B65A3A}.g{fill:#205A4A}.small{font-size:18px;font-weight:650}.tiny{font-size:14px;font-weight:620;letter-spacing:.3px}.label{font-size:14px;font-weight:800;letter-spacing:1.4px}.big{font-size:38px;font-weight:850}.mid{font-size:25px;font-weight:800}</style><text x="52" y="48" class="label m">DELIVERY FAILURE → PORTABLE FIX</text><line x1="52" y1="70" x2="1388" y2="70" stroke="#D7D1C5"/>
+<text x="52" y="122" class="big">내 PC에서 되던 것을 다른 PC에서도 되게 만든 수정</text>
+<rect x="52" y="176" width="380" height="246" fill="#F1EDE4" stroke="#D7D1C5"/><text x="78" y="218" class="label r">FIRST DELIVERY</text><text x="78" y="272" class="mid">Python 미설치</text><text x="78" y="316" class="mid">BAT 한글·LF 깨짐</text><text x="78" y="370" class="small m">전달받은 업무 PC에서 실행 실패</text>
+<path d="M466 298 H610" stroke="#B65A3A" stroke-width="4"/><path d="M598 286 l18 12 l-18 12" fill="none" stroke="#B65A3A" stroke-width="4"/>
+<rect x="646" y="176" width="742" height="246" fill="#171717"/><text x="676" y="218" class="label" style="fill:#E8C8BA">FINAL PORTABLE PACKAGE</text>
+<text x="676" y="276" class="big" style="fill:#fff">ASCII + CRLF + PowerShell</text><text x="676" y="326" class="mid" style="fill:#fff">Python 0 · 상대경로 · Windows 기본 구성</text>
+<circle cx="1170" cy="292" r="62" fill="#205A4A"/><path d="M1138 292 l22 22 l44 -48" fill="none" stroke="#fff" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="52" y="494" class="small m">검증: index 200 · template 200 · 임시 폴더 압축 해제 후 BAT 실행</text>
+</svg>

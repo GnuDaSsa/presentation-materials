@@ -1,0 +1,2222 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>영상팀 워크플로우</title>
+<style>
+@font-face{font-family:"Batang";src:url(fonts/GowunBatang-Regular.ttf);font-weight:400}
+@font-face{font-family:"Batang";src:url(fonts/GowunBatang-Bold.ttf);font-weight:700}
+@font-face{font-family:"Pre";src:url(fonts/PretendardGOV-Light.otf);font-weight:300}
+@font-face{font-family:"Pre";src:url(fonts/PretendardGOV-Regular.otf);font-weight:400}
+@font-face{font-family:"Pre";src:url(fonts/PretendardGOV-Medium.otf);font-weight:500}
+@font-face{font-family:"Pre";src:url(fonts/PretendardGOV-SemiBold.otf);font-weight:600}
+@font-face{font-family:"Pre";src:url(fonts/PretendardGOV-Bold.otf);font-weight:700}
+@font-face{font-family:"Mono";src:local("SF Mono"),local("SFMono-Regular"),local("Menlo"),local("Consolas")}
+
+:root{
+  --bg:#EEEDE8;
+  --sheet:#FAF9F6;
+  --ink:#1B1B1D;
+  --mid:#55524C;
+  --soft:#97928A;
+  --line:#CDC8BE;
+  --faint:#E2DED6;
+  --red:#CF3A1E;
+  --serif:"Batang","Gowun Batang","AppleMyungjo",serif;
+  --sans:"Pre","Pretendard GOV","Pretendard","Apple SD Gothic Neo",sans-serif;
+  --mono:"Mono","SF Mono",Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden;overflow:clip;background:var(--bg);color:var(--ink)}
+body{font-family:var(--sans);-webkit-font-smoothing:antialiased;cursor:default;user-select:none;word-break:keep-all;overflow-wrap:anywhere}
+#stage{position:fixed;inset:0;overflow:hidden;overflow:clip}
+#world{position:absolute;left:0;top:0;width:15200px;height:9700px;transform-origin:0 0}
+
+/* ---------- drawing frame ---------- */
+.frame{position:absolute;border:2px solid var(--ink)}
+.frame-in{position:absolute;border:1px solid var(--ink)}
+.zone{display:none;position:absolute;font:28px/1 var(--mono);color:var(--mid)}
+.ztick{position:absolute;background:var(--ink)}
+
+/* ---------- overview title ---------- */
+.ttl{position:absolute;left:300px;top:250px}
+.ttl .k{font:30px/1 var(--mono);letter-spacing:.12em;color:var(--mid)}
+.ttl h1{font:700 168px/1.05 var(--serif);letter-spacing:-.02em;margin-top:34px}
+.ttl .s{font:400 50px/1.4 var(--sans);color:var(--mid);margin-top:30px}
+
+/* ---------- sheets ---------- */
+.sheet{position:absolute;width:1600px;height:1000px;background:var(--sheet);border:3px solid var(--ink);cursor:pointer}
+.sheet::after{content:"";position:absolute;inset:16px;border:1px solid var(--line);pointer-events:none}
+.ov,.dt{position:absolute;inset:0;transition:opacity .5s ease}
+.dt{opacity:0;pointer-events:none}
+.snap .ov,.snap .dt{transition:none!important}
+.sheet.focus .ov{opacity:0;pointer-events:none}
+.sheet.focus .dt{opacity:1;pointer-events:auto}
+.sheet.focus{cursor:default}
+
+.ov{padding:96px 110px}
+.ov-top{display:flex;gap:36px;align-items:baseline;font:46px/1 var(--mono);color:var(--mid);letter-spacing:.1em}
+.ov-top .no{color:var(--ink)}
+.ov-name{font:700 330px/1 var(--serif);letter-spacing:-.03em;margin-top:70px}
+.ov-sub{position:absolute;left:110px;right:110px;bottom:96px;font:500 68px/1.25 var(--sans);color:var(--mid);border-top:2px solid var(--ink);padding-top:34px}
+
+.lane{position:absolute;width:1600px;font:36px/1 var(--mono);color:var(--soft);letter-spacing:.04em}
+.lane b{color:var(--mid);font-weight:400;margin-right:24px}
+
+/* detail layout */
+.dt{padding:64px 84px 0}
+.dh{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2px solid var(--ink);padding-bottom:22px}
+.dh h2{font:700 66px/1 var(--serif);letter-spacing:-.02em;display:flex;align-items:baseline;gap:28px}
+.dh h2 .no{font:400 26px/1 var(--mono);color:var(--mid);letter-spacing:.1em}
+.dh .r{font:20px/1 var(--mono);color:var(--soft);letter-spacing:.12em}
+.df{position:absolute;left:84px;right:84px;bottom:46px;display:flex;justify-content:space-between;font:19px/1 var(--mono);color:var(--soft);letter-spacing:.06em;border-top:1px solid var(--line);padding-top:16px}
+.body{position:absolute;left:84px;right:84px;top:178px;bottom:110px}
+
+.k{font:20px/1 var(--mono);letter-spacing:.12em;color:var(--soft);margin-bottom:16px}
+.p{font:400 31px/1.55 var(--sans)}
+.p strong{font-weight:700}
+.mid{color:var(--mid)}
+.red{color:var(--red)}
+code{font:.86em var(--mono);background:var(--faint);padding:.08em .35em}
+.gap{height:40px}
+.gap-s{height:22px}
+
+.strike,.circled,.under{position:relative;display:inline-block;white-space:nowrap}
+.mark{position:absolute;overflow:visible;pointer-events:none}
+
+.tags{display:flex;gap:14px;margin:18px 0 14px}
+.tags span{font:500 26px/1 var(--sans);border:1.5px solid var(--ink);padding:12px 18px 11px}
+
+.col2{display:grid;grid-template-columns:1fr 470px;gap:90px;height:100%}
+
+/* 01 */
+.ratio{font:700 250px/1 var(--serif);letter-spacing:-.04em;margin-top:6px}
+.ratio small{font-size:110px;margin-left:8px}
+.bar{display:flex;height:46px;border:1.5px solid var(--ink);margin-top:34px}
+.bar .me{flex:95;background:var(--ink)}
+.bar .ai{flex:5;background:var(--red)}
+.barl{display:flex;justify-content:space-between;font:22px/1 var(--mono);margin-top:14px;color:var(--mid)}
+
+/* 02 */
+.brand{font:600 150px/1 var(--sans);letter-spacing:-.04em;margin:14px 0 36px}
+.redline{font:500 28px/1.4 var(--sans);color:var(--red)}
+
+/* revision note */
+.sheet.rev{width:960px;height:600px;border:none;background:transparent}
+.sheet.rev::after{display:none}
+.rev .cloud{position:absolute;inset:0;overflow:visible;pointer-events:none}
+.rev .ov{padding:70px 80px}
+.rev .ov-top{font-size:36px;color:var(--red)}
+.rev .ov-name{font:700 92px/1.2 var(--serif);color:var(--red);margin-top:58px;letter-spacing:-.02em}
+.rev .dt{padding:40px 60px;display:flex;flex-direction:column;justify-content:center}
+.rk{font:15px/1 var(--mono);color:var(--red);letter-spacing:.1em;display:flex;align-items:center;gap:14px}
+.rt{font:700 46px/1.2 var(--serif);margin:24px 0 16px;letter-spacing:-.01em}
+.rp{font:400 21px/1.6 var(--sans);color:var(--ink)}
+.rc{font:15px/1.4 var(--mono);color:var(--mid);letter-spacing:.04em;margin-top:18px}
+
+/* 03 */
+.col3{display:grid;grid-template-columns:470px 1fr;gap:96px;height:100%}
+.hongdae{font:700 118px/1 var(--serif);letter-spacing:-.04em}
+.legend{font:21px/1.7 var(--mono);color:var(--mid);margin-top:20px}
+.legend i{display:inline-block;width:14px;height:14px;border-radius:50%;margin-right:12px;vertical-align:-1px}
+.sched{width:100%;border-collapse:collapse;margin-top:6px}
+.sched th{font:400 18px/1 var(--mono);letter-spacing:.12em;color:var(--soft);text-align:left;padding:0 0 12px;border-bottom:2px solid var(--ink)}
+.sched td{font:400 26px/1.4 var(--sans);padding:15px 0 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.sched td:first-child{width:210px;color:var(--mid)}
+.sched td b{font-weight:600}
+.sched .alt{font-size:22px;color:var(--mid)}
+.formula{font:500 28px/1.4 var(--sans);margin-top:28px}
+.formula span{border-bottom:2px solid var(--ink);padding-bottom:2px}
+.p3{font-size:28px}
+
+/* 04 */
+.col4{display:grid;grid-template-columns:600px 1fr;gap:90px;height:100%}
+.brand2{font:600 112px/1 var(--sans);letter-spacing:-.04em}
+.arrowd{font:300 60px/1 var(--sans);color:var(--mid);margin:18px 0 14px}
+.brand3{font:600 62px/1.1 var(--sans);letter-spacing:-.02em}
+.flow{font:500 44px/1 var(--sans);color:var(--soft);margin-top:56px}
+.hand{font:500 24px/1.4 var(--sans);color:var(--red);margin-top:16px}
+
+/* 05 */
+.lead{font:700 54px/1.25 var(--serif);letter-spacing:-.02em}
+.tri{display:grid;grid-template-columns:repeat(3,1fr);gap:54px;margin-top:46px}
+.tri .t{border-top:2px solid var(--ink);padding-top:20px}
+.tri .t .k{color:var(--ink)}
+.tri .p{font-size:27px;line-height:1.5}
+
+/* 06 */
+.lead6{font:700 92px/1.1 var(--serif);letter-spacing:-.03em}
+
+
+/* 05 cases */
+.cases{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:340px 340px;gap:32px;height:100%}
+.case{position:relative;border:1.5px solid var(--ink);padding:20px 22px;background:var(--sheet);cursor:zoom-in;display:flex;flex-direction:column}
+.zoomed .case{cursor:default}
+.ch{font:14px/1 var(--mono);letter-spacing:.06em;color:var(--mid);display:flex;gap:12px}
+.ch span{color:var(--red)}
+.ct{font:700 26px/1.2 var(--serif);letter-spacing:-.01em;margin:10px 0 12px}
+.cd{font:400 15.5px/1.5 var(--sans);margin-top:auto}
+.pair{display:flex;align-items:center;gap:10px}
+.pair i{font:300 22px/1 var(--sans);color:var(--mid);font-style:normal;flex:none}
+.pair figure{position:relative;flex:1;min-width:0}
+.pair img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border:1px solid var(--ink)}
+.pair b{position:absolute;left:0;top:0;font:600 10px/1 var(--mono);letter-spacing:.12em;background:var(--sheet);color:var(--ink);padding:5px 7px 4px;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.pair b.a{background:var(--red);color:#fff;border-color:var(--red)}
+.pair figcaption{font:12px/1.3 var(--mono);color:var(--mid);margin-top:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pair.three{gap:8px}
+.case.tall{flex-direction:row;gap:26px}
+.case.tall .tx{flex:1;display:flex;flex-direction:column}
+.case.tall .tx .cd{margin-top:0}
+.case.tall .tx .cd:first-of-type{margin-top:auto}
+.case.tall .tx .cd.mid{margin-top:8px}
+.pair.v{gap:10px;height:100%}
+.pair.v figure{height:100%;flex:none}
+.pair.v img{height:100%;width:auto;aspect-ratio:9/16}
+
+
+/* ===== VT-10 단계별 상세도 ===== */
+.ttl2{position:absolute;top:250px}
+.ttl2 .k{font:30px/1 var(--mono);letter-spacing:.12em;color:var(--mid)}
+.ttl2 h1{font:700 150px/1.05 var(--serif);letter-spacing:-.02em;margin-top:30px}
+.ttl2 .s{font:400 50px/1.4 var(--sans);color:var(--mid);margin-top:26px}
+.tb2{position:absolute;top:250px;width:1600px;height:280px;border:2px solid var(--ink);display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:1fr 1fr;background:var(--sheet)}
+.tb2 div{border-right:1px solid var(--ink);padding:18px 22px;font:500 30px/1.2 var(--sans)}
+.tb2 div:last-child{border-right:none}
+.tb2 .wide{grid-column:span 4;border-right:none;border-bottom:1px solid var(--ink);font:700 52px/1 var(--serif);display:flex;align-items:center;gap:30px}
+.tb2 small{display:block;font:18px/1 var(--mono);color:var(--soft);letter-spacing:.12em;margin-bottom:12px}
+.tb2 .wide small{display:inline;margin:0}
+.rowlab{position:absolute;width:600px;height:1000px;border-top:4px solid var(--ink);padding-top:40px}
+.rowlab .n{font:46px/1 var(--mono);color:var(--red)}
+.rowlab .t{font:700 150px/1.05 var(--serif);letter-spacing:-.03em;margin:22px 0 34px}
+.rowlab .k{font:30px/1 var(--mono);letter-spacing:.1em;color:var(--soft);margin-bottom:12px}
+.rowlab .v{font:500 40px/1.35 var(--sans);margin-bottom:34px}
+.rowlab .v.m{font:400 34px/1.35 var(--mono);color:var(--mid)}
+.sheet.dp .ov-name{font-size:150px;line-height:1.15}
+.sheet.dp .ov-top .no{color:var(--red)}
+.cols{display:grid;gap:56px;height:100%}
+.fld{width:100%;border-collapse:collapse}
+.fld th{white-space:nowrap;text-align:left;font:400 16px/1 var(--mono);letter-spacing:.1em;color:var(--soft);padding:0 0 10px;border-bottom:2px solid var(--ink)}
+.fld td{border-bottom:1px solid var(--line);padding:9px 0;vertical-align:top;font:400 21px/1.42 var(--sans)}
+.fld td:first-child{font:18px/1.45 var(--mono);padding-right:18px;white-space:nowrap}
+.fld td small{color:var(--mid);font-size:.88em}
+.fld td b{font-weight:600}
+.fld.c3 td:nth-child(2){font-weight:600}
+.fld .red{color:var(--red)}
+.chips{display:flex;flex-wrap:wrap;gap:9px}
+.chips span{border:1.5px solid var(--ink);padding:8px 12px 7px;font:500 19px/1 var(--sans);background:var(--sheet)}
+.chips.m span{font:17px/1 var(--mono)}
+.ol{counter-reset:o;display:flex;flex-direction:column;gap:11px}
+.ol p{font:400 21px/1.42 var(--sans);padding-left:40px;position:relative}
+.ol p::before{counter-increment:o;content:counter(o);position:absolute;left:0;top:1px;width:26px;height:26px;border:1.5px solid var(--ink);border-radius:50%;font:14px/26px var(--mono);text-align:center}
+.ol p b{font-weight:600}
+.ol.r p::before{border-color:var(--red);color:var(--red)}
+.sflow{display:flex}
+.sflow > div{flex:1;border:2px solid var(--ink);padding:14px 16px;position:relative;margin-right:40px;background:var(--sheet)}
+.sflow > div:last-child{margin-right:0}
+.sflow > div:not(:last-child)::after{content:"→";position:absolute;right:-32px;top:50%;transform:translateY(-50%);font:300 26px/1 var(--sans);color:var(--mid)}
+.sflow small{display:block;font:14px/1.2 var(--mono);color:var(--soft);letter-spacing:.06em}
+.sflow b{display:block;font:700 27px/1.2 var(--serif);margin:6px 0 6px}
+.sflow code{display:block;background:none;padding:0;font:14px/1.35 var(--mono);color:var(--mid)}
+.sflow code,.sflow b,.sflow em{word-break:keep-all}
+.sflow em{display:block;font:normal 500 16px/1.35 var(--sans);color:var(--red);margin-top:8px}
+.sflow.sm b{font-size:22px}
+.tl{border-left:2px solid var(--ink);padding-left:24px;display:flex;flex-direction:column;gap:13px}
+.tl p{font:400 21px/1.42 var(--sans);position:relative}
+.tl p::before{content:"";position:absolute;left:-31px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--ink)}
+.tl p span{display:block;font:15px/1.2 var(--mono);color:var(--red);margin-bottom:2px}
+.anat{width:100%;border-collapse:collapse}
+.anat td{padding:9px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.anat td:first-child{font:19px/1.45 var(--mono);color:var(--ink);width:760px;padding-right:30px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.anat td:first-child em{font-style:normal;color:var(--soft)}
+.anat td:last-child{font:500 22px/1.4 var(--sans)}
+.anat td:last-child small{font:400 18px/1.4 var(--sans);color:var(--mid);margin-left:10px}
+.tree{font:25px/1.75 var(--mono);white-space:pre;color:var(--ink)}
+.tree em{font-style:normal;color:var(--soft)}
+.tree b{font-weight:400;color:var(--red)}
+.fbox{position:absolute;border:2px solid var(--ink);background:var(--sheet);padding:14px 18px;font:500 24px/1.3 var(--sans)}
+.fbox small{display:block;font:15px/1.3 var(--mono);color:var(--soft);margin-bottom:6px;letter-spacing:.06em}
+.fbox.r{border-color:var(--red)}
+.note{font:400 22px/1.55 var(--sans);color:var(--mid)}
+.note b{color:var(--ink);font-weight:600}
+.trace{border-left:2px solid var(--red);padding-left:22px;display:flex;flex-direction:column;gap:14px}
+.trace p{font:400 21px/1.4 var(--sans);position:relative}
+.trace p::before{content:"";position:absolute;left:-30px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--red)}
+.trace p span{display:block;font:15px/1.2 var(--mono);color:var(--red);margin-bottom:3px;letter-spacing:.04em}
+.trace q{font-weight:600}.trace q::before{content:"“"}.trace q::after{content:"”"}
+.trace code{font-size:.8em}
+.statrow{display:flex;gap:56px;margin-top:30px}
+.statrow div b{display:block;font:700 76px/1 var(--serif);letter-spacing:-.03em}
+.statrow div span{font:17px/1.3 var(--sans);color:var(--mid)}
+.statrow div.z b{color:var(--soft)}
+#hud .mode{border:1px solid var(--mid);padding:3px 6px 2px}
+/* r1 */
+.id{font:normal 400 .7em/1.3 var(--mono);color:var(--soft);letter-spacing:.02em;margin-left:.5em}
+.fld.ko td:first-child{font:600 20px/1.42 var(--sans);white-space:normal;width:230px}
+.fld.ko td:first-child .id{display:block;margin-left:0;font-size:14px}
+.fld.big td{font:400 27px/1.4 var(--sans);padding:14px 0}
+.fld.big td:first-child{font:600 27px/1.4 var(--sans);white-space:normal;width:46%}
+.sflow.big b{font-size:30px}
+.sflow.big code{font:400 19px/1.4 var(--sans);color:var(--ink)}
+.aside{border:1.5px dashed var(--soft);padding:22px 24px}
+.pair video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border:1px solid var(--ink);background:var(--ink)}
+.snd{display:none;color:var(--red)}
+.case.nosound .snd{display:inline}
+.v4top{display:flex;justify-content:space-between;align-items:baseline;gap:40px}
+.v4brand{font:600 44px/1 var(--sans);letter-spacing:-.03em;white-space:nowrap}
+.v4brand .mid{font-weight:300}
+.v4skip{font:500 26px/1 var(--sans);color:var(--soft);white-space:nowrap}
+.v4skip em{font:normal 500 19px/1 var(--sans);color:var(--red);margin-left:14px}
+.v4claim{font:400 26px/1.4 var(--sans);margin:12px 0 14px}
+.v4{display:grid;grid-template-columns:280px 1fr 280px;column-gap:40px;row-gap:10px;align-items:center}
+.v4 .k{margin:0 0 2px}
+.v4 .k span{color:var(--line);margin-left:10px}
+.v4 img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border:1px solid var(--ink)}
+.v4 figcaption{font:14px/1.3 var(--mono);color:var(--mid);margin-top:5px;white-space:nowrap}
+.v4q code{display:block;background:none;padding:0;font:16px/1.45 var(--mono);color:var(--mid)}
+.v4q p{font:600 23px/1.35 var(--sans);margin-top:6px}
+.v4q p small{display:block;font:400 18px/1.35 var(--sans);color:var(--mid)}
+.v4q.r{border-left:3px solid var(--red);padding-left:18px}
+.v4q.r p{color:var(--red)}
+.v4 figure.r img{border:3px solid var(--red)}
+.v4 figure.r figcaption{color:var(--red);cursor:pointer}
+/* r2 */
+#s3r{width:1440px;height:810px}
+#s3r .dt{padding:44px 60px;display:grid;grid-template-columns:420px 1fr;column-gap:44px;align-items:center}
+#s3r .rt{font-size:36px;margin:20px 0 16px}
+#s3r .rp{font-size:25px;line-height:1.55}
+.r2l{font:700 27px/1.3 var(--sans);color:var(--red);margin-top:16px}
+.r2q{font:15px/1.5 var(--mono);color:var(--mid);margin-top:12px}
+.r2q b{font-weight:400;color:var(--soft);display:block}
+#s3r .rc [data-go]{color:var(--red);cursor:pointer}
+.fx{display:flex;flex-direction:column;gap:14px}
+.fxk{font:15px/1 var(--mono);letter-spacing:.1em;color:var(--mid);margin-bottom:8px}
+.fxk b{font:700 20px/1 var(--sans);color:var(--ink);margin-right:12px;letter-spacing:0}
+.fxk.a b{color:var(--red)}
+.fxrow{display:flex;align-items:flex-start;gap:10px}
+.fxrow > i{font:300 24px/1 var(--sans);font-style:normal;color:var(--mid);flex:none;margin-top:100px}
+.fxrow figure{flex:1;min-width:0}
+.cw{position:relative;aspect-ratio:16/9;overflow:hidden;border:1px solid var(--ink)}
+.cw img{display:block;width:100%;height:100%;object-fit:cover}
+.cw.z img{position:absolute;left:0;bottom:0;width:200%;height:200%}
+.cw .ring{position:absolute;border:3px solid var(--red);border-radius:50%;transform:rotate(-8deg)}
+.cw b{position:absolute;left:0;bottom:0;font:600 12px/1 var(--mono);background:var(--red);color:#fff;padding:5px 7px 4px}
+.fxrow figcaption{font:14px/1.35 var(--mono);color:var(--mid);margin-top:6px}
+.fxn{font:13px/1.4 var(--mono);color:var(--soft)}
+.au{display:inline-flex;align-items:center;gap:16px;margin-top:18px;border:1.5px solid var(--ink);padding:12px 18px;cursor:pointer;font:500 22px/1 var(--sans)}
+.aub{width:0;height:0;border-left:18px solid var(--ink);border-top:11px solid transparent;border-bottom:11px solid transparent;flex:none}
+.au.on .aub{width:16px;height:22px;border:0;border-left:5px solid var(--red);border-right:5px solid var(--red)}
+.aubar{position:relative;width:200px;height:3px;background:var(--line);flex:none}
+.aubar i{position:absolute;left:0;top:0;height:3px;width:0;background:var(--red)}
+.auk{font:15px/1 var(--mono);color:var(--soft)}
+.who{width:100%;border-collapse:collapse;margin-top:26px;border-top:2px solid var(--ink)}
+.who td{font:400 22px/1.4 var(--sans);padding:10px 0;border-bottom:1px solid var(--line)}
+.who td:first-child{font-weight:700;width:150px}
+.who tr:last-child td:first-child{color:var(--red)}
+.whon{font:14px/1 var(--mono);color:var(--soft);margin-top:10px}
+.appxb{position:absolute;left:2400px;top:4130px;width:1600px;border:3px solid var(--ink);background:var(--sheet);padding:30px 40px;cursor:pointer}
+.appxb b{display:block;font:700 60px/1.1 var(--sans);letter-spacing:-.02em}
+.appxb small{display:block;font:34px/1.4 var(--mono);color:var(--mid);margin-top:14px}
+/* r3 */
+.ttl .by{font:500 54px/1.3 var(--sans);color:var(--ink);margin-top:22px}
+.gl{font:17px/1.4 var(--mono);color:var(--soft);margin-top:8px}
+#s3 .col3{grid-template-columns:440px 1fr;gap:60px}
+#s3 .hongdae{font-size:104px}
+#s3 .p3{font-size:24px;line-height:1.5}
+#s3 .p3.mid{font-size:20px}
+#s3 .sched{margin-top:14px}
+#s3 .sched th{padding-bottom:9px}
+#s3 .sched td{font-size:22px;padding:8px 0 7px}
+#s3 .sched .alt{font-size:18px}
+.f3{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 30px;margin-top:14px}
+.f3 .formula,.f3 .redline{font-size:22px;margin-top:0}
+.i3{margin-top:12px;border-top:2px solid var(--ink);padding-top:8px}
+.i3k{font:15px/1 var(--mono);letter-spacing:.06em;color:var(--mid);margin-bottom:9px}
+.i3k b{font:700 19px/1 var(--sans);color:var(--red);margin-right:12px;letter-spacing:0}
+.i3row{display:flex;align-items:flex-start;gap:10px}
+.i3row figure{flex:none}
+.i3row img{display:block;height:170px;aspect-ratio:4/5;object-fit:cover;border:1px solid var(--ink)}
+.i3row figure.a img{border:3px solid var(--red)}
+.i3row figcaption{font:14px/1.3 var(--mono);color:var(--mid);margin-top:5px;white-space:nowrap}
+.i3row figure.a figcaption{color:var(--red)}
+.i3row > i{font:300 22px/1 var(--sans);font-style:normal;color:var(--mid);flex:none;margin-top:76px}
+.i3q{flex:1;min-width:0;margin-left:14px;border-left:3px solid var(--red);padding-left:16px}
+.i3q q{display:block;font:700 25px/1.3 var(--serif);quotes:"\201C" "\201D"}
+.i3q small{display:block;font:14px/1.45 var(--mono);color:var(--mid);margin-top:8px}
+.i3d{font:400 19px/1.4 var(--sans);margin-top:8px}
+.i3d b{font-weight:700;color:var(--red)}
+#s4 .v4{row-gap:6px}
+#s4 .v4claim{margin:8px 0 8px}
+.v4q code.mv{margin-top:10px}
+#s3r .dt{grid-template-columns:440px 1fr}
+#s3r .rp{font-size:23px}
+#s3r .fx{gap:10px}
+#s3r .fxrow{gap:20px}
+.fxb{font:600 18px/1.4 var(--sans);color:var(--ink);border-left:3px solid var(--red);padding-left:12px;word-break:keep-all}
+#s5 .cd{transition:opacity .4s}
+body:not(.zoomed) #s5 .cd{opacity:0}
+.pl{position:absolute;right:0;top:0;display:flex;align-items:center;gap:8px;font:600 12px/1 var(--sans);background:var(--ink);color:#fff;padding:7px 9px 6px;pointer-events:auto;cursor:pointer}
+.pl::before{content:"";width:0;height:0;border-left:10px solid #fff;border-top:6px solid transparent;border-bottom:6px solid transparent}
+figure.playing .pl{display:none}
+/* r4 */
+.bd{display:inline-block;vertical-align:middle;font:600 13px/1 var(--mono);letter-spacing:.06em;border:1.5px solid var(--red);color:var(--red);padding:5px 8px 4px;margin-right:12px;white-space:nowrap;cursor:pointer}
+.bd.k{border-color:var(--ink);color:var(--ink)}
+.ch > span:first-child{white-space:nowrap}
+#d00c .bd{cursor:default;margin-right:0}
+#d00c .fld.ko td:first-child{width:150px}
+.glo{font-size:.72em;color:var(--mid)}
+#s3 .f3 .gl{flex-basis:100%;margin-top:0}
+#s3 .p3.mid{margin-top:4px}
+#s3 .i3d{font-size:18px}
+#s4 .pa,#s4 .pb{transition:opacity .4s}
+body.p4a #s4 .pb{opacity:0;pointer-events:none}
+body.p4b #s4 .pa{opacity:.38}
+.n6{font:400 24px/1.5 var(--sans);color:var(--ink);margin-top:6px}
+.n6 b{font-weight:700}
+/* r5 */
+.pl:hover{background:var(--red)}
+.ho6{font:400 22px/1.4 var(--sans);margin-top:10px}
+.ho6 b{font-weight:700;color:var(--red);margin-right:22px}
+.ho6 small{color:var(--mid);font-size:.85em}
+#s6 .who{margin-top:14px}
+.ttl .bdl{font:500 38px/1.3 var(--mono);color:var(--mid);margin-top:26px;cursor:pointer;white-space:nowrap}
+.ttl .bdl span{color:var(--soft)}
+#d03b .fld td:first-child{width:150px}
+#s4 .df .n4{font-weight:400;transition:color .4s}
+body.p4b #s4 .df .n4{color:var(--ink)}
+/* r6 */
+#s4 figure.mv4{position:relative}
+#s4 figure.mv4 video{position:absolute;left:0;top:0;display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border:1px solid var(--ink)}
+
+/* r8 — 키워드 사슬(왼쪽 레일) */
+.kcw{display:grid;grid-template-columns:290px minmax(0,1fr);column-gap:30px;height:100%}
+.kcw>.ev{position:relative;min-width:0;height:100%}
+.kc{display:flex;flex-direction:column;justify-content:space-between;height:100%}
+.kc>div{position:relative;height:104px;border:2px solid var(--ink);background:var(--sheet);padding:13px 14px 7px;display:flex;flex-direction:column;justify-content:center}
+.kc>div:not(:last-child)::after{content:"↓";position:absolute;right:34px;bottom:-19px;font:300 18px/1 var(--sans);color:var(--mid)}
+.kc small{position:absolute;left:10px;top:-9px;background:var(--sheet);padding:0 7px;font:13px/16px var(--mono);letter-spacing:.1em;color:var(--mid);white-space:nowrap}
+.kc b{display:block;font:600 21px/1.2 var(--sans);letter-spacing:-.01em;white-space:nowrap}
+.kc b.m{font:400 15px/1.68 var(--mono);letter-spacing:0}
+.kc>div.key{border:3px solid var(--red)}
+.kc>div.key small{color:var(--red)}
+.kc .under{margin-bottom:9px}
+.chips span.r{border-color:var(--red);color:var(--red)}
+/* r8 — 시트별 증거 영역 */
+.e1{display:grid;grid-template-columns:minmax(0,1fr) 470px;gap:44px;height:100%}
+#s2 .brand{margin:10px 0 26px}
+.e3{display:grid;grid-template-columns:300px minmax(0,1fr);gap:44px;height:100%}
+#s3 .hongdae{font-size:88px}
+.mt4{display:flex;align-items:center;gap:14px;font:500 21px/1 var(--sans);white-space:nowrap;margin-bottom:12px}
+.mt4 small{font:13px/1 var(--mono);letter-spacing:.1em;color:var(--soft)}
+.mt4 i{font-style:normal;color:var(--mid)}
+.mt4 .no{color:var(--soft)}
+.mt4 strong{font-weight:700;border-bottom:3px solid var(--red);padding-bottom:3px}
+.mt4 em{font:normal 500 17px/1 var(--sans);color:var(--red)}
+.mt4 .gf{margin-left:auto;font:500 17px/1 var(--sans);color:var(--soft)}
+#s4 .v4{grid-template-columns:250px minmax(0,1fr) 250px;column-gap:36px}
+#s4 .v4q p{font-size:21px}
+#s4 .v4 figcaption{white-space:normal}
+#s4 .v4 .k.pb{font-size:14px!important}
+#s5 .case.tall .pair.v{height:auto;align-self:center}
+#s5 .case.tall .pair.v figure{height:205px}
+#s6 .lead6{font-size:64px}
+#s6 #edit{margin-top:18px!important}
+#s6 .ho6{font-size:20px}
+#s6 .ho6 b{margin-right:14px}
+#s6 .ho6 small{font-size:.8em}
+#s1 .p.mid{font-size:22px}
+.mt4 .gf .strike{margin-right:8px}
+#s5 #c52 .ch{flex-wrap:wrap;row-gap:6px}
+#s5 #c52 .ch em{white-space:nowrap}
+#rev .rt{font-size:38px;margin:20px 0 12px}
+#rev .chips{margin-bottom:4px}
+/* title block */
+.tb{position:absolute;left:4500px;top:4130px;width:1600px;height:280px;border:2px solid var(--ink);display:grid;grid-template-columns:1fr 1fr 1fr 1fr;grid-template-rows:1fr 1fr;background:var(--sheet)}
+.tb div{border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:18px 22px;font:500 30px/1.2 var(--sans)}
+.tb div:nth-child(n+2):nth-child(-n+1){}
+.tb .wide{grid-column:span 4;border-right:none;font:700 52px/1 var(--serif);display:flex;align-items:center;gap:30px}
+.tb div:last-child{border-right:none}
+.tb div:nth-child(n+2){border-bottom:none}
+.tb small{display:block;font:18px/1 var(--mono);color:var(--soft);letter-spacing:.12em;margin-bottom:12px}
+.tb .wide small{display:inline;margin:0}
+
+.legend-ov{position:absolute;left:300px;top:4170px;font:36px/1.6 var(--mono);color:var(--mid);letter-spacing:.03em}
+.legend-ov .sw{display:inline-block;width:70px;height:0;border-top:4px solid var(--ink);vertical-align:middle;margin-right:24px}
+.legend-ov .sw.r{border-top:5px solid var(--red)}
+
+/* ---------- HUD ---------- */
+#hud{position:fixed;left:28px;bottom:24px;font:13px/1 var(--mono);color:var(--mid);letter-spacing:.08em;display:flex;align-items:center;gap:16px;transition:opacity .4s}
+#hud .ticks{display:flex;gap:5px}
+#hud .ticks i{width:7px;height:3px;background:var(--line)}
+#hud .ticks i.on{background:var(--ink)}
+#hint{opacity:0;position:fixed;right:28px;bottom:24px;font:12px/1 var(--mono);color:var(--soft);letter-spacing:.06em;transition:opacity 1s}
+body.clean #hud,body.clean #hint{opacity:0}
+
+/* r9 s3 split */
+.sp3{display:grid;grid-template-columns:minmax(0,1fr) 2px minmax(0,1fr);column-gap:36px;height:100%;padding-top:6px}
+.sp3d{background:var(--ink)}
+.sp3t{font:700 38px/1.1 var(--serif);letter-spacing:-.01em;margin-bottom:14px}
+.sp3t.r{color:var(--red)}
+.sp3k{display:flex;flex-wrap:wrap;gap:8px}
+.sp3k span{font:600 18px/1 var(--sans);border:2px solid var(--ink);padding:8px 12px 7px;white-space:nowrap}
+.sp3kl{list-style:none;margin-bottom:14px}
+.sp3kl li{font:600 19px/1.35 var(--sans);padding-left:16px;position:relative}
+.sp3kl li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;background:var(--red)}
+.sp3g{display:grid;gap:10px 12px;margin-top:16px}
+.sp3g.sq{grid-template-columns:repeat(2,196px);justify-content:start}
+.sp3g.wd{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:0}
+.sp3g figure{position:relative}
+.sp3g img{display:block;width:100%;border:1px solid var(--ink)}
+.sp3g.sq img{aspect-ratio:1/1;object-fit:cover}
+.sp3g.wd img{aspect-ratio:16/9;object-fit:cover}
+.sp3g figcaption{font:13px/1.2 var(--mono);color:var(--mid);margin-top:4px}
+.sp3g figure.pick img{border:4px solid var(--red)}
+.sp3g figure.pick b{position:absolute;left:0;top:0;background:var(--red);color:var(--sheet);font:600 14px/1 var(--mono);padding:5px 9px 4px;letter-spacing:.06em}
+.sp3n{font:13px/1.4 var(--mono);color:var(--soft);margin-top:10px}
+.sp3s{font:600 14px/1 var(--mono);letter-spacing:.08em;color:var(--mid);margin:12px 0 7px}
+.sp3g.q4{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:0}
+.sp3g.q4 img{aspect-ratio:16/9;object-fit:cover}
+.sp3g.q4 figure.pick img{border-width:3px}
+.sp3g.q4 figure.pick b{font-size:12px;padding:3px 6px 2px}
+.sp3g.w3{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px 10px;margin-top:0}
+.sp3g.w3 img{aspect-ratio:16/9;object-fit:cover}
+.sp3kl{margin-bottom:4px}
+.sp3b{margin-top:16px;display:flex;align-items:flex-start;gap:0;flex-wrap:wrap}
+.sp3b .bd{margin-bottom:6px}
+.sp3b strong{display:block;flex-basis:100%;font:700 31px/1.25 var(--serif);color:var(--red);letter-spacing:-.01em}
+/* r10 */
+:root{--t2:64px;--t2s:48px;--t3:32px;--t4:22px;--t5:18px;--t6:15px}
+.lane{transition:opacity .4s;font-size:58px}
+body.in .lane{opacity:0}
+body.in .ttl,body.in .legend{opacity:0;transition:opacity .3s}
+.ttl2,.tb2,.rowlab,.sheet.dp,.zx{transition:opacity .5s}
+body:not(.apx) :is(.ttl2,.tb2,.rowlab,.sheet.dp,.zx){opacity:0;pointer-events:none}
+.ttl .bdl{display:flex;align-items:center;white-space:nowrap}
+.ttl .bdl .bd{font-size:62px;border-width:4px;padding:14px 22px 12px;margin-right:22px;cursor:pointer}
+.ttl .s{font-size:62px}
+.ttl .by{font-size:62px}
+.legend-ov{font-size:56px}
+.appxb b{font-size:72px}
+.appxb small{font-size:50px}
+.kc small{font:15px/16px var(--mono)}
+.kc b{font-size:22px}
+.kc b.m{font-size:15px}
+.kc>div{border-width:1.5px}
+.kc>div.key{border-width:3px}
+.bd{font-size:15px}
+.mt4 small{font-size:15px}
+.sp3g figcaption,.sp3n,.sp3s{font-size:15px}
+.sp3s{margin:8px 0 5px}
+.ch{font-size:18px;align-items:baseline}
+.ch span{font:700 24px/1 var(--mono)}
+.cd{font-size:16px}
+.pl{font-size:15px}
+.pair figure{display:flex;flex-direction:column}
+.pair figcaption{font:15px/1.3 var(--sans);white-space:nowrap}
+.pair b{position:static;display:block;order:-1;border:0;background:none;padding:0 0 5px;font:600 15px/1 var(--mono);color:var(--mid)}
+.pair b.a{background:none;color:var(--red);border:0}
+.pair.v img{height:185px;width:auto}
+#s5 .case.tall .pair.v figure{height:auto}
+body:not(.zoomed) #s5 .pl{font-size:0;gap:0;padding:7px 8px;top:20px}
+#c53 .pair.three figure:last-child{flex:1.8}
+/* 01 */
+#s1 .ratio + .p{font:600 36px/1.3 var(--sans)}
+#s1 .ratio + .p .bd{font-size:22px;margin:0 0 0 18px}
+#s1 .tags span{font-size:32px;padding:14px 22px 13px}
+#s1 .p.mid{font-size:26px}
+/* 02 */
+.msg2{font:700 var(--t2)/1.2 var(--serif);letter-spacing:-.02em;margin:6px 0 28px}
+#s2 .row2{display:flex;align-items:center;gap:32px}
+#s2 .brand{font-size:72px;margin:0}
+#s2 .au{margin-top:0}
+.ex2{position:absolute;right:0;bottom:240px;margin:0}
+/* revision 2 */
+.fxk{display:flex;align-items:center}
+.fxk .bd{margin:0 0 0 auto;font-size:16px}
+/* 03 */
+.pk3{display:grid;grid-template-columns:256px 19px 396px;align-items:center}
+.sp3g.c4{grid-template-columns:repeat(2,1fr);gap:8px;margin:0}
+.pk3 .big{margin:0}
+.pk3 .big img{display:block;width:396px;aspect-ratio:16/9;object-fit:cover;border:4px solid var(--red)}
+.pk3 .big figcaption{font:600 15px/1 var(--mono);color:var(--red);margin-top:5px}
+.pk3>i{font:300 22px/1 var(--sans);font-style:normal;color:var(--mid);text-align:center}
+.bt3{display:grid;grid-template-columns:442px minmax(0,1fr);column-gap:24px;align-items:end}
+.bt3 .sp3g.w3{gap:8px 8px}
+.bt3 figcaption{white-space:normal}
+.bt3 .sp3b{margin:0;border-left:3px solid var(--red);padding-left:16px}
+.sp3b strong{font-size:var(--t3)}
+.sp3b .bd{font-size:18px}
+/* 04 */
+#s4 .ev{position:relative}
+#s4 .v4a,#s4 .v4b{position:absolute;left:0;right:0;top:44px;bottom:0;transition:opacity .4s}
+body:not(.p4b) #s4 .v4b{opacity:0;pointer-events:none}
+body.p4b #s4 .v4a{opacity:0;pointer-events:none}
+.v4a{display:grid;grid-template-columns:290px minmax(0,1fr);column-gap:44px;row-gap:10px;align-items:center;align-content:start}
+.v4a img,.v4b img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border:1px solid var(--ink)}
+.v4a figcaption,.v4b figcaption{font:15px/1.3 var(--mono);color:var(--mid);margin-top:5px}
+.v4a .k{margin:0;grid-column:1}
+.v4a .h4{grid-column:2}
+.h4{font:700 var(--t2s)/1.15 var(--serif);letter-spacing:-.02em}
+.v4r p{font:600 26px/1.35 var(--sans)}
+.v4r code,.v4l code,.v4q code{display:block;background:none;padding:0;font:16px/1.45 var(--mono);color:var(--mid);margin-top:8px}
+.v4r.two{grid-row:span 2;border-left:2px solid var(--ink);padding-left:22px}
+.seq{font:500 24px/1.4 var(--sans);margin:10px 0 4px}
+.v4b{display:grid;grid-template-columns:minmax(0,1fr) 560px;column-gap:36px;grid-template-rows:auto auto;row-gap:14px;align-items:start}
+.v4b .mv4{width:560px}
+.v4b .v4s{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.v4b .v4q.r{align-self:center;grid-column:1;grid-row:2;border-left:3px solid var(--red);padding-left:18px}
+.v4b .v4q.r p{font:600 23px/1.35 var(--sans);color:var(--red);margin-top:6px}
+.v4b .v4l{grid-column:1;grid-row:1}
+.v4b .mv4{grid-column:2;grid-row:1}
+.v4b .v4s{grid-column:2;grid-row:2}
+.v4s figure.r img{border:3px solid var(--red)}
+.v4s figure.r figcaption{color:var(--red);cursor:pointer}
+#s4 figure.mv4 video{cursor:pointer}
+.pt4{font:500 26px/1 var(--sans);color:var(--mid);letter-spacing:0}
+body:not(.p4b) #s4 .pt4.b,body.p4b #s4 .pt4.a{display:none}
+/* 06 */
+#s6 .ho6{font-size:24px;margin-top:14px}
+#s6 .ho6.s{font-size:20px;color:var(--mid);margin-top:6px}
+.who td{font-size:24px}
+.pair.three{align-items:flex-start}
+#s1 .ratio + .p{margin-top:16px}
+/* hud */
+#hud{font-size:14px}
+#hint{font-size:13px}
+@media (max-width:1500px){#hint{right:auto;left:28px;bottom:50px}}
+/* ===== R12 ===== */
+.ztick{display:none}
+.ttl .s,.legend-ov,.ov-sub,.ov-top,.rev .ov-top{font-size:88px}
+.ttl .bdl .bd{font-size:80px}
+.appxb b{font-size:105px}
+#hud .mode{cursor:pointer}
+/* chain */
+.kcw{grid-template-columns:330px minmax(0,1fr);column-gap:30px}
+.kc>div{height:108px;padding:10px 14px 4px}
+.kc small{font:500 20px/22px var(--sans);letter-spacing:0;top:-12px;color:var(--mid)}
+.kc>div.key small{color:var(--red)}
+.kc b{font:600 24px/1.12 var(--sans);letter-spacing:-.01em}
+.kc .under{margin-bottom:5px}
+.kc>div:not(:last-child)::after{font-size:20px;bottom:-17px}
+/* floor */
+.bd{font-size:20px;padding:6px 10px 5px}
+#rev .bd{font-size:15px}
+#s3r .bd{font-size:17px}
+.k,.dh .r,.mt4 .no{color:var(--mid)}
+.mt4{font-size:22px}
+.mt4 small{font:500 20px/1 var(--sans);letter-spacing:0;color:var(--mid)}
+.mt4 em{font-size:21px}
+.sp3g figcaption,.v4a figcaption,.v4b figcaption,.pair b{font:500 20px/1.3 var(--sans);letter-spacing:0;color:var(--mid);white-space:nowrap}
+.pair b{padding:0 0 5px}
+.pair b.a{color:var(--red)}
+#s3r .rk{font-size:18px}
+#s3r .rk svg{width:34px;height:30px}
+#s3r .fxk{font-size:17px}
+#s3r .fxk b{font-size:22px}
+#s3r .fxrow figcaption{font:500 17px/1.35 var(--sans);letter-spacing:0}
+#s3r .cw b{font-size:16px}
+#s3r .dt{align-items:start}
+#s3r .rt{font-size:42px}
+.cw.z img{width:150%;height:150%}
+/* 01 */
+.e1>div:last-child{display:flex;flex-direction:column;justify-content:center}
+.ratio{font-size:280px}
+.ratio small{font-size:124px}
+#s1 .ratio + .p{font:600 44px/1.3 var(--sans);margin-top:16px}
+#s1 .ratio + .p .bd{font-size:28px;padding:7px 12px 6px;margin-left:18px}
+/* 02 */
+.aubar{width:260px}
+.ex2{left:0;right:auto;bottom:296px}
+/* 03 */
+#s3 .body{bottom:46px}
+.sp3t{font-size:42px}
+.sp3t.r{color:var(--ink)}
+.sp3k span{font-size:22px}
+.sp3g.sq{grid-template-columns:repeat(2,250px);gap:8px 20px}
+.sp3r{display:flex;flex-direction:column}
+.sp3kl li{font-size:21px;line-height:1.28}
+.sp3kl li::before{background:var(--ink)}
+.pk3{grid-template-columns:300px 19px 312px}
+.pk3 .big{position:relative}
+.pk3 .big img{width:304px;border:3px solid var(--red)}
+.sp3g figure.pick img{border-width:2.5px}
+.pk3 .big figcaption{position:absolute;left:0;bottom:0;margin:0;background:var(--red);color:#fff;font:600 20px/1 var(--sans);padding:5px 9px}
+.sp3s{font:500 20px/1 var(--sans);letter-spacing:0;margin:10px 0 6px}
+.sp3g.w3{grid-template-columns:repeat(3,206px);gap:8px 12px;margin-top:0}
+.sp3b{margin-top:auto;display:block;border:0;border-top:3px solid var(--red);padding:10px 0 0}
+.sp3b .bd{font-size:24px;margin:0 14px 0 0;vertical-align:middle}
+.sp3b strong{display:inline;font:700 32px/1.2 var(--serif)}
+.sp3b strong span{white-space:nowrap}
+/* 04 */
+.v4r p{font:600 36px/1.4 var(--sans)}
+.v4r.two{align-self:stretch;display:flex;flex-direction:column;justify-content:center}
+.v4b{grid-template-columns:minmax(0,1fr) 560px;grid-template-rows:auto auto auto;row-gap:14px}
+.v4b .h4{grid-column:1/-1;grid-row:1;white-space:nowrap}
+.v4b .seq{grid-column:1;grid-row:2;font:600 34px/1.4 var(--sans);margin:0}
+.v4b .seq span{display:block;white-space:nowrap}
+.v4b .mv4{grid-column:2;grid-row:2}
+.v4b .v4q.r{grid-column:1;grid-row:3;align-self:center}
+.v4b .v4q.r p{font:600 32px/1.3 var(--sans)}
+.v4b .v4s{grid-column:2;grid-row:3}
+.v4s figure.r img{border:1px solid var(--ink)}
+.anat td:only-child{width:auto;padding-right:0;white-space:normal;font:500 24px/1.4 var(--sans)}
+/* 05 */
+.ch{font:500 20px/1 var(--sans);letter-spacing:0}
+.ch span{color:var(--ink)}
+.ct{font-size:28px;letter-spacing:0}
+body:not(.zoomed) #s5 .pair figcaption{display:none}
+body.zoomed #s5 .pair b{font-size:14px}
+.pl{gap:0;padding:7px 8px}
+.pair.v img{height:236px}
+#s5 .case.tall .pair.v{align-self:flex-start}
+#c53 .pair.three{display:grid;grid-template-columns:136px minmax(0,1fr);grid-template-rows:auto auto;gap:8px 16px;align-items:start}
+#c53 .pair.three>i{display:none}
+#c53 .pair.three figure:last-child{grid-column:2;grid-row:1/3}
+#s5 .case,#s5 .kc{transition:opacity .4s}
+body.zoomed #s5 .case:not(.cur),body.zoomed #s5 .kc{opacity:0}
+/* 06 */
+.who2{display:grid;grid-template-columns:1fr 1fr;column-gap:40px;margin-top:20px;border-top:2px solid var(--ink);padding-top:14px}
+.who2 b{display:block;font:700 32px/1.2 var(--sans);margin-bottom:8px}
+.who2 ul{list-style:none}
+.who2 li{font:400 26px/1.4 var(--sans)}
+#s6 .ho6{font-size:32px;margin-top:20px;border-top:1px solid var(--line);padding-top:14px}
+#s6 .ho6 b{color:var(--ink);margin-right:22px}
+.ex6{position:absolute;right:0}
+.pk3{grid-template-columns:284px 19px 296px}
+.pk3 .big img{width:288px}
+.sp3kl li{font-size:20px;line-height:1.25}
+.sp3s{margin:8px 0 4px}
+#s4 .v4a,#s4 .v4b{top:38px}
+.v4a{row-gap:8px}
+.pair.v img{height:186px}
+#s5 .case.tall .pair.v{margin-top:79px}
+#c53 .pair.three{grid-template-columns:124px minmax(0,1fr)}
+#c53 .pair.three{gap:4px 16px}
+.sp3g.w3{gap:6px 12px}
+.sp3b{padding-top:8px}
+#c53 .ct{margin:6px 0 8px}
+.sp3b strong{line-height:1.12}
+.sp3b strong{font-size:30px;line-height:1.1}
+.sp3kl{margin-bottom:0}
+/* R12 floor 2 (screen >=19px) */
+.ttl .s,.legend-ov,.ov-sub,.ov-top,.rev .ov-top{font-size:92px}
+.ttl .bdl .bd{font-size:84px}
+.k,.dh .r{font-size:22px}
+.kc small{font:500 22px/22px var(--sans);top:-13px}
+.bd{font-size:22px}
+#rev .bd{font-size:15px}
+#s3r .bd{font-size:18px}
+.sp3b .bd{font-size:24px}
+.mt4 small{font-size:22px}
+.mt4 em{font-size:22px}
+.sp3g figcaption,.v4a figcaption,.v4b figcaption,.pair b,.sp3s{font-size:22px}
+.sp3kl li{font-size:22px}
+.pk3 .big figcaption{font-size:22px}
+.ch{font-size:22px}
+body.zoomed #s5 .pair b{font-size:14px}
+.v4b .v4q.r p{font-size:34px}
+#s3r .rk{font-size:19px}
+#s3r .rk svg,#rev .rk svg{flex:none;width:44px;height:39px}
+#rev .rk svg{width:34px;height:30px}
+#s3r .fxk{font-size:18px}
+#s3r .fxk b{font-size:22px}
+#s3r .fxrow figcaption{font-size:18px}
+#s3r .cw b{font-size:18px}
+.ttl .bdl .bd{font-size:92px;padding:14px 22px 12px}
+#s4 .v4b .v4q.r p{font-size:32px}
+.ttl .s{letter-spacing:-.06em;word-spacing:-.1em}
+.sp3kl{margin-bottom:6px}
+/* ===== R13 ===== */
+.dt{transition:opacity .2s ease}
+.ov{transition:opacity .35s ease .2s}
+.sheet.focus .ov{transition:opacity .18s ease}
+.sheet.focus .dt{transition:opacity .4s ease .18s}
+.snap .ov,.snap .dt{transition:none!important}
+body.clean .appxb{opacity:0}
+/* S4 */
+#s1 .body,#s2 .body,#s4 .body,#s5 .body,#s6 .body{bottom:70px}
+.kcw{height:100%;align-items:start}
+.kcw>.ev{height:712px}
+.kc>div{height:106px;padding:15px 14px 2px}
+.kc>div.key{height:auto;min-height:106px}
+.kc small{font:500 24px/22px var(--sans);top:-8px}
+.kc b{font:600 26px/1.08 var(--sans);letter-spacing:-.02em}
+.kc .under{font-size:28px;margin-bottom:3px}
+.kc>div:not(:last-child)::after{bottom:-19px}
+/* S5 */
+.h4{font-size:56px;line-height:1.1}
+#s4 .mvw{position:relative;aspect-ratio:16/9;overflow:hidden;border:1px solid var(--ink)}
+#s4 .mvw img,#s4 .mvw video{border:0;transform:scale(2.5);transform-origin:0% 62%}
+.v4b .seq{justify-self:end;align-self:center;font:600 34px/1.2 var(--sans)}
+.v4b .seq i{display:block;font-style:normal;font-weight:400;font-size:26px;line-height:1;width:1em;transform:rotate(90deg);margin:3px 0 3px 8px;color:var(--mid)}
+.v4b .v4s{grid-template-columns:240px 1fr;align-items:start}
+.v4b .v4s .q5{font:600 28px/1.25 var(--sans);color:var(--red);white-space:nowrap;margin-top:4px}
+.v4b{row-gap:10px}
+/* S6 */
+#s3r .fxk b{font-size:26px}
+#s3r .fxk{margin-bottom:6px}
+#s3r .bd{font-size:20px}
+#s3r .fxrow figcaption{font-size:20px}
+#s3r .rt{font-size:46px}
+.r2l{font-size:29px}
+#s3r .cw.z img{bottom:-20%}
+.cw .ring{border-width:2.5px}
+/* S7 */
+#s3 .body{bottom:28px}
+#s3 .sp3g.sq{grid-template-columns:repeat(2,270px);gap:6px 20px}
+#s3 .sp3g.sq figcaption{font-size:24px}
+#s3 .sp3b{margin:0 0 10px;border:0;padding:0;display:flex;align-items:center;gap:16px;flex-wrap:nowrap}
+#s3 .sp3b strong{display:block;flex-basis:auto;font:700 36px/1.15 var(--serif);color:var(--red)}
+#s3 .sp3b strong span{display:block;white-space:nowrap}
+#s3 .sp3b .bd{font-size:26px;margin:0;order:2}
+#s3 .sp3t{margin-bottom:8px}
+#s3 .pk3{grid-template-columns:284px 48px 296px}
+#s3 .pk3 .big img{width:296px;border-width:2.5px}
+#s3 .pk3>i{font:500 34px/1 var(--sans);color:var(--ink)}
+#s3 .sp3g figure.pick img{border-width:2px}
+#s3 .pk3 .big figcaption{background:var(--sheet);color:var(--red);border:2px solid var(--red)}
+#s3 .sp3kl li{line-height:1.22}
+
+/* ===== R14 ===== */
+#ink .cx{transition:opacity .25s ease}
+body.in #ink .cx{opacity:0}
+.snap #ink .cx{transition:none}
+#s2 .au{visibility:hidden;pointer-events:none}
+.ttl .s,.legend-ov,.ov-sub,.ov-top,.rev .ov-top{font-size:106px}
+.ov-sub{line-height:1.15;letter-spacing:-.01em;left:90px;right:90px}
+#s3 .sp3t{font-size:35px}
+#s3 .sp3b strong{font-size:43px;line-height:1.14}
+#s3 .sp3b .bd{font-size:27px}
+#s3 .sp3g.w3{grid-template-columns:repeat(3,216px);gap:12px 14px}
+#s3 .sp3g figcaption{font-size:25px;line-height:1.2}
+#s3 .sp3kl li{line-height:1.15}
+#s3 .sp3s{margin:4px 0 2px}
+#s3 .pk3{grid-template-columns:264px 48px 296px}
+#s3 .pk3>i{display:flex;align-items:center;justify-content:center}
+#s3r .r2l{margin-top:26px}
+#s3r .fx > div:nth-child(2) .cw.z img{left:-30%}
+#s4 .mt4{flex-wrap:wrap;row-gap:10px;font-size:27px;margin-bottom:0}
+#s4 .mt4 .br{flex-basis:100%;height:0}
+#s4 .mt4 small,#s4 .mt4 em{font-size:27px}
+#s4 .mt4 .bd{font-size:22px}
+#s4 .mt4{transition:opacity .4s}
+body.p4b #s4 .mt4{opacity:0;pointer-events:none}
+#s4 .v4a{top:94px;row-gap:6px;grid-template-columns:258px minmax(0,1fr)}
+#s4 .v4a .mark{position:absolute;left:0;top:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+#s4 .v4r.two{border-left:0}
+#s4 .mvw img,#s4 .mvw video{transform:scale(3.3);transform-origin:0% 62%}
+.kc small{font:500 25px/22px var(--sans)}
+.kc b{font:600 28px/1.06 var(--sans);letter-spacing:-.045em}
+.kc .under{font-size:28px}
+.kc>div{height:112px;padding:15px 14px 6px}
+.kc>div.key{min-height:112px}
+#c53 .pair.three{grid-template-rows:auto auto auto}
+#c53 .pair.three figure:last-child{grid-row:1/4}
+#c53 .pair.three > i:first-of-type{display:block;grid-column:1;justify-self:center;font-size:27px;line-height:1;height:16px;margin:-6px 0;transform:rotate(90deg);color:var(--ink)}
+body.zoomed #c53.cur .pair.three{grid-template-columns:84px minmax(0,1fr);column-gap:10px}
+.ch,.ct,.pair b{transition:font-size .5s ease}
+body.zoomed #s5 .case.cur .ch{font-size:11px}
+body.zoomed #s5 .case.cur .ct{font-size:21px;margin:4px 0 8px}
+body.zoomed #s5 .case.cur .pair b{font-size:9.5px}
+body.zoomed #s5 .case.cur .cd{font-size:10px;margin-top:11px}
+.pair b{color:var(--ink)}
+.pair b.a{color:var(--red)}
+/* ===== R15 ===== */
+.appxb{display:none}
+body.ov #hud{opacity:0;pointer-events:none}
+body:not(.zoomed) #s5 .pl{display:none}
+#s2 .brand{font-size:44px}
+#s4 .mvw img,#s4 .mvw video{transform:scale(2.2);transform-origin:0% 62%}
+body.zoomed #s5 .case.cur .ch span{font-size:11px}
+#c53 .pair.three{grid-template-rows:auto auto 1fr}
+body.zoomed #c53.cur .pair.three > i:first-of-type{font-size:9.5px;height:8px;margin:-2px 0}
+#s4 .kc>div.key{border-width:2px}
+#s4 .mt4 strong{border-bottom-width:1.2px}
+#s3r .fxrow{gap:12px}
+#s3r .fxrow > i{font:500 24px/1 var(--sans);color:var(--ink);width:24px;text-align:center}
+#s4 .mt4 i.dn{transform:rotate(90deg)}
+#s4 .mt4 .br + strong{margin-left:416px}
+/* 01: 4고리 (사용자 지정 11-14) */
+#s1 .kc{justify-content:flex-start;gap:40px}
+#s1 .kc>div{height:132px;padding-top:16px}
+#s1 .kc>div:not(:last-child)::after{bottom:-31px}
+#s2 .kc{justify-content:flex-start;gap:30px}
+#s2 .kc>div{height:118px}
+#s2 .kc>div:not(:last-child)::after{bottom:-26px}
+/* 02: 생성 요소 → 장면 수 재정립 (사용자 지정 11-14) */
+#s2 .k{margin:4px 0 0}
+#s2 .tags.t2{flex-wrap:wrap;gap:12px;margin:14px 0 34px}
+#s2 .tags.t2 span{font-size:28px;padding:12px 18px 11px}
+#s2 .msg2{margin:0 0 18px}
+#s2 .why2{display:flex;align-items:center;flex-wrap:wrap;gap:14px;font:500 30px/1.2 var(--sans)}
+#s2 .why2 i{font-style:normal;color:var(--mid)}
+#s2 .why2 b{font-weight:700;color:var(--red);border-bottom:3px solid var(--red);padding-bottom:2px}
+#s2 .why2 em{font-style:normal;font-size:24px;border:1.5px solid var(--ink);padding:8px 12px 7px;margin-left:10px}
+#s2 .row2{height:0;overflow:hidden}
+/* 03 왼쪽: 홍보물 + 2D·3D·실사 캐릭터 (사용자 지정 11-14) */
+#s3 .sp3g.sq.s4{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px 10px;margin-top:22px}
+#s3 .sp3g.s4 .rl{grid-column:1/-1;font:600 24px/1 var(--sans);color:var(--mid);margin:10px 0 2px}
+#s3 .sp3g.s4 .cl{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;font:500 24px/1 var(--sans);color:var(--mid);text-align:center;margin-top:6px}
+/* △2 발표에서 제외 (사용자 지정 11-14: 기본 사항) */
+#s3r{display:none}
+/* 05: 판단 칸 제거 (사용자 지정 11-14) */
+#s5 .kc{justify-content:flex-start;gap:30px}
+#s5 .kc>div{height:118px}
+#s5 .kc>div:not(:last-child)::after{bottom:-26px}
+/* 06: 편집은 직접 (사용자 지정 11-14) */
+#s6 .kc{justify-content:flex-start;gap:34px}
+#s6 .kc>div{height:126px}
+#s6 .kc>div:not(:last-child)::after{bottom:-29px}
+#s6 .tags.t6{align-items:center;gap:12px;margin:18px 0 6px}
+#s6 .tags.t6 span{font-size:26px;padding:10px 16px 9px}
+#s6 .tags.t6 i{font:400 26px/1 var(--sans);font-style:normal;color:var(--mid)}
+#s6 .tags.t6 b{font:700 30px/1 var(--sans);color:var(--red);margin-left:4px}
+/* 사슬 밑줄이 다음 줄 글자와 겹치지 않게 */
+.kc b:has(.under){margin-bottom:12px}
+/* 02 = 생성 요소만, 이유는 △1로 (사용자 지정 11-14: 중복 금지) */
+#s2 .msg2{margin:6px 0 34px}
+#s2 .tags.t2{gap:16px;margin:0}
+#s2 .tags.t2 span{font-size:40px;padding:18px 26px 16px}
+#rev .why1{display:flex;align-items:center;flex-wrap:wrap;gap:9px;font:500 19px/1.2 var(--sans);margin:0 0 14px}
+#rev .why1 i{font-style:normal;color:var(--mid)}
+#rev .why1 b{font-weight:700;color:var(--red);border-bottom:2px solid var(--red);padding-bottom:1px}
+#rev .why1 em{font-style:normal;font-size:15px;border:1px solid var(--ink);padding:5px 8px 4px;margin-left:6px}
+#s2 .ev{display:flex;flex-direction:column;justify-content:center;padding-bottom:60px}
+#s2 .msg2{font-size:76px;line-height:1.15}
+#s2 .tags.t2 span{font-size:44px}
+#s5 .kc>div.key{height:auto;min-height:118px;padding-top:20px}
+/* 04 사슬 4칸: 스킬·위키 합침, 쉬운 말 (사용자 지정 11-14) */
+#s4 .kc{justify-content:flex-start;gap:30px}
+#s4 .kc>div{height:auto;min-height:112px;padding-top:18px;padding-bottom:12px}
+#s4 .kc>div:not(:last-child)::after{bottom:-26px}
+#s4 .kc>div.k4 b{letter-spacing:-.03em}
+#s4 .kc>div.k4 b.to{margin-top:6px;color:var(--red)}
+/* 04②: 형용사 대신 순서 — 이유와 예시 (사용자 요청 11-14) */
+.v4b .adj4{grid-column:1;grid-row:2/4;justify-self:start;align-self:start;width:318px;display:flex;flex-direction:column;gap:26px;margin-top:4px}
+.v4b .adj4 b{display:block;font:700 26px/1.2 var(--sans);margin-bottom:8px}
+.v4b .adj4 .x b{color:var(--mid)}
+.v4b .adj4 .o b{color:var(--red)}
+.v4b .adj4 s{display:block;font:500 22px/1.35 var(--mono);color:var(--mid);text-decoration-color:var(--red);text-decoration-thickness:2px}
+.v4b .adj4 .x span{display:block;font:500 21px/1.4 var(--sans);margin-top:8px}
+.v4b .adj4 code{display:block;font:400 19px/1.5 var(--mono);color:var(--ink);border-left:3px solid var(--red);padding-left:12px}
+/* 06: 모션 매치 컷 (사용자 요청 11-14) */
+#s6 .mc6{margin:22px 0 26px;padding:18px 22px;border:2px solid var(--ink)}
+#s6 .mc6 .h{display:flex;align-items:baseline;gap:16px;margin-bottom:14px}
+#s6 .mc6 .h b{font:700 36px/1 var(--serif);color:var(--red)}
+#s6 .mc6 .h span{font:500 22px/1 var(--sans);color:var(--mid)}
+#s6 .mc6 .f{display:flex;align-items:center;gap:18px;font:600 30px/1.2 var(--sans)}
+#s6 .mc6 .f i{font:500 24px/1 var(--mono);font-style:normal;color:var(--red)}
+#s6 .mc6 p{font:500 22px/1.4 var(--sans);margin:12px 0 0}
+#s6 .kc>div.key{padding-top:24px}
+/* 06 모션 매치 컷 프레임 (화성 최종본 28.6s │ 29.0s) */
+#s6 .mc6{margin:12px 0 12px;padding:14px 18px}
+#s6 .mc6 .h{margin-bottom:10px}
+#s6 .mc6 .fr{display:flex;align-items:flex-start;gap:12px}
+#s6 .mc6 .fr figure{margin:0;width:258px}
+#s6 .mc6 .fr img,#s6 .mc6 .fr video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border:1px solid var(--ink)}
+#s6 .mc6 .fr figure.v{margin-left:14px}
+#s6 .mc6 .fr figure.v video{border:2px solid var(--red)}
+#s6 .mc6 .fr figcaption{font:500 20px/1.2 var(--sans);margin-top:6px}
+#s6 .mc6 .fr i{font:500 22px/1 var(--mono);font-style:normal;color:var(--red);align-self:center;margin-top:-26px}
+#s6 .mc6 p{margin-top:8px}
+#s6 .who2 li{font-size:20px;line-height:1.22}
+#s6 .who2 b{margin-bottom:4px}
+.v4b .adj4 em.ko{display:block;font:500 20px/1.5 var(--sans);font-style:normal;margin-top:10px;padding-left:15px}
+</style>
+</head>
+<body>
+<div id="stage">
+<div id="world">
+
+  <div id="zones"></div>
+  <svg id="ink" class="mark" style="left:0;top:0" width="6400" height="4600"></svg>
+
+  <div class="ttl">
+    <h1>영상팀 워크플로우</h1>
+    <div class="s">기획 · 음악 · 이미지 · 영상화 · 후처리 · 편집</div>
+      <div class="bdl" data-go="d00c"><span class="bd k">실제 자료</span><span class="bd">예시</span><span class="bd">체감</span></div>
+  </div>
+
+  <!-- 01 기획 -->
+  <section class="sheet" id="s1" style="left:300px;top:1250px">
+    <div class="ov">
+      <div class="ov-top"><span class="no">01</span></div>
+      <div class="ov-name">기획</div>
+      <div class="ov-sub">95%는 내 창의성</div>
+    </div>
+    <div class="dt">
+      <div class="dh"><h2><span class="no">01</span>기획</h2></div>
+      <div class="body"><div class="kcw">
+  <div class="kc">
+    <div class="key"><small>판단</small><b>뼈대는 내 창의성</b><b>AI는 <span class="under">살 붙이는 조언</span>만</b><b>체감 95 : 5</b></div>
+    <div><small>모델·도구</small><b>기획 대화</b><b>Claude 100%</b></div>
+    <div><small>스킬·라이브러리</small><b>Codex imagegen</b><b>콘티 뽑기</b></div>
+    <div><small>위키·기록</small><b>교훈 장부에 기록</b><b>자동 적용 ✗</b><b>부를 때만 쓰는 기억</b></div>
+  </div>
+  <div class="ev"><div class="e1">
+        <div>
+          <div class="k">처음 꿈꾼 것</div>
+          <p class="p mid"><span class="strike">Codex + LLM Wiki → 언젠가 기획 안 해도 되게</span></p>
+          <div class="gap"></div>
+          <div class="k">해 보니 · 매번 다름</div>
+          <div class="tags"><span>2D</span><span>3D</span><span>실사</span><span>분위기</span></div>
+        </div>
+        <div>
+                    <div class="ratio"><span class="circled">95<small>%</small></span></div>
+          <p class="p">제 창의성<span class="bd" data-go="d00c">체감</span></p>
+        </div>
+      </div></div>
+</div></div>
+    </div>
+  </section>
+
+  <!-- 02 음악 -->
+  <section class="sheet" id="s2" style="left:2400px;top:1250px">
+    <div class="ov">
+      <div class="ov-top"><span class="no">02</span></div>
+      <div class="ov-name">음악</div>
+      <div class="ov-sub">Suno</div>
+    </div>
+    <div class="dt">
+      <div class="dh"><h2><span class="no">02</span>음악</h2></div>
+      <div class="body">
+        <div class="kcw">
+  <div class="kc">
+    <div class="key"><small>중요</small><b><span class="under">음악이 먼저 정해짐</span></b><b>→ △1</b></div>
+    <div><small>판단</small><b>특이할 것 없이 Suno</b><b>거의 손 안 댐</b><b>고르기·다운로드는 직접</b></div>
+    <div><small>모델·도구</small><b>Suno</b><b>Custom · 길이는 초로</b></div>
+    <div><small>스킬·라이브러리</small><b style="letter-spacing:-.05em">awesome-suno-prompts</b><b>레포지토리 활용</b></div>
+  </div>
+  <div class="ev">
+<div class="msg2">음악 생성에서<br>중요한 것</div>
+<div class="tags t2"><span>Custom 모드</span><span>길이는 초로</span><span>형용사 나열 ✗</span><span>아티스트·곡 이름 ✗</span><span>인트로 허밍 ✗</span></div>
+<div class="row2"><div class="au" id="au2"><span class="aub"></span><span class="aubar"><i></i></span><audio preload="none" tabindex="-1" muted></audio></div></div>
+<svg id="wave" class="mark" style="display:none" width="1072" height="290"></svg>
+</div>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 수정 노트 -->
+  <section class="sheet rev" id="rev" style="left:1880px;top:420px">
+    <svg class="cloud" width="960" height="600"></svg>
+    <div class="ov">
+      <div class="ov-top"><span class="no">△1</span></div>
+      <div class="ov-name">음악에 맞춰<br>기획 수정</div>
+    </div>
+    <div class="dt">
+      <div class="rk"><svg width="26" height="23" viewBox="0 0 26 23"><path d="M13 1.5 L24.5 21.5 L1.5 21.5 Z" fill="none" stroke="#CF3A1E" stroke-width="1.6"/><text x="13" y="18" text-anchor="middle" font-size="11" fill="#CF3A1E" font-family="Menlo">1</text></svg>음악 → 기획<span class="bd" data-go="d00c">예시</span></div>
+      <div class="rt">음악을 정하고, 기획을 다시 손봅니다.</div>
+      <div class="why1"><span>하이햇 · 박자감</span><i>→</i><span>처음과 다른 장면 수</span><i>→</i><b>장면 수 재정립</b><em>뮤비 · 배경음악 모두</em></div>
+      <div class="chips"><span>팝핑댄서 출신</span><span>비트에 민감</span><span class="r">하이햇 = 장면 전환</span><span class="r">30씬 → 40씬</span></div>
+      <svg id="beats" style="display:block;margin-top:18px;overflow:visible" width="840" height="284"></svg>
+        </div>
+  </section>
+
+  <!-- 03 이미지 -->
+  <section class="sheet" id="s3" style="left:4500px;top:1250px">
+    <div class="ov">
+      <div class="ov-top"><span class="no">03</span></div>
+      <div class="ov-name">이미지</div>
+      <div class="ov-sub">Midjourney · Seedream</div>
+    </div>
+    <div class="dt">
+      <div class="dh"><h2><span class="no">03</span>이미지</h2></div>
+      <div class="body"><div class="sp3">
+        <div class="sp3l">
+          <h3 class="sp3t r">슬롭을 만드는 요소</h3>
+          <div class="sp3k"><span>프롬프팅 없이 한 줄</span><span>모두가 쓰는 GPT · 나노바나나</span><span>어디서 본 것 같은 그림</span></div>
+          <div class="sp3g sq s4">
+            <div class="rl">나노바나나 · 한 줄</div>
+            <figure><img src="assets/r9/slop_nano_1.jpg" alt=""></figure>
+            <figure><img src="assets/r9/slop_nano_2d.jpg" alt=""></figure>
+            <figure><img src="assets/r9/slop_nano_3d.jpg" alt=""></figure>
+            <figure><img src="assets/r9/slop_nano_real.jpg" alt=""></figure>
+            <div class="rl">GPT · 한 줄</div>
+            <figure><img src="assets/r9/slop_gpt_2.jpg" alt=""></figure>
+            <figure><img src="assets/r9/slop_gpt_2d.jpg" alt=""></figure>
+            <figure><img src="assets/r9/slop_gpt_3d.jpg" alt=""></figure>
+            <figure><img src="assets/r9/slop_gpt_real.jpg" alt=""></figure>
+            <div class="cl"><span>홍보물</span><span>2D</span><span>3D</span><span>실사</span></div>
+          </div>
+        </div>
+        <div class="sp3d"></div>
+        <div class="sp3r">
+          <h3 class="sp3t">내 요소 → 개성</h3>          <div class="sp3b"><span class="bd" data-go="d00c">체감</span><strong><span>이것만으로 공모전 슬롭</span> <span>85%는 이기고 들어간다</span></strong></div>
+          <ul class="sp3kl"><li>툴 배분: 2D·3D·수묵 = Midjourney · 실사 = Seedream</li><li>공냥 프롬프트킷 서식</li><li>Grok · Midjourney는 한 번에 여러 장</li><li>내 눈에 드는 한 장 → 작풍 선정</li></ul>
+          <div class="pk3">
+            <div class="sp3g c4">
+              <figure><img src="assets/r9/mj_0.jpg" alt=""></figure>
+              <figure><img src="assets/r9/mj_1.jpg" alt=""></figure>
+              <figure class="pick"><img src="assets/r9/mj_2.jpg" alt=""></figure>
+              <figure><img src="assets/r9/mj_3.jpg" alt=""></figure>
+            </div>
+            <i><svg width="48" height="24" viewBox="0 0 48 24"><path d="M2 12H44M34 4l10 8-10 8" fill="none" stroke="#1B1A17" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i>
+            <figure class="big"><img src="assets/r9/mj_2.jpg" alt=""><figcaption>고름</figcaption></figure>
+          </div>
+          <div class="sp3s">직접 골라 쓴 작풍</div>
+          <div class="sp3g w3">
+            <figure><img src="assets/r9/mine_2d_char.jpg" alt=""><figcaption>2D 셀 · 인물 시트</figcaption></figure>
+            <figure><img src="assets/r9/mine_hand_park.jpg" alt=""><figcaption>손그림 수채 · 장소</figcaption></figure>
+            <figure><img src="assets/r9/mine_anime.jpg" alt=""><figcaption>애니 · 장면</figcaption></figure>
+            <figure><img src="assets/r9/mine_mj_hall.jpg" alt=""><figcaption>Midjourney · 공간</figcaption></figure>
+            <figure><img src="assets/r9/mine_grok.jpg" alt=""><figcaption>Grok · 인물</figcaption></figure>
+            <figure><img src="assets/r9/mine_real_robot.jpg" alt=""><figcaption>실사 · 로봇 시트</figcaption></figure>
+          </div>
+        </div>
+      </div></div>
+    </div>
+  </section>
+
+  <!-- △2 참조 수정 사례 -->
+  <section class="sheet rev" id="s3r" style="left:4580px;top:300px">
+    <svg class="cloud" width="1440" height="810"></svg>
+    <div class="ov">
+      <div class="ov-top"><span class="no">△2</span></div>
+      <div class="ov-name">참조 그림 속 물건이<br>영상에 그대로</div>
+    </div>
+    <div class="dt">
+      <div>
+        <div class="rk"><svg width="26" height="23" viewBox="0 0 26 23"><path d="M13 1.5 L24.5 21.5 L1.5 21.5 Z" fill="none" stroke="#CF3A1E" stroke-width="1.6"/><text x="13" y="18" text-anchor="middle" font-size="11" fill="#CF3A1E" font-family="Menlo">2</text></svg>영상 → 참조<span class="bd" data-go="d00c">재구성</span></div>
+        <div class="rt">참조 그림에 있으면,<br>영상에도 나옵니다.</div>
+        <p class="r2l">영상에 이상한 물건이 계속 나오면,<br>프롬프트보다 참조 그림부터 봅니다.</p>
+      </div>
+      <div class="fx">
+        <div>
+          <div class="fxk"><b>전</b></div>
+          <div class="fxrow">
+            <figure><div class="cw z"><img src="assets/r2/a_earlier_REF_LOC_MEETUP_HALL_1.jpg" alt=""><span class="ring" style="left:39.5%;top:55%;width:17%;height:28%"></span><b>종이 여백</b></div><figcaption>처음 장소 참조 — 리본 그릇, 종이 여백</figcaption></figure>
+            <i>→</i>
+            <figure><div class="cw"><img src="assets/r3/same_before.jpg" alt=""><span class="ring" style="left:41%;top:56%;width:17%;height:28%"></span></div><figcaption>생성한 영상 — 리본 그릇 그대로</figcaption></figure>
+          </div>
+        </div>
+        <div>
+          <div class="fxk a"><b>후</b></div>
+          <div class="fxrow">
+            <figure><div class="cw z"><img src="assets/r2/a_approved_REF_LOC_MEETUP_HALL_2.jpg" alt=""></div><figcaption>다시 그린 장소 참조 — 리본 없음</figcaption></figure>
+            <i>→</i>
+            <figure><div class="cw"><img src="assets/r3/same_after.jpg" alt=""></div><figcaption>다시 생성한 영상 — 리본 없음</figcaption></figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 영상화 -->
+  <section class="sheet" id="s4" style="left:300px;top:2950px">
+    <div class="ov">
+      <div class="ov-top"><span class="no">04</span></div>
+      <div class="ov-name">영상화</div>
+      <div class="ov-sub">Runway · Seedance 2.0 / 2.5</div>
+    </div>
+    <div class="dt">
+      <div class="dh"><h2><span class="no">04</span>영상화<span class="pt4 a">① 참조에 역할 주기</span><span class="pt4 b">② 동작과 결과</span></h2><div class="r"><span class="bd k" data-go="d00c">실제 자료</span></div></div>
+      <div class="body"><div class="kcw">
+  <div class="kc">
+    <div><small>중요</small><b>인물·장소 컷마다 유지</b><b>영상 속 글자는 최대한 피함</b><b>글자는 후처리로 추가</b></div>
+    <div><small>판단</small><b>시작 이미지 없이 참조만</b><b>참조 1장 = 역할 1개</b></div>
+    <div><small>모델·도구</small><b>Seedance 2.0 · 2.5</b><b>프롬프트는 Claude가 씀</b></div>
+    <div class="key k4"><small>참고한 지식 → 위키</small><b>Seedance 공식 문법</b><b>Higgsfield 2D·3D·실사</b><b>사징가(인플루언서) 스킬</b><b class="to">→ <span class="under">위키에 모아 Claude에게</span></b></div>
+  </div>
+  <div class="ev"><div class="mt4"><small>프롬프트 저작</small><span class="no">Codex</span><i>→</i><span class="no">Astra ✗</span><i class="dn">→</i><span class="br"></span><strong>Claude Opus 5.5 · Fable 5.2</strong><em>원하는 바 이상</em><span class="bd" data-go="d00c">체감</span></div>
+        <div class="v4a"><svg class="mark" id="m4"></svg>
+          <div class="k">붙인 참조 3장</div>
+          <div class="h4">참조 1장 = 역할 1개</div>
+          <figure><img src="assets/vid/b01_ref1.jpg" alt=""><figcaption>장소</figcaption></figure>
+          <div class="v4r"><p>여기선 장소만</p></div>
+          <figure><img src="assets/vid/b01_ref2.jpg" alt=""><figcaption>남자 인물 시트</figcaption></figure>
+          <div class="v4r two"><p>인물 시트 = 얼굴·옷만</p><p>종이 배경·3면 배치 제외</p></div>
+          <figure><img src="assets/vid/b01_ref3.jpg" alt=""><figcaption>여자 인물 시트</figcaption></figure>
+        </div>
+        <div class="v4b">
+          <div class="h4">동작 = 형용사 ✗ · 순서&nbsp;○</div>
+          <div class="adj4">
+            <div class="x"><b>✗ 형용사로 쓰면</b><s>dynamic, cinematic, smooth motion</s><span>화면에 안 보이는 말 → 화면 전체가 계속 출렁 = AI 티</span></div>
+            <div class="o"><b>○ 순서로 쓰면</b><code>The reeds lean in one slow wave of wind; his coat hem lifts a beat after; his shoulders rise and sink with one slow breath and he stays still.</code><em class="ko">갈대가 바람 한 번에 천천히 눕고, 한 박자 뒤 그의 코트 자락이 들리고, 천천히 숨 한 번에 어깨가 오르내린 뒤 그는 가만히 멈춘다.</em></div>
+          </div>
+          <p class="seq"><span>갈대 눕고 <i>→</i></span> <span>코트 자락 <i>→</i></span> <span>숨 한 번 <i>→</i></span> <span>멈춤</span></p>
+          <figure class="mv4"><div class="mvw"><img src="assets/vid/b01_shot1.jpg" alt=""><video id="v4s1" src="assets/r6/b01_shot1_0-3s.mp4" poster="assets/vid/b01_shot1.jpg" preload="auto" muted loop playsinline></video></div><figcaption>숏 1</figcaption></figure>
+          <div class="v4s"><figure><img src="assets/vid/b01_shot2.jpg" alt=""><figcaption>숏 2</figcaption></figure><figure class="r"><img src="assets/vid/b01_shot5.jpg" alt=""><figcaption data-go="c54">숏 5 → 05-4</figcaption><p class="q5">현수막 = 글자 없는 빈 천</p></figure></div>
+        </div>
+      </div></div></div>
+    </div>
+  </section>
+
+  <!-- 05 후처리 -->
+  <section class="sheet" id="s5" style="left:2400px;top:2950px">
+    <div class="ov">
+      <div class="ov-top"><span class="no">05</span></div>
+      <div class="ov-name">후처리</div>
+      <div class="ov-sub">효과 · 카드 · 설명 · 합성</div>
+    </div>
+    <div class="dt">
+      <div class="dh"><h2><span class="no">05</span>후처리</h2></div>
+      <div class="body"><div class="kcw">
+  <div class="kc">
+    <div><small>중요</small><b>AI가 쓴 글자는 깨짐</b><b>틀리면 안 되는 정보</b></div>
+    <div><small>모델·도구</small><b>Python · ffmpeg</b><b>Blender · Real-ESRGAN</b><b>demucs + Whisper</b></div>
+    <div><small>스킬·라이브러리</small><b>효과 모음 HTML 구성</b><b>Threads에서 퍼와</b><b>선택지 늘리기</b></div>
+    <div class="key"><small>쌓인 특성</small><b><span class="under">같은 효과 반복 ✗</span></b><b>얇은 HUD · 번짐 ✗</b><b>480p 미리보기 먼저</b></div>
+    <div><small>위키·기록</small><b>교훈 장부 · 3D·모션</b><b>Claude 메모리 3건</b><b>효과 모음은 따로 보관</b></div>
+  </div>
+  <div class="ev"><div class="cases">
+          <article class="case" id="c51">
+            <div class="ch"><span>05-1</span>화성시 공모전 「여긴, 화성」</div>
+            <div class="ct">타격하는 박에만, 잉크 프레임</div>
+            <div class="pair">
+              <figure><img src="assets/post/hw_before.jpg" alt=""><b>효과 직전</b><figcaption>최종본의 타격 직전 프레임</figcaption></figure>
+              <i>→</i>
+              <figure><video src="assets/clips/hw_hit.mp4" poster="assets/post/hw_after.jpg" preload="auto" muted loop playsinline data-silent></video><span class="pl"></span><b class="a">효과 순간</b><figcaption>최종본 2.5초</figcaption></figure>
+            </div>
+            <p class="cd">약 0.4초만(최종본 기준) · 실사 → 형광 잉크 판화 · 같은 효과 반복 ✗</p>
+          </article>
+          <article class="case tall" id="c52">
+            <div class="tx">
+              <div class="ch"><span>05-2</span>광양시 「매돌이」</div>
+              <div class="ct">장소가 바뀌면,<br>도감 카드</div>
+              <p class="cd">“관찰 지점 No.01” 카드 · 어디인지 화면이 말함</p>
+              <p class="cd mid">4K 확대 + 그레인 · 두 그림 모두 최종본 프레임</p>
+            </div>
+            <div class="pair v">
+              <figure><img src="assets/post/md_before.jpg" alt=""><b>카드 직전</b></figure>
+              <figure><img src="assets/post/md_after.jpg" alt=""><b class="a">카드 등장</b></figure>
+            </div>
+          </article>
+          <article class="case" id="c53">
+            <div class="ch"><span>05-3</span>성남시 푸드테크 설명 영상</div>
+            <div class="ct">실사는 글자 없이, 설명은 코드로</div>
+            <div class="pair three">
+              <figure><img src="assets/post/sn_before.jpg" alt=""><b>생성 원본</b></figure>
+              <i>→</i>
+              <figure><img src="assets/post/sn_after.jpg" alt=""><b class="a">자막 얹음</b></figure>
+              <i>+</i>
+              <figure><img src="assets/post/sn_mg.jpg" alt=""><b class="a">설명 그래픽</b></figure>
+            </div>
+            <p class="cd">틀리면 안 되는 정보(기술명 · 지도 · 로고) = AI에게 안 그리게</p>
+          </article>
+          <article class="case" id="c54">
+            <div class="ch"><span>05-4</span>성남시 MV · 「솔로몬의 선택」 장면</div>
+            <div class="ct">빈 현수막에 글자 걸기</div>
+            <div class="pair">
+              <figure><video src="assets/clips/sol_before.mp4" poster="assets/post/sol_before.jpg" preload="auto" muted loop playsinline data-silent></video><span class="pl"></span><b>생성 원본</b><figcaption>빈 천으로 생성 · 04의 숏 5</figcaption></figure>
+              <i>→</i>
+              <figure><video src="assets/clips/sol_after.mp4" poster="assets/post/sol_after.jpg" preload="auto" muted loop playsinline data-silent></video><span class="pl"></span><b class="a">글자 합성</b><figcaption>천의 주름·그림자 위에 곱하기 합성</figcaption></figure>
+            </div>
+            <p class="cd">AI 글자는 깨짐 → 빈 현수막으로 생성 → 글자는 천 위에 합성</p>
+          </article>
+        </div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 편집 -->
+  <section class="sheet" id="s6" style="left:4500px;top:2950px">
+    <div class="ov">
+      <div class="ov-top"><span class="no">06</span></div>
+      <div class="ov-name">편집</div>
+      <div class="ov-sub">직접</div>
+    </div>
+    <div class="dt">
+      <div class="dh"><h2><span class="no">06</span>편집</h2></div>
+      <div class="body"><div class="kcw">
+  <div class="kc">
+    <div><small>중요</small><b>트랜지션 · 속도</b><b>화면 페이드 인·아웃</b></div>
+    <div class="key"><small>판단</small><b><span class="under">내 의도대로</span></b><b>워크플로우에서 제외</b><b>편집 자동화보다 직접</b></div>
+    <div><small>모델·도구</small><b>ffmpeg 가편으로 보기</b><b>컷편집·효과는 직접</b></div>
+  </div>
+  <div class="ev"><div class="lead6">편집은 <span class="under">제가</span> 합니다.</div>
+        <div class="tags t6"><span>ffmpeg 가편</span><i>→</i><span>트랜지션</span><span>속도</span><span>페이드 인·아웃</span><b>= 직접</b></div>
+        <div class="mc6"><div class="h"><b>모션 매치 컷</b><span>화성 「여긴, 화성」</span></div>
+          <div class="fr"><figure><img src="assets/r17/hw_mc_a.jpg" alt=""><figcaption>기계팔이 짐을 놓음</figcaption></figure><i>│컷│</i><figure><img src="assets/r17/hw_mc_b.jpg" alt=""><figcaption>바둑알이 떨어짐</figcaption></figure><figure class="v"><video src="assets/r17/hw_matchcut.mp4" poster="assets/r17/hw_mc_a.jpg" muted loop autoplay playsinline></video><figcaption>이어 보기</figcaption></figure></div>
+          <p>떨어지는 움직임이 컷을 넘어 이어짐 → 장면이 바뀌어도 눈이 끊기지 않음</p></div>
+        <svg id="edit" style="display:none" width="1072" height="172" viewBox="0 0 1432 230"></svg>
+        <div class="who2">
+          <div><b>AI 세션</b><ul><li>콘티 구체화</li><li>프롬프트 작성</li><li>생성 실행·수확</li><li>1차 검수</li><li>후처리 코드 작성·실행</li></ul></div>
+          <div><b>사람</b><ul><li>방향·컨셉 선택</li><li>곡 선택</li><li>콘티 승인</li><li>생성 실행 승인</li><li>결과 채택·거절</li><li>최종 편집</li></ul></div>
+        </div>
+        <div class="ho6"><b>AI 세션 → 사람</b>검수를 통과한 승인 클립 + 이야기 순서표</div>
+      </div></div></div>
+    </div>
+  </section>
+
+  <!-- lanes under sheets -->
+
+  <div class="appxb" id="appxb"><b>부록 16장 · D 키</b></div>
+  <div class="legend-ov">
+    <div><span class="sw"></span>진행 순서</div>
+    <div><span class="sw r"></span>되돌아가는 수정</div>
+  </div>
+
+  <!-- ================= VT-10 단계별 상세도 ================= -->
+  <div class="ttl2" style="left:6900px">
+    <h1>부록 · 단계별 상세도</h1>
+    <div class="s">질문이 나오면 펼치는 자료 · 시트를 누르면 크게 · D는 01-A부터, G는 이 지도</div>
+  </div>
+
+  <div class="rowlab" style="left:6900px;top:800px"><div class="n">01</div><div class="t">기획</div><div class="k">정해지는 것</div><div class="v">컨셉 · 스타일 바이블 · 콘티</div><div class="k">담당</div><div class="v m">기획 대화 → 콘티 세션</div></div>
+  <div class="rowlab" style="left:6900px;top:2060px"><div class="n">02</div><div class="t">음악</div><div class="k">정해지는 것</div><div class="v">Style · 가사 구조 · 길이</div><div class="k">담당</div><div class="v m">음악 세션</div></div>
+  <div class="rowlab" style="left:6900px;top:3320px"><div class="n">03</div><div class="t">이미지</div><div class="k">정해지는 것</div><div class="v">참조 이미지<br>인물 · 장소 · 소품 · 스타일</div><div class="k">담당</div><div class="v m">이미지 생성 → 검수</div></div>
+  <div class="rowlab" style="left:6900px;top:4580px"><div class="n">04</div><div class="t">영상화</div><div class="k">정해지는 것</div><div class="v">생성 1회분 프롬프트 · 생성 · 검수</div><div class="k">담당</div><div class="v m">영상 생성 → 검수</div></div>
+  <div class="rowlab" style="left:6900px;top:5840px"><div class="n">05</div><div class="t">후처리</div><div class="k">정해지는 것</div><div class="v">색 · 자막 · 효과 · 업스케일 · MG</div><div class="k">담당</div><div class="v m">로컬 스크립트</div></div>
+  <div class="rowlab" style="left:6900px;top:7100px"><div class="n">06</div><div class="t">편집</div><div class="k">정해지는 것</div><div class="v">컷 선택 · 길이 · 순서</div><div class="k">담당</div><div class="v m">사람</div></div>
+  <div class="rowlab" style="left:6900px;top:8360px"><div class="n">00</div><div class="t">공통</div><div class="k">정해지는 것</div><div class="v">위키 · 교훈</div><div class="k">담당</div><div class="v m">전 단계</div></div>
+  <section class="sheet dp" id="d01a" style="left:7600px;top:800px">
+    <div class="ov"><div class="ov-top"><span class="no">01-A</span></div><div class="ov-name">기획 순서</div><div class="ov-sub">컨셉 → 스타일 → 음악 → 콘티</div></div>
+    <div class="dt">
+      <div class="dh"><h2><span class="no">01-A</span>기획 순서와 확정</h2></div>
+      <div class="body"><div class="sflow">
+  <div><small>1 · 기획 대화</small><b>컨셉 3안</b><code>세 안 중 하나를 고름</code><em>확정: 고른 안을 말한 원문 그대로</em></div>
+  <div><small>2 · 기획 대화</small><b>스타일 바이블</b><code>화풍 · 인물 · 장소를 글로 고정</code><em>확정: 형식 검사 통과</em></div>
+  <div><small>3 · 음악 세션</small><b>음악</b><code>Suno 생성 → 내가 선택</code><em>확정: 고른 음원 등록</em></div>
+  <div><small>4 · 콘티 세션</small><b>콘티</b><code>15초 단위로 장면 설계</code><em>확정: 승인한 원문 그대로</em></div>
+</div>
+<div class="cols" style="grid-template-columns:1fr 520px;margin-top:34px;height:auto">
+  <div><div class="k">컨셉 1안에 들어가는 것</div>
+  <table class="fld ko">
+    <tr><td>한 줄 줄거리</td><td>한 문장 — 누가, 무엇을 원하고, 무엇이 막고, 무엇이 바뀌나</td></tr>
+    <tr><td>감정 곡선</td><td>첫 0–3초에 잡기 · 쌓기 · 정점 <small>(기억될 한 장면)</small> · 마무리 <small>(페이드 말고 해소)</small></td></tr>
+    <tr><td>차별점</td><td>공모 주제의 뻔한 버전이 아닌 이유</td></tr>
+    <tr><td>피할 것</td><td>클리셰 · 사실 위험 · 거절된 룩</td></tr>
+    <tr><td>매체 · 화면비 · 길이</td><td>2D · 3D · 실사 · 혼합 / 16:9 / 60초 ≈ 15초 블록 4개 <small>(계획 단위 — 실제 생성 횟수와는 다름)</small></td></tr>
+  </table></div>
+  <div><div class="k">확정 규칙</div>
+  <div class="ol"><p>앞 단계가 바뀌면 <b>뒤 단계의 확정을 다시 확인</b> <small class="mid">— 단, 생성 전 묶음은 15초 구간별로 봅니다. 입력이 바뀐 구간만 다시 확정하고, 그대로인 구간의 확정과 결과는 유지(11-11부터). 화풍 고정 문장이 바뀌면 전 구간, 인물 고정 설명이 바뀌면 그 인물이 나오는 구간만</small></p><p>고칠 때는 같은 문서를 고쳐 다시 확정, 이전본은 따로 보관</p><p>제작 단계에서 프롬프트를 새로 쓰지 않음 — 그 내용을 정한 단계로 돌아감</p><p>영상 종류: 뮤직비디오 · 공모전 · 관광 · 기관 홍보 · 숏폼</p></div></div>
+</div></div>
+    </div>
+  </section>
+  <section class="sheet dp" id="d01b" style="left:9400px;top:800px">
+    <div class="ov"><div class="ov-top"><span class="no">01-B</span></div><div class="ov-name">스타일 바이블</div><div class="ov-sub">모든 프롬프트의 고정 문단</div></div>
+    <div class="dt">
+      <div class="dh"><h2><span class="no">01-B</span>스타일 바이블에 적는 것</h2></div>
+      <div class="body"><div class="cols" style="grid-template-columns:1fr 470px">
+<table class="fld ko">
+  <tr><th>항목</th><th>내용</th></tr>
+  <tr><td>색 팔레트</td><td>HEX 값으로</td></tr>
+  <tr><td>빛</td><td>광원 방향·질 · 시간대 · 실제 조명 · 대비 — 레시피 하나</td></tr>
+  <tr><td>질감</td><td>그레인 · 선 · 재질 · 렌더 방식</td></tr>
+  <tr><td>렌즈 문법</td><td>기본 화각대 · 심도 · 카메라 움직임의 느낌</td></tr>
+  <tr><td>금지할 룩</td><td>거절할 구체적 룩</td></tr>
+  <tr><td>화풍 고정 문장<i class="id">style_block_en</i></td><td><b>영어 600자 이하</b> — 매체·렌더·팔레트·빛·질감·렌즈. 장면 내용은 넣지 않음</td></tr>
+  <tr><td>인물 고정 설명<i class="id">identity_block_en</i></td><td><b>영어 350자 이하</b> — 얼굴·머리·체형·의상·나이감. 표정·행동은 넣지 않음 <small>+ 인물 시트 참조 연결</small></td></tr>
+  <tr><td>장소</td><td>구조 · 재질 · 광원 · 고정 랜드마크</td></tr>
+  <tr><td>해상도</td><td>720p · 1080p</td></tr>
+</table>
+<div><div class="k">어디로 흘러가나</div>
+<div class="tl">
+  <p><span>화풍 고정 문장</span>모든 영상 프롬프트 맨 앞에 원문 그대로 — 입력 검사가 일치를 확인</p>
+  <p><span>인물 고정 설명</span>그다음 문단에 원문 그대로</p>
+  <p><span>인물 시트 참조</span>03 이미지의 인물 시트로 연결</p>
+  <p><span>색 팔레트</span>이미지 프롬프트 색 항목의 HEX</p>
+  <p><span>금지할 룩</span>프롬프트 · 검수의 거절 기준</p>
+</div></div></div></div>
+    </div>
+  </section>
+  <section class="sheet dp" id="d01c" style="left:11200px;top:800px">
+    <div class="ov"><div class="ov-top"><span class="no">01-C</span></div><div class="ov-name">콘티 항목</div><div class="ov-sub">생성 1회 15초 · 숏 1–4(2.0) · 1–8(2.5)</div></div>
+    <div class="dt">
+      <div class="dh"><h2><span class="no">01-C</span>콘티에 적는 것</h2></div>
+      <div class="body"><div class="cols" style="grid-template-columns:1fr 1fr">
+<div><div class="k">생성 1회 (블록)</div>
+<table class="fld ko">
+  <tr><td>길이</td><td>프로젝트에서 확정한 길이와 같아야 함 <small>(기본 15초)</small></td></tr>
+  <tr><td>역할</td><td>이야기·음악 구간에서 이 블록이 하는 일</td></tr>
+  <tr><td>소리</td><td>무음 · 현장음 · 대사 · 음악 참조</td></tr>
+  <tr><td>인물 · 장소</td><td>등장 인물 · 장소</td></tr>
+  <tr><td>붙일 참조</td><td>붙일 참조 이미지</td></tr>
+  <tr><td>마지막 구도</td><td>다음 생성이 이어받는 마지막 그림</td></tr>
+  <tr><td>확인할 오류</td><td>얼굴 · 텍스처 · 폰 화면 등 위험 속성</td></tr>
+</table>
+<p class="note" style="margin-top:18px">모델을 <b>Seedance 2.5</b>로 적으면 2.5 규격, 안 적으면 2.0</p></div>
+<div><div class="k">숏 — 한 번의 생성 안의 장면</div>
+<table class="fld ko">
+  <tr><td>시간 구간</td><td>빈틈 없이 이어지는 초 구간</td></tr>
+  <tr><td>숏 크기</td><td>정해진 목록 9종 <small>(extreme wide ~ insert)</small></td></tr>
+  <tr><td>앵글</td><td>정해진 목록 10종 <small>(eye level · low · overhead · pov …)</small></td></tr>
+  <tr><td>카메라 움직임</td><td>정해진 목록 24종 <small>(static · slow push in · tracking · orbit · fpv …)</small></td></tr>
+  <tr><td>렌즈 · 구도</td><td>화각 · 화면 안 위치와 전경/배경 층</td></tr>
+  <tr><td>동작</td><td>시작 → 행동 → 보이는 반응</td></tr>
+  <tr><td>꼭 지킬 내용</td><td>프롬프트까지 살아남아야 할 구절</td></tr>
+  <tr><td>근거 대사</td><td>근거 대사 — 장면은 대사 그대로 <small>(인서트는 따로 표시)</small></td></tr>
+</table>
+<p class="note" style="margin-top:18px">숏 5: <b>“입구 위 글자 없는 긴 크림 천 현수막 … (후반 ‘솔로몬의 선택’ 합성 자리)”</b> → 04 · 05-4</p></div>
+</div></div>
+    </div>
+  </section>
+  <section class="sheet dp" id="d02a" style="left:7600px;top:2060px">
+    <div class="ov"><div class="ov-top"><span class="no">02-A</span></div><div class="ov-name">Suno 프롬프트</div><div class="ov-sub">참고 모음 → 스타일 · 가사 · 길이</div></div>
+    <div class="dt">
+      <div class="dh"><h2><span class="no">02-A</span>Suno 프롬프트 구조</h2></div>
+      <div class="body"><div class="cols" style="grid-template-columns:1fr 1fr 1fr;gap:44px">
+<div><div class="k">참고 프롬프트 모음 → 프롬프트</div>
+<div class="ol"><p><b>검색</b> — 장르·무드·용도·그루브·악기·보컬·BPM·형식으로 색인 + 관련 1–3개만</p><p><b>추출</b> — 가까운 패턴 2–5개에서 변수만</p><p><b>정리</b> — 아티스트·곡 이름 제거, 묘사어로 대체</p><p><b>조합</b> — 프롬프트 하나</p><p><b>변형</b> — 변수 몇 개만 바꾼 1개</p><p><b>기록</b> — 참고한 파일 이름</p></div></div>
+<div><div class="k">조합 변수</div>
+<div class="chips"><span>장르 · 서브장르</span><span>시대감</span><span>BPM · 박자 · 키</span><span>그루브 · 드럼</span><span>베이스</span><span>화성</span><span>리드 · 텍스처</span><span>보컬 성격</span><span>형식 · 에너지 곡선</span><span>믹스 · 공간</span><span>용도</span></div>
+<div class="k" style="margin-top:30px">출력 필드</div>
+<div class="chips"><span>Style</span><span>Lyrics · 구조</span><span>피할 것</span><span>생성 설정</span><span>참고 근거</span><span>두 안의 차이</span></div></div>
+<div><div class="k">규칙</div>
+<div class="ol r"><p>BGM 길이: Simple 대신 Custom, Duration을 <b>초</b>로 입력 — 목표값일 뿐</p><p>보컬: 한 명의 안정된 한국어 보컬, 자연스러운 발음·호흡</p><p>perfect · crystalline · ethereal 같은 형용사 나열 금지</p><p>인스트 인트로엔 허밍·속삭임 금지를 명시</p><p>고르기 · 다운로드는 내가 직접</p></div></div>
+</div></div>
+    </div>
+  </section>
+  <section class="sheet dp" id="d03a" style="left:7600px;top:3320px">
+    <div class="ov"><div class="ov-top"><span class="no">03-A</span></div><div class="ov-name">이미지 프롬프트</div><div class="ov-sub">공냥 키트 6섹션</div></div>
+    <div class="dt">
+      <div class="dh"><h2><span class="no">03-A</span>이미지 프롬프트 구조</h2></div>
+      <div class="body"><div class="cols" style="grid-template-columns:1fr 560px">
+<div><table class="fld ko">
+  <tr><th>항목</th><th>내용</th><th>분량</th></tr>
+  <tr><td>1 장면<i class="id">Scene</i></td><td>누가 · 무엇이 · 어디서 · 무엇을 — 핵심을 맨 앞에</td><td>60–120어</td></tr>
+  <tr><td>2 카메라<i class="id">Camera</i></td><td>시점 · 거리 · 렌즈 성격 (결과로 서술)</td><td>15–30어</td></tr>
+  <tr><td>3 빛<i class="id">Lighting</i></td><td>방향 · soft/hard · 그림자 · 림 (장비명 금지)</td><td>10–25어</td></tr>
+  <tr><td>4 색<i class="id">Color</i></td><td>팔레트 + 색온도 + <b>HEX 3–5개</b></td><td>10–20어</td></tr>
+  <tr><td>5 질감<i class="id">Texture</i></td><td>매체 · 질감 · 표면 반응</td><td>10–20어</td></tr>
+  <tr><td>6 글자<i class="id">Text</i></td><td>(선택) 따옴표 카피 · 폰트 · 위치</td><td>0–25어</td></tr>
+  <tr><td>끝</td><td><code>AR x:y</code> 토큰 하나</td><td></td></tr>
+</table>
+<p class="note" style="margin-top:20px"><b>포맷 B</b> (단독 인물 화보): 피사체 → 얼굴 → 헤어 → 장르 → 장면·포즈 → 의상 → 구도 → 조명 → HEX → 질감 → AR, 350–450자 한 문단</p></div>
+<div><div class="k">철칙 · 공냥 키트(gpt-image-2용) 기준</div>
+<div class="ol r"><p>장면에서 뺄 것은 부정문 대신 <b>긍정형으로 다시 쓰기</b> <small class="mid">— gpt-image-2는 장면 부정어를 오히려 그림. 예외: 글자를 넣을 때 중복·유령 글자를 막는 정해진 문구</small></p><p>masterpiece · 8k · best quality 같은 옛 어휘 금지</p><p>카메라·조명 장비명 대신 결과 ("배경이 부드럽게 흐려짐")</p><p>수치는 박는다 — HEX · 켈빈 · key:fill 1:2</p><p>1줄 = 1컷 = 1호출, 그리드 금지</p><p>이상적 피부 대신 natural skin texture · visible pores · film grain</p></div></div>
+</div></div>
+    </div>
+  </section>
+  <section class="sheet dp" id="d03b" style="left:9400px;top:3320px">
+    <div class="ov"><div class="ov-top"><span class="no">03-B</span></div><div class="ov-name">참조 이미지 규칙</div><div class="ov-sub">인물 · 장소 · 소품 · 스타일</div></div>
+    <div class="dt">
+      <div class="dh"><h2><span class="no">03-B</span>참조 이미지 규칙과 검수</h2></div>
+      <div class="body"><div class="cols" style="grid-template-columns:1fr 1fr">
+<div><div class="k">참조 종류</div>
+<div class="chips" style="margin-bottom:22px"><span>인물</span><span>장소</span><span>소품</span><span>스타일</span><span>내가 준 자료</span></div>
+<div class="ol"><p>참조 1 = 프롬프트 1 = 이미지 1 — 그리드·연락 시트 금지</p><p>반복 인물은 <b>승인된 인물 시트를 먼저</b>, 생성 때 실제 첨부</p><p>Seedream 인물 시트: 2패널(정면 · 뒷모습 전신, 높이 85%)</p><p>장소 참조에 소품 · 종이 여백 금지 — 영상으로 번진다</p><p>실제 장비 · 장소는 위키미디어 Commons 실사진을 Seedream 입력으로</p><p>시작프레임 · 스타일프레임은 만들지 않음 <small>(10-29~)</small></p><p>승인된 참조가 충분하면 <b>새 이미지가 0장이어도 됩니다</b> — 부족한 것만 보탭니다</p></div></div>
+<div><div class="k">참조 그림 검사 · 재사용 참조(인물 · 장소) — 지금 기본 방식</div>
+<table class="fld">
+  <tr><td>작풍 잠금</td><td>계획된 매체와 다른 화풍이 섞이면 탈락</td></tr>
+  <tr><td>정체성</td><td>얼굴 윤곽 · 눈 간격 · 코 · 턱 · 머리 볼륨 · 나이감</td></tr>
+  <tr><td>역할 분리</td><td>같은 화면의 조연과 구분되는가</td></tr>
+  <tr><td>물리</td><td>폰 화면 방향 · 손 · 목 연결</td></tr>
+</table>
+<div class="k" style="margin-top:22px">장면 단위 검사 · 컷별 시작 이미지 방식일 때만</div>
+<table class="fld">
+  <tr><td>이야기 기능</td><td>정지 포스터가 아닌 원인 → 반응</td></tr>
+  <tr><td>동작 상태</td><td>던지기·변형은 단계별로 분리</td></tr>
+</table>
+<p class="note" style="margin-top:14px;font-size:19px">지금 기본 방식은 컷별 시작 이미지를 만들지 않습니다. 컷의 구도 · 동작 · 시간 진행은 영상 프롬프트가 맡고, 실제로 일어났는지는 영상 검수(04-B)에서 봅니다.</p></div>
+</div></div>
+    </div>
+  </section>
+  <section class="sheet dp" id="d03c" style="left:11200px;top:3320px">
+    <div class="ov"><div class="ov-top"><span class="no">03-C</span></div><div class="ov-name">이미지 모델 변경</div><div class="ov-sub">gpt-image → MJ · Seedream</div></div>
+    <div class="dt">
+      <div class="dh"><h2><span class="no">03-C</span>이미지 모델 변경</h2></div>
+      <div class="body"><div class="cols" style="grid-template-columns:560px 1fr">
+<div><div class="k">변경 이력</div>
+<div class="tl">
+  <p><span>~07-03</span>Claude · ChatGPT 웹에서 프롬프트 작성 → ChatGPT Image 2</p>
+  <p><span>07-06</span>Codex imagegen (gpt-image-2)이 기본 경로</p>
+  <p><span>07-12</span>공냥 키트를 모든 이미지 프롬프트의 기본 층으로</p>
+  <p><span>11-07</span>Midjourney 사용 (공개 갤러리 허용)</p>
+  <p><span>11-10</span>배분 확정 — 수묵·회화 = Midjourney, 사람·깔끔한 실사 = Seedream</p>
+</div></div>
+<div><div class="k">현재 배분</div>
+<table class="fld c3">
+  <tr><th>용도</th><th>도구</th><th>비고</th></tr>
+  <tr><td>2D · 3D · 수묵 · 회화</td><td>Midjourney</td><td>작풍 참조</td></tr>
+  <tr><td>실사 · 인물 · 실제 장소·장비</td><td>Seedream 5.5 Pro</td><td>실사진을 입력으로</td></tr>
+  <tr><td>일본풍 2D 캐릭터</td><td>여러 모델 비교</td><td>Grok Imagine · Midjourney · Kling · 나노바나나 · GPT</td></tr>
+  <tr><td>포스터 · 도감 · 인포그래픽</td><td>gpt-image-2</td><td>공냥 키트 포맷 A</td></tr>
+</table>
+<p class="note" style="margin-top:20px">생성은 이미지 전용 AI 세션이 실행하고, 결과는 프로젝트에 등록한 뒤 검수합니다.</p></div>
+</div></div>
+    </div>
+  </section>
+  <section class="sheet dp" id="d04a" style="left:7600px;top:4580px">
+    <div class="ov"><div class="ov-top"><span class="no">04-A</span></div><div class="ov-name">프롬프트 해부</div><div class="ov-sub">줄마다 주인이 있다</div></div>
+    <div class="dt">
+      <div class="dh"><h2><span class="no">04-A</span>프롬프트 해부</h2></div>
+      <div class="body"><table class="anat">
+  <tr><td>길이와 숏 수<small>15초를 다 씀 — 프롬프트 사정으로 줄이지 않음</small></td></tr>
+  <tr><td>화풍 고정 문장<small>스타일 바이블 원문 그대로, 모든 생성에 반복</small></td></tr>
+  <tr><td>인물 고정 설명<small>승인한 설명 원문 그대로</small></td></tr>
+  <tr><td>참조 하나에 역할 하나<small>"분위기용" 같은 느슨한 역할 금지</small></td></tr>
+  <tr><td>누가 · 어디서 · 무엇이 일어나나 한 문장</td></tr>
+  <tr><td>숏마다 크기 · 앵글 · 움직임 · 렌즈<small>그다음은 형용사 대신 보이는 사건</small></td></tr>
+<tr><td>동작은 순서로<small>늦추고 → 멈추고 → 챙긴다 (숏 3)</small></td></tr>
+  <tr><td>현장음만<small>음악 · 자막은 후처리</small></td></tr>
+  <tr><td>인물 특징 다시 적기<small>긴 테이크 흔들림 방지</small></td></tr>
+  <tr><td>마지막 구도<small>다음 생성이 이어받음</small></td></tr>
+</table>
+<p class="note" style="margin-top:12px">모델 입력은 <b>영어만</b> · Runway 입력 10,000자 이하 · 길이를 맞추려고 내용을 압축하지 않음</p></div>
+    </div>
+  </section>
+  <section class="sheet dp" id="d04b" style="left:9400px;top:4580px">
+    <div class="ov"><div class="ov-top"><span class="no">04-B</span></div><div class="ov-name">검사 → 생성 → 검수</div><div class="ov-sub">넣기 전에 거치는 순서</div></div>
+    <div class="dt">
+      <div class="dh"><h2><span class="no">04-B</span>생성 전 묶음 → 검사 → 생성 → 검수</h2></div>
+      <div class="body"><div class="sflow sm">
+  <div><small>규칙 고르기</small><b>위키 발췌</b><code>지식 33개 중 필요한 섹션만<br>기본값: 배포 런타임 6섹션 · 9,000자<br>수정 중인 로컬 소스 11 · 14,000</code></div>
+  <div><small>생성 전 묶음</small><b>1회분 패키지</b><code>요약 · 프롬프트 · 설정<br>참조 목록</code></div>
+  <div><small>입력 검사</small><b>형식 검사</b><code>영어 · 10,000자 이하<br>숏 시간 표기 · 참조 번호</code></div>
+  <div><small>반복 실수 검사</small><b>거절 패턴</b><code>13가지 → 04-C</code></div>
+</div>
+<div class="sflow sm" style="margin-top:28px">
+  <div><small>설정 확인</small><b>길이 확인</b><code>2.0 ≤ 15초<br>2.5 ≤ 30초 · 1–8숏</code></div>
+  <div><small>확정</small><b>묶음 확정</b><code>입력이 바뀌면 다시 확정</code><em>내가 실행 승인 1회</em></div>
+  <div><small>생성</small><b>제출 · 수확</b><code>실행 승인 뒤 제출 · 내려받기</code></div>
+  <div><small>영상 검수</small><b>클립 검수</b><code>정상 속도 재생 · 접촉/전환 구간 느리게 · 소리 확인<br>+ 1초 1장 시트 · 사람 컷 확대</code></div>
+</div>
+<div class="cols" style="grid-template-columns:1fr 1fr;margin-top:30px;height:auto">
+<table class="fld ko"><tr><th>생성이 끝나거나 멈추는 경우</th><th></th></tr>
+  <tr><td>정상 종료</td><td>전부 내려받음, 또는 아직 실행 승인 전 — 내려받았다고 검수가 끝난 것은 아님</td></tr><tr><td>확인 필요</td><td>내가 확인해야 다음으로</td></tr><tr><td>실패</td><td>생성 실패·유실 · 실행 거부 · 세션 수 상한 — 다시 생성하기 전에 이미 제출됐는지부터 확인(중복 생성 방지) · 복구는 같은 세션, 같은 자리에서 이어서</td></tr></table>
+<table class="fld"><tr><th>검수에서 보는 것</th><th></th></tr>
+  <tr><td>움직임 · 소리</td><td>정상 속도로 재생 · 접촉·전환은 느리게 · 소리</td></tr><tr><td>필요한 일</td><td>필요한 일이 실제로 일어났나 — 주인공 유지 · 행동이 빠지지 않았나</td></tr><tr><td>글자 · 얼굴</td><td>옷 · 등판 · 소품 위 깨진 글자 · 서양인 얼굴 · 이상한 헤어</td></tr><tr><td>시선 · 손</td><td>장비를 보는가, 손 논리</td></tr><tr><td>교체</td><td>같은 클립의 무인 구간·클로즈업으로 — 그 구간이 장면의 역할을 하는지 따로 검수 · 거절된 클립 자체는 해결 전까지 보류</td></tr></table>
+</div></div>
+    </div>
+  </section>
+  <section class="sheet dp" id="d04c" style="left:11200px;top:4580px">
+    <div class="ov"><div class="ov-top"><span class="no">04-C</span></div><div class="ov-name">반복 실수 검사</div><div class="ov-sub">내가 거절한 것 13가지</div></div>
+    <div class="dt">
+      <div class="dh"><h2><span class="no">04-C</span>반복 실수 검사<span class="id">prompt_lint</span></h2></div>
+      <div class="body"><div class="cols" style="grid-template-columns:1fr 470px;height:auto">
+<div><div class="k">관찰된 실패 — 이렇게 썼더니 이렇게 나왔다</div>
+<table class="fld big">
+  <tr><th>프롬프트에 쓴 것</th><th>실제로 나온 것</th></tr>
+  <tr><td>"매끈한 피부"<span class="id">smooth skin</span></td><td>플라스틱 같은 AI 피부</td></tr>
+  <tr><td>글자가 있을 법한 소품 · 옷</td><td>깨진 글자, 가짜 한자 · 숫자</td></tr>
+  <tr><td>"화면은 비어 있다"</td><td>그 말이 오히려 화면을 불러냄</td></tr>
+  <tr><td>한국 단서가 없는 사무실</td><td>외국 스톡 영상 같은 사무실</td></tr><tr><td>장소 참조 그림 속 소품 · 종이 여백</td><td>영상에 그대로 번짐</td></tr>
+</table>
+<p class="note" style="margin-top:16px">그 밖에 2가지: 화면 내용 묘사 → 가짜 UI 글자 · 콧줄 묘사 → 산소 캐뉼라로 오인</p></div>
+<div><div class="k">작업 방식 선택 — 실패가 아니라 내 방침</div>
+<div class="ol"><p>시작 장면 이미지는 만들지 않음</p><p>요청하지 않은 자막 · 지명 타이틀 · 라벨 금지</p><p>과한 액션 줄이기 <small>(손그림 작업에서)</small> · 거절한 클리셰 금지</p><p>자연 × AI 억지 비유 금지</p></div></div>
+</div>
+<p class="note" style="margin-top:22px">이 13가지 문구를 프롬프트를 쓰는 단계에서 자동으로 찾아 경고합니다. 의도한 예외는 그 장면에만 허용합니다. <b>경고를 통과했다고 좋은 영상이 보장되지는 않습니다 — 같은 실수를 두 번 하지 않기 위한 장치입니다.</b></p>
+<p class="note" style="margin-top:14px"><b>규칙에는 적용 조건이 있습니다.</b> "과한 액션 줄이기"는 손그림(잉크·수채) 작업에서 나온 교훈입니다. 한 작품에서 거절한 표현을 모든 작품의 금지로 만들지 않고, 다른 장르에서는 경고를 보고 판단합니다.</p></div>
+    </div>
+  </section>
+  <section class="sheet dp" id="d04d" style="left:13000px;top:4580px">
+    <div class="ov"><div class="ov-top"><span class="no">04-D</span></div><div class="ov-name">영상 모델 · 모드</div><div class="ov-sub">2.0 → 2.5 · 시작 이미지 없이</div></div>
+    <div class="dt">
+      <div class="dh"><h2><span class="no">04-D</span>영상 모델 · 모드 변경</h2></div>
+      <div class="body"><div class="cols" style="grid-template-columns:1fr 470px">
+<div><table class="fld c3">
+  <tr><th>항목</th><th>Seedance 2.0</th><th>Seedance 2.5</th></tr>
+  <tr><td>길이</td><td>5–15초</td><td>5–30초 <small>(우리 런타임 기준 · Unlimited는 15초·720p)</small></td></tr>
+  <tr><td>숏 수</td><td>최대 4</td><td>1–8</td></tr>
+  <tr><td>참조</td><td>번호로 지정</td><td>우리 런타임 한도 12장</td></tr>
+  <tr><td>프롬프트 형식</td><td>흐르는 서술</td><td>라벨 블록 (04-A)</td></tr>
+  <tr><td>카메라</td><td>숏당 무브 하나</td><td>4초 넘는 비트 안 복합 무브</td></tr>
+  <tr><td>선택</td><td>기본</td><td>사용자가 명시할 때</td></tr>
+</table>
+<p class="note" style="margin-top:20px">숏 수·참조 장수는 우리 런타임의 검사 한도입니다(모델 사양과 다를 수 있음).<br>경로: Runway 웹 화면 · Grok은 시작 이미지 방식 전용</p></div>
+<div><div class="k">변경 이력</div>
+<div class="tl">
+  <p><span>~07</span>컷마다 시작 이미지를 만들어 영상으로</p>
+  <p><span>07-11</span>시작 이미지 없는 방식 추가 — 참조만 붙이고 연출은 프롬프트가</p>
+  <p><span>10-29</span>시작프레임 없이 참조만이 기본</p>
+  <p><span>11-07</span>Seedance 2.5 지원</p>
+  <p><span>11-11</span>반복 실수 검사 추가</p>
+</div></div>
+</div></div>
+    </div>
+  </section>
+  <section class="sheet dp" id="d05a" style="left:7600px;top:5840px">
+    <div class="ov"><div class="ov-top"><span class="no">05-A</span></div><div class="ov-name">후처리 구성</div><div class="ov-sub">작업 · 방법 · 기준</div></div>
+    <div class="dt">
+      <div class="dh"><h2><span class="no">05-A</span>후처리 구성</h2></div>
+      <div class="body"><table class="fld c3">
+  <tr><th>작업</th><th>방법</th><th>기준</th></tr>
+  <tr><td>색보정</td><td>Python · ffmpeg 스크립트</td><td>과한 부분부터 줄이기 · 컷 사이 톤 맞추기</td></tr>
+  <tr><td>정보 라벨</td><td>코드 오버레이</td><td>요청한 글자만 — 지명 타이틀 임의 삽입 금지</td></tr>
+  <tr><td>가사 자막</td><td>demucs 보컬 분리 + Whisper</td><td>보컬 시작 0.1초 전 · Noto Sans KR Bold</td></tr>
+  <tr><td>효과 (승인)</td><td>효과 모음</td><td>접촉 스파크 · 타이포 임팩트 1–3프레임 · 잉크 작화 약 0.4초(최종본 기준) · 공간 전환</td></tr>
+  <tr><td>효과 (거절)</td><td></td><td class="red">얇은 HUD · 흐림·번짐 · 도형 오버레이 · 입술 마스크 · 같은 효과 반복</td></tr>
+  <tr><td>합성</td><td>곱하기 합성</td><td>빈 현수막 천 위에 글자 (05-4)</td></tr>
+  <tr><td>업스케일</td><td>Real-ESRGAN animevideov3 ×2</td><td>+ lanczos 블렌드 · 그레인 → 4K</td></tr>
+  <tr><td>설명 그래픽</td><td>코드 · Blender · ffmpeg</td><td>480p 미리보기 먼저 · 공공 톤 남색·금색</td></tr>
+  <tr><td>정지 화면 검사</td><td>ffmpeg</td><td>렌더마다</td></tr>
+</table></div>
+    </div>
+  </section>
+  <section class="sheet dp" id="d06a" style="left:7600px;top:7100px">
+    <div class="ov"><div class="ov-top"><span class="no">06-A</span></div><div class="ov-name">편집 규칙</div><div class="ov-sub">사람이 직접</div></div>
+    <div class="dt">
+      <div class="dh"><h2><span class="no">06-A</span>편집 규칙</h2></div>
+      <div class="body"><div class="cols" style="grid-template-columns:1fr 1fr">
+<table class="fld">
+  <tr><td>누가</td><td>내가 직접 — CapCut 자동 편집은 10-16 중단</td></tr>
+  <tr><td>AI 역할</td><td>장면을 계속 뽑고 원본을 바로 띄움 · 편집안은 요청 때만</td></tr>
+  <tr><td>길이 부족</td><td>정지 · 슬로모션 · 확대 이동 효과 대신 <b>이미 뽑은 다른 테이크</b></td></tr>
+  <tr><td>검사</td><td>정지 화면 검사 — 렌더마다</td></tr>
+  <tr><td>미리보기</td><td>전 구간 480p 먼저, 확정 후 고해상도</td></tr>
+  <tr><td>파일</td><td>편집물은 프로젝트 소재 폴더 밖 별도 폴더에</td></tr>
+  <tr><td>보관</td><td>진행 중 로컬 · 완료본 SSD</td></tr>
+</table>
+<div><div class="k">왜 밖에 두나</div><p class="note">소재 폴더에 등록되지 않은 파일이 섞이면 소재 점검이 실패해 이미지 검수 · 영상 생성 단계가 <b>멈춘다</b>.</p></div>
+</div></div>
+    </div>
+  </section>
+  <section class="sheet dp" id="d00a" style="left:7600px;top:8360px">
+    <div class="ov"><div class="ov-top"><span class="no">00-A</span></div><div class="ov-name">위키 지도</div><div class="ov-sub">원문 → 지식 → 고르기</div></div>
+    <div class="dt">
+      <div class="dh"><h2><span class="no">00-A</span>위키 지도</h2></div>
+      <div class="body"><div class="cols" style="grid-template-columns:660px 1fr;gap:70px">
+<div><div class="k">위키</div>
+<div class="tree">위키
+├─ 원문            <em>278 · 고치지 않음</em>
+├─ 지식 페이지      <em>50 · 영상 29</em>
+├─ 남겨둘 만한 답   <em>18</em>
+├─ 다음 작품 시드   <em>7</em>
+├─ 인계 요약(캡슐)  <b>147일</b>
+├─ 지식 목록        <b>33</b>
+└─ 규칙 · 목차 · 기록</div></div>
+<div style="position:relative">
+  <div class="k">흐름</div>
+  <svg id="d1flow" class="mark" style="left:0;top:40px" width="700" height="470"></svg>
+  <div class="fbox" style="left:0;top:50px;width:190px"><small>모으기</small>원문</div>
+  <div class="fbox" style="left:260px;top:50px;width:200px"><small>정리</small>지식 페이지</div>
+  <div class="fbox" style="left:530px;top:50px;width:170px;font-size:21px"><small>고르기</small>필요한 규칙만</div>
+  <div class="fbox r" style="left:0;top:250px;width:190px"><small>세션</small>대화·작업</div>
+  <div class="fbox r" style="left:260px;top:250px;width:200px"><small>인계</small>캡슐</div>
+  <div class="fbox" style="left:530px;top:250px;width:170px"><small>다음 작업</small>메모리 · 시드</div>
+  <p class="note" style="position:absolute;left:0;top:420px;width:700px">원문은 그대로 두고, 검증·요약한 지식 페이지로 컴파일한다(Karpathy식 LLM Wiki). Codex와 Claude가 같은 위키를 읽고 쓴다. 압축·인계 직전에 캡슐을 남기고, 재사용할 교훈만 지식 페이지·시드·메모리로 옮긴다.</p>
+</div></div></div>
+    </div>
+  </section>
+  <section class="sheet dp" id="d00b" style="left:9400px;top:8360px">
+    <div class="ov"><div class="ov-top"><span class="no">00-B</span></div><div class="ov-name">실패 → 경고</div><div class="ov-sub">'매끈한 피부' 사례 하나</div></div>
+    <div class="dt">
+      <div class="dh"><h2><span class="no">00-B</span>실패 하나가 다음 입력의 경고가 되기까지</h2></div>
+      <div class="body">
+        <div class="k">실제 사례 — '매끈한 피부'</div>
+        <div class="sflow big">
+          <div><small>실패</small><b>“AI 티가 질질”</b><code>실사 인물 프롬프트에 smooth skin이라고 쓴 결과에 대한 내 판정</code></div>
+          <div><small>기록</small><b>메모</b><code>규칙과 이유를 적어 둠 — 대신 모공 · 35mm · 그레인</code></div>
+          <div><small>자동 검사</small><b>검사 규칙</b><code>같은 문구를 찾는 규칙 추가 — 영상 · 이미지 프롬프트</code></div>
+          <div><small>정리</small><b>교훈 장부</b><code>실사 항목에 올림 — 실사 장면마다 함께 전달</code></div>
+          <div><small>다음 입력</small><b class="red">경고</b><code>같은 문구를 쓰면 쓰는 단계에서 경고</code></div>
+        </div>
+        <div class="cols" style="grid-template-columns:1fr 520px;margin-top:44px;height:auto">
+          <div>
+            <p class="note">이런 규칙이 지금 13가지 → 04-C</p>
+          </div>
+          <div class="aside">
+            <div class="k">별도 경로 · 아직 결과 없음</div>
+            <p class="note"><b>좋았던 결과 모으기</b> — Runway에서 하트를 누른 결과의 프롬프트를 프로젝트 마감 때 한 번 읽어 모으는 경로. 만들어 두었고 <b>아직 수집 0건</b>입니다. 위 사례와는 별개입니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="sheet dp" id="d00c" style="left:11200px;top:8360px">
+    <div class="ov"><div class="ov-top"><span class="no">00-C</span></div><div class="ov-name">배지와 한계</div><div class="ov-sub">배지 네 가지 · 화면별 한계</div></div>
+    <div class="dt">
+      <div class="dh"><h2><span class="no">00-C</span>배지와 한계</h2></div>
+      <div class="body"><div class="cols" style="grid-template-columns:470px 1fr">
+<div><div class="k">화면의 배지 네 가지</div>
+<table class="fld ko">
+  <tr><td><span class="bd k">실제 자료</span></td><td>실제 작업물 · 발췌·크기 조정만, 합성·보정 없음</td></tr>
+  <tr><td><span class="bd">예시</span></td><td>설명하려고 그린 도식과 숫자. 잰 값이 아닙니다</td></tr>
+  <tr><td><span class="bd">체감</span></td><td>발표자의 체감. 조사 수치가 아닙니다</td></tr>
+</table>
+<p class="note" style="margin-top:18px">부록의 규칙과 한도는 <b>그렇게 하도록 적어 둔 것</b>의 기록입니다. 모든 작품에 적용됐다거나 품질이 좋아졌다는 증거는 아닙니다.</p>
+</div>
+<div><div class="k">화면별 한계</div>
+<table class="fld">
+  <tr><td>01 기획</td><td>95 : 5는 발표자의 체감입니다</td></tr>
+  <tr><td>03 이미지</td><td>85%는 발표자의 체감입니다. 왼쪽 네 장은 한 줄로 뽑은 예시</td></tr>
+  <tr><td>△1</td><td>30씬 → 40씬, 6씬 → 8씬은 예시 숫자. 음파는 실제 곡의 바탕 모양만, 하이햇 자리와 장면 나누기는 그린 예시. 음악 때문에 바뀐 실제 콘티 기록은 싣지 못했습니다</td></tr>
+  <tr><td>02 · 06</td><td>02 음파는 △1과 같은 그림(예시). 06 편집 타임라인은 도식(예시). 02의 20초 음원은 실제 곡</td></tr>
+  <tr><td>04 저작 모델</td><td>Codex → Astra → Claude 변천과 “원하는 바 이상”은 발표자의 체감입니다</td></tr>
+  <tr><td>05-1 · 05-2</td><td>원본이 로컬에 없어 최종본의 효과 직전·효과 순간을 나란히 둠(원본 대조 아님). 약 0.4초는 최종본 클립에서 프레임을 센 값(약 11프레임)</td></tr>
+  <tr><td>04-B · 04-D</td><td>숏 수·참조 장수는 우리 런타임의 검사 한도(모델 사양과 다를 수 있음). 위키 발췌 한도는 실행본·소스·프로젝트 설정마다 다를 수 있음</td></tr>
+</table></div>
+</div></div>
+    </div>
+  </section>
+</div>
+</div>
+
+<div id="hud"><span class="ticks" id="ticks"></span><span id="hudl">전체도</span></div>
+<div id="hint">→ / Space 다음 · ← 이전 · Esc 전체도 · 1–6 이동 · D 부록 · G 부록 지도 · P 발표 ↔ 부록 포함 · V 클립 · M 음악 · F 전체화면 · H 안내 숨김</div>
+
+<script>
+(() => {
+const NS = 'http://www.w3.org/2000/svg';
+const RED = '#CF3A1E', INK = '#1B1B1D', LINE = '#CDC8BE', SOFT = '#97928A', MID = '#55524C';
+const W = 6400, H = 4600;
+
+/* seeded random so the hand-drawn marks look identical every time */
+let seed = 20261113;
+const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+
+const el = (tag, attrs, parent) => {
+  const e = document.createElementNS(NS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  if (parent) parent.appendChild(e);
+  return e;
+};
+
+/* ---------- hand-drawn helpers ---------- */
+const bez = (p0, p1, p2, p3, t) => {
+  const u = 1 - t;
+  return [u*u*u*p0[0] + 3*u*u*t*p1[0] + 3*u*t*t*p2[0] + t*t*t*p3[0],
+          u*u*u*p0[1] + 3*u*u*t*p1[1] + 3*u*t*t*p2[1] + t*t*t*p3[1]];
+};
+// turn a list of points into a smooth path, with a small human wobble
+function handPath(pts, amp) {
+  const ph = rnd() * 6.28, ph2 = rnd() * 6.28;
+  const out = pts.map((p, i) => {
+    const t = i / (pts.length - 1);
+    const a = pts[Math.max(0, i - 1)], b = pts[Math.min(pts.length - 1, i + 1)];
+    let nx = -(b[1] - a[1]), ny = b[0] - a[0];
+    const l = Math.hypot(nx, ny) || 1; nx /= l; ny /= l;
+    const w = amp * (0.6 * Math.sin(t * 5.1 + ph) + 0.4 * Math.sin(t * 11.7 + ph2));
+    return [p[0] + nx * w, p[1] + ny * w];
+  });
+  let d = `M${out[0][0].toFixed(1)} ${out[0][1].toFixed(1)}`;
+  for (let i = 1; i < out.length - 1; i++) {
+    const m = [(out[i][0] + out[i+1][0]) / 2, (out[i][1] + out[i+1][1]) / 2];
+    d += ` Q${out[i][0].toFixed(1)} ${out[i][1].toFixed(1)} ${m[0].toFixed(1)} ${m[1].toFixed(1)}`;
+  }
+  const L = out[out.length - 1];
+  return d + ` L${L[0].toFixed(1)} ${L[1].toFixed(1)}`;
+}
+const sampleBez = (p0, p1, p2, p3, n) => Array.from({length: n + 1}, (_, i) => bez(p0, p1, p2, p3, i / n));
+function arrowHead(svg, tip, from, len, color, sw) {
+  const ang = Math.atan2(tip[1] - from[1], tip[0] - from[0]);
+  for (const s of [-1, 1]) {
+    const a = ang + Math.PI + s * 0.47 + (rnd() - .5) * .08;
+    const e = [tip[0] + Math.cos(a) * len, tip[1] + Math.sin(a) * len];
+    el('path', {d: handPath([e, [(e[0]+tip[0])/2, (e[1]+tip[1])/2], tip], sw * .25), fill: 'none', stroke: color, 'stroke-width': sw, 'stroke-linecap': 'round'}, svg);
+  }
+}
+
+/* ---------- drawing frame zones ---------- */
+function zones(x0, w, h, extra) {
+  const z = document.getElementById('zones');
+  const add = (cls, css, txt) => { const d = document.createElement('div'); d.className = cls + (extra ? ' ' + extra : ''); d.style.cssText = css; if (txt != null) d.textContent = txt; z.appendChild(d); };
+  add('frame', `left:${x0 + 60}px;top:60px;width:${w - 120}px;height:${h - 120}px`);
+  add('frame-in', `left:${x0 + 110}px;top:110px;width:${w - 220}px;height:${h - 220}px`);
+  const cols = Math.round(w / 800), rows = Math.round(h / 920);
+  for (let i = 0; i < cols; i++) {
+    const x = x0 + 110 + (w - 220) * (i + .5) / cols;
+    for (const y of [72, h - 100]) add('zone', `left:${x - 8}px;top:${y}px`, i + 1);
+    if (i) for (const y of [62, h - 110]) add('ztick', `left:${x0 + 110 + (w - 220) * i / cols}px;top:${y}px;width:1px;height:48px`);
+  }
+  for (let j = 0; j < rows; j++) {
+    const y = 110 + (h - 220) * (j + .5) / rows;
+    for (const x of [x0 + 76, x0 + w - 98]) add('zone', `left:${x}px;top:${y - 14}px`, 'ABCDEFGHIJK'[j]);
+    if (j) for (const x of [x0 + 62, x0 + w - 110]) add('ztick', `left:${x}px;top:${110 + (h - 220) * j / rows}px;width:48px;height:1px`);
+  }
+}
+
+/* ---------- overview connectors ---------- */
+function cxg() { const i = document.getElementById('ink'); let g = i.querySelector('g.cx'); if (!g) { g = document.createElementNS('http://www.w3.org/2000/svg', 'g'); g.setAttribute('class', 'cx'); i.appendChild(g); } return g; }
+function connectors() {
+  const s = cxg();
+  const straight = (pts, head) => {
+    el('polyline', {points: pts.map(p => p.join(',')).join(' '), fill: 'none', stroke: INK, 'stroke-width': 4, 'stroke-linejoin': 'miter'}, s);
+    const a = pts[pts.length - 2], b = pts[pts.length - 1];
+    const ang = Math.atan2(b[1] - a[1], b[0] - a[0]);
+    const l = 46, w = 16;
+    const p1 = [b[0] - Math.cos(ang) * l - Math.sin(ang) * w, b[1] - Math.sin(ang) * l + Math.cos(ang) * w];
+    const p2 = [b[0] - Math.cos(ang) * l + Math.sin(ang) * w, b[1] - Math.sin(ang) * l - Math.cos(ang) * w];
+    el('polygon', {points: [b, p1, p2].map(p => p.join(',')).join(' '), fill: INK}, s);
+    el('circle', {cx: pts[0][0], cy: pts[0][1], r: 9, fill: INK}, s);
+  };
+  straight([[1930, 1750], [2370, 1750]]);
+  straight([[4030, 1750], [4470, 1750]]);
+  straight([[6130, 1750], [6230, 1750], [6230, 2620], [1100, 2620], [1100, 2920]]);
+  straight([[1930, 3450], [2370, 3450]]);
+  straight([[4030, 3450], [4470, 3450]]);
+
+  // red revision loop: 음악 → (note) → 기획
+  const A = sampleBez([3080, 1235], [3110, 1000], [3020, 770], [2880, 735], 30);
+  el('path', {d: handPath(A, 5), fill: 'none', stroke: RED, 'stroke-width': 7, 'stroke-linecap': 'round'}, s);
+  el('circle', {cx: 3080, cy: 1236, r: 11, fill: RED}, s);
+  const Bp = [[1858, 740], [1600, 760], [1320, 960], [1280, 1225]];
+  const B = sampleBez(...Bp, 34);
+  el('path', {d: handPath(B, 6), fill: 'none', stroke: RED, 'stroke-width': 7, 'stroke-linecap': 'round'}, s);
+  arrowHead(s, B[B.length - 1], B[B.length - 4], 56, RED, 7);
+}
+
+/* ---------- revision cloud ---------- */
+function cloud(sel = '#rev .cloud', w = 960, h = 600, sw = 3.2) {
+  const svg = document.querySelector(sel);
+  const m = 8;
+  const corners = [[m, m], [w - m, m], [w - m, h - m], [m, h - m], [m, m]];
+  let d = `M${m} ${m}`;
+  for (let c = 0; c < 4; c++) {
+    const [x0, y0] = corners[c], [x1, y1] = corners[c + 1];
+    const L = Math.hypot(x1 - x0, y1 - y0);
+    const n = Math.max(1, Math.round(L / 44));
+    const js = Array.from({length: n}, () => .85 + rnd() * .3), sum = js.reduce((a, b) => a + b);
+    let pos = 0;
+    for (const j of js) {
+      const step = L * j / sum;
+      pos += step;
+      const t = pos / L, x = x0 + (x1 - x0) * t, y = y0 + (y1 - y0) * t;
+      const r = step * (0.56 + rnd() * .06);
+      d += ` A${r.toFixed(1)} ${r.toFixed(1)} 0 0 1 ${x.toFixed(1)} ${y.toFixed(1)}`;
+    }
+  }
+  el('rect', {x: m, y: m, width: w - 2*m, height: h - 2*m, fill: '#FAF9F6'}, svg);
+  el('path', {d, fill: 'none', stroke: RED, 'stroke-width': sw, 'stroke-linejoin': 'round'}, svg);
+}
+
+/* ---------- small diagrams ---------- */
+function rev2() { return; /* △2 제외 (사용자 지정 11-14) */
+  cloud('#s3r .cloud', 1440, 810, 1.1);
+  const s = cxg();
+  const P = sampleBez([5300, 1124], [5288, 1160], [5312, 1196], [5300, 1232], 12);
+  el('path', {d: handPath(P, 3), fill: 'none', stroke: RED, 'stroke-width': 7, 'stroke-linecap': 'round'}, s);
+  arrowHead(s, P[P.length - 1], P[P.length - 3], 50, RED, 7);
+  const R = [[265, 3450], [198, 3450], [198, 190], [5300, 190], [5300, 292]];
+  const Q = [];
+  for (let i = 0; i < R.length - 1; i++) Q.push(...sampleBez(R[i], R[i], R[i + 1], R[i + 1], 24).slice(i ? 1 : 0));
+  el('path', {d: handPath(Q, 4), fill: 'none', stroke: RED, 'stroke-width': 7, 'stroke-linecap': 'round', 'stroke-linejoin': 'round'}, s);
+  el('circle', {cx: 265, cy: 3450, r: 13, fill: RED}, s);
+  arrowHead(s, Q[Q.length - 1], Q[Q.length - 3], 50, RED, 7);
+}
+
+/* r8: 실제 곡 포락선(assets/r8/c05_hats.json env 1000칸 → 128칸 최대값, 0–99). 바탕 모양만 실제이고 하이햇 위치는 예시 */
+const ENV = [73,69,80,67,84,58,73,72,68,76,73,59,80,75,64,71,72,61,73,60,73,67,78,69,64,78,77,78,78,68,75,71,75,69,61,68,75,66,63,78,69,70,61,76,72,72,65,75,76,59,22,93,46,68,68,78,77,59,17,88,73,68,85,65,68,67,83,75,77,73,81,81,74,70,77,77,73,75,75,62,81,42,78,73,73,79,62,71,77,71,75,78,64,75,78,80,76,93,72,81,57,48,27,8,23,89,99,81,89,63,75,75,73,78,84,73,74,79,74,71,80,84,76,79,77,73,81,77];
+// 128칸: 4칸마다 하이햇(빨강), 16칸마다 강한 하이햇(굵은 빨강 + 바로 뒤 한 칸 여운)
+function hatWave(s, x0, w, mid, amp) {
+  const n = ENV.length, p = w / n, bw = p * .58;
+  el('line', {x1: x0, y1: mid, x2: x0 + w, y2: mid, stroke: LINE, 'stroke-width': 1}, s);
+  for (let i = 0; i < n; i++) {
+    const acc = i % 16 === 0, hat = i % 4 === 0, tail = i % 16 === 1;
+    const h = acc ? amp : hat ? amp * .72 : tail ? amp * .6 : amp * (.1 + .42 * ENV[i] / 99);
+    const wd = acc ? bw * 1.7 : (hat || tail) ? bw * .55 : bw;
+    el('rect', {x: x0 + (i + .5) * p - wd / 2, y: mid - h, width: wd, height: h * 2, fill: acc || hat || tail ? RED : INK, 'fill-opacity': acc || !(hat || tail) ? 1 : .3}, s);
+  }
+}
+function wave() {
+  const s = document.getElementById('wave');
+  const w = 1072, mid = 138, amp = 116, p = w / 128;
+  hatWave(s, 0, w, mid, amp);
+  for (let k = 0; k < 8; k++) { const x = (16 * k + .5) * p; el('path', Object.assign({d: `M${x} 262 L${x - 7} 276 L${x + 7} 276 Z`}, {fill: RED}), s); }
+}
+function beats() {
+  const s = document.getElementById('beats');
+  const x0 = 168, w = 632, p = w / 128, mid = 70, amp = 46, yA = 136, hA = 44, yB = 208, hB = 44;
+  const T = (x, y, t, o) => { const e = el('text', Object.assign({x, y, fill: MID, 'font-size': 13, 'font-family': 'Mono, Menlo'}, o), s); e.textContent = t; return e; };
+  const sans = {'font-family': 'Pre, sans-serif', 'font-weight': 600, 'font-size': 19};
+  const ax = k => x0 + (16 * k + .5) * p;
+  for (let k = 1; k < 8; k++) { const d = {stroke: RED, 'stroke-width': 1.2, 'stroke-dasharray': '3 4'}; el('line', Object.assign({x1: ax(k), y1: mid - amp - 10, x2: ax(k), y2: yA - 16}, d), s); el('line', Object.assign({x1: ax(k), y1: yA + hA + 5, x2: ax(k), y2: yB}, d), s); }
+  hatWave(s, x0, w, mid, amp);
+  T(0, mid - 6, '음파', Object.assign({}, sans, {fill: INK}));
+  T(0, mid + 16, '빨강 = 하이햇', {fill: RED});
+  el('rect', {x: x0, y: yA, width: w, height: hA, fill: 'none', stroke: MID, 'stroke-width': 1.8}, s);
+  for (let j = 1; j < 6; j++) { const x = x0 + w * j / 6; el('line', {x1: x, y1: yA, x2: x, y2: yA + hA, stroke: MID, 'stroke-width': 1.8}, s); }
+  for (let j = 0; j < 6; j++) T(x0 + w * (j + .5) / 6, yA + 29, String(j + 1), {'text-anchor': 'middle', fill: MID, 'font-size': 20, 'font-weight': 600});
+  T(0, yA + 18, '기획 초안 6씬', Object.assign({}, sans, {fill: MID}));
+  T(0, yA + 36, '균등 분할');
+  for (let k = 0; k < 8; k++) {
+    const a = k ? ax(k) : x0, b = k < 7 ? ax(k + 1) : x0 + w;
+    el('rect', {x: a, y: yB, width: b - a, height: hB, fill: '#FAF9F6', stroke: RED, 'stroke-width': 1.8}, s);
+    T((a + b) / 2, yB + 29, String(k + 1), {'text-anchor': 'middle', fill: RED, 'font-size': 20, 'font-weight': 700});
+  }
+  T(0, yB + 18, '하이햇 기준 8씬', Object.assign({}, sans, {fill: RED}));
+  T(0, yB + 37, '튀는 박에서 전환', {fill: RED});
+  const P = sampleBez([x0 + w + 10, yA + 18], [x0 + w + 38, yA + 34], [x0 + w + 38, yB + 6], [x0 + w + 12, yB + 24], 16);
+  el('path', {d: handPath(P, 1.5), fill: 'none', stroke: RED, 'stroke-width': 2.2, 'stroke-linecap': 'round'}, s);
+  arrowHead(s, P[P.length - 1], P[P.length - 3], 12, RED, 2.2);
+}
+function dots() {
+  const s = document.getElementById('dots'); if (!s) return;
+  const pick = new Set([47, 58, 63, 74, 86]);
+  for (let i = 0; i < 100; i++) {
+    const x = (i % 10) * 38 + 19, y = Math.floor(i / 10) * 38 + 19;
+    el('circle', {cx: x, cy: y, r: 12.5, fill: pick.has(i) ? RED : LINE}, s);
+  }
+}
+
+function post() {
+  const s = document.getElementById('post');
+  el('line', {x1: 0, y1: 90, x2: 1432, y2: 90, stroke: INK, 'stroke-width': 2}, s);
+  for (let i = 0; i <= 64; i++) {
+    const x = i * 1432 / 64;
+    el('line', {x1: x, y1: 90, x2: x, y2: i % 4 === 0 ? 70 : 80, stroke: INK, 'stroke-width': i % 4 === 0 ? 1.6 : 1}, s);
+  }
+  const hits = [[8, '컷'], [16, '스파크'], [24, ''], [28, '타이포'], [40, ''], [44, '스파크'], [52, ''], [56, '타이포']];
+  hits.forEach(([b, lab]) => {
+    const x = b * 1432 / 64;
+    el('path', {d: `M${x} 92 L${x - 9} 112 L${x + 9} 112 Z`, fill: RED}, s);
+    if (lab) { const t = el('text', {x, y: 136, fill: RED, 'font-size': 17, 'font-family': 'Pre, sans-serif', 'font-weight': 500, 'text-anchor': 'middle'}, s); t.textContent = lab; }
+  });
+  // lyric bar
+  el('rect', {x: 1432 * 30 / 64, y: 30, width: 1432 * 9 / 64, height: 22, fill: 'none', stroke: MID, 'stroke-width': 1.4}, s);
+  const ly = el('text', {x: 1432 * 30 / 64 + 8, y: 47, fill: MID, 'font-size': 15, 'font-family': 'Pre, sans-serif'}, s); ly.textContent = '가사';
+  const lt = el('text', {x: 0, y: 47, fill: SOFT, 'font-size': 15, 'font-family': 'Mono, Menlo', 'letter-spacing': '2'}, s); lt.textContent = 'BEAT';
+}
+
+function edit() {
+  const s = document.getElementById('edit');
+  const x0 = 0;
+  const clips = [['T03', 120], ['T11', 86], ['T07', 160], ['T02', 70], ['T15', 132], ['T09', 96], ['T21', 150], ['T04', 110], ['T18', 140], ['T12', 108], ['T06', 120]];
+  let x = x0;
+  clips.forEach(([n, w]) => {
+    el('rect', {x, y: 28, width: w - 4, height: 48, fill: '#EFEDE7', stroke: INK, 'stroke-width': 1.4}, s);
+    x += w;
+  });
+  // audio
+  for (let i = 0; i < (x - x0) / 6; i++) {
+    const hh = 6 + rnd() * 22;
+    el('rect', {x: x0 + i * 6, y: 147 - hh / 2, width: 2.6, height: hh, fill: MID}, s);
+  }
+  el('line', {x1: x0, y1: 104, x2: x - 4, y2: 104, stroke: LINE, 'stroke-width': 1}, s);
+  // cut range (clip T09 = x 568..660)
+  el('rect', {x: 686, y: 28, width: 112, height: 48, fill: '#F3D9D2'}, s);
+  [686, 798].forEach(cx => {
+    el('line', {x1: cx, y1: 20, x2: cx, y2: 84, stroke: RED, 'stroke-width': 3}, s);
+    if (cx === 686) el('path', {d: `M${cx - 6} 2 L${cx} 10 L${cx + 6} 2`, fill: 'none', stroke: RED, 'stroke-width': 3, 'stroke-linejoin': 'round', 'stroke-linecap': 'round'}, s);
+  });
+  // playhead
+  const ph = x0 + 640;
+  el('line', {x1: ph, y1: 6, x2: ph, y2: 196, stroke: RED, 'stroke-width': 2.4}, s);
+  el('path', {d: `M${ph - 9} 0 L${ph + 9} 0 L${ph} 12 Z`, fill: RED}, s);
+}
+
+/* ---------- hand marks on text ---------- */
+
+function marks4() {
+  const svg = document.getElementById('m4'); if (!svg) return;
+  const v = svg.parentNode, imgs = v.querySelectorAll('figure img');
+  if (imgs.length < 3) return;
+  svg.innerHTML = '';
+  const ell = (cx, cy, rx, ry) => {
+    const pts = []; for (let i = 0; i <= 34; i++) { const a = -2.2 + i / 34 * 6.7; pts.push([cx + Math.cos(a) * rx, cy + Math.sin(a) * ry]); }
+    el('path', {d: handPath(pts, 1.2), fill: 'none', stroke: RED, 'stroke-width': 3, 'stroke-linecap': 'round'}, svg);
+  };
+  const A = imgs[1], B = imgs[2];
+  [[A, FACE, CLOTH], [B, FACE_F, CLOTH_F]].forEach(([im, FACE, CLOTH]) => {
+    const x = im.offsetLeft, y = im.offsetTop, w = im.offsetWidth, h = im.offsetHeight;
+    ell(x + w * FACE[0], y + h * FACE[1], w * FACE[2], h * FACE[3]);
+    ell(x + w * CLOTH[0], y + h * CLOTH[1], w * CLOTH[2], h * CLOTH[3]);
+  });
+  const tx = v.querySelector('.v4r.two p'); if (!tx) return;
+  const bx = A.offsetLeft + A.offsetWidth + 12, y1 = A.offsetTop + A.offsetHeight / 2, y2 = B.offsetTop + B.offsetHeight / 2, ym = (y1 + y2) / 2;
+  const tl = tx.offsetLeft + tx.offsetParent.offsetLeft - 8;
+  el('path', {d: `M${bx} ${y1} Q${bx + 12} ${y1} ${bx + 12} ${ym - 14} Q${bx + 12} ${ym} ${bx + 24} ${ym} Q${bx + 12} ${ym} ${bx + 12} ${ym + 14} Q${bx + 12} ${y2} ${bx} ${y2}`, fill: 'none', stroke: RED, 'stroke-width': 2.2, 'stroke-linecap': 'round', 'stroke-linejoin': 'round'}, svg);
+  el('line', {x1: bx + 24, y1: ym, x2: tl, y2: ym, stroke: RED, 'stroke-width': 2}, svg);
+}
+const FACE = [.205, .21, .065, .14], CLOTH = [.205, .62, .095, .25], FACE_F = [.23, .15, .06, .09], CLOTH_F = [.23, .58, .10, .29];
+function decorate() {
+  document.querySelectorAll('.strike>svg.mark,.under>svg.mark,.circled>svg.mark').forEach(n => n.remove());
+  document.querySelectorAll('.strike').forEach(sp => {
+    const w = sp.offsetWidth, h = sp.offsetHeight;
+    const svg = el('svg', {class: 'mark', width: w + 20, height: h, style: `left:-10px;top:0`});
+    const y = h * .56;
+    const P = Array.from({length: 14}, (_, i) => [i / 13 * (w + 4) + 8, y + (i / 13 - .5) * -4]);
+    el('path', {d: handPath(P, 2), fill: 'none', stroke: RED, 'stroke-width': 3, 'stroke-linecap': 'round'}, svg);
+    sp.appendChild(svg);
+  });
+  document.querySelectorAll('.under').forEach(sp => {
+    const w = sp.offsetWidth, h = sp.offsetHeight;
+    const l6 = !!sp.closest('.lead6');
+    const svg = el('svg', {class: 'mark', width: w + 20, height: 30, style: `left:-6px;top:${l6 ? h - 2 : h - 10}px`});
+    const P = Array.from({length: 12}, (_, i) => [l6 ? i / 11 * w + 6 : i / 11 * (w + 10), 10 + Math.sin(i * .9) * 1.2 + i * .3]);
+    el('path', {d: handPath(P, 1.6), fill: 'none', stroke: RED, 'stroke-width': 3.2, 'stroke-linecap': 'round'}, svg);
+    sp.appendChild(svg);
+  });
+  document.querySelectorAll('.circled').forEach(sp => {
+    const w = sp.offsetWidth, h = sp.offsetHeight;
+    const pad = sp.closest('.ratio') ? 66 : 26, svg = el('svg', {class: 'mark', width: w + pad * 2, height: h + pad * 2, style: `left:${-pad}px;top:${-pad}px`});
+    const rt = !!sp.closest('.ratio');
+    const cx = w / 2 + pad, cy = h / 2 + pad + 6, rx = rt ? w / 2 + 50 : w / 2 + 16, ry = rt ? h / 2 + 6 : h / 2 - 4;
+    const P = [];
+    for (let i = 0; i <= 40; i++) {
+      const a = -2.2 + i / 40 * (Math.PI * 2 + .55);
+      const k = 1 + i / 40 * .07;
+      P.push([cx + Math.cos(a) * rx * k, cy + Math.sin(a) * ry * k]);
+    }
+    el('path', {d: handPath(P, 3), fill: 'none', stroke: RED, 'stroke-width': 4.5, 'stroke-linecap': 'round'}, svg);
+    sp.appendChild(svg);
+  });
+}
+
+
+/* ---------- VT-10 drawings ---------- */
+const txt = (svg, x, y, t, o = {}) => { const e = el('text', Object.assign({x, y, fill: INK, 'font-size': 20, 'font-family': 'Pre, sans-serif'}, o), svg); e.textContent = t; return e; };
+const arrowLine = (svg, a, b, color, sw) => {
+  el('line', {x1: a[0], y1: a[1], x2: b[0], y2: b[1], stroke: color, 'stroke-width': sw}, svg);
+  const ang = Math.atan2(b[1] - a[1], b[0] - a[0]), l = sw * 5, w = sw * 2;
+  const p1 = [b[0] - Math.cos(ang) * l - Math.sin(ang) * w, b[1] - Math.sin(ang) * l + Math.cos(ang) * w];
+  const p2 = [b[0] - Math.cos(ang) * l + Math.sin(ang) * w, b[1] - Math.sin(ang) * l - Math.cos(ang) * w];
+  el('polygon', {points: [b, p1, p2].map(p => p.join(',')).join(' '), fill: color}, svg);
+};
+function d1flow() {
+  const s = document.getElementById('d1flow');
+  const mono = {'font-family': 'Mono, Menlo', 'font-size': 15, fill: MID, 'text-anchor': 'middle'};
+  const rm = Object.assign({}, mono, {fill: RED});
+  arrowLine(s, [195, 52], [255, 52], INK, 2.4); txt(s, 225, 36, '컴파일', mono);
+  arrowLine(s, [465, 52], [525, 52], INK, 2.4); txt(s, 495, 36, '고르기', mono);
+  arrowLine(s, [195, 252], [255, 252], RED, 2.4); txt(s, 225, 236, '압축 전', rm);
+  arrowLine(s, [465, 252], [525, 252], RED, 2.4); txt(s, 495, 236, '옮김', rm);
+  arrowLine(s, [360, 208], [360, 104], RED, 2.4); txt(s, 372, 165, '옮김', Object.assign({}, rm, {'text-anchor': 'start'}));
+}
+
+/* ---------- camera ---------- */
+const world = document.getElementById('world');
+const steps = [
+  {rect: [30, 30, 6340, 4540], label: '전체도'},
+  {id: 's1', label: '01 기획'},
+  {id: 's2', label: '02 음악'},
+  {id: 'rev', label: '△1 음악에 맞춰 기획 수정'},
+  {id: 's3', label: '03 이미지'},
+  {id: 's4', part: 'a', label: '04 영상화 ① 참조에 역할 주기'},
+  {id: 's4', part: 'b', hash: 's4-2', label: '04 영상화 ② 동작과 결과'},
+  {id: 's5', label: '05 후처리'},
+  {id: 'c51', focus: 's5', label: '05-1 화성 · 잉크 프레임'},
+  {id: 'c52', focus: 's5', label: '05-2 매돌이 · 도감 카드'},
+  {id: 'c53', focus: 's5', label: '05-3 성남 · 설명은 코드로'},
+  {id: 'c54', focus: 's5', label: '05-4 솔로몬 · 현수막 글자'},
+  {id: 's6', label: '06 편집'},
+  {rect: [30, 30, 6340, 4540], label: '전체도'},
+  {rect: [6630, 30, 8540, 9640], deep: 1, appx: 1, hash: 'appx', label: '부록 · 단계별 상세도'},
+  {id: 'd01a', deep: 1, label: '01-A 기획 순서와 확정'},
+  {id: 'd01b', deep: 1, label: '01-B 스타일 바이블에 적는 것'},
+  {id: 'd01c', deep: 1, label: '01-C 콘티에 적는 것'},
+  {id: 'd02a', deep: 1, label: '02-A Suno 프롬프트 구조'},
+  {id: 'd03a', deep: 1, label: '03-A 이미지 프롬프트 구조'},
+  {id: 'd03b', deep: 1, label: '03-B 참조 이미지 규칙 · 검수'},
+  {id: 'd03c', deep: 1, label: '03-C 이미지 모델 변경'},
+  {id: 'd04a', deep: 1, label: '04-A 프롬프트 해부'},
+  {id: 'd04b', deep: 1, label: '04-B 검사 → 생성 → 검수'},
+  {id: 'd04c', deep: 1, label: '04-C 반복 실수 검사'},
+  {id: 'd04d', deep: 1, label: '04-D 영상 모델 · 모드 변경'},
+  {id: 'd05a', deep: 1, label: '05-A 후처리 구성'},
+  {id: 'd06a', deep: 1, label: '06-A 편집 규칙'},
+  {id: 'd00a', deep: 1, label: '00-A 위키 지도'},
+  {id: 'd00b', deep: 1, label: '00-B 실패 → 경고'},
+  {id: 'd00c', deep: 1, label: '00-C 배지와 한계'},
+  {rect: [0, 0, 15200, 9700], deep: 1, label: '전체'},
+];
+let idx = 0, cam = null, raf = 0, focusTimer = 0, clipTimer = 0, brief = true, ret = null;
+const stepFrom = (i, d) => { let j = i + d; while (brief && steps[j] && steps[j].deep) j += d; return steps[j] ? j : i; };
+const leave = d => { if (ret !== null && brief && steps[idx].deep) return ret; return stepFrom(idx, d); };
+
+function rectFor(st) {
+  if (st.rect) return {x: st.rect[0], y: st.rect[1], w: st.rect[2], h: st.rect[3], pad: .02};
+  const e = document.getElementById(st.id);
+  let x = 0, y = 0, n = e;
+  while (n && n !== world) { x += n.offsetLeft; y += n.offsetTop; n = n.offsetParent; }
+  return {x, y, w: e.offsetWidth, h: e.offsetHeight, pad: st.focus ? .04 : .05};
+}
+function camFor(r) {
+  const vw = innerWidth, vh = innerHeight;
+  const z = Math.min(vw * (1 - r.pad * 2) / r.w, vh * (1 - r.pad * 2) / r.h);
+  return {x: r.x + r.w / 2, y: r.y + r.h / 2, z};
+}
+function apply(c) {
+  world.style.transform = `translate(${innerWidth / 2 - c.x * c.z}px, ${innerHeight / 2 - c.y * c.z}px) scale(${c.z})`;
+}
+const ease = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+const au = document.getElementById('au2'), aud = au.querySelector('audio');
+function tune() {} /* 발표는 시스템 음성 없이 진행 — 음악 재생 안 함 */
+aud.addEventListener('play', () => au.classList.add('on'));
+aud.addEventListener('pause', () => au.classList.remove('on'));
+aud.addEventListener('timeupdate', () => { au.querySelector('.aubar i').style.width = (aud.currentTime / (aud.duration || 20) * 100) + '%'; });
+au.addEventListener('click', ev => { ev.stopPropagation(); if (steps[idx].id === 's2') tune(); });
+function playClip(v) {
+  v.currentTime = 0;
+  v.muted = true;
+  const box = v.closest('.case');
+  box.classList.remove('nosound');
+  const p = v.play();
+  if (p) p.catch(() => { v.muted = true; box.classList.add('nosound'); v.play().catch(() => {}); });
+}
+function clips(delay) {
+  clearTimeout(clipTimer);
+  const cur = steps[idx].id;
+  if (cur !== 's2' && !aud.paused) { aud.pause(); aud.currentTime = 0; }
+  const act = [];
+  document.querySelectorAll('.case video').forEach(v => {
+    if (v.closest('.case').id === cur) act.push(v);
+    else if (!v.paused || v.currentTime > 0) { v.pause(); v.load(); }
+  });
+  if (act.length) clipTimer = setTimeout(() => act.forEach(playClip), delay);
+  const s1 = document.getElementById('v4s1');
+  if (!s1.dataset.c) { s1.dataset.c = 1; s1.addEventListener('click', e => { e.stopPropagation(); s1.paused ? s1.play() : s1.pause(); }); }
+  if (steps[idx].part === 'b') { if (s1.paused) { s1.muted = true; s1.currentTime = 0; s1.play().catch(() => {}); } }
+  else if (!s1.paused || s1.currentTime > 0) { s1.pause(); s1.load(); }
+}
+function go(i, instant) {
+  ret = null;
+  i = Math.max(0, Math.min(steps.length - 1, i));
+  idx = i;
+  const st = steps[i];
+  const target = camFor(rectFor(st));
+  cancelAnimationFrame(raf); clearTimeout(focusTimer);
+  const fid = st.focus || st.id;
+  document.querySelectorAll('.sheet.focus').forEach(e => { if (e.id !== fid) e.classList.remove('focus'); });
+  document.body.classList.toggle('zoomed', !!st.focus);
+  document.querySelectorAll('.case').forEach(c => c.classList.toggle('cur', c.id === st.id));
+  document.body.classList.toggle('in', !!st.id);
+  document.body.classList.toggle('apx', !!(st.appx || /^d\d/.test(st.id || '') || (st.rect && st.rect[2] > 7000)));
+  document.body.classList.toggle('p4a', st.part === 'a'); document.body.classList.toggle('p4b', st.part === 'b');
+  const tgtEl = fid ? document.getElementById(fid) : null;
+  hud();
+  history.replaceState(null, '', '#' + (st.hash || st.id || i));
+  if (instant || !cam) {
+    cam = target; apply(cam);
+    document.body.classList.add('snap');
+    if (tgtEl) tgtEl.classList.add('focus');
+    requestAnimationFrame(() => requestAnimationFrame(() => document.body.classList.remove('snap')));
+    clips(0);
+    return;
+  }
+  const from = {...cam};
+  const dist = Math.hypot(target.x - from.x, target.y - from.y) * Math.min(from.z, target.z) / innerWidth;
+  const dip = Math.min(1.1, dist * .55);
+  const dur = 1150 + Math.min(dist, 2) * 260;
+  const t0 = performance.now();
+  clips(dur);
+  if (tgtEl) focusTimer = setTimeout(() => tgtEl.classList.add('focus'), dur * .5);
+  const tick = now => {
+    const t = Math.min(1, (now - t0) / dur), e = ease(t);
+    const lz = Math.log(from.z) + (Math.log(target.z) - Math.log(from.z)) * e;
+    cam = {
+      x: from.x + (target.x - from.x) * e,
+      y: from.y + (target.y - from.y) * e,
+      z: Math.exp(lz) / (1 + dip * Math.sin(Math.PI * e)),
+    };
+    apply(cam);
+    if (t < 1) raf = requestAnimationFrame(tick); else cam = target;
+  };
+  raf = requestAnimationFrame(tick);
+}
+
+/* ---------- HUD ---------- */
+const ticks = document.getElementById('ticks');
+function hud() {
+  document.body.classList.toggle('ov', idx === 0);
+  const st = steps[idx];
+  const vis = steps.map((s, i) => i).filter(i => !brief || !steps[i].deep);
+  const pos = vis.indexOf(idx);
+  const dps = steps.filter(s => /^d\d/.test(s.id || ''));
+  const an = dps.indexOf(st);
+  const mode = ret !== null ? '부록 · → 돌아가기' : an >= 0 ? '부록' : st.deep ? '부록' : brief ? '발표' : '발표+부록';
+  const sheets = vis.filter(i => steps[i].id && !/^d\d/.test(steps[i].id));
+  const sp = sheets.indexOf(idx);
+  const tail = an >= 0 ? ` · 부록 ${an + 1}/${dps.length} · 지도 G · 나가기 D` : st.appx ? ' · 시트를 누르면 크게 · 나가기 D' : sp >= 0 ? ` · ${sp + 1}/${sheets.length}` : '';
+  document.getElementById('hudl').innerHTML = `${st.label}${tail} <span class="mode">${mode}</span>`;
+  ticks.innerHTML = '';
+  sheets.forEach(i => { const t = document.createElement('i'); if (i <= idx) t.className = 'on'; ticks.appendChild(t); });
+}
+
+/* ---------- input ---------- */
+addEventListener('keydown', e => {
+  const k = e.key;
+  if (document.activeElement && document.activeElement !== document.body) document.activeElement.blur();
+  if (['ArrowRight', 'ArrowDown', ' ', 'PageDown', 'Enter'].includes(k)) { e.preventDefault(); go(leave(1)); }
+  else if (['ArrowLeft', 'ArrowUp', 'PageUp', 'Backspace'].includes(k)) { e.preventDefault(); go(leave(-1)); }
+  else if (k === 'p' || k === 'P') { brief = !brief; hud(); }
+  else if (k === 'd' || k === 'D') { if (steps[idx].deep) { brief = true; go(0); } else { brief = false; go(steps.findIndex(s => s.id === 'd01a')); } }
+  else if (k === 'g' || k === 'G') { brief = false; go(steps.findIndex(s => s.appx)); }
+  else if (k === 'v' || k === 'V') { if (steps[idx].id === 's5') go(steps.findIndex(s => s.id === 'c51')); else document.querySelectorAll('.case video').forEach(v => { if (v.closest('.case').id === steps[idx].id) playClip(v); }); }
+  else if (k === 'm' || k === 'M') { if (steps[idx].id === 's2') tune(); }
+  else if (k === 'Escape' || k === '0') go(0);
+  else if (k === 'Home') go(0);
+  else if (k === 'End') go(brief ? steps.findIndex(s => s.appx) - 1 : steps.length - 1);
+  else if (/^[1-6]$/.test(k)) go(steps.findIndex(s => s.id === 's' + k));
+  else if (k === 'r' || k === 'R') go(steps.findIndex(s => s.id === 'rev'));
+  else if (k === 'f' || k === 'F') { document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen(); }
+  else if (k === 'h' || k === 'H') document.getElementById('hint').style.opacity = document.getElementById('hint').style.opacity === '1' ? 0 : 1;
+});
+document.querySelectorAll('.sheet').forEach(s => s.addEventListener('click', ev => {
+  ev.stopPropagation();
+  if (steps[idx].id === s.id) return;
+  go(steps.findIndex(st => st.id === s.id));
+}));
+document.querySelectorAll('.case').forEach(c => c.addEventListener('click', ev => {
+  const cur = steps[idx];
+  if ((cur.focus || cur.id) !== 's5') return;
+  ev.stopPropagation();
+  if (cur.id === c.id) return;
+  go(steps.findIndex(st => st.id === c.id));
+}));
+document.querySelectorAll('.case video').forEach(v => v.addEventListener('click', () => { if (v.closest('.case').id === steps[idx].id) playClip(v); }));
+document.querySelectorAll('.case .pl').forEach(b => b.addEventListener('click', ev => {
+  const cur = steps[idx], c = b.closest('.case');
+  if ((cur.focus || cur.id) !== 's5') return;
+  ev.stopPropagation();
+  if (cur.id === c.id) playClip(b.parentElement.querySelector('video'));
+  else go(steps.findIndex(st => st.id === c.id));
+}));
+document.querySelectorAll('.case video').forEach(v => { const f = v.closest('figure'); v.addEventListener('playing', () => f.classList.add('playing')); ['pause', 'ended', 'emptied'].forEach(n => v.addEventListener(n, () => f.classList.remove('playing'))); });
+document.querySelectorAll('[data-go]').forEach(e => e.addEventListener('click', ev => { ev.stopPropagation(); const from = idx, j = steps.findIndex(s => s.id === e.dataset.go); go(j); if (brief && steps[j].deep && !steps[from].deep) { ret = from; hud(); } }));
+document.getElementById('hud').addEventListener('click', e => { if (e.target.closest('.mode')) { e.stopPropagation(); brief = !brief; hud(); } });
+document.getElementById('appxb').addEventListener('click', ev => { ev.stopPropagation(); brief = false; go(steps.findIndex(s => s.appx)); });
+document.getElementById('stage').addEventListener('click', () => { if (steps[idx].id) go(0); });
+addEventListener('resize', () => go(idx, true));
+
+function fromHash() {
+  let raw = location.hash.slice(1);
+  try { raw = decodeURIComponent(raw); } catch (e) {}
+  const j = /^\d+$/.test(raw) ? +raw : steps.findIndex(s => (s.hash || s.id) === raw);
+  return steps[j] ? j : 0;
+}
+addEventListener('hashchange', () => { const j = fromHash(); if (j !== idx) { if (steps[j].deep) brief = false; go(j); } });
+
+/* ---------- boot ---------- */
+zones(0, 6400, 4600); zones(6600, 8600, 9700, 'zx'); connectors(); cloud('#rev .cloud', 960, 600, 0.9); wave(); beats(); dots(); edit(); d1flow(); rev2();
+document.fonts.ready.then(() => {
+  decorate(); marks4();
+  const h = fromHash();
+  if (steps[h].deep) brief = false;
+  go(h, true);
+});
+const params = new URLSearchParams(location.search);
+if (params.has('full')) { brief = false; hud(); }
+if (params.has('clean')) document.body.classList.add('clean');
+
+/* ---------- 발표덱 안에 넣었을 때(iframe): 덱과 →/← 를 이어 줌 ---------- */
+if (window.parent !== window) {
+  const lastBrief = () => { let j = 0; steps.forEach((s, i) => { if (!s.deep) j = i; }); return j; };
+  /* ?path=0,5,6 : 발표덱에서 정한 단계만 순서대로 보여 줌 (중랑구청판 추가) */
+  const PATH = (params.get('path') || '').split(',').filter(Boolean).map(Number).filter(n => steps[n]);
+  const _go = go;
+  go = (j, instant) => { _go(j, instant); parent.postMessage({wfmap: 'step', label: steps[idx].label, n: PATH.length ? PATH.indexOf(idx) + 1 : idx + 1, total: PATH.length || steps.length}, '*'); };
+  const step = d => {
+    if (PATH.length) {
+      const p = PATH.indexOf(idx), q = p < 0 ? (d > 0 ? 0 : PATH.length - 1) : p + d;
+      if (q < 0 || q >= PATH.length) { parent.postMessage({wfmap: 'edge', dir: d}, '*'); return; }
+      go(PATH[q]); return;
+    }
+    const j = leave(d);
+    if (j === idx) { parent.postMessage({wfmap: 'edge', dir: d}, '*'); return; }
+    go(j);
+  };
+  addEventListener('message', e => {
+    const m = e.data || {};
+    if (!m.wfcmd) return;
+    if (m.wfcmd === 'next') step(1);
+    else if (m.wfcmd === 'prev') step(-1);
+    else if (m.wfcmd === 'start') { brief = true; go(PATH.length ? PATH[0] : 0, true); }
+    else if (m.wfcmd === 'end') { brief = true; go(PATH.length ? PATH[PATH.length - 1] : lastBrief(), true); }
+  });
+  /* 구조도 안을 클릭해 포커스가 들어와 있어도 끝에서는 덱으로 넘김 · F 는 덱 전체화면 */
+  addEventListener('keydown', e => {
+    const k = e.key;
+    const fwd = ['ArrowRight', 'ArrowDown', ' ', 'PageDown', 'Enter'].includes(k);
+    const back = ['ArrowLeft', 'ArrowUp', 'PageUp', 'Backspace'].includes(k);
+    if ((fwd || back) && PATH.length) {
+      e.preventDefault(); e.stopImmediatePropagation(); step(fwd ? 1 : -1);
+    } else if ((fwd || back) && leave(fwd ? 1 : -1) === idx) {
+      e.preventDefault(); e.stopImmediatePropagation();
+      parent.postMessage({wfmap: 'edge', dir: fwd ? 1 : -1}, '*');
+    } else if (k === 'f' || k === 'F') {
+      e.preventDefault(); e.stopImmediatePropagation();
+      parent.postMessage({wfmap: 'fullscreen'}, '*');
+    }
+  }, true);
+}
+
+})();
+</script>
+</body>
+</html>

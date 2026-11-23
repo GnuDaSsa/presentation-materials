@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ko">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Azure 자막 시작 안내</title><link rel="stylesheet" href="/azure-setup.css"><script type="module" src="/azure-setup.js"></script></head>
+<body>
+<main>
+  <nav><a href="/">← 발표 화면</a><span>워크숍 발표 · API 인계</span></nav>
+  <header><p class="eyebrow">AZURE SPEECH TRANSLATION</p><h1>영어 발표를<br>베트남어·한국어 자막으로</h1><p class="lead">프로그램 준비는 끝났습니다.<br>Azure 리소스를 만든 뒤 키와 지역을 한 번만 설정하면 됩니다.</p></header>
+  <aside class="status"><strong id="setup-status">로컬 설정 확인 중</strong><p id="setup-detail">설정 여부를 확인합니다.</p><button id="check-status" type="button">설정 상태 다시 확인</button></aside>
+  <section><h2><span>01</span> Azure Speech 리소스 만들기</h2>
+    <ol><li><a href="https://portal.azure.com/" target="_blank" rel="noopener">Azure Portal</a>에 로그인합니다. Azure 구독이 없으면 먼저 구독을 만듭니다. OpenAI 계정·API 키와는 별도입니다.</li>
+      <li><strong>리소스 만들기</strong>에서 <strong>Speech / 음성</strong>을 검색합니다. Microsoft의 Speech 리소스를 선택합니다. 포털에서 Foundry Tools의 Speech로 표시될 수도 있습니다.</li>
+      <li>아래 값을 입력한 뒤 생성 화면의 내용을 확인하고 배포합니다.</li></ol>
+    <div class="table-wrap"><table><thead><tr><th>항목</th><th>설정</th></tr></thead><tbody>
+      <tr><td>구독</td><td>사용할 Azure 구독</td></tr><tr><td>리소스 그룹</td><td>예: <code>rg-workshop-speech</code> · 새로 만들기 가능</td></tr>
+      <tr><td>지역</td><td>한국에서 발표한다면 <strong>Korea Central</strong>부터 시험합니다. 코드: <code>koreacentral</code></td></tr>
+      <tr><td>이름</td><td>예: <code>workshop-speech-본인식별자</code> · 포털에서 중복 여부 확인</td></tr>
+      <tr><td>가격 책정 계층</td><td>시험용은 <strong>Free F0</strong>가 선택 가능하면 사용합니다. F0가 없거나 한도가 부족하면 <strong>Standard S0</strong>의 표시 요금을 확인해 선택합니다.</td></tr>
+    </tbody></table></div>
+    <p class="note">공식 가격표의 F0 음성 번역 한도는 월 5시간입니다. 계정·지역별 선택 가능 여부와 최신 조건은 생성 화면에서 확인하세요. S0는 사용량 과금입니다. 이 앱은 번역 음성을 재생하지 않고 두 언어 텍스트만 받습니다. <a href="https://azure.microsoft.com/en-us/pricing/details/speech/" target="_blank" rel="noopener">가격표</a> · <a href="https://learn.microsoft.com/en-us/azure/ai-services/speech-service/regions" target="_blank" rel="noopener">지원 지역</a></p>
+  </section>
+  <section><h2><span>02</span> 키와 지역 확인하기</h2>
+    <p>배포가 끝나면 <strong>리소스로 이동 → Keys and Endpoint / 키 및 엔드포인트</strong>를 엽니다. 필요한 값은 두 개입니다.</p>
+    <div class="pair"><article><h3>Key 1</h3><p>Speech 리소스의 키를 복사합니다. Key 2도 사용할 수 있습니다.</p></article><article><h3>Location / Region</h3><p>동일한 리소스의 지역 코드를 확인합니다. 예: <code>koreacentral</code></p></article></div>
+    <p>이 프로그램은 지역 기반 연결을 사용하므로 Endpoint 주소나 모델 배포 이름을 입력할 필요가 없습니다. 판교·성남 등 발표 용어는 프로그램에서 인식 힌트로 전달합니다.</p>
+    <p class="note">키는 채팅에 보내지 말고 아래 로컬 설정 도구에 입력하세요. <a href="https://learn.microsoft.com/en-us/azure/ai-services/speech-service/get-started-speech-translation" target="_blank" rel="noopener">Microsoft 생성·키 확인 안내</a></p>
+  </section>
+  <section><h2><span>03</span> 이 PC에 연결하기</h2>
+    <ol><li>프로젝트 폴더를 엽니다.<code class="block">C:\Users\sajw1\OneDrive\문서\ChatGPT\영어발표</code></li>
+      <li><strong>Azure설정.cmd</strong>를 두 번 클릭합니다.</li>
+      <li>지역 코드를 입력하고, 이어서 Speech 키를 붙여 넣습니다. 키 입력 내용은 화면에 표시되지 않습니다.</li>
+      <li>도구가 Azure 인증을 확인한 뒤 <code>.env.local</code>에 저장하고 발표 서버를 재시작합니다. 기존 OpenAI 키는 유지합니다. 서버 재시작이 안 되면 현재 서버를 종료하고 <strong>발표시작.cmd</strong>를 다시 실행합니다.</li></ol>
+    <details><summary>환경 파일을 직접 설정하는 경우</summary><p><code>.env.local</code>에 다음 항목만 추가하거나 수정합니다. 기존 <code>OPENAI_API_KEY</code> 줄은 유지합니다.</p><pre>AZURE_SPEECH_KEY=발급받은_Speech_키
+AZURE_SPEECH_REGION=koreacentral
+CAPTION_PROVIDER=azure</pre><p>프로젝트 폴더의 터미널에서 인증을 확인합니다. 키나 발급된 토큰은 출력하지 않습니다.</p><pre>npm run azure:check
+powershell -NoProfile -ExecutionPolicy Bypass -File .\start.ps1 -Restart</pre><p><code>.env.local</code>은 Git 제외 대상입니다. 프로젝트를 다른 사람에게 전달할 때 키 파일은 제외하고, 새 PC에는 그 PC에서 사용할 키를 설정하세요.</p></details>
+  </section>
+  <section><h2><span>04</span> 발표 화면에서 시험하기</h2>
+    <ol><li><a href="/">발표 화면</a>을 새로고침합니다.</li><li><strong>⚙ 설정 → 번역 서비스 → Azure Speech · 영어 발표</strong>를 선택합니다.</li><li>설정 창을 닫고 <strong>자막 시작</strong>을 누릅니다. 마이크 권한을 허용한 뒤 상태가 <strong>번역 중</strong>이면 영어로 말합니다.</li></ol>
+    <blockquote lang="en">Welcome to Pangyo in Seongnam. Today we will discuss system semiconductors and fabless companies.</blockquote>
+    <p>위쪽 베트남어, 아래쪽 한국어 자막을 확인합니다. 다음 구절이 들어오면 이전 자막을 교체하고, 새 글자가 4초간 없으면 숨깁니다. 전체 화면은 <kbd>F</kbd>, 장표 언어는 <kbd>E</kbd>, 종료는 <kbd>M</kbd>입니다.</p>
+    <p>이번 Azure 모드는 <strong>영어 입력(en-US) 고정</strong>입니다. 한국어로 발표하려면 중지 후 OpenAI 모드를 선택합니다. 서비스 변경은 자막이 중지된 상태에서만 가능합니다.</p>
+    <p class="note">현재까지 Azure 실서비스의 속도·번역 정확도는 측정하지 않았습니다. 키 발급 전에는 SDK 연결 흐름과 화면 동작을 모의 응답으로 검사했습니다. 0.3~0.5초 지연을 보장하지 않습니다. 실제 마이크로 같은 문장을 두 서비스에서 말해 보며 첫 자막 속도, 문장 완성 시간, 용어 정확도를 비교하세요.</p>
+  </section>
+  <section><h2><span>05</span> 연결이 안 될 때</h2><div class="table-wrap"><table><thead><tr><th>증상</th><th>확인할 내용</th></tr></thead><tbody>
+    <tr><td>Azure 설정 필요</td><td>설정 도구 실행 → 서버 재시작 → 브라우저 새로고침 순서로 진행합니다.</td></tr>
+    <tr><td>인증 실패 / 401 / 403</td><td>키와 지역이 같은 Speech 리소스에서 나온 값인지 확인합니다. OpenAI·Azure OpenAI·Translator 전용 키를 넣지 않았는지 확인합니다.</td></tr>
+    <tr><td>429 / 이용 한도</td><td>Azure 리소스의 사용량·요금제·동시 연결 수를 확인하고 중복 실행 중인 자막 탭을 중지합니다.</td></tr>
+    <tr><td>연결 시간 초과</td><td>인터넷과 조직의 Azure Speech WebSocket 접속 허용 여부를 확인합니다. 사설 엔드포인트만 허용된 리소스는 이 지역 기반 설정으로 연결되지 않습니다.</td></tr>
+    <tr><td>원문은 맞는데 용어 번역이 다름</td><td>인식 힌트는 번역 결과를 강제하는 사전이 아닙니다. 실제 출력으로 확인하고, 필요한 표기 보정은 용어집에 추가합니다.</td></tr>
+    <tr><td>다른 PC로 이동</td><td>Node.js 22 이상에서 <code>npm ci</code>를 실행합니다. SDK 브라우저 파일이 준비됩니다. 그 PC의 키를 설정한 뒤 <strong>발표시작.cmd</strong>로 시작합니다.</td></tr>
+  </tbody></table></div></section>
+  <section><h2>개발자 인계 · API 구조</h2>
+    <p>브라우저의 Speech SDK <strong>1.52.0</strong>을 로컬에서 제공합니다. 영어 음성은 Azure Speech로 직접 스트리밍됩니다. 이 경로는 OpenAI 번역 API를 호출하지 않습니다. 서버는 키를 보관하고 짧게 유효한 토큰만 브라우저에 발급합니다.</p>
+    <pre>마이크 → Azure Speech SDK → Azure Speech
+                          ← 영어 인식 결과 + vi/ko 번역
+로컬 서버 → Azure STS → 임시 토큰 → 브라우저</pre>
+    <div class="table-wrap"><table><thead><tr><th>파일 / API</th><th>역할</th></tr></thead><tbody>
+      <tr><td><code>azure-api.mjs</code></td><td>키·지역 검증, STS 토큰 발급·캐시, 요청 제한</td></tr>
+      <tr><td><code>POST /api/azure-token</code></td><td>같은 출처의 JSON <code>{}</code> 요청 → <code>token, region, expiresAt</code> 반환. 장기 키는 반환하지 않음</td></tr>
+      <tr><td><code>GET /api/health</code></td><td><code>providers.azure.available</code>은 설정 존재 여부. 실제 인증 성공 여부는 <code>npm run azure:check</code>로 확인</td></tr>
+      <tr><td><code>public/azure-captions.js</code></td><td>SDK 로딩, en-US → vi/ko 설정, 중간·최종 결과, 오디오 구간별 자막 교체, 토큰 갱신·마이크 종료</td></tr>
+      <tr><td><code>public/glossary.js</code></td><td>핵심·현재 장표의 영어 용어를 PhraseListGrammar로 전달. 명확한 철자 변형 보정</td></tr>
+      <tr><td><code>public/app.js</code></td><td>서비스 선택·화면·기존 4초 자막 숨김 유지. 선택은 브라우저에 저장</td></tr>
+    </tbody></table></div>
+    <p><code>SpeechTranslationConfig.fromAuthorizationToken</code>으로 연결합니다. <code>recognizing</code>은 중간 결과, <code>recognized</code>는 최종 결과입니다. <code>result.text</code>가 영어 원문이고 <code>result.translations.get('vi')</code>, <code>get('ko')</code>가 두 자막입니다. 중간 결과는 누적 문장이라 화면에 덧붙이지 않고 교체합니다. 원문은 이번 발표 화면에 별도 표시하지 않습니다.</p>
+    <p>STS 토큰 유효기간은 10분입니다. 프로그램은 보수적으로 9분으로 관리하고 약 8분에 갱신해 실행 중인 recognizer의 <code>authorizationToken</code>에 반영합니다. 갱신이나 연결에 실패하면 종료하고 오류를 표시합니다. 다른 서비스로 자동 전송하지 않습니다.</p>
+    <p>Azure SDK가 발화 구간을 나누므로 OpenAI의 별도 번역 요청 조정이나 문장 교체 대기를 추가하지 않습니다. 문장 중간 번역과 고유명사는 계속 수정될 수 있습니다. PhraseListGrammar는 인식 보조이며 영구 학습이나 강제 번역 사전은 아닙니다.</p>
+    <pre>npm test
+npm run test:azure:ui
+npm run azure:check
+# 실제 유료 음성 번역 검사: 키 설정과 .build/jargon-test.wav 필요
+npm run test:azure:live</pre>
+    <p class="note">음성과 자막은 앱의 평상시 실행에서 파일로 저장하지 않습니다. 실제 검사 스크립트는 합성 발화의 결과·시간을 <code>.build/</code>에 저장합니다. 원래 OpenAI 검사: <code>node scripts/check-fast-live.mjs jargon-test</code> (기본 테스트 포트 3231, TEST_URL로 변경).</p>
+  </section>
+  <footer><p>공식 자료 · 확인일 2026-10-19</p><ul>
+    <li><a href="https://learn.microsoft.com/en-us/azure/ai-services/speech-service/how-to-translate-speech">번역 설정·중간 결과·대상 언어</a></li>
+    <li><a href="https://learn.microsoft.com/en-us/azure/ai-services/speech-service/rest-speech-to-text-short#authentication">STS 토큰 발급과 유효기간</a></li>
+    <li><a href="https://learn.microsoft.com/en-us/javascript/api/microsoft-cognitiveservices-speech-sdk/phraselistgrammar?view=azure-node-latest">PhraseListGrammar</a></li>
+    <li><a href="https://learn.microsoft.com/en-us/azure/ai-services/speech-service/get-speech-recognition-results">발화 시간과 중간·최종 결과</a></li>
+  </ul><a href="/">발표 화면으로 돌아가기 →</a></footer>
+</main></body></html>

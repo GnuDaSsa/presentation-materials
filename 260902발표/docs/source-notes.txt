@@ -1,0 +1,13 @@
+발표 근거 요약
+
+- 기존 발표 레퍼런스: GitHub GnuDaSsa/donawa-presentation (다크 에디토리얼, 강한 한 문장, 실제 화면 중심)
+- SNS 취합기: GitHub GnuDaSsa/SeongNam-SNS-Solution, Chrome 확장 v0.2.0 구조 및 공유/생산 자동 분류 설명
+- SNS 취합기 공개 기준 문서: https://gitlab.aigov.go.kr/sajw1994/sn-sns-solution — 공개 프로젝트 ID 166, 확장 배포 v1.22 Photo Fix / 개발 패키지 0.2.1, 공보관실 확인과 약 6개 계정 테스트, 월 선택→시작→COPY→붙여넣기 흐름, 생산·공유·제외 판정표, 브라우저 로컬 저장·외부 서버 미전송·사람 최종 확인 원칙
+- 업무 노트: UpNote export `업무에 사용중인 부분.md` — 일반현황 HWPX 책갈피 자동화, 고유가 지원금 Q&A 챗봇 1,700회, 동호회 22명·정원 40명
+- 활동 이력: UpNote export `수상기록공모참여상금도움 싹다.md` — 2026-06-09 일반현황 책갈피, 2026-06-29 SNS 취합기 배포·업데이트
+- 가입 운영: UpNote export `수시가입문의 멘트 260714.md`, `동호회 운영개요.md` — 설문 → 안내 → 오픈채팅 → 회비 → 온보딩
+- Korean Law MCP: UpNote export `260522.md`, `260515 기술교육 1회차.md`, `AI딸깍연구소.md`
+- Gemini 공동구독: UpNote export `수시가입문의 멘트 260714.md`의 공동구독 계획만 사용. 자격증명은 제외.
+- 환경정책과: UpNote 활동 기록의 2026-05-27 환경의날 AI영상 제작 지원 및 사용자 제공 개요를 기반으로 정성 설명. 정량 수치는 넣지 않음.
+- 일반현황 모바일 책갈피: https://github.com/GnuDaSsa/gnudas-nextjs/blob/main/app/general-status-bookmark/page.tsx 및 https://gnudas-nextjs.vercel.app/general-status-bookmark — HWP/OLE→ZIP 기반 HWPX 정규화→목차/본문 매칭과 책갈피·하이퍼링크 삽입→누락 검사→한컴 PDF 내보내기→PDF 페이지 이미지 렌더링→고정 목차 검색·페이지 이동을 포함한 모바일 단일파일 HTML 생성. 변환은 로컬 PC의 한컴 COM·Python에서 수행하며 최종 공유물은 HTML 1개, HWPX/PDF/이미지는 검증·재처리용 중간 산출물.
+- 영상 강의 모션 레퍼런스: https://github.com/GnuDaSsa/ai-content-workflow-lecture 및 https://gnudassa.github.io/ai-content-workflow-lecture/ — 활성 슬라이드 기준 mask/up/fade/line 등장, 0.10–0.22초 스태거, 0.75–1.20초 중심의 짧은 진입, 사진 Ken Burns, 시연용 GIF·MP4, 장식용 무한 루프 회피 원칙. 현재 PPTX에는 이를 단순화해 기본 fade, 파트 구분 push, 구조·공정 설명 wipe 전환을 네이티브 OOXML로 적용함.

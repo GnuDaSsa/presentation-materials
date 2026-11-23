@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "paths": {
+    "stateFile": "docs/harness-state.json",
+    "memoryFile": "docs/project-memory.md",
+    "decisionsFile": "docs/decisions.md",
+    "contractsDir": "docs/contracts"
+  },
+  "commands": {
+    "verifyQuick": "bash scripts/verify-html-deck.sh",
+    "verifyFull": "bash scripts/verify-html-deck.sh && bash scripts/verify-deck.sh",
+    "docsGenerate": ""
+  },
+  "rules": {
+    "maxRepeatedFailures": 2
+  }
+}

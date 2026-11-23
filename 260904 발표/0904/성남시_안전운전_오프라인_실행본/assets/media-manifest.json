@@ -1,0 +1,235 @@
+{
+  "version": 11,
+  "project": "20260901_083314_seongnam-public-vehicle-fmv-safety",
+  "assetPolicy": "new-assets-only; existing Seongnam deer/Unity assets are forbidden",
+  "assets": [
+    {
+      "id": "c02_user_placeholder_galmachi_day_route_20260903",
+      "blockId": "C02_DAY_CURVE_ROUTE",
+      "kind": "video",
+      "path": "./assets/videos/prototype/case02_galmachi_day_route.mp4",
+      "status": "prototype-ready",
+      "width": 1280,
+      "height": 720,
+      "fps": 24,
+      "expectedDurationSeconds": [
+        15,
+        16
+      ],
+      "actualDurationSeconds": 15.069002,
+      "byteSize": 26471937,
+      "videoCodec": "h264",
+      "audioCodec": "aac",
+      "sha256": "6c23d5677d9088f29b28674c87d436f4bc60dbed19085dca9c9f618c00c92f97",
+      "qualityVerdict": "NOT_REVIEWED_USER_PLACEHOLDER",
+      "reviewNote": "사용자가 지정한 갈마치로 낮 커브길 퀘스트 전용 MP4. 0.0~7.0초는 접근, 7.0초 정지 프레임은 복수선택 문제, 정답 시 7.0초~끝은 성공 분기로만 사용한다.",
+      "provenance": "fresh current project only; user-supplied Galmachi daytime route and success-branch placeholder; technical metadata verified; no director QC claim"
+    },
+    {
+      "id": "c02_user_placeholder_galmachi_day_accident_20260903",
+      "blockId": "C02_DAY_FAILURE_CURVE_IMPACT",
+      "kind": "video",
+      "path": "./assets/videos/prototype/case02_galmachi_day_accident.mp4",
+      "status": "prototype-ready",
+      "width": 1280,
+      "height": 720,
+      "fps": 24,
+      "expectedDurationSeconds": [
+        15,
+        16
+      ],
+      "actualDurationSeconds": 15.069002,
+      "byteSize": 24652718,
+      "videoCodec": "h264",
+      "audioCodec": "aac",
+      "sha256": "9a002b885c0f3a97080bd26b8154f9a68beb0a4a5493eb89042f480a159ef484",
+      "qualityVerdict": "NOT_REVIEWED_USER_PLACEHOLDER",
+      "reviewNote": "사용자가 지정한 갈마치로 낮 커브길 오답 사고 분기 전용 MP4. 낮 퀘스트의 오답 판정 뒤 0.0초부터 끝까지 재생하며 다른 CASE 또는 밤 운전에서 재사용하지 않는다.",
+      "provenance": "fresh current project only; user-supplied Galmachi daytime failure-branch placeholder; technical metadata verified; no director QC claim"
+    },
+    {
+      "id": "c02_user_placeholder_galmachi_night_route_20260903",
+      "blockId": "C02_NIGHT_CURVE_ROUTE",
+      "kind": "video",
+      "path": "./assets/videos/prototype/case02_galmachi_night_route.mp4",
+      "status": "prototype-ready",
+      "width": 1280,
+      "height": 720,
+      "fps": 24,
+      "expectedDurationSeconds": [
+        15,
+        16
+      ],
+      "actualDurationSeconds": 15.069002,
+      "byteSize": 21777306,
+      "videoCodec": "h264",
+      "audioCodec": "aac",
+      "sha256": "c17006c7e7eef580bb241e3b09621b120055de948d030d89d4467f410b92964f",
+      "qualityVerdict": "NOT_REVIEWED_USER_PLACEHOLDER",
+      "reviewNote": "사용자가 지정한 갈마치로 밤 커브길 퀘스트 전용 MP4. 0.0~7.0초는 접근, 7.0초 정지 프레임은 야간 복수선택 문제, 정답 시 7.0초~끝은 성공 분기로만 사용한다.",
+      "provenance": "fresh current project only; user-supplied Galmachi nighttime route and success-branch placeholder; technical metadata verified; no director QC claim"
+    },
+    {
+      "id": "c02_user_placeholder_galmachi_night_accident_20260903",
+      "blockId": "C02_NIGHT_FAILURE_GALMACHI_ACCIDENT",
+      "kind": "video",
+      "path": "./assets/videos/prototype/case02_galmachi_accident.mp4",
+      "status": "prototype-ready",
+      "width": 1276,
+      "height": 720,
+      "fps": 24,
+      "expectedDurationSeconds": [
+        15,
+        16
+      ],
+      "actualDurationSeconds": 15.041995,
+      "byteSize": 13225600,
+      "videoCodec": "h264",
+      "audioCodec": "aac",
+      "sha256": "f117aca9229a0eaed890d5a8d96224a10079462dafd4d669e05f5579d4b51c19",
+      "qualityVerdict": "NOT_REVIEWED_USER_PLACEHOLDER",
+      "reviewNote": "사용자 지시에 따라 갈마치로 밤 운전의 오답 사고 분기에만 사용하는 전용 MP4. 야간 복수선택 오답 판정 뒤 0.0초부터 끝까지 재생하며 다른 CASE 또는 낮 운전에서 재사용하지 않는다.",
+      "provenance": "fresh current project only; user-supplied Galmachi nighttime failure-branch placeholder; technical metadata and day/night classification verified; no director QC claim"
+    },
+    {
+      "id": "c03_user_placeholder_approach_20260903",
+      "blockId": "C03_DRIVE_AND_STOP",
+      "kind": "video",
+      "path": "./assets/videos/prototype/case03_approach.mp4",
+      "status": "prototype-ready",
+      "width": 1280,
+      "height": 720,
+      "fps": 24,
+      "expectedDurationSeconds": [
+        15,
+        16
+      ],
+      "actualDurationSeconds": 15.069002,
+      "byteSize": 14227988,
+      "videoCodec": "h264",
+      "audioCodec": "aac",
+      "sha256": "0c45a40ed9ce289167e7a1b8ce8810be05055b5837e054a0d12b929f49e8f9f8",
+      "qualityVerdict": "NOT_REVIEWED_USER_PLACEHOLDER",
+      "reviewNote": "사용자 지시에 따라 내용 판단 없이 최신 임시 도입 영상으로 교체. 앞 7.0초 재생 후 판단 인터페이스로 전환한다.",
+      "provenance": "fresh current project only; user-supplied implementation placeholder; no story or director QC claim"
+    },
+    {
+      "id": "c03_user_placeholder_decision_loop_20260903",
+      "blockId": "C03_DECISION_LOOP",
+      "kind": "video",
+      "path": "./assets/videos/prototype/case03_decision_loop.mp4",
+      "status": "prototype-ready",
+      "width": 1280,
+      "height": 720,
+      "fps": 24,
+      "expectedDurationSeconds": [
+        15,
+        16
+      ],
+      "actualDurationSeconds": 15.069002,
+      "byteSize": 16050258,
+      "videoCodec": "h264",
+      "audioCodec": "aac",
+      "sha256": "8fb50265b7dc2aa50765aaf6aadaeabd24484d1e2206c0d3772c4e9ac83c236c",
+      "qualityVerdict": "NOT_REVIEWED_USER_PLACEHOLDER",
+      "reviewNote": "사용자 지시에 따라 내용 판단 없이 문제 풀이와 AI 판정 대기 동안 동일 영상을 반복 재생.",
+      "provenance": "fresh current project only; user-supplied implementation placeholder; no story or director QC claim"
+    },
+    {
+      "id": "c03_user_placeholder_success_20260903",
+      "blockId": "C03_SAFE_EXTERIOR_COLLECTION",
+      "kind": "video",
+      "path": "./assets/videos/prototype/case03_success.mp4",
+      "status": "prototype-ready",
+      "width": 1280,
+      "height": 720,
+      "fps": 24,
+      "expectedDurationSeconds": [
+        15,
+        16
+      ],
+      "actualDurationSeconds": 15.069002,
+      "byteSize": 14730336,
+      "videoCodec": "h264",
+      "audioCodec": "aac",
+      "sha256": "4407f80f404641c71e245db6c35c57facd677411f18978e943ff38e79a21854e",
+      "qualityVerdict": "NOT_REVIEWED_USER_PLACEHOLDER",
+      "reviewNote": "사용자 지시에 따라 내용 판단 없이 새 지정 파일의 6.0초부터 13.0초까지만 합리적 답변 성공 분기에 재생.",
+      "provenance": "fresh current project only; user-supplied implementation placeholder; no story or director QC claim"
+    },
+    {
+      "id": "c03_user_placeholder_accident_20260903",
+      "blockId": "C03_FAILURE_UNSAFE_EXIT_IMPACT",
+      "kind": "video",
+      "path": "./assets/videos/prototype/case03_accident.mp4",
+      "status": "prototype-ready",
+      "width": 1280,
+      "height": 720,
+      "fps": 24,
+      "expectedDurationSeconds": [
+        15,
+        16
+      ],
+      "actualDurationSeconds": 15.069002,
+      "byteSize": 26132506,
+      "videoCodec": "h264",
+      "audioCodec": "aac",
+      "sha256": "621a0e4ff931bd9981f951019c28b6dd926639f922979eae416789911529110d",
+      "qualityVerdict": "NOT_REVIEWED_USER_PLACEHOLDER",
+      "reviewNote": "사용자 지시에 따라 내용 판단 없이 최신 지정 MP4 전체를 비합리적 답변 사고 분기에 연결.",
+      "provenance": "fresh current project only; user-supplied implementation placeholder; no story or director QC claim"
+    },
+    {
+      "id": "c03_reference_empty_day_road_r1",
+      "path": "./assets/references/roadkill/empty-day-road.png",
+      "status": "production-ready",
+      "width": 1672,
+      "height": 941,
+      "fps": 0,
+      "expectedDurationSeconds": [
+        0,
+        0
+      ],
+      "actualDurationSeconds": 0,
+      "byteSize": 2701840,
+      "videoCodec": "png",
+      "audioCodec": "none",
+      "sourceAssetId": "AST_5538E1B6AAB24068",
+      "qcReceipt": "runtime:lanes/seedance/qc/two_reference_assets_20260903/qc.json",
+      "provenance": "fresh runtime project only; empty bright summer daytime road; no cars; exact Runway Image1 reference; no existing Seongnam/deer/Unity asset",
+      "sha256": "88832df45f858dc27e50596ba7f6a8a2fbdd339d64a7d8778975a5d9f751d11b",
+      "qualityVerdict": "PASS_REFERENCE_ONLY",
+      "kind": "image",
+      "blockId": "C03_REFERENCE_INPUTS"
+    },
+    {
+      "id": "c03_reference_porter_amber_beacon_r1",
+      "path": "./assets/references/roadkill/porter-amber-beacon.png",
+      "status": "production-ready",
+      "width": 1672,
+      "height": 941,
+      "fps": 0,
+      "expectedDurationSeconds": [
+        0,
+        0
+      ],
+      "actualDurationSeconds": 0,
+      "byteSize": 1363399,
+      "videoCodec": "png",
+      "audioCodec": "none",
+      "sourceAssetId": "AST_9D363FBFEFFE466C",
+      "qcReceipt": "runtime:lanes/seedance/qc/two_reference_assets_20260903/qc.json",
+      "provenance": "fresh runtime project only; isolated transparent Porter exterior with roof-mounted amber beacon; exact Runway Image2 reference; no existing Seongnam/deer/Unity asset",
+      "sha256": "c1410b3d1a7daf146c9d17757cef6fb5976b77a7a88309150434a4f7cf118f69",
+      "qualityVerdict": "PASS_REFERENCE_ONLY",
+      "kind": "image",
+      "blockId": "C03_REFERENCE_INPUTS"
+    }
+  ],
+  "qualityGate": {
+    "status": "functional-prototype",
+    "reason": "User-supplied Roadkill approach, decision-loop, and branch videos plus the Galmachi failure video are wired without content review; final media will be replaced later.",
+    "evidenceAssetId": null,
+    "replacementPolicy": "Replace the four Roadkill prototype-ready rows and the Galmachi failure prototype row by blockId without changing branching code."
+  }
+}

@@ -1,0 +1,301 @@
+성남 시스템반도체 · 사전 원고 자막 초안
+한국어 오프닝 후 영어 발표 · 영어 / 한국어 / 베트남어 자막
+V1.6 정책 내용을 바탕으로 발표자 소개를 추가하고, 발음하기 쉽도록 영어 어휘와 문장을 다듬었습니다. 임의로 늘린 설명 14개는 되돌리고, 기존 영어 대사 앞에 요청한 한국어 오프닝 3개 구간을 추가했습니다. 최종 PDF의 성남 시스템반도체 얼라이언스와 발표 구간 5개를 복원했습니다. 한국어·베트남어는 이에 대응하는 번역 초안입니다.
+연구센터 규모와 일정은 원자료의 기준 또는 계획입니다.
+
+1장 · Seongnam: The Heart of the System Semiconductor Cluster
+[v16-001 · 실제 발화: 한국어]
+EN  Hello. I am Jinwoo Sa, an administrative officer with the AI Semiconductor Department.
+KO  안녕하세요. AI반도체과 사진우 주무관입니다.
+VI  Xin chào quý vị. Tôi là Jinwoo Sa, chuyên viên thuộc Phòng Bán dẫn AI.
+
+[v16-002 · 실제 발화: 한국어]
+EN  Thank you for visiting Seongnam today.
+KO  오늘 이렇게 성남시에 방문해 주심에 감사드립니다.
+VI  Xin trân trọng cảm ơn quý vị đã đến thăm thành phố Seongnam hôm nay.
+
+[v16-003 · 실제 발화: 한국어]
+EN  As this is an international gathering, I will now continue in English.
+KO  국제적인 자리이니만큼, 지금부터 영어로 진행하도록 하겠습니다.
+VI  Vì đây là một buổi gặp gỡ quốc tế, từ bây giờ tôi xin tiếp tục trình bày bằng tiếng Anh.
+
+[v16-005]
+EN  It's a great honor to speak here today.
+KO  오늘 이 자리에서 말씀드리게 되어 매우 영광입니다.
+VI  Tôi rất vinh dự được phát biểu tại đây hôm nay.
+
+[v16-006]
+EN  Thank you for visiting seongnam out of your business schedule representationg Ministry of Science and Technology from Vietnam
+KO  바쁜 일정 중에도 성남을 방문해 주신 베트남 과학기술부 관계자 여러분께 감사드립니다.
+VI  Xin cảm ơn quý vị đại diện Bộ Khoa học và Công nghệ Việt Nam đã dành thời gian trong lịch trình bận rộn để đến thăm Seongnam.
+
+[v16-007]
+EN  Today, I will introduce Seongnam's policies to support the system semiconductor industry.
+KO  오늘은 시스템반도체 산업을 지원하기 위한 성남시의 정책을 소개해 드리겠습니다.
+VI  Hôm nay, tôi xin giới thiệu các chính sách của Seongnam nhằm hỗ trợ ngành bán dẫn hệ thống.
+
+2장 · Jinwoo Sa · AI Champion Black
+[v16-008]
+EN  My name is Jinwoo Sa, and I’m belong to the AI Division, AI Semiconductor Department, and the Semiconductor Team at Seongnam City Hall.
+KO  저는 성남시청 AI국 AI반도체과 반도체팀 소속 사진우입니다.
+VI  Tôi là Jinwoo Sa, thuộc Nhóm Bán dẫn, Phòng Bán dẫn AI, Cục AI của Tòa thị chính Seongnam.
+
+[v16-009]
+EN  I have completed the AI Champion Black, which is the highest level of the government's AI Champion certification program.
+KO  저는 정부 AI 챔피언 인증 프로그램의 최고 등급인 블랙 과정을 수료했습니다.
+VI  Tôi đã hoàn thành AI Champion Black, cấp độ cao nhất trong chương trình chứng nhận AI Champion của Chính phủ.
+
+[v16-010]
+EN  In fact, I created all of today's presentation materials and the live caption system using AI.
+KO  사실 오늘 발표자료와 실시간 자막 시스템을 모두 AI로 만들었습니다.
+VI  Trên thực tế, tôi đã tạo toàn bộ tài liệu trình bày hôm nay và hệ thống phụ đề trực tiếp bằng AI.
+
+[v16-011]
+EN  Now, let me begin my presentation, titled “Seongnam: The Heart of the System Semiconductor Cluster.”
+KO  그럼 ‘시스템반도체 클러스터의 중심, 성남’이라는 주제로 발표를 시작하겠습니다.
+VI  Sau đây, tôi xin bắt đầu bài trình bày với chủ đề “Seongnam: Trung tâm của cụm công nghiệp bán dẫn hệ thống”.
+
+[v16-video-001]
+EN  I will show you a video about Seongnam's semiconductor programs, and then continue my presentation.
+KO  성남시 반도체 사업 전반을 담은 영상을 보여드린 뒤 발표를 이어가겠습니다.
+VI  Tôi xin giới thiệu một video về các chương trình bán dẫn của Seongnam, sau đó sẽ tiếp tục bài trình bày.
+
+3장 · Our vision and industrial strength
+[v16-video-002]
+EN  You have just seen a brief overview of our programs. Now, let me continue my presentation.
+KO  사업을 간단히 정리한 영상을 보셨습니다. 이제 발표를 이어가겠습니다.
+VI  Quý vị vừa xem phần giới thiệu khái quát về các chương trình của chúng tôi. Bây giờ, tôi xin tiếp tục bài trình bày.
+
+[v16-012]
+EN  Our vision is to become a leading city for system semiconductors.
+KO  우리의 비전은 시스템반도체에 특화된 선도 도시가 되는 것입니다.
+VI  Tầm nhìn của chúng tôi là trở thành thành phố tiên phong chuyên về bán dẫn hệ thống.
+
+[v16-013]
+EN  Seongnam has a unique strength.
+KO  성남에는 특별한 강점이 있습니다.
+VI  Seongnam có một thế mạnh riêng.
+
+[v16-014]
+EN  About 40 percent of South Korea's fabless semiconductor companies are located here in Seongnam, especially in Pangyo.
+KO  대한민국 팹리스 반도체 기업의 약 40%가 이곳 성남에 있으며, 특히 판교에 집중되어 있습니다.
+VI  Khoảng 40% doanh nghiệp bán dẫn fabless của Hàn Quốc đặt tại Seongnam, đặc biệt là ở Pangyo.
+
+[v16-015]
+EN  We aim to provide the support these companies need to grow much faster.
+KO  우리는 기업들이 훨씬 빠르게 성장할 수 있는 발판을 만들고자 합니다.
+VI  Chúng tôi hướng tới cung cấp sự hỗ trợ cần thiết để các doanh nghiệp tăng trưởng nhanh hơn nhiều.
+
+4장 · Three main strategies
+[v16-016]
+EN  Our goal is to build a strong network for the system semiconductor industry in Seongnam.
+KO  우리의 목표는 성남에 탄탄한 시스템반도체 산업 네트워크를 구축하는 것입니다.
+VI  Mục tiêu của chúng tôi là xây dựng một mạng lưới công nghiệp vững mạnh cho ngành bán dẫn hệ thống tại Seongnam.
+
+[v16-017]
+EN  We have developed three main strategies.
+KO  세 가지 주요 전략을 마련했습니다.
+VI  Chúng tôi đã xây dựng ba chiến lược chính.
+
+[v16-018]
+EN  Infrastructure, talent development, and industrial space.
+KO  인프라, 인재양성, 산업공간입니다.
+VI  Đó là hạ tầng, phát triển nhân lực và không gian công nghiệp.
+
+[v16-019]
+EN  Let me explain how we are putting these strategies into action.
+KO  이 전략들을 어떻게 실행하고 있는지 설명드리겠습니다.
+VI  Sau đây, tôi xin trình bày cách chúng tôi triển khai các chiến lược này.
+
+5장 · System Semiconductor Development Support Center: Three major projects
+[v16-020]
+EN  First, infrastructure. One of our major programs is the System Semiconductor Development Support Center.
+KO  첫 번째는 인프라입니다. 주요 사업 중 하나는 시스템반도체 개발지원센터입니다.
+VI  Thứ nhất là hạ tầng. Một trong những chương trình chủ chốt là Trung tâm Hỗ trợ Phát triển Bán dẫn Hệ thống.
+
+[v16-021]
+EN  This program includes three major projects.
+KO  이 사업은 세 가지 주요 프로젝트로 구성됩니다.
+VI  Chương trình này gồm ba dự án chính.
+
+[v16-022]
+EN  The first is the System IC Verification Center.
+KO  첫째는 시스템반도체 검증지원센터입니다.
+VI  Thứ nhất là Trung tâm Kiểm chứng Vi mạch Hệ thống.
+
+[v16-023]
+EN  The second is a Semiconductor Testing Project for the Advanced Defense Industry.
+KO  둘째는 첨단 방위산업용 반도체 시험 프로젝트입니다.
+VI  Thứ hai là Dự án Thử nghiệm Bán dẫn cho Công nghiệp Quốc phòng Tiên tiến.
+
+[v16-024]
+EN  And the third is the Advanced Equipment Sharing Program for Fabless Companies.
+KO  셋째는 팹리스 기업을 위한 첨단장비 공동이용지원사업입니다.
+VI  Thứ ba là Chương trình Sử dụng Chung Thiết bị Tiên tiến dành cho Doanh nghiệp Fabless.
+
+6장 · Advanced equipment, EDA tools and testing facilities
+[v16-025]
+EN  These projects give companies access to advanced equipment, EDA tools, and testing facilities.
+KO  이 사업들은 기업이 첨단장비, EDA 도구, 시험 시설을 이용할 수 있도록 지원합니다.
+VI  Các dự án này giúp doanh nghiệp tiếp cận thiết bị tiên tiến, công cụ EDA và cơ sở thử nghiệm.
+
+[v16-026]
+EN  We also offer technical training and consulting services.
+KO  기술교육과 컨설팅 서비스도 제공합니다.
+VI  Chúng tôi cũng cung cấp đào tạo kỹ thuật và dịch vụ tư vấn.
+
+[v16-027]
+EN  Through these programs, we aim to lower development costs and help local companies compete.
+KO  이를 통해 개발비용을 줄이고 지역 기업의 경쟁력을 강화하고자 합니다.
+VI  Thông qua các chương trình này, chúng tôi hướng tới giảm chi phí phát triển và nâng cao năng lực cạnh tranh của doanh nghiệp địa phương.
+
+7장 · Seongnam System Semiconductor Alliance
+[v16-alliance-001]
+EN  Here is the second thing we do for the Insfrasturcture, System Semiconductor Alliance.
+KO  인프라 분야의 두 번째 사업은 시스템반도체 얼라이언스입니다.
+VI  Hoạt động thứ hai về hạ tầng là Liên minh Bán dẫn Hệ thống.
+
+[v16-alliance-006]
+EN  The System Semiconductor Alliance connects semiconductor suppliers with companies that need their technology.
+KO  시스템반도체 얼라이언스는 반도체 공급기업과 기술이 필요한 수요기업을 연결합니다.
+VI  Liên minh Bán dẫn Hệ thống kết nối các nhà cung cấp bán dẫn với những doanh nghiệp cần công nghệ của họ.
+
+[v16-alliance-003]
+EN  At Tech Forum Day, companies share new technologies and present their work.
+KO  테크포럼 데이에서는 기업들이 최신 기술을 공유하고 자사의 기술을 발표합니다.
+VI  Tại Ngày Diễn đàn Công nghệ, các doanh nghiệp chia sẻ công nghệ mới và giới thiệu thành quả của mình.
+
+[v16-alliance-004]
+EN  Through small-group networking, companies find partners in their field.
+KO  소규모 네트워킹을 통해 같은 기술 분야의 협력 기업을 찾습니다.
+VI  Thông qua kết nối theo nhóm nhỏ, các doanh nghiệp tìm đối tác trong cùng lĩnh vực công nghệ.
+
+[v16-alliance-005]
+EN  We also support joint planning of government projects, from proposals to joint research.
+KO  정부과제 제안 기획부터 공동 연구까지, 정부과제 공동기획도 지원합니다.
+VI  Chúng tôi cũng hỗ trợ doanh nghiệp cùng lập kế hoạch cho các dự án của chính phủ, từ xây dựng đề xuất đến nghiên cứu chung.
+
+[v16-alliance-002]
+EN  In 2026, the alliance connects 77 companies: 55 suppliers and 22 customers.
+KO  2026년에는 공급기업 55개사와 수요기업 22개사, 총 77개사를 연결합니다.
+VI  Năm 2026, liên minh kết nối 77 doanh nghiệp, gồm 55 nhà cung cấp và 22 doanh nghiệp có nhu cầu sử dụng bán dẫn.
+
+8장 · Three-step semiconductor training
+[v16-028]
+EN  Second, talent development.
+KO  두 번째는 인재양성입니다.
+VI  Thứ hai là phát triển nhân lực.
+
+[v16-029]
+EN  We run a three-step semiconductor training program.
+KO  성남시는 3단계 반도체 교육 프로그램을 운영합니다.
+VI  Chúng tôi triển khai chương trình đào tạo bán dẫn theo ba cấp độ.
+
+[v16-030]
+EN  The program has three levels: practical, professional, and advanced training.
+KO  실무교육, 전문교육, 고급교육의 세 단계로 구성됩니다.
+VI  Chương trình gồm ba cấp độ đào tạo: thực hành, chuyên môn và nâng cao.
+
+[v16-031]
+EN  Each level is supported by a university.
+KO  각 단계는 대학의 지원을 받아 운영됩니다.
+VI  Mỗi cấp độ được triển khai với sự hỗ trợ của một trường đại học.
+
+[v16-032]
+EN  At Korea Polytechnics Seongnam Campus, students receive training in AI semiconductor manufacturing, packaging, and testing.
+KO  한국폴리텍대학 성남캠퍼스에서는 AI반도체 제조, 패키징, 테스트 분야를 교육합니다.
+VI  Tại Cơ sở Seongnam của Korea Polytechnics, học viên được đào tạo về chế tạo, đóng gói và kiểm thử bán dẫn AI.
+
+[v16-033]
+EN  Gachon University offers a specialized course in digital chip design.
+KO  가천대학교는 디지털 칩 설계 전문과정을 제공합니다.
+VI  Đại học Gachon cung cấp khóa học chuyên sâu về thiết kế chip số.
+
+[v16-034]
+EN  And Sogang University's Pangyo Campus offers an advanced semiconductor design program.
+KO  서강대학교 판교캠퍼스는 고급 반도체 설계 프로그램을 운영합니다.
+VI  Cơ sở Pangyo của Đại học Sogang tổ chức chương trình thiết kế bán dẫn nâng cao.
+
+[v16-035]
+EN  These programs have two main goals.
+KO  이 프로그램에는 두 가지 주요 목표가 있습니다.
+VI  Các chương trình này có hai mục tiêu chính.
+
+[v16-036]
+EN  For young people, we provide the skills they need to start their careers.
+KO  청년들에게는 사회에 첫발을 내딛는 데 필요한 역량을 제공합니다.
+VI  Đối với thanh niên, chúng tôi trang bị những kỹ năng cần thiết để bắt đầu sự nghiệp.
+
+[v16-037]
+EN  For local companies, we train skilled workers right here in Seongnam.
+KO  지역 기업에 필요한 숙련 인력을 이곳 성남에서 양성합니다.
+VI  Chúng tôi đào tạo lao động có tay nghề ngay tại Seongnam cho các doanh nghiệp địa phương.
+
+[v16-038]
+EN  This is how we connect education directly with the needs of the semiconductor industry.
+KO  이처럼 교육을 반도체 산업의 수요와 직접 연결하고 있습니다.
+VI  Đó là cách chúng tôi gắn kết trực tiếp giáo dục với nhu cầu của ngành bán dẫn.
+
+9장 · Pangyo System Semiconductor Research Center
+[v16-039]
+EN  Third, industrial space.
+KO  세 번째는 산업공간입니다.
+VI  Thứ ba là không gian công nghiệp.
+
+[v16-040]
+EN  We plan to build the Pangyo System Semiconductor Research Center in the Third Pangyo Techno Valley.
+KO  제3판교테크노밸리에 판교 시스템반도체 연구센터를 조성할 계획입니다.
+VI  Chúng tôi đang lên kế hoạch xây dựng Trung tâm Nghiên cứu Bán dẫn Hệ thống Pangyo tại Khu Công nghệ Pangyo thứ ba.
+
+[v16-041]
+EN  The center will be completed in 2030.
+KO  연구센터는 2030년 준공 예정입니다.
+VI  Trung tâm dự kiến hoàn thành vào năm 2030.
+
+[v16-042]
+EN  It will provide office and research space for semiconductor companies.
+KO  반도체 기업을 위한 사무공간과 연구공간을 제공하게 됩니다.
+VI  Trung tâm sẽ cung cấp không gian văn phòng và nghiên cứu cho các doanh nghiệp bán dẫn.
+
+10장 · Office space, research and technical support
+[v16-043]
+EN  The first three floors will be for support facilities. The System Semiconductor Development Support Center will be here.
+KO  1층부터 3층까지는 지원시설로 사용됩니다. 시스템반도체 개발지원센터가 이곳에 들어섭니다.
+VI  Ba tầng đầu tiên sẽ dành cho các cơ sở hỗ trợ. Trung tâm Hỗ trợ Phát triển Bán dẫn Hệ thống sẽ đặt tại đây.
+
+[v16-044]
+EN  This means companies in the building will have easy access to shared equipment, technical support, and other services.
+KO  따라서 입주 기업들은 공동장비, 기술지원 등 다양한 서비스를 편리하게 이용할 수 있습니다.
+VI  Nhờ đó, doanh nghiệp trong tòa nhà có thể thuận tiện tiếp cận thiết bị dùng chung, hỗ trợ kỹ thuật và các dịch vụ khác.
+
+[v16-045]
+EN  We aim to offer more than office space. We want to create a place where companies can develop technology, work together, and grow.
+KO  우리의 목표는 단순한 사무공간 제공이 아니라, 기업들이 기술을 개발하고 협력하며 함께 성장할 수 있는 환경을 조성하는 것입니다.
+VI  Mục tiêu của chúng tôi không chỉ là cung cấp văn phòng, mà còn tạo môi trường để doanh nghiệp phát triển công nghệ, hợp tác và cùng tăng trưởng.
+
+11장 · A strong industrial ecosystem
+[v16-046]
+EN  Shared infrastructure and development support help fabless companies compete.
+KO  공동 인프라와 개발 지원으로 팹리스 기업의 경쟁력을 높입니다.
+VI  Hạ tầng dùng chung và hỗ trợ phát triển giúp các doanh nghiệp fabless nâng cao khả năng cạnh tranh.
+
+[v16-047]
+EN  Through university partnerships and skills training, we aim to create high-quality jobs.
+KO  대학 연계와 전문역량 교육으로 양질의 일자리를 만들고자 합니다.
+VI  Thông qua hợp tác với các trường đại học và đào tạo kỹ năng, chúng tôi hướng tới tạo ra việc làm chất lượng cao.
+
+[v16-048]
+EN  Industrial space and business cooperation help us build a strong industry network.
+KO  산업공간과 기업 협력으로 탄탄한 산업 네트워크를 구축합니다.
+VI  Không gian công nghiệp và hợp tác giữa các doanh nghiệp giúp chúng tôi xây dựng mạng lưới ngành vững mạnh.
+
+12장 · Thank you
+[v16-049]
+EN  Together with our partners, we are working to build a stronger semiconductor industry.
+KO  파트너들과 함께 더욱 탄탄한 반도체 산업을 만들어 나가고 있습니다.
+VI  Cùng các đối tác, chúng tôi đang xây dựng một ngành bán dẫn vững mạnh hơn.
+
+[v16-050]
+EN  Thank you for listening.
+KO  경청해 주셔서 감사합니다.
+VI  Xin cảm ơn quý vị đã lắng nghe.

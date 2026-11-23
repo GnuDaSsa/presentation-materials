@@ -1,0 +1,14 @@
+판교 시스템반도체 연구센터 · 3D 영상
+
+출처: https://gnudassa.github.io/pangyo-3d-viewer/?v=0.7
+녹화일: 2026-10-31
+10.12초 · 1280×720 · H.264 MP4 · 무음
+
+발표자가 제작한 뷰어의 건물 외관을 직접 녹화했습니다. 기획안의 공간을 이해하기 위한 추정 모델이며 준공 사진이 아닙니다. 원본 뷰어의 안내에 따라 형상·문·주변 매스는 추정 표현입니다.
+
+지도 데이터: © OpenStreetMap contributors · ODbL
+저작자 표시: https://www.openstreetmap.org/copyright
+라이선스: https://opendatacommons.org/licenses/odbl/1-0/
+원본 데이터 고지: app/public/assets/research-video/REGIONAL_DATA_LICENSE.md
+
+HTML 발표자료 8장에 포함했습니다. 한 번 자동 재생한 뒤 마지막 화면을 유지합니다. 공유용 PDF와 제공한 원본 PDF는 기존 정지 자료를 유지합니다.

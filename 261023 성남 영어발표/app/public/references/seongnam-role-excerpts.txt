@@ -1,0 +1,30 @@
+REFERENCE EXCERPTS · PROVIDED BY THE USER ON 23 OCTOBER 2026
+Source file: 시스템반도체와 성남.html
+Source presentation title: 시스템반도체 산업 그리고 성남
+
+Section 16 · 성남시의 역할
+The supplied presentation explains Seongnam’s support before and after MPW.
+Before MPW: EDA, hardware emulators, shared equipment and design support.
+After MPW: measurement, analysis and debugging to inform design improvements.
+The named programs are the System Semiconductor Development Support Center
+and shared advanced equipment for fabless companies.
+
+Section 17 · 클러스터 조성
+Co-location is explained in terms of reducing the effort of repeated consultation
+between fabless firms, technology suppliers, specialist service providers and customers.
+
+Section 18 · 판교 시스템반도체 연구센터
+The research-center concept combines space for companies, development support,
+shared equipment, and support or collaboration facilities.
+Its purpose is to bring companies, equipment, institutions and specialist personnel together.
+
+HOW THESE EXCERPTS WERE USED
+The English presentation adopts the support-stage explanation and the functional
+co-location concept. It does not assert the source’s individual floor assignments.
+MPW fabrication is shown as an external foundry step. MPW support programs have
+their own operators and eligibility requirements; no single operator is asserted
+for all MPW activity. The equipment program can support both pre- and post-fabrication work.
+
+Cross-checks: KETI equipment listings (https://sivc.keti.re.kr/),
+Seongnam shared-equipment announcement (https://snvision.seongnam.go.kr/20976),
+and IDEC MPW process information (https://www.idec.or.kr/mpw/info).

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520">
+<rect width="1200" height="520" fill="#f7f4ec"/>
+<text x="56" y="52" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="3" fill="#7b756d">TASK ROUTING · 발표용 재구성</text>
+<line x1="72" y1="410" x2="1128" y2="410" stroke="#cbc5bb" stroke-width="2"/>
+<g font-family="Arial,sans-serif">
+ <rect x="72" y="290" width="290" height="120" fill="#e5e1d8"/><text x="96" y="332" font-size="20" font-weight="800" fill="#1a1a1a">ROUTINE</text><text x="96" y="368" font-size="26" font-weight="800">요약 · 정리 · 초안</text><text x="96" y="397" font-size="16" fill="#6d685f">저비용 모델 / 기본 구독</text>
+ <rect x="455" y="205" width="290" height="205" fill="#b9b4aa"/><text x="479" y="248" font-size="20" font-weight="800">BUILD</text><text x="479" y="286" font-size="26" font-weight="800">개발 · 자료 제작</text><text x="479" y="322" font-size="18">중간급 모델 + 도구</text><text x="479" y="354" font-size="16" fill="#514d47">대부분의 실무가 여기</text>
+ <rect x="838" y="98" width="290" height="312" fill="#a94528"/><text x="862" y="142" font-size="20" font-weight="800" fill="#fff">FRONTIER</text><text x="862" y="182" font-size="26" font-weight="800" fill="#fff">장기 자율 작업</text><text x="862" y="218" font-size="26" font-weight="800" fill="#fff">고난도 코드·연구</text><text x="862" y="272" font-size="17" fill="#f7e8e0">Fable · Sol · K3</text><text x="862" y="310" font-size="16" fill="#f7e8e0">필요한 순간만 선택</text>
+ <path d="M362 350 L455 315" stroke="#1a1a1a" stroke-width="2"/><path d="M745 255 L838 205" stroke="#1a1a1a" stroke-width="2"/>
+</g></svg>

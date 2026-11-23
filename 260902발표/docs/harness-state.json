@@ -1,0 +1,13 @@
+{
+  "currentGoal": "최종 HTML과 선별된 참고·첨부자료를 비공개 GitHub 저장소에 패키징하여 푸시",
+  "status": "complete",
+  "currentContract": "docs/contracts/dlc-briefing-deck.md",
+  "blockers": [],
+  "nextStep": "GitHub의 attachments 안내와 최종 HTML을 확인하고 후속 발표 피드백을 반영한다.",
+  "lastUpdated": "2026-09-01T22:26:34.724548+09:00",
+  "verification": {
+    "lastCommand": "bash scripts/verify-html-deck.sh; python3 -m zipfile -t attachments/design-reference/Design_Interior_20260830132103_DESIGN_REFERENCE_ONLY.pptx; SHA-256 comparison; git diff --check",
+    "lastResult": "pass",
+    "notes": "63 slides, 60 minutes, 67 image placements 유지. PPTX 4,862,440 bytes, SHA-256 e0a8460c115346fda81f86fa7ae8eca929bd323dfa5225bd0f08fd5268ad0426 일치. 내부 원문·실명 메신저·연락처 자료 제외."
+  }
+}

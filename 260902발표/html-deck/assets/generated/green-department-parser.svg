@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="560" viewBox="0 0 1440 560">
+<rect width="1440" height="560" fill="#FBFBF8"/>
+<style>text{font-family:Pretendard,'Apple SD Gothic Neo',Arial,sans-serif;fill:#171717}.m{fill:#71706B}.r{fill:#B65A3A}.g{fill:#205A4A}.small{font-size:18px;font-weight:650}.tiny{font-size:14px;font-weight:620;letter-spacing:.3px}.label{font-size:14px;font-weight:800;letter-spacing:1.4px}.big{font-size:38px;font-weight:850}.mid{font-size:25px;font-weight:800}</style><text x="52" y="48" class="label m">DEPARTMENT PARSER · OTHER NOTES</text><line x1="52" y1="70" x2="1388" y2="70" stroke="#D7D1C5"/>
+<rect x="52" y="126" width="390" height="310" fill="#F1EDE4" stroke="#D7D1C5"/><text x="78" y="166" class="label m">RAW 기타사항</text>
+<text x="78" y="220" class="mid">실수요부서 담당자 연락처</text><text x="78" y="264" class="big r">031 · 729 · 0000</text><text x="78" y="314" class="small">AI반도체과 홍길동 주무관</text><text x="78" y="356" class="small m">괄호 · 공백 · 안내문구 혼재</text>
+<path d="M470 280 H602" stroke="#B65A3A" stroke-width="4"/><path d="M590 268 l18 12 l-18 12" fill="none" stroke="#B65A3A" stroke-width="4"/>
+<rect x="638" y="126" width="328" height="310" fill="#FBFBF8" stroke="#D7D1C5"/><text x="664" y="166" class="label g">RULE ENGINE</text>
+<text x="664" y="218" class="mid">1. 031 번호 탐지</text><text x="664" y="264" class="mid">2. 안내 문구 제거</text><text x="664" y="310" class="mid">3. 조직 접미사 확인</text><text x="664" y="356" class="mid">4. 공식 연번 정렬</text>
+<path d="M994 280 H1098" stroke="#171717" stroke-width="4"/><path d="M1086 268 l18 12 l-18 12" fill="none" stroke="#171717" stroke-width="4"/>
+<text x="1134" y="180" class="label g">CONFIRMED</text><text x="1134" y="224" class="mid">부서명 추출</text><line x1="1134" y1="250" x2="1378" y2="250" stroke="#D7D1C5"/>
+<text x="1134" y="306" class="label r">REVIEW</text><text x="1134" y="350" class="mid">이름·전화 보존</text><text x="1134" y="386" class="small m">불명확한 행은 버리지 않음</text>
+<text x="52" y="502" class="small m">162개 조직명 · 공식 번호 1–165 매핑</text>
+</svg>

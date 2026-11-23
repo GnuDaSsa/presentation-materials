@@ -1,0 +1,21 @@
+# Local working data and browser automation residue
+.work/
+.playwright-cli/
+tmp/
+output/
+
+# Generated inspection/debug artifacts
+*.inspect.ndjson
+*.log
+.DS_Store
+
+# The root PPTX is an older export and does not match the final 60-slide HTML deck
+*.pptx
+
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+
+# Local Codex operating instructions
+AGENTS.md

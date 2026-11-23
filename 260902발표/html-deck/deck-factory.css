@@ -1,0 +1,98 @@
+/*
+ * Deck Factory adaptation layer.
+ * Source contract: GnuDaSsa/gnudas-presentaion/deck-factory/skills/deck-factory
+ * Profile: paper-light public report, with dark cover/chapter/closing anchors.
+ */
+:root{
+  --df-paper:#f7f4ec;
+  --df-paper-1:#efe9dc;
+  --df-paper-2:#e6decf;
+  --df-ink:#1a1a1a;
+  --df-body:#4c4a45;
+  --df-mute:#747066;
+  --df-line:rgba(26,26,26,.10);
+  --df-line-strong:rgba(26,26,26,.18);
+  --df-accent:#5662cc;
+  --df-dark:#08090a;
+  --df-dark-body:#a6abb2;
+  --df-dark-line:rgba(255,255,255,.09);
+}
+
+/* Profile and depth: flat editorial canvas, no decorative spotlight. */
+#viewport{background:#e8e4da}
+#canvas{box-shadow:none}
+.slide{padding:64px 86px 54px}
+.slide:not(.part):not(.deck-dark){background:var(--df-paper);color:var(--df-ink)}
+.slide.paper{background:var(--df-paper);color:var(--df-ink)}
+.slide.part,.slide.deck-dark{background:var(--df-dark);color:#f5f6f7}
+
+.slide:not(.part):not(.deck-dark) .subtitle,
+.slide:not(.part):not(.deck-dark) .card p,
+.slide:not(.part):not(.deck-dark) .process p,
+.slide:not(.part):not(.deck-dark) .muted,
+.slide:not(.part):not(.deck-dark) .stat span{color:var(--df-body)}
+.slide:not(.part):not(.deck-dark) .rule{background:var(--df-line)}
+
+/* Editorial hierarchy: action title, moderate weight, one signal color. */
+.hero,.title{font-weight:650;letter-spacing:-.04em}
+.hero::after,.title::after{content:"."}
+.eyebrow{color:var(--df-accent)!important}
+.slide.has-stat .eyebrow{color:var(--df-mute)!important}
+.slide.has-stat .stat strong{color:var(--df-accent)!important}
+.accent,.cyan,.warm{color:inherit!important}
+.quote{color:inherit!important;font-weight:620;border-left:3px solid var(--df-accent);padding-left:22px}
+.part .quote,.deck-dark .quote{color:#f5f6f7!important}
+.rule.accent-rule{background:var(--df-accent);height:2px}
+
+/* no_box: separation by hairline and whitespace, not filled cards. */
+.card,.paper .card,.process .step,.paper .process .step{
+  background:transparent!important;
+  border:0!important;
+  border-top:1px solid var(--df-line)!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+.part .card,.deck-dark .card,.part .process .step,.deck-dark .process .step{
+  border-top-color:var(--df-dark-line)!important;
+}
+.card.accent-card,.process .step.accent-card{
+  border-top-color:var(--df-line-strong)!important;
+}
+.process .step:not(:last-child)::after{color:var(--df-mute)}
+.badge,.paper .badge{background:transparent;border-color:var(--df-line);border-radius:0}
+.media-frame,.paper .media-frame{border-radius:0;box-shadow:none;border-color:var(--df-line)}
+.codebox{border-radius:0;box-shadow:none}
+
+/* Four-corner master chrome. Existing page counter remains the bottom-right corner. */
+.deck-brand,.deck-meta,.deck-author{
+  position:absolute;z-index:4;font:650 10px/1 Pretendard,sans-serif;
+  letter-spacing:.12em;text-transform:uppercase;pointer-events:none;
+}
+.deck-brand{left:86px;top:28px;color:var(--df-ink);display:flex;align-items:center;gap:9px}
+.deck-brand::before{content:"";width:16px;height:2px;background:var(--df-accent);display:block}
+.deck-meta{right:86px;top:30px;color:var(--df-mute)}
+.deck-author{left:86px;bottom:27px;color:var(--df-mute)}
+.slide.part .deck-brand,.slide.deck-dark .deck-brand{color:#f5f6f7}
+.slide.part .deck-meta,.slide.part .deck-author,.slide.deck-dark .deck-meta,.slide.deck-dark .deck-author{color:var(--df-dark-body)}
+.slide::after{right:86px;bottom:27px;color:var(--df-mute)}
+.slide.part::after,.slide.deck-dark::after{color:var(--df-dark-body)}
+.source-chip{left:86px;bottom:45px;color:var(--df-mute)}
+
+/* Components use hairlines as internal structure. */
+.label-row{border-bottom-color:var(--df-line)}
+.list-row .n,.paper .list-row .n,.kicker,.paper .kicker{color:var(--df-mute)}
+.stat strong{font-weight:620}
+.topline{background:var(--df-accent)!important;height:2px}
+
+/* Deck Factory evidence slide. */
+.df-contract{display:grid;grid-template-columns:1.12fr .88fr;gap:34px;margin-top:34px;align-items:center}
+.df-contract .media-frame{height:360px}
+.df-principles{display:grid;gap:0;border-top:1px solid var(--df-line)}
+.df-principle{display:grid;grid-template-columns:62px 1fr;gap:12px;padding:15px 0;border-bottom:1px solid var(--df-line)}
+.df-principle .df-no{font-size:11px;color:var(--df-accent);letter-spacing:.12em;font-weight:800}
+.df-principle strong{font-size:18px;font-weight:650}
+.df-principle p{margin:5px 0 0;font-size:14px;line-height:1.4;color:var(--df-body)}
+
+@media print{
+  .deck-brand,.deck-meta,.deck-author{display:block!important}
+}

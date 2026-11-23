@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#0c0c0c"/>
+  <path d="M0 510 C230 430 380 590 620 500 S960 390 1200 470 V675 H0Z" fill="#efe8db"/>
+  <circle cx="1020" cy="122" r="180" fill="#ff6d42" opacity=".9"/>
+  <circle cx="1020" cy="122" r="112" fill="#ffc34d" opacity=".76"/>
+  <text x="76" y="88" fill="#c7c2b8" font-family="Arial,sans-serif" font-size="22" font-weight="700" letter-spacing="5">OPENAI · OFFICIAL RELEASE · 2026.07.09</text>
+  <text x="72" y="240" fill="#fff" font-family="Arial,sans-serif" font-size="104" font-weight="800" letter-spacing="-5">GPT-5.6</text>
+  <text x="76" y="306" fill="#ddd7ca" font-family="Arial,sans-serif" font-size="30" font-weight="600">SOL · TERRA · LUNA</text>
+  <g transform="translate(76 382)">
+    <text x="0" y="0" fill="#ffffff" font-family="Arial,sans-serif" font-size="22" font-weight="700">API PRICE / 1M TOKENS</text>
+    <text x="0" y="50" fill="#111" font-family="Arial,sans-serif" font-size="26" font-weight="800">SOL</text>
+    <text x="92" y="50" fill="#111" font-family="Arial,sans-serif" font-size="26">$5 IN · $30 OUT</text>
+    <text x="0" y="94" fill="#111" font-family="Arial,sans-serif" font-size="26" font-weight="800">TERRA</text>
+    <text x="124" y="94" fill="#111" font-family="Arial,sans-serif" font-size="26">$2.5 IN · $15 OUT</text>
+    <text x="0" y="138" fill="#111" font-family="Arial,sans-serif" font-size="26" font-weight="800">LUNA</text>
+    <text x="104" y="138" fill="#111" font-family="Arial,sans-serif" font-size="26">$1 IN · $6 OUT</text>
+  </g>
+  <text x="76" y="630" fill="#5c574f" font-family="Arial,sans-serif" font-size="18">공식 페이지 내용의 발표용 재구성 · openai.com/index/gpt-5-6</text>
+</svg>

@@ -1,0 +1,20 @@
+OpenAI API 설정 안내
+
+[기본 오프라인 실행]
+- 성남시_안전운전_실행.html은 API 키 없이 완전히 동작합니다.
+- 고라니 자유문장은 브라우저에 포함된 로컬 안전정책으로 판정됩니다.
+- 갈마치로 낮/밤 객관식은 API를 사용하지 않습니다.
+- 파일을 열 때 외부 서버로 답안이나 API 요청을 보내지 않습니다.
+
+[왜 API 키를 HTML에 넣지 않았나]
+- HTML에 키를 기록하면 파일을 받은 누구나 키를 열람하고 사용할 수 있습니다.
+- 따라서 OPENAI_API_KEY는 실행 HTML/JavaScript에 절대 포함하지 않습니다.
+
+[선택형 서버 API 설정값 — 개발자용]
+OPENAI_API_KEY=여기에_개인키_입력
+OPENAI_JUDGE_MODEL=gpt-4o-mini
+JUDGE_HOST=127.0.0.1
+JUDGE_PORT=8787
+
+서버형 OpenAI 판정이 필요할 때만 원본 개발 프로젝트의 .env.example을 .env.local로 복사하고 개인키를 입력한 뒤 npm install, npm run dev를 실행합니다.
+개인 API 키가 들어간 .env.local은 공유 ZIP에 넣지 마십시오.

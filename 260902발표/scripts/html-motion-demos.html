@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=600,height=338,initial-scale=1" />
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;width:600px;height:338px;overflow:hidden;background:#f3f0e8;font-family:Pretendard,"Malgun Gothic",Arial,sans-serif;color:#171816}
+  body{position:relative}
+  .demo{position:absolute;inset:0;display:none;overflow:hidden;background:#f3f0e8}
+  .demo.active{display:block}
+  .meta{position:absolute;left:28px;top:22px;font-size:10px;font-weight:800;letter-spacing:.16em;color:#797971}
+  .rust{color:#a94c31}
+  .rule{position:absolute;left:28px;right:28px;bottom:25px;height:1px;background:#c8c4ba}
+  .page{position:absolute;right:28px;bottom:14px;font-size:10px;letter-spacing:.12em;color:#797971}
+
+  #demo-title .stage{position:absolute;inset:50px 28px 34px;display:grid;place-items:center;text-align:center;perspective:900px}
+  #demo-title .halo{position:absolute;width:350px;height:350px;border:1px solid #d4d0c6;border-radius:50%}
+  #demo-title h1{position:relative;margin:0;font-size:58px;line-height:.9;letter-spacing:-.055em;font-weight:640;transform-origin:center center;will-change:transform,filter,opacity}
+  #demo-title h1 span{display:block;font-size:24px;margin-top:13px;letter-spacing:.01em;font-weight:520}
+  #demo-title .strike{position:absolute;left:50%;top:236px;height:5px;background:#a94c31;transform:translateX(-50%);will-change:width}
+
+  #demo-data .chart-title{position:absolute;left:30px;top:58px;font-size:26px;font-weight:650;letter-spacing:-.045em}
+  #demo-data .metric{position:absolute;right:31px;top:46px;text-align:right}
+  #demo-data .metric b{display:block;font-size:46px;line-height:1;font-weight:650;letter-spacing:-.06em}
+  #demo-data .metric span{font-size:11px;color:#74746e;font-weight:700}
+  #demo-data .bars{position:absolute;left:31px;right:31px;bottom:45px;height:175px;display:flex;align-items:flex-end;gap:17px;border-bottom:1px solid #88877f}
+  #demo-data .bar{position:relative;width:76px;background:#20211f;transform-origin:center bottom;will-change:height,opacity}
+  #demo-data .bar:nth-child(4),#demo-data .bar:nth-child(5){background:#a94c31}
+  #demo-data .bar i{position:absolute;left:0;right:0;top:-20px;text-align:center;font-style:normal;font-size:10px;font-weight:750;color:#66665f}
+  #demo-data .axis{position:absolute;left:31px;bottom:27px;font-size:9px;letter-spacing:.08em;color:#77776f}
+
+  #demo-transition{background:#161715;color:#f4f1e9}
+  #demo-transition .meta{color:#9c9d96}
+  #demo-transition .track{position:absolute;inset:48px 25px 35px;overflow:hidden;border-top:1px solid #4a4c47;border-bottom:1px solid #4a4c47}
+  #demo-transition .scene{position:absolute;inset:0;padding:33px 38px;will-change:transform,opacity}
+  #demo-transition .scene.one{background:#161715}
+  #demo-transition .scene.two{background:#f3f0e8;color:#171816}
+  #demo-transition .scene small{font-size:10px;letter-spacing:.14em;font-weight:750;color:#9c9d96}
+  #demo-transition .scene.two small{color:#77776f}
+  #demo-transition .scene h2{margin:30px 0 0;font-size:43px;line-height:.98;letter-spacing:-.055em;font-weight:600}
+  #demo-transition .scene.two h2{max-width:450px}
+  #demo-transition .scene .block{position:absolute;right:42px;bottom:28px;width:120px;height:62px;background:#a94c31}
+  #demo-transition .wipe{position:absolute;top:48px;bottom:35px;width:7px;background:#a94c31;will-change:left,opacity}
+  #demo-transition .page{color:#9c9d96}
+</style>
+</head>
+<body>
+  <section class="demo" id="demo-title">
+    <div class="meta">HTML MOTION <span class="rust">/ 01</span></div>
+    <div class="stage"><div class="halo"></div><h1>Deep Learning Crew<span>Regular Meetup Day</span></h1></div>
+    <div class="strike"></div><div class="rule"></div><div class="page">FOCUS</div>
+  </section>
+
+  <section class="demo" id="demo-data">
+    <div class="meta">HTML MOTION <span class="rust">/ 02</span></div>
+    <div class="chart-title">근거가 말하는 순서대로</div>
+    <div class="metric"><b>0</b><span>누적 사용</span></div>
+    <div class="bars">
+      <div class="bar"><i>Q1</i></div><div class="bar"><i>Q2</i></div><div class="bar"><i>Q3</i></div><div class="bar"><i>Q4</i></div><div class="bar"><i>NOW</i></div>
+    </div>
+    <div class="axis">SEQUENTIAL REVEAL</div><div class="page">DATA</div>
+  </section>
+
+  <section class="demo" id="demo-transition">
+    <div class="meta">HTML MOTION <span class="rust">/ 03</span></div>
+    <div class="track">
+      <article class="scene one"><small>01 · BEFORE</small><h2>장면이 바뀌어도<br/>흐름은 그대로</h2><div class="block"></div></article>
+      <article class="scene two"><small>02 · NEXT SCENE</small><h2>다음 이야기로<br/>자연스럽게 연결</h2><div class="block"></div></article>
+    </div>
+    <div class="wipe"></div><div class="page">TRANSITION</div>
+  </section>
+
+<script>
+  const clamp = value => Math.max(0, Math.min(1, value));
+  const easeOut = value => 1 - Math.pow(1 - clamp(value), 4);
+  const easeInOut = value => value < .5 ? 8 * value ** 4 : 1 - Math.pow(-2 * value + 2, 4) / 2;
+  window.renderDemo = (name, rawProgress) => {
+    document.querySelectorAll('.demo').forEach(el => el.classList.toggle('active', el.id === `demo-${name}`));
+    const p = clamp(rawProgress);
+    if (name === 'title') {
+      const e = easeOut(p);
+      const title = document.querySelector('#demo-title h1');
+      title.style.opacity = String(clamp(p * 2.5));
+      title.style.transform = `scale(${3.1 - 2.1 * e}) translateY(${34 * (1 - e)}px)`;
+      title.style.filter = `blur(${18 * (1 - e)}px)`;
+      title.style.letterSpacing = `${14 * (1 - e) - 3}px`;
+      document.querySelector('#demo-title .strike').style.width = `${330 * easeOut((p - .58) / .42)}px`;
+      document.querySelector('#demo-title .halo').style.transform = `scale(${.65 + .35 * e})`;
+      document.querySelector('#demo-title .halo').style.opacity = String(.18 + .82 * e);
+    }
+    if (name === 'data') {
+      const targets = [56, 88, 118, 148, 175];
+      document.querySelectorAll('#demo-data .bar').forEach((bar, index) => {
+        const bp = easeOut((p - index * .1) / .48);
+        bar.style.height = `${Math.max(2, targets[index] * bp)}px`;
+        bar.style.opacity = String(.18 + .82 * bp);
+      });
+      const countProgress = easeOut((p - .32) / .68);
+      document.querySelector('#demo-data .metric b').textContent = Math.round(1700 * countProgress).toLocaleString('ko-KR') + (countProgress > .98 ? '+' : '');
+    }
+    if (name === 'transition') {
+      const e = easeInOut(clamp((p - .18) / .66));
+      const one = document.querySelector('#demo-transition .scene.one');
+      const two = document.querySelector('#demo-transition .scene.two');
+      one.style.transform = `translateX(${-108 * e}%)`;
+      one.style.opacity = String(1 - .45 * e);
+      two.style.transform = `translateX(${108 * (1 - e)}%)`;
+      document.querySelector('#demo-transition .wipe').style.left = `${25 + 543 * e}px`;
+      document.querySelector('#demo-transition .wipe').style.opacity = String(e > .02 && e < .98 ? 1 : 0);
+    }
+  };
+  window.renderDemo('title', 0);
+</script>
+</body>
+</html>

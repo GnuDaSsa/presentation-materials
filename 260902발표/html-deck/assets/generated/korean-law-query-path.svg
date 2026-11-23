@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="560" viewBox="0 0 1440 560">
+<rect width="1440" height="560" fill="#FBFBF8"/>
+<style>text{font-family:Pretendard,'Apple SD Gothic Neo',Arial,sans-serif;fill:#171717}.m{fill:#71706B}.r{fill:#B65A3A}.g{fill:#205A4A}.small{font-size:18px;font-weight:650}.tiny{font-size:14px;font-weight:620;letter-spacing:.3px}.label{font-size:14px;font-weight:800;letter-spacing:1.4px}.big{font-size:38px;font-weight:850}.mid{font-size:25px;font-weight:800}</style><text x="52" y="48" class="label m">KOREAN LAW MCP · QUERY PATH</text><line x1="52" y1="70" x2="1388" y2="70" stroke="#D7D1C5"/>
+<text x="52" y="122" class="big">기억에서 답하지 않고, 공식 법령 시스템까지 왕복</text>
+<rect x="52" y="190" width="260" height="210" fill="#F1EDE4" stroke="#D7D1C5"/><text x="78" y="232" class="label m">01 · QUESTION</text><text x="78" y="292" class="mid">근거 법령은?</text><text x="78" y="332" class="small m">자연어 질문</text>
+<path d="M336 292 H442" stroke="#B65A3A" stroke-width="4"/><path d="M430 280 l18 12 l-18 12" fill="none" stroke="#B65A3A" stroke-width="4"/>
+<rect x="478" y="158" width="304" height="274" fill="#171717"/><text x="510" y="204" class="label" style="fill:#E8C8BA">02 · MCP CONNECTOR</text><text x="510" y="270" class="big" style="fill:#fff">42 API</text><text x="510" y="318" class="mid" style="fill:#fff">→ 10개 도구</text><text x="510" y="368" class="small" style="fill:#D8D8D2">질문을 검색 호출로 변환</text>
+<path d="M806 292 H912" stroke="#B65A3A" stroke-width="4"/><path d="M900 280 l18 12 l-18 12" fill="none" stroke="#B65A3A" stroke-width="4"/>
+<rect x="948" y="190" width="440" height="210" fill="#FBFBF8" stroke="#D7D1C5"/><text x="976" y="232" class="label g">03 · OFFICIAL SOURCE</text><text x="976" y="282" class="mid">법령 · 판례 · 행정규칙</text><text x="976" y="326" class="small m">조문 · 시행일 · 관련 항목 확인</text><text x="976" y="366" class="small r">담당자 최종 판단</text>
+<text x="52" y="496" class="small m">질문 → 도구 호출 → 공식 근거 → 출처를 붙인 답변</text>
+</svg>

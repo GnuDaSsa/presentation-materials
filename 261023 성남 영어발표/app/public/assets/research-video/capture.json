@@ -1,0 +1,16 @@
+{
+  "source": "https://gnudassa.github.io/pangyo-3d-viewer/?v=0.7",
+  "method": "Direct recording of the original viewer WebGL canvas using Chrome MediaRecorder; one continuous orbit through the viewer controls.",
+  "created": "2026-10-31T09:35:34.687Z",
+  "width": 1280,
+  "height": 720,
+  "audio": false,
+  "sha256": "749f228116953916a1fbdb1e64952c6d46d6505da2b0b083f204d17a519b9c59",
+  "bytes": 7517202,
+  "modelNote": "Conceptual model; geometry, doors and surrounding masses are estimates in the source viewer.",
+  "mapAttribution": "© OpenStreetMap contributors · ODbL; shown alongside the video in the presentation.",
+  "errors": [],
+  "review_status": "LOCAL_REVIEWED",
+  "duration_sec": 10.118067,
+  "review_notes": "Start, middle and end frames visually checked. Local playback, pause, replay, last-frame hold, slide navigation, reduced-motion and fallback poster verified in Chrome."
+}

@@ -1,0 +1,2 @@
+.update-notice{position:fixed;right:18px;bottom:58px;z-index:30;max-width:min(430px,90vw);padding:10px 14px;border:1px solid #628e85;border-radius:7px;background:#10241ff2;color:#ccece1;font:12px/1.6 Arial,'Malgun Gothic',sans-serif;box-shadow:0 4px 18px #0005;pointer-events:none}.update-notice[hidden]{display:none!important}
+@media print{.update-notice{display:none!important}}

@@ -1,0 +1,116 @@
+{
+  "title": "Seongnam: The Heart of the System Semiconductor Cluster - V1.6 + Speaker introduction",
+  "width": 1440,
+  "height": 810,
+  "version": "2026-11-03-english-v1.6-alliance-restored",
+  "slides": [
+    {
+      "number": 1,
+      "title": "시스템반도체 클러스터의 중심 성남",
+      "image": "/source-final/page-01.png",
+      "imageEn": "/motion-previews/en-01.png",
+      "text": "성남시 시스템반도체 정책 시스템반도체 클러스터의 중심 성남 성남시청 AI혁신국 AI반도체과 반도체팀 사진우 01 / 12",
+      "textEn": "Seongnam City · System semiconductor policy The Heart of the System Semiconductor Cluster Seongnam Jinwoo Sa · Semiconductor Team AI Semiconductor Department · AI Division Seongnam City Hall 01 / 12",
+      "hidden": false
+    },
+    {
+      "number": 2,
+      "title": "사진우 · AI 챔피언 블랙",
+      "image": "/motion-previews/ko-02.png",
+      "imageEn": "/motion-previews/en-02.png",
+      "text": "발표자 소개 사진우 성남시청 AI혁신국 AI반도체과 반도체팀 AI CHAMPION BLACK 고급과정 수료 행정안전부 AI 챔피언 프로그램의 최고 등급 공공부문 AI 전문인재 교육·인증 GREEN 초급 → BLUE 중급 → BLACK 고급 · 최고 등급 오늘 발표자료 + 실시간 자막 AI로 직접 제작 과정 안내 · 행정안전부, 2026. 5. 7. ↗ 02 / 12",
+      "textEn": "Today's speaker Jinwoo Sa Seongnam City Hall AI Division AI Semiconductor Department Semiconductor Team AI CHAMPION BLACK Advanced course completed The highest level of the AI Champion program Government AI certification program · Republic of Korea GREEN Basic → BLUE Intermediate → BLACK Advanced · Highest level Today's slides + Live captions Created by me using AI Program source · Ministry of the Interior and Safety, 7 May 2026 ↗ 02 / 12",
+      "hidden": false
+    },
+    {
+      "number": 3,
+      "title": "대한민국 팹리스의 집적지, 성남",
+      "image": "/source-final/page-02.png",
+      "imageEn": "/motion-previews/en-03.png",
+      "text": "산업 기반 대한민국 팹리스의 집적지, 성남 판교테크노밸리 전경 · 공식 2025 팜플렛 수록 약 40 % 대한민국 팹리스 반도체 기업 중 성남 소재 비중 01 판교테크노밸리 설계역량 02 한국전자기술연구원(KETI) 연구기반 03 소부장·후공정·IT 수요기업 산업 연계 03 / 12",
+      "textEn": "Industrial base Our vision and industrial strength Pangyo Techno Valley · Official 2025 brochure Approx. 40 % Share of Korea’s fabless semiconductor companies located in Seongnam 01 Pangyo Techno Valley Design capabilities 02 Korea Electronics Technology Institute (KETI) Research base 03 Materials, components, equipment, back-end processing and IT customers Industrial connections 03 / 12",
+      "hidden": false
+    },
+    {
+      "number": 4,
+      "title": "시스템반도체 산업 지원 전략",
+      "image": "/source-final/page-03.png",
+      "imageEn": "/motion-previews/en-04.png",
+      "text": "추진 전략 시스템반도체 산업 지원 전략 성남 시스템반도체 생태계 01 인프라 구축 공동장비·설계도구 · 시험·검증 02 인재양성 대학 연계 · 반도체 전문교육 03 산업공간 조성 기업 입주·연구 · 기술지원 연계 04 / 12",
+      "textEn": "Strategic priorities Three main strategies Seongnam System semiconductor ecosystem 01 Infrastructure Shared equipment and design tools · Testing and validation 02 Talent development University partnerships · Specialist semiconductor education 03 Industrial space Office space and research · Links to technical support 04 / 12",
+      "hidden": false
+    },
+    {
+      "number": 5,
+      "title": "개발지원센터 세 가지 사업",
+      "image": "/source-final/page-04.png",
+      "imageEn": "/motion-previews/en-05.png",
+      "text": "반도체 검증 개념 이미지 · AI 생성 인프라 · 사업별 역할 개발지원센터 세 가지 사업 01 시스템반도체 검증지원센터 검증 공간·환경 조성 설계 검증·기술 컨설팅 검증 완료 제품의 상용화 연계 02 첨단 방위산업용 시스템반도체 부품 실증 국방용 반도체 검증 인프라 전주기 실증 지원 체계 국방 무기체계 진입 지원 03 팹리스 첨단장비 공동이용지원 고성능 검증 장비 공동활용 고가 장비·EDA 이용 부담 완화 장비 활용 전문교육 05 / 12",
+      "textEn": "Semiconductor validation concept · AI-generated Infrastructure · Program roles System Semiconductor Development Support Center Three major projects 01 System IC Verification Center Validation spaces and facilities Design validation and technical consulting Commercialization links for validated products 02 Semiconductor Testing Project for the Advanced Defense Industry Defense semiconductor validation infrastructure Demonstration support across the development cycle Support for integration into defense weapon systems 03 Advanced Equipment Sharing Program for Fabless Companies Shared high-performance validation equipment Reduced cost barriers to equipment and EDA tools Specialist training in equipment use 05 / 12",
+      "hidden": false
+    },
+    {
+      "number": 6,
+      "title": "설계·검증·상용화 지원",
+      "image": "/source-final/page-05.png",
+      "imageEn": "/motion-previews/en-06.png",
+      "text": "기업 지원 설계·검증·상용화 지원 01 설계·시제작 EDA 설계도구 설계 지원 02 시험·검증 공동이용 장비 설계·성능 검증 03 상용화 연계 검증 완료 제품 사업화 지원 기술 컨설팅 · 전문교육 개발비용 부담 완화 · 기업 경쟁력 강화 운영현황(2026) 장비 27건 · 검증 솔루션 7건 · 기업지원 131건 · 행사·교육 37회 06 / 12",
+      "textEn": "Business support Advanced equipment, EDA tools and testing facilities 01 Design and prototyping EDA design tools Design support 02 Testing and validation Shared equipment Design and performance validation 03 Commercialization links Validated products Commercialization support Technical consulting · Specialist training Lower development costs · Stronger business competitiveness Operations (2026) 27 equipment items · 7 validation solutions · 131 business support cases · 37 events and training sessions 06 / 12",
+      "hidden": false
+    },
+    {
+      "number": 7,
+      "title": "성남 시스템반도체 얼라이언스",
+      "image": "/source-final/page-06.png",
+      "hidden": false,
+      "imageEn": "/motion-previews/en-07.png",
+      "text": "인프라 · 기업 협력 성남 시스템반도체 얼라이언스 반도체 공급기업 기술교류 협력기회 반도체 수요기업 테크포럼 데이 최신 기술 세미나·기업 기술발표 공급·수요기업 간 기술교류 소규모 네트워킹 기술 분야별 기업 연결 협력 수요·공동사업 기회 발굴 정부과제 공동기획 분과별 정부과제 RFP 기획 공동 R&D 협력 기회 발굴 2026년 얼라이언스 참여 77개사 · 공급기업 55개사 / 수요기업 22개사 2026년 얼라이언스 참여 77 개사 07 / 12",
+      "textEn": "Infrastructure · Business cooperation Seongnam System Semiconductor Alliance Semiconductor Suppliers Technical exchange Cooperation opportunities Semiconductor Customers Tech Forum Day Seminars on new technologies · Company presentations Technical exchange between suppliers and customers Small-group networking Connecting companies by technology field Identifying cooperation needs and joint projects Joint planning of government projects Working-group planning of government project RFPs Identifying opportunities for joint R&D 2026 Alliance participation: 77 companies · 55 suppliers / 22 customers 2026 Alliance participation 77 companies 07 / 12"
+    },
+    {
+      "number": 8,
+      "title": "대학 연계 인재양성",
+      "image": "/source-final/page-07.png",
+      "imageEn": "/motion-previews/en-08.png",
+      "text": "인재양성 · 분야별 전문 역량 대학 연계 인재양성 대상·규모 경기도 거주 15세 이상 미취업자 / 100명 사업기간 연중 실무인력 한국폴리텍대학 성남캠퍼스 교육과정 AI반도체 제조·패키징·테스트 공정 기술아카데미 대상 고등학교 졸업(예정)자 이상 모집인원 40명(20명 × 2회) 전문인력 가천대학교 교육과정 디지털설계 전문가 과정 대상 전문학사 이상 모집인원 30명 고급인력 서강대학교 판교캠퍼스 교육과정 글로벌 반도체설계 전문가 과정 대상 이공계열 학사 이상 (관련 전공자) 모집인원 30명 08 / 12",
+      "textEn": "Talent development · Professional skills Three-step semiconductor training Eligibility and places Unemployed Gyeonggi residents aged 15 or older / 100 places Program period Year-round Practical skills Korea Polytechnics Seongnam Campus Course AI Semiconductor Manufacturing, Packaging and Testing Process Technology Academy Entry qualification High school graduates or expected graduates and above Recruitment places 40 places (20 × 2 cohorts) Professional skills Gachon University Course Specialized Course in Digital Chip Design Entry qualification Associate degree or higher Recruitment places 30 places Advanced expertise Sogang University Pangyo Campus Course Advanced Semiconductor Design Program Entry qualification Bachelor’s degree or higher in science or engineering (relevant major) Recruitment places 30 places 08 / 12",
+      "hidden": false
+    },
+    {
+      "number": 9,
+      "title": "판교 시스템반도체 연구센터",
+      "image": "/source-final/page-08.png",
+      "imageEn": "/motion-previews/en-09.png",
+      "text": "산업공간 · 조성 계획 판교 시스템반도체 연구센터 ▶ 재생 직접 제작한 3D 모델 · 기획안 ↗ Map data © OpenStreetMap contributors · ODbL 2030 년 준공 목표 부지면적 4,627 ㎡ 연면적 29,542 ㎡ 건축규모 지하 3층 ~ 지상 8층 제3판교테크노밸리 성남금토 공공주택지구 자족용지 6-1 사업기간 · 2025–2030년 계획 2025 2026 · 조성 추진 2030 · 준공 목표 09 / 12",
+      "textEn": "Industrial space · Development plan Pangyo System Semiconductor Research Center ▶ Play Presenter-created 3D model · Conceptual design ↗ Map data © OpenStreetMap contributors · ODbL 2030 Target completion Site area 4,627 ㎡ Gross floor area 29,542 ㎡ Building scale 3 basement levels · 8 above-ground floors Third Pangyo Techno Valley Self-sufficient facilities plot 6-1, Seongnam Geumto Public Housing District Project period · Planned for 2025–2030 2025 2026 · Development underway 2030 · Target completion 09 / 12",
+      "hidden": false
+    },
+    {
+      "number": 10,
+      "title": "입주·연구·기술지원의 연결",
+      "image": "/source-final/page-09.png",
+      "imageEn": "/motion-previews/en-10.png",
+      "text": "판교 시스템반도체 연구센터 · 공간배치 계획 입주·연구·기술지원의 연결 8F 7F 6F 5F 4F 3F 2F 1F 층별 기능 개념도 4–8층 산업시설 기업 입주·연구공간 1–3층 지원시설 개발지원센터 등 기업지원 기능 용도별 연면적 배분 70% 30% 20,737㎡ 산업시설 8,805㎡ 지원시설 용도별 계획 면적 기업 입주·연구 ↔ 공동장비·기술지원 ↔ 수요 연계 R&D 10 / 12",
+      "textEn": "Pangyo System Semiconductor Research Center · Spatial plan Office space, research and technical support 8F 7F 6F 5F 4F 3F 2F 1F Conceptual floor functions Floors 4–8 Industrial facilities Office and research space Floors 1–3 Support facilities Development Support Center and other business support functions Gross floor area by use 70% 30% 20,737㎡ Industrial facilities 8,805㎡ Support facilities Planned floor area by use Office space and research ↔ Shared equipment and technical support ↔ Demand-linked R&D 10 / 12",
+      "hidden": false
+    },
+    {
+      "number": 11,
+      "title": "기업과 인재의 동반 성장",
+      "image": "/source-final/page-10.png",
+      "imageEn": "/motion-previews/en-11.png",
+      "text": "정책 목표 기업과 인재의 동반 성장 01 공동 인프라 전주기 지원 팹리스 경쟁력 강화 02 대학 연계 전문역량 교육 양질의 일자리 창출 03 산업공간 기업 협력 지속 가능한 산업 생태계 기술개발과 협력, 성장을 뒷받침하는 도시 11 / 12",
+      "textEn": "Policy objectives A strong industrial ecosystem 01 Shared infrastructure Support across the development cycle Help fabless companies compete 02 University partnerships Professional skills training Create high-quality jobs 03 Industrial space Business cooperation Build a strong industry network A city supporting technological development, cooperation and growth 11 / 12",
+      "hidden": false
+    },
+    {
+      "number": 12,
+      "title": "대한민국 시스템반도체 산업의 핵심 거점 성남",
+      "image": "/source-final/page-11.png",
+      "imageEn": "/motion-previews/en-12.png",
+      "text": "성남시 시스템반도체 정책 대한민국 시스템반도체 산업의 핵심 거점 성남 감사합니다 성남시청 AI혁신국 AI반도체과 반도체팀 사진우 12 / 12",
+      "textEn": "Seongnam City · System semiconductor policy A key hub for Korea’s system semiconductor industry Seongnam Thank you Jinwoo Sa · Semiconductor Team AI Semiconductor Department · AI Division Seongnam City Hall 12 / 12",
+      "hidden": false
+    }
+  ]
+}

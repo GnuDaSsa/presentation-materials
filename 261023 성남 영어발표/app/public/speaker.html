@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Seongnam · 영문 공식 발표문</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/speaker.css">
+  <link rel="stylesheet" href="/live-updates.css">
+  <script type="module" src="/speaker.js"></script>
+</head>
+<body>
+  <header class="speaker-toolbar">
+    <a href="/" target="seongnam-deck">S. <span>발표 화면</span></a>
+    <span class="speaker-context">KOREAN OPENING → ENGLISH</span>
+    <button id="timer-button">리허설 시작</button><output id="timer" aria-label="경과 시간">00:00</output>
+    <button id="timer-reset" aria-label="타이머 초기화">↺</button>
+    <button id="font-smaller" aria-label="글자 작게">A−</button><button id="font-larger" aria-label="글자 크게">A+</button>
+    <button id="print-script">인쇄</button><button id="download-script">TXT 저장</button>
+  </header>
+  <div class="speaker-layout">
+    <aside>
+      <p class="eyebrow">SEONGNAM CITY</p>
+      <h1>영문 공식 발표문</h1>
+      <p class="aside-intro">해외 공공·산업 관계자 대상<br>한국어 인사 후 영어 발표 · 영상 시간 별도</p>
+      <label class="sync-label"><input id="follow-deck" type="checkbox" checked> 발표 화면과 장표 맞추기</label>
+      <p id="connection" role="status">발표 화면을 열면 연결됩니다.</p>
+      <nav id="script-nav" aria-label="대본 장표"></nav>
+      <a class="research-link" href="/Seongnam-Formal-Address.txt" download="Seongnam-Formal-Address.txt">공식 발표문 TXT</a>
+      <a class="research-link" href="#research">출처와 변경 근거</a>
+      <a class="research-link" href="#questions">예상 질문</a>
+      <p class="aside-note">두 화면을 쓸 때 이 창은 발표자 모니터에 두세요. 시간은 자동으로 장표를 넘기지 않습니다.</p>
+    </aside>
+    <main>
+      <section class="rehearsal-summary">
+        <span id="word-count"></span>
+        <p>본문만 읽습니다. 한국어 큐와 출처는 읽지 않습니다. 시간 배분에는 짧은 멈춤과 도식 설명이 포함되어 있습니다.</p>
+      </section>
+      <div id="scripts"></div>
+      <section id="questions" class="reference-section"><p class="eyebrow">Q&A PREPARATION</p><h2>예상 질문</h2><div id="question-list"></div></section>
+      <section id="research" class="reference-section"><p class="eyebrow">RESEARCH · PROGRAM ROLES</p><h2>출처와 변경 근거</h2><p>기존 사업 자료는 2026년 10월 20일 검토했고, 지원 구간과 연구센터 역할은 10월 23일 제공 자료와 공식 장비 안내를 반영해 보완했습니다. 연구센터는 조성 계획이며, 기능 구성도는 확정된 층별 배치를 뜻하지 않습니다. 표지의 반도체 이미지는 AI로 만든 콘셉트 이미지입니다.</p><div id="changes"></div><div id="source-list"></div></section>
+    </main>
+  </div>
+  <footer class="speaker-footer"><button id="speaker-prev">← 이전 장</button><span id="speaker-position">1 / 11</span><button id="speaker-replay">장면 다시 재생 R</button><button id="speaker-next">다음 장 →</button></footer>
+</body>
+</html>

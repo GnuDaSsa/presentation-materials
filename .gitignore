@@ -1,0 +1,26 @@
+# 대용량 미디어/압축/실행파일 (GitHub 100MB 제한)
+*.mp4
+*.mov
+*.webm
+*.avi
+*.mkv
+*.zip
+*.exe
+*.lnk
+.runtime/
+node_modules/
+.env
+.env.local
+
+# 백업
+_backup*/
+*backup*.html
+
+# 100MB 넘는 단일파일 HTML
+260915 경기도청 발표_단일파일/
+261022 나주 강의자료_개인정보·퇴임식제외_단일파일/나주_강의자료_단일파일.html
+적극행정_발표_최종본_최적화.html
+
+# 이미 별도 GitHub 저장소가 있는 폴더
+261023경기도청 강의/
+경기도인재개발원 행정혁신 강의/
